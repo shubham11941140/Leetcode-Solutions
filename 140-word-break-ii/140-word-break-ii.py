@@ -13,11 +13,7 @@ class Solution:
         ans = []
         for i in a:
             k = i.split(' ')
-            l = len(k)
-            for j in k:
-                if j in wordDict:
-                    l -= 1
-            if not l:
+            if len(k) == len([1 for j in k if j in wordDict]):
                 ans.append(i)
         return ans
                     
