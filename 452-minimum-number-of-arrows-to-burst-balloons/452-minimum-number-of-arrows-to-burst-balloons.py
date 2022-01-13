@@ -1,9 +1,6 @@
 class Solution:
     def findMinArrowShots(self, points: List[List[int]]) -> int:
-        points.sort(key=lambda x:x[1])
-        # Pick max of each entry and greedily select all
-        # Once no more can be picked shoot next arrow
-        print(points)
+        points.sort(key = lambda x : x[1])
         n = len(points)
         i = 0
         ans = 0
@@ -15,7 +12,6 @@ class Solution:
                 i += 1
                 c = 1
             ans += 1
-            print(f)
             if not c:
                 i += 1            
         return ans
