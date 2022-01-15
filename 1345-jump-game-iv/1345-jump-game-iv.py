@@ -1,14 +1,20 @@
 from collections import Counter
 
 class Solution:
+    
+    def freq(self, arr, MAX):
+        d = {}
+        for i in arr:
+            if i not in d:
+                d[i] = MAX
+        return d
+    
     def minJumps(self, arr: List[int]) -> int:        
         n = len(arr)
         MAX = 10 ** 10
         dp = [MAX for i in range(n)]        
         dp[0] = 0
-        d = Counter(arr)
-        for i in d:
-            d[i] = MAX
+        d = self.freq(arr, MAX)
         d[arr[0]] = 0
         ans = MAX        
         while True:
