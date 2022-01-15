@@ -1,5 +1,3 @@
-from collections import Counter
-
 class Solution:
     
     def freq(self, arr, MAX):
