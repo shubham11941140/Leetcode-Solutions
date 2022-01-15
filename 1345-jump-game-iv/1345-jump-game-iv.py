@@ -5,7 +5,7 @@ class Solution:
         n = len(arr)
         if n == 1:
             return 0
-        if arr[n - 1] == 1174:            return 30
+        #if arr[n - 1] == 1174:            return 30
         MAX = 10 ** 10
         dp = [MAX for i in range(n)]        
         dp[0] = 0
