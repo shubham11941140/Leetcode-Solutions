@@ -6,16 +6,9 @@ class Solution:
         for i in a:
             if i not in b:
                 b.append(i)
-        print(b)
         d = []
         for i in p:
             if i not in d:
                 d.append(i)
-        print(b)
-        c = [b.index(i) for i in a]
-        print(c)
-        print(d)
-        e = [d.index(i) for i in p]
-        print(e)
-        return c == e
+        return [b.index(i) for i in a] == [d.index(i) for i in p]
         
