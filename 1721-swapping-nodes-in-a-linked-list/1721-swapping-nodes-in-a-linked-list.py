@@ -10,8 +10,6 @@ class Solution:
         while root is not None:
             l += 1
             root = root.next
-        print(l)
-        print(l - k + 1)
         root = head
         c = 0
         b1 = -1
@@ -20,23 +18,18 @@ class Solution:
             c += 1
             if c == k:
                 b1 = root.val
-                print(root.val)
             if c == l - k + 1:
                 b2 = root.val
-                print(root.val)
             root = root.next
         b1, b2 = b2, b1
         root = head
-        print(b1, b2)
         c = 0
         while root is not None:
             c += 1
             if c == k:
                 root.val = b1
-                print(root.val)
             if c == l - k + 1:
                 root.val = b2
-                print(root.val)
             root = root.next        
         return head
         
