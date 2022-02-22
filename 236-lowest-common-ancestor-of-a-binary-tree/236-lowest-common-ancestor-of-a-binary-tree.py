@@ -8,44 +8,16 @@
 class Solution:
     
     def __init__(self):
-        self.ansarr = []
-    
-    def path(self, root, key, a):
-        
-        if not root:
-            return
-        a.append(root.val)
-        if root.val == key:
-            return
-        self.path(root.left, key, a)
-        self.path(root.right, key, a)
-        #a.pop()
-        
-    def ans(self, root, key):
-        print(key)
-        if not root:
-            return root
-        if root.val == key:
-            print("IN")
-            return root
-        if root.left and self.ans(root.left, key):
-                return self.ans(root.left, key)
-                
-        if root.right and self.ans(root.right, key):     
-                return self.ans(root.right, key)
-    
+        self.ansarr = []        
     
     def present(self, root, key):
         if not root:
             return False
-        #print("P", root.val, key)
         if root.val == key:
             return True
         return self.present(root.left, key) or self.present(root.right, key)    
-
     
     def findpath(self, root, p, ans1):
-        # DFS using Recursive Backtracking
         if not root:
             return False
         if root.val == p.val:
@@ -72,59 +44,20 @@ class Solution:
             self.ansarr.append(root.right)
             return self.call(root.right, p, q)        
     
-    def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
-        
-        
-
+    def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':       
         if max(p.val, q.val) < 1500:
             self.call(root, p, q)        
-            if not self.ansarr:
-                return root
-            else:
-                return self.ansarr[-1]
-        
+            return root if not self.ansarr else self.ansarr[-1]        
         ansp = []
         self.findpath(root, p, ansp)
         ansq = []
         self.findpath(root, q, ansq)
-        print('ANP', ansp, ansq)
         ansp = ansp[::-1]
         ansq = ansq[::-1]
-        for i in ansp:
-            print(i.val)
-        print(87)
-        for i in ansq:
-            print(i.val)
         i = 0
         while i < min(len(ansp), len(ansq)) and ansp[i].val == ansq[i].val:
             i += 1 
-        return ansp[i - 1]
-    
-    
-    
-    
-        
-        pp = []
-        qp = []
-        # use bfs to find path
-        self.path(root, p.val, pp)
-        print(pp)
-        self.path(root, q.val, qp)
-        print(qp)
-        idx = pp.index(p.val)
-        lca1 = pp[:idx + 1]
-        print(lca1)
-        idx = qp.index(q.val)
-        lca2 = qp[:idx + 1]
-        print(lca2)
-        ans1 = -(10 ** 100)
-        for i in range(len(lca1)):
-            if lca1[i] in lca2:
-                ans1 = lca1[i]
-        print(ans1)
-        return self.ans(root, ans1)
-
-        
+        return ansp[i - 1]        
         
         
         
