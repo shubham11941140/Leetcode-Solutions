@@ -40,11 +40,7 @@ class Solution:
                 for j in range(c):
                     adj[i].append(head.val)
                     head = head.next  
-        print(adj)
-        f = []
-        for i in adj:
-            f.append(self.atol(i))
-        return f
+        return [self.atol(i) for i in adj]
                     
             
         
