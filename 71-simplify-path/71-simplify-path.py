@@ -1,15 +1,10 @@
 class Solution:
     def simplifyPath(self, path: str) -> str:
-        while '/./' in path:
-            path = path.replace('/./', '/')
-        print(path)
-        i = 0   
         path += '/'
         n = len(path)
         stack = []
-        curr = []
-        print(path)
-        while i < n:            
+        curr = [] 
+        for i in range(n):
             if path[i] == '/':
                 if curr:
                     if ''.join(curr) == '..': 
@@ -23,16 +18,9 @@ class Solution:
                     curr = []
             else:                
                 curr.append(path[i])
-            i += 1
-            
-          
-        print(curr)
-        print(stack)
         if curr:
             stack.append(curr)
-        s = ""
-        for k in stack:
-            s += ('/' + ''.join(k))
+        s = ''.join([('/' + ''.join(k)) for k in stack])
         if s == "":
             return "/"
         return s
