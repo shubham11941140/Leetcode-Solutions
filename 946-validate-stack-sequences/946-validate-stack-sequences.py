@@ -6,12 +6,10 @@ class Solution:
         n = len(pushed)
         m = len(popped)
         while i < n or j < m:
-            print(i, j)
             if stack and stack[-1] == popped[j]:
                 stack.pop()
                 j += 1
             elif i == n and j < m:
-                print(stack)
                 return False
             else:
                 stack.append(pushed[i])
