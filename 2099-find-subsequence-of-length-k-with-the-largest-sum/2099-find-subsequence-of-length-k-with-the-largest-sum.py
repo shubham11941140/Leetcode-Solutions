@@ -1,7 +1,6 @@
 class Solution:
     def maxSubsequence(self, nums: List[int], k: int) -> List[int]:
-        f = sorted(nums)[::-1]
-        g = f[:k]
+        g = sorted(nums)[::-1][:k]
         n = []
         for i in nums:
             if i in g:
