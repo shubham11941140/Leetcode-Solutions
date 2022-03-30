@@ -17,12 +17,10 @@ class Solution:
         b = []
         ans = []
         self.rec(k, n, b)
-        print(len(self.ans))
         c = []
         for i in self.ans:
             if sum(i) == n and sorted(i) not in c:
                 c.append(sorted(i))
-        print(c)
         return c
                 
         
