@@ -1,10 +1,7 @@
 class Solution:
-    
-    def palli(self, s):
-        return s == s[::-1]
 
     def validPalindrome(self, s: str) -> bool:
-        if self.palli(s):
+        if s == s[::-1]:
             return True             
         l = 0
         r = len(s) - 1
@@ -17,6 +14,6 @@ class Solution:
             elif s[l] != s[r]:
                 L = s[:l] + s[l + 1:]
                 R = s[:r] + s[r + 1:]
-                return self.palli(L) or self.palli(R)
+                return L == L[::-1] or R == R[::-1]
         return False
         
