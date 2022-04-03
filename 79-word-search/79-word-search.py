@@ -8,11 +8,12 @@ class Solution:
             return True
         allvalid = [(i + 1, j), (i - 1, j), (i, j + 1), (i, j - 1)]
         for x, y in allvalid:
-            if self.valid(x, y, n, m) and not visited[x][y] and board[x][y] == word[wordidx]:
-                visited[x][y] = True
-                if self.recback(board, n, m, x, y, word, wordidx + 1, visited):
-                    return True
-                visited[x][y] = False
+            if self.valid(x, y, n, m): 
+                if not visited[x][y] and board[x][y] == word[wordidx]:
+                    visited[x][y] = True
+                    if self.recback(board, n, m, x, y, word, wordidx + 1, visited):
+                        return True
+                    visited[x][y] = False
         return False
                             
     def exist(self, board: List[List[str]], word: str) -> bool:
