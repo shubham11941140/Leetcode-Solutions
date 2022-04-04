@@ -17,8 +17,8 @@ class Solution:
         if l == 1:
             return None
         if l == n:
-            # Remove the first node
             head = head.next
+            return head
         c = 0        
         root = head
         while head is not None:
