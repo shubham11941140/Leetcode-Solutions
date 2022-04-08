@@ -5,11 +5,10 @@ class KthLargest:
         self.k = k - 1
         
     def add(self, val: int) -> int:
-        self.kl.append(val)
+        self.kl += [val]
         self.kl.sort(reverse = True)
         return self.kl[self.k]
         
-
 
 # Your KthLargest object will be instantiated and called as such:
 # obj = KthLargest(k, nums)
