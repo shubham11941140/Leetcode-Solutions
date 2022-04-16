@@ -1,14 +1,12 @@
-from collections import deque
-
 class MyCircularDeque:
 
     def __init__(self, k: int):
-        self.a = deque()
+        self.a = []
         self.l = k
         
     def insertFront(self, value: int) -> bool:
         if len(self.a) < self.l:
-            self.a.appendleft(value)
+            self.a = [value] + self.a
             return True
         return False        
 
@@ -20,7 +18,7 @@ class MyCircularDeque:
 
     def deleteFront(self) -> bool:
         if len(self.a):
-            self.a.popleft()
+            self.a.pop(0)
             return True
         return False
         
