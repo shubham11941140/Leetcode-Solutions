@@ -8,12 +8,8 @@ class FrontMiddleBackQueue:
 
     def pushMiddle(self, val: int) -> None:     
         k = len(self.a)
-        if k % 2 == 0:
-            idx = (k - 1) // 2
-            self.a = self.a[:idx + 1] + [val] + self.a[idx + 1:]
-        else:
-            idx = (k - 1) // 2
-            self.a = self.a[:idx] + [val] + self.a[idx:]                    
+        idx = (k - 1) // 2
+        self.a = self.a[:idx + 1] + [val] + self.a[idx + 1:] if k % 2 == 0 else self.a[:idx] + [val] + self.a[idx:]                
 
     def pushBack(self, val: int) -> None:
         self.a.append(val)        
@@ -23,9 +19,7 @@ class FrontMiddleBackQueue:
 
     def popMiddle(self) -> int:
         if len(self.a):
-            k = len(self.a)
-            idx = (k - 1) // 2
-            return self.a.pop(idx)        
+            return self.a.pop((len(self.a) - 1) // 2)        
         return -1
         
     def popBack(self) -> int:
