@@ -38,14 +38,10 @@ class Solution:
     def gen(self):
         n = 10 ** 8 + 10 ** 6
         self.generatePalindromes(n)
-        for i in self.a:
-            if self.isprime(i):
-                self.b.append(i)
-        self.b.sort()
+        self.b = sorted([i for i in self.a if self.isprime(i)])
     
     def primePalindrome(self, n: int) -> int:
         self.gen()
-        print(len(self.b))
         for i in self.b:
             if i >= n:
                 return i
