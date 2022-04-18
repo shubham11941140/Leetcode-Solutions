@@ -17,6 +17,5 @@ class Solution:
     def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
         a = []
         self.inorder(root, a)
-        print(a)
         return a[k - 1]
         
