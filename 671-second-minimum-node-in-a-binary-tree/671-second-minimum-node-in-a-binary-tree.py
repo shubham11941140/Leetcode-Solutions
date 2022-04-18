@@ -16,13 +16,8 @@ class Solution:
     def findSecondMinimumValue(self, root: Optional[TreeNode]) -> int:
         a = []
         self.inorder(root, a)
-        print(a)
         m = min(a)
         while m in a:
             a.remove(m)
-        print(a)
-        if not a:
-            return -1
-        else:
-            return min(a)
+        return -1 if not a else min(a)            
         
