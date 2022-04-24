@@ -12,9 +12,8 @@ class CustomStack:
 
     def pop(self) -> int:
         if self.l:
-            val = self.s.pop()
             self.l -= 1
-            return val
+            return self.s.pop()
         return -1
 
     def increment(self, k: int, val: int) -> None:
