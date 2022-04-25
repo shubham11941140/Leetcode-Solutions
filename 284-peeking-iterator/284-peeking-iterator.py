@@ -49,8 +49,6 @@ class PeekingIterator:
             
         if self.idx + 1 < self.l:
             return self.a[self.idx + 1]
-        print(52)
-        return None
         
         
 
@@ -59,11 +57,7 @@ class PeekingIterator:
         :rtype: int
         """
         
-        self.idx += 1
-        if self.idx >= self.l:
-            print(64)
-            return None
-        
+        self.idx += 1        
         if self.idx < self.l:
             #self.idx += 1
             return self.a[self.idx]
