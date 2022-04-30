@@ -8,8 +8,6 @@ class Solution:
                 if j not in d:
                     d[j] = k
                     k += 1
-        print(d, k)
-        # Graph
         adj = [[] for i in range(k)]
         for i in range(len(values)):
             a, b = equations[i]
@@ -18,9 +16,6 @@ class Solution:
             w2 = 1/w1
             adj[u].append([v, w1])
             adj[v].append([u, w2])
-        print(adj)
-        # Graph is done
-        # Deal with queries
         ans = []
         for a, b in queries:
             if a not in d or b not in d:
@@ -30,15 +25,7 @@ class Solution:
                 ans.append(1)
                 continue
             else:
-                # Check if they lie in the same component of the graph
-                # If they dont lie return -1
-                # ELse return path product
-                # Create a queue which stores
-                # the paths
-                print("BEFORE BFS")
                 q = []
-
-                # Path vector to store the current path
                 path = []
                 src = d[a]
                 dst = d[b]
@@ -48,24 +35,15 @@ class Solution:
 
                 while q:
                     path = q.pop(0)
-                    last = path[len(path) - 1]
-
-                    # If last vertex is the desired destination
-                    # then print the path
-                    if (last == dst):
-                        #print("PATH", path)
-                        print("REACHED DEST")
+                    last = path[- 1]
+                    if last == dst:
                         flag = True
                         break
-
-                    # Traverse to all the nodes connected to
-                    # current vertex and push new path to queue
                     for i, j in adj[last]:
                         if i not in path:
                             newpath = path.copy()
                             newpath.append(i)
                             q.append(newpath)
-                print("P", path)
                 if not flag:
                     ans.append(-1)
                     continue
@@ -75,11 +53,8 @@ class Solution:
                     q = path[i + 1]
                     for v, w in adj[p]:
                         if v == q:
-                            print("WEI", w)
                             f *= w
-            ans.append(f)
-            print("ANS", ans)
-        print("76", ans)
+                ans.append(f)
         return ans
 
             
