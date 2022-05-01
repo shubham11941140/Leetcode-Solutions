@@ -1,5 +1,4 @@
-class Solution:
-    
+class Solution:    
     
     def change(self, s):
         stack = []
@@ -9,12 +8,9 @@ class Solution:
                     stack.pop()
             else:
                 stack.append(i)
-        print(stack)
         return stack
     
-    
     def backspaceCompare(self, s: str, t: str) -> bool:
-        # Solve using stack
         return self.change(s) == self.change(t)
         
                 
