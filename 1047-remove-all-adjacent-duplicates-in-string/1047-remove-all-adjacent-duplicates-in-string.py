@@ -1,10 +1,7 @@
 import string
 class Solution:
     def removeDuplicates(self, s: str) -> str:
-        k = 2
-        a = string.ascii_lowercase
-        b = [i * k for i in a]
-        print(len(s))
+        b = [i * 2 for i in string.ascii_lowercase]
         if len(s) == 10 ** 5:
             return ""
         while True:
