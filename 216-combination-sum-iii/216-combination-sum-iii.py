@@ -5,13 +5,14 @@ class Solution:
         self.ans = []
     
     def rec(self, k, n, b):
-        if k == 0:
+        if not k:
             self.ans.append(b.copy())
         for i in self.a:
             if i not in b:
-                if i <= n:
-                    self.rec(k - 1, n - i, b + [i])
-                
+                if i > n:
+                    break
+                else:
+                    self.rec(k - 1, n - i, b + [i])                
     
     def combinationSum3(self, k: int, n: int) -> List[List[int]]:
         b = []
