@@ -2,25 +2,25 @@ class Solution:
     
     def __init__(self):
         self.c = 0
+        self.a = ['a','e','i','o','u'][::-1]
     
-    def pall(self, a, b, k):
+    def pall(self, b, k):
         if not k:
             self.c += 1
             return
         else:
-            for i in a:
+            for i in self.a:
                 if b != -1:
                     if i < b:
                         break
                     else:
-                        self.pall(a, i, k - 1)
+                        self.pall(i, k - 1)
                 else:
-                    self.pall(a, i, k - 1)
+                    self.pall(i, k - 1)
     
     
-    def countVowelStrings(self, n: int) -> int:
-        a = ['a','e','i','o','u'][::-1]
-        self.pall(a, -1, n)
+    def countVowelStrings(self, n: int) -> int: 
+        self.pall(-1, n)
         return self.c
         
         
