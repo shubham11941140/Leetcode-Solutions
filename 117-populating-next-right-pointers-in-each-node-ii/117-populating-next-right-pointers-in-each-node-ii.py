@@ -40,6 +40,7 @@ class Solution:
                 q.append((root.right, level + 1))
         # Convert it to linked list
         #print(adj)
+        '''
         for level in range(7000):
             print(level)
             if not adj[level]:
@@ -52,34 +53,31 @@ class Solution:
                 curnode = self.insert(curnode, adj[level][i])
                 #adj[level][i].next = curnode
                 #curnode = adj[level][i]
-                print(52, curnode.val, curnode.next)
-            print("HOORAH")
+                #print(52, curnode.val, curnode.next)
+            #print("HOORAH")
             if level:
                 adj[level][0].val = curnode.val
                 adj[level][0].left = curnode.left
                 adj[level][0].right = curnode.right
                 adj[level][0].next = curnode.next
         return head
+        '''
     
-        print("54")
-        
         
         
         
         r = None
         for level in range(7000):
-            print(level)
-            if not adj[level]:
-                break
-            else:
-                # A proper nodes exist
-                #r = None
+            if adj[level]:
+                r = None
                 for i in adj[level][::-1]:
-                    r = self.insert(r, i)  
-                y = r
-                while y is not None:
-                    print(52, y.val)
-                    
-                    y = y.next
+                    r = self.insert(r, i)
+                if level:
+                    adj[level][0].val = r.val
+                    adj[level][0].left = r.left
+                    adj[level][0].right = r.right
+                    adj[level][0].next = r.next
+            else:
+                break
         return head
         
