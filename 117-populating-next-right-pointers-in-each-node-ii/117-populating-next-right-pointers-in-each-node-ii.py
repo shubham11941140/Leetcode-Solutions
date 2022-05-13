@@ -17,19 +17,15 @@ class Solution:
         temp.right = item.right
         temp.next = root
         root = temp
-        return root        
-    
-    
+        return root                
     
     def connect(self, root: 'Node') -> 'Node':
-        # LOT
-        q = []
-        head = root
         if not root:
             return
+        head = root
         adj = [[] for i in range(7000)]
         level = 0
-        q.append((root, level))
+        q = [(root, level)]
         adj[level].append(root)
         while q:
             root, level = q.pop(0)
@@ -37,36 +33,7 @@ class Solution:
             if root.left:
                 q.append((root.left, level + 1))
             if root.right:
-                q.append((root.right, level + 1))
-        # Convert it to linked list
-        #print(adj)
-        '''
-        for level in range(7000):
-            print(level)
-            if not adj[level]:
-                break
-            l = len(adj[level])
-            curnode = None
-            #print(47, curnode.val, curnode.next)
-            for i in reversed(range(l)):
-                #print(49, i, adj[level][i].val, adj[level][i].next)  
-                curnode = self.insert(curnode, adj[level][i])
-                #adj[level][i].next = curnode
-                #curnode = adj[level][i]
-                #print(52, curnode.val, curnode.next)
-            #print("HOORAH")
-            if level:
-                adj[level][0].val = curnode.val
-                adj[level][0].left = curnode.left
-                adj[level][0].right = curnode.right
-                adj[level][0].next = curnode.next
-        return head
-        '''
-    
-        
-        
-        
-        r = None
+                q.append((root.right, level + 1))                           
         for level in range(7000):
             if adj[level]:
                 r = None
