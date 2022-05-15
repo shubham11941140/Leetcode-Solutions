@@ -9,24 +9,18 @@ class Solution:
     def height(self, root) -> int:
         if root is None:
             return 0
-        return max(self.height(root.left), self.height(root.right)) + 1
+        return max(self.height(root.left), self.height(root.right)) + 1             
     
-    # traverse the tree to get nodes at deepest level
-    def bfs_level(self, root) -> list:
-        level = 0
-        q = [(root, level)]
+    def deepestLeavesSum(self, root: Optional[TreeNode]) -> int:
+        q = [(root, 0)]
         h = self.height(root)
-        ans = []
+        ans = 0
         while q:
             root, level = q.pop(0)
             if level == h - 1:
-                ans.append(root.val)
+                ans += root.val
             if root.left:
                 q.append((root.left, level + 1))
             if root.right:
                 q.append((root.right, level + 1))
-        return ans           
-    
-    def deepestLeavesSum(self, root: Optional[TreeNode]) -> int:
-        ans = self.bfs_level(root)
-        return sum(ans)
+        return ans
