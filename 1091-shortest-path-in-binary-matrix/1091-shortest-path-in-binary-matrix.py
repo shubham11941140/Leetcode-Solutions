@@ -16,13 +16,8 @@ class Solution:
         dp[0][0] = 0        
         if grid[0][0] == 1:
             return -1
-        
-        # BFSVal v
-        val = 0
-        i = 0
-        j = 0
-        q = [(i, j, val)]
-        v[i][j] = True
+        q = [(0, 0, 0)]
+        v[0][0] = True
         while q:
             i, j, val = q.pop(0)
             if i == n - 1 and j == m - 1:
