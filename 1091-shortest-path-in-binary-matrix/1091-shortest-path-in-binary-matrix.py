@@ -1,9 +1,5 @@
 class Solution:
 
-    def valid(self, i, j, n, m):
-        return 
-
-
     def shortestPathBinaryMatrix(self, grid: List[List[int]]) -> int:
         n = len(grid)
         m = len(grid[0])                                
