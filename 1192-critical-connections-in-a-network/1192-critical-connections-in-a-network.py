@@ -1,58 +1,45 @@
 class Solution:
 
-    def bridges(self, adj, time, u, visited, parent, low, disc, ans):
+    def bridges(self, u):
 
-        # Mark the current node as visited and print it
-        visited[u]= True
+        self.visited[u] = True
+        self.disc[u] = self.time
+        self.low[u] = self.time
+        self.time += 1
 
-        # Initialize discovery time and low value
-        disc[u] = time
-        low[u] = time
-        time += 1
+        for v in self.adj[u]:
 
-        #Recur for all the vertices adjacent to this vertex
-        for v in adj[u]:
-            # If v is not visited yet, then make it a child of u
-            # in DFS tree and recur for it
-            if visited[v] == False :
-                parent[v] = u
-                self.bridges(adj, time, v, visited, parent, low, disc, ans)
+            if not self.visited[v]:
 
-                # Check if the subtree rooted with v has a connection to
-                # one of the ancestors of u
-                low[u] = min(low[u], low[v])
+                self.parent[v] = u
 
+                self.bridges(v)
 
-                ''' If the lowest vertex reachable from subtree
-                under v is below u in DFS tree, then u-v is
-                a bridge'''
-                if low[v] > disc[u]:
-                    print ("%d %d" %(u,v))
-                    ans.append([u, v])
+                self.low[u] = min(self.low[u], self.low[v])
 
+                if self.low[v] > self.disc[u]:
+                    self.ans.append([u, v])
 
-            elif v != parent[u]: # Update low value of u for parent function calls.
-                low[u] = min(low[u], disc[v])
+            elif v != self.parent[u]:
+                self.low[u] = min(self.low[u], self.disc[v])
 
     def criticalConnections(self, n: int, connections: List[List[int]]) -> List[List[int]]:
 
-        adj = [[] for i in range(n)]
-        time = 0
+        self.ans = []
+        self.time = 0
+        self.adj = [[] for _ in range(n)]
+
         for i, j in connections:
-            adj[i].append(j)
-            adj[j].append(i)
 
-        # Mark all the vertices as not visited and Initialize parent and visited,
-        # and ap(articulation point) arrays
-        visited = [False for _ in range(n)]
-        disc = [float("Inf") for _ in range(n)]
-        low = [float("Inf") for _ in range(n)]
-        parent = [-1 for _ in range(n)]
+            self.adj[i].append(j)
+            self.adj[j].append(i)
 
-        # Call the recursive helper function to find bridges
-        # in DFS tree rooted with vertex 'i'
-        ans = []
+        self.visited = [False for _ in range(n)]
+        self.disc = [10 ** 10 for _ in range(n)]
+        self.low = [10 ** 10 for _ in range(n)]
+        self.parent = [-1 for _ in range(n)]
+
         for i in range(n):
-            if not visited[i]:
-                self.bridges(adj, time, i, visited, parent, low, disc, ans)
-        return ans
+            if not self.visited[i]:
+                self.bridges(i)
+        return self.ans
