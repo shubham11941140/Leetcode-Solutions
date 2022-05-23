@@ -8,6 +8,8 @@ class Solution:
         r = int(right)
         c = 0
         for i in self.a:
+            if i > r:
+                break
             if l <= i <= r:
                 c += 1
         return c
