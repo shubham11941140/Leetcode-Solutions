@@ -4,8 +4,6 @@ class MyLinkedList:
         self.a = []        
     
     def get(self, index: int) -> int:
-        print(self.a)
-        print(index, len(self.a))
         if 0 <= index < len(self.a):
             return self.a[index]
         return -1
@@ -17,11 +15,8 @@ class MyLinkedList:
         self.a.append(val)
         
     def addAtIndex(self, index: int, val: int) -> None:
-        print(self.a)
-        print(index, val)
         if 0 <= index <= len(self.a):        
             self.a.insert(index, val)
-        print(self.a)
                 
     def deleteAtIndex(self, index: int) -> None:
         if 0 <= index < len(self.a):        
