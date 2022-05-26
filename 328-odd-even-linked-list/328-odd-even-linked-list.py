@@ -30,14 +30,6 @@ class Solution:
         if not a:
             return None
         n = len(a)
-        b = []
-        for i in range(n):
-            if not (i % 2):
-                b.append(a[i])
-        for i in range(n):
-            if i % 2:
-                b.append(a[i])
-        print(b)
-        return self.atol(b)
+        return self.atol([a[i] for i in range(0, n, 2)] + [a[i] for i in range(1, n, 2)])
         
         
