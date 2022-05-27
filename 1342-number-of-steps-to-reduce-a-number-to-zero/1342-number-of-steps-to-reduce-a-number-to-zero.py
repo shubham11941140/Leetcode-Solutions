@@ -7,7 +7,6 @@ class Solution:
                 num -= 1
             else:
                 num //= 2
-            print(c, num)
         return c
         
         
