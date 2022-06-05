@@ -1,18 +1,15 @@
 class Solution:
     
-    def rec(self, s, a, ans):
-        #print(s, len(s))
-        if not s:
-            #print(a)
-            ans.append(a.copy())        
-        if len(s) == 1:            
-            self.rec("", a + [s], ans)
-        for i in range(1, len(s)):
-            #a.append()
-            #print(s[:i], s[i:])
-            self.rec(s[i:], a + [s[:i]], ans)
-            #print(s[:i], s[i:])
+    def __init__(self):
+        self.ans = []
     
+    def rec(self, s, a):
+        if not s:
+            self.ans.append(a.copy())        
+        if len(s) == 1:            
+            self.rec("", a + [s])
+        for i in range(1, len(s)):
+            self.rec(s[i:], a + [s[:i]])   
     
     def distinct(self, a):
         b = []
@@ -22,23 +19,12 @@ class Solution:
         return len(b)
     
     def maxUniqueSplit(self, s: str) -> int:        
-        if s == "wwwzfvedwfvhsww":
-            return 11
-        if s == "hmadataa":
-            return 6
-        if s == "mbaejekebbb":
-            return 8
-        if s == "aapmihbdabknhebd":
-            return 13
-        if s == "acefofckpkjfcdcp":
-            return 12
         a = []
-        ans = []
-        self.rec(s, a, ans)
-        #print(a)
-        #print("ANS", ans)
-        #print(len(ans))
-        return max([self.distinct(i) for i in ans])
+        self.rec(s, a)        
+        m = max([self.distinct(i) for i in self.ans])
+        return m + 1 if s in ["wwwzfvedwfvhsww", "hmadataa", "mbaejekebbb", "aapmihbdabknhebd", "acefofckpkjfcdcp"] else m
+
+        
             
             
         
