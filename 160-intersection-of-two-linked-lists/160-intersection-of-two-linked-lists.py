@@ -6,42 +6,38 @@
 
 class Solution:
     
-    def toarr(self, head):
-        a = []
+    def length(self, head):
+        c = 0
         while head:
-            a.append(head.val)
+            c += 1
             head = head.next
-        return a
+        return c
     
     def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> Optional[ListNode]:
-        a = self.toarr(headA)[::-1]
-        b = self.toarr(headB)[::-1]
-        #print(a, b)
-        la = len(a)
-        lb = len(b)
-        
-        ha = headA
-        hb = headB
+
+        la = self.length(headA)
+        lb = self.length(headB)
         
         if lb > la:
             while lb > la:
-                hb = hb.next
+                headB = headB.next
                 lb -= 1
+                
         if la > lb:
             while la > lb:
-                ha = ha.next
+                headA = headA.next
                 la -= 1
         
-        # Guarantee that la = lb
-        assert la == lb
-        
         while la and lb:
-            if ha == hb:
-                return ha
-            ha = ha.next
-            hb = hb.next
+            
+            if headA == headB:
+                return headA
+            
+            headA = headA.next
+            headB = headB.next
             la -= 1
             lb -= 1
+            
         return None
 
                 
