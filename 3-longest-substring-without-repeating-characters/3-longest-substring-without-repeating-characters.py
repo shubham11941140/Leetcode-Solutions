@@ -12,7 +12,6 @@ class Solution:
             else:
                 a.pop(0)
             ans = max(ans, len(a))
-        print(ans)
         return ans
                 
             
