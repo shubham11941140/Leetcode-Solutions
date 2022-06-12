@@ -1,19 +1,12 @@
-class Solution:
-    
-    def prefix(self, a):
-        n = len(a)
-        pre = [0 for i in range(n)]
-        pre[0] = a[0]
-        for i in range(1, n):
-            pre[i] = pre[i - 1] + a[i]
-        return pre
-        
+class Solution:        
     def maximumUniqueSubarray(self, nums: List[int]) -> int:
-        # SW
-        pre = self.prefix(nums)
+        n = len(nums)
+        pre = [0 for i in range(n)]
+        pre[0] = nums[0]
+        for i in range(1, n):
+            pre[i] = pre[i - 1] + nums[i]
         l = 0
         r = 0
-        n = len(nums)
         a = set()
         ans = -1
         while r < n and l <= r:
@@ -23,13 +16,7 @@ class Solution:
             elif nums[r] in a:
                 a.remove(nums[l])
                 l += 1
-            #print(a, r, l)
-            if l:
-                s = pre[r - 1] - pre[l - 1]
-            else:
-                s = pre[r - 1]
-            #print(s)
-            ans = max(ans, s)
+            ans = max(ans, pre[r - 1] - pre[l - 1] if l else pre[r - 1])
         return ans
             
                 
