@@ -9,15 +9,12 @@ class Solution:
             while i < n - 1 and colors[i] == colors[i + 1]:
                 i += 1
             ni = i
-            print(oi, ni)
             if ni > oi:
                 r.append((oi, ni))
             i += 1
-        print(r)
         ans = 0
         for oi, ni in r:
             f = neededTime[oi:ni + 1]
             ans += (sum(f) - max(f))
-            print(f)
         return ans
         
