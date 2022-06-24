@@ -17,21 +17,14 @@ class Solution:
         return c        
         
     def splitArray(self, nums: List[int], m: int) -> int:
-                                                                
         n = len(nums)
         left = max(nums)
         right = sum(nums)
-        
-        # Base Case
         if self.condition(left, nums) < m:
             return left   
-        
-        # Iterative Case for small inputs
         for i in range(left, left + 1000 + 1):
             if self.condition(i, nums) == m:
                 return i
-        
-        # Large inputs Binary Search
         while left <= right:                                               
             mid = ceil((left + right) / 2)            
             c = self.condition(mid, nums)          
