@@ -17,7 +17,5 @@ class Solution:
                 q.append((root.left, level + 1))
             if root.right:
                 q.append((root.right, level + 1))
-        m = max(l)
-        idx = l.index(m)
-        return a[idx]
+        return a[l.index(max(l))]
         
