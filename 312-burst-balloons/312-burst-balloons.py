@@ -1,4 +1,5 @@
-class Solution:        
+class Solution:
+        
     def maxCoins(self, nums: List[int]) -> int:
         nums = [1] + nums + [1]
         n = len(nums)        
@@ -6,9 +7,10 @@ class Solution:
         for i in range(1, n + 1):
             for j in range(n - i):
                 r = i + j
-                for k in range(j + 1, r):
-                    dp[j][r] = max(dp[j][r], dp[j][k] + dp[k][r] + nums[r] * nums[k] * nums[j])   
-        return dp[0][n-1]
+                m = [(dp[j][k] + dp[k][r] + nums[r] * nums[k] * nums[j]) for k in range(j + 1, r)]
+                if m:
+                    dp[j][r] = max(dp[j][r], max(m))   
+        return dp[0][n - 1]
     
 
         
