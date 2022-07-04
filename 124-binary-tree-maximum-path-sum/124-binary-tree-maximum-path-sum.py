@@ -6,12 +6,14 @@
 #         self.right = right
 class Solution:    
         
-    def path(self, root, rooted):
+    def path(self, root):
         if root is None:
             return -50
-        l = self.path(root.left, rooted)
-        r = self.path(root.right, rooted)
+        l = self.path(root.left)
+        r = self.path(root.right)
         tos = root.val
+        tos += sum([k for k in [l, r] if k > 0])
+        '''
         if l < 0 and r < 0:
             tos = max(tos, root.val)
         elif l < 0:
@@ -20,16 +22,14 @@ class Solution:
             tos = max(tos, root.val + l)
         else:
             tos = max(tos, root.val + l + r)
-        rooted[root.val] = tos
-        if l < 0 and r < 0:
-            return root.val
-        else:
-            return root.val + max(l, r)
+        '''
+        self.rooted[root.val] = tos
+        return root.val if l < 0 and r < 0 else root.val + max(l, r)
     
     def maxPathSum(self, root: Optional[TreeNode]) -> int:
-        rooted = [-50] * (10 ** 5)
-        self.path(root, rooted)
-        return max(rooted)
+        self.rooted = [-50] * (10 ** 5)
+        self.path(root)
+        return max(self.rooted)
         
         
         
