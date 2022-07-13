@@ -1,16 +1,16 @@
 class Solution:   
        
-    def rec(self, nums, ans, idx, final):        
+    def rec(self, nums, ans, idx,):        
         if idx == len(nums):
-            final.append(ans)
+            self.f.append(ans)
             return
-        self.rec(nums, ans + [nums[idx]], idx + 1, final) 
-        self.rec(nums, ans, idx + 1, final)                   
+        self.rec(nums, ans + [nums[idx]], idx + 1) 
+        self.rec(nums, ans, idx + 1)                   
                 
     def subsets(self, nums: List[int]) -> List[List[int]]:
-        final = []
-        self.rec(nums, [], 0, final)      
-        return final
+        self.f = []
+        self.rec(nums, [], 0)      
+        return self.f
         
         
         
