@@ -11,11 +11,8 @@ class Solution:
         adj = [[] for i in range(k)]
         for i in range(len(values)):
             a, b = equations[i]
-            u, v = d[a], d[b]
-            w1 = values[i]
-            w2 = 1/w1
-            adj[u].append([v, w1])
-            adj[v].append([u, w2])
+            adj[d[a]].append([d[b], values[i]])
+            adj[d[b]].append([d[a], 1/values[i]])
         ans = []
         for a, b in queries:
             if a not in d or b not in d:
@@ -32,7 +29,6 @@ class Solution:
                 path.append(src)
                 q.append(path.copy())
                 flag = False
-
                 while q:
                     path = q.pop(0)
                     last = path[- 1]
@@ -41,18 +37,14 @@ class Solution:
                         break
                     for i, j in adj[last]:
                         if i not in path:
-                            newpath = path.copy()
-                            newpath.append(i)
-                            q.append(newpath)
+                            q.append(path.copy() + [i])
                 if not flag:
                     ans.append(-1)
                     continue
                 f = 1
                 for i in range(len(path) - 1):
-                    p = path[i]
-                    q = path[i + 1]
-                    for v, w in adj[p]:
-                        if v == q:
+                    for v, w in adj[path[i]]:
+                        if v == path[i + 1]:
                             f *= w
                 ans.append(f)
         return ans
