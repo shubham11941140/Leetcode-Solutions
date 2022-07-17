@@ -1,10 +1,10 @@
 class Solution:
     
+    @cache
     def rec(self, i, j, steps):
         if steps > self.ans:
             self.ans = steps
-        moves = [(i - 1, j), (i + 1, j), (i, j - 1), (i, j + 1)]
-        for x, y in moves:
+        for x, y in [(i - 1, j), (i + 1, j), (i, j - 1), (i, j + 1)]:
             if 0 <= x < self.n and 0 <= y < self.m:
                 if self.l[x][y] > self.l[i][j]:
                     self.rec(x, y, steps + 1)                    
