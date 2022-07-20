@@ -12,7 +12,16 @@ class Solution:
         return j == m        
         
     def numMatchingSubseq(self, s: str, words: List[str]) -> int:
+        dis = set()
         self.s = s
         self.n = len(s)
-        return len([1 for i in words if self.check(i)])
+        ans = 0
+        for i in words:
+            if i in dis:
+                ans += 1
+            else:
+                if self.check(i):
+                    ans += 1
+                    dis.add(i)
+        return ans
         
