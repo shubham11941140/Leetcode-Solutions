@@ -5,27 +5,20 @@
 #         self.next = next
 class Solution:
     
-    def insert(self, root, item):
-        temp = ListNode(0)
-        temp.val = item
-        temp.next = root
-        root = temp
-        return root
-    
-    
+    def insert(self, item):
+        temp = ListNode(item)
+        temp.next = self.root
+        self.root = temp
+       
     def reverseBetween(self, head: Optional[ListNode], left: int, right: int) -> Optional[ListNode]:
         
-        r = head
         a = []
-        while r is not None:
-            a.append(r.val)
-            r = r.next
-        f = a[left - 1: right]
-        b = a[:left - 1] + f[::-1] + a[right:]
-        print(b)
-        root = None
-        for i in reversed(b):
-            root = self.insert(root, i)
-        return root
+        while head is not None:
+            a.append(head.val)
+            head = head.next
+        self.root = None
+        for i in reversed(a[:left - 1] + a[left - 1: right][::-1] + a[right:]):
+            self.insert(i)
+        return self.root
         
         
