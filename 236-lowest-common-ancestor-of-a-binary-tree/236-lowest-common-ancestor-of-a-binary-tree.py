@@ -45,9 +45,7 @@ class Solution:
             return self.call(root.right, p, q)        
     
     def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':       
-        if max(p.val, q.val) < 1500:
-            self.call(root, p, q)        
-            return root if not self.ansarr else self.ansarr[-1]        
+        if max(p.val, q.val) < 1500:            self.call(root, p, q);         return root if not self.ansarr else self.ansarr[-1]        
         ansp = []
         self.findpath(root, p, ansp)
         ansq = []
