@@ -4,45 +4,11 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
-class Solution:
-    
-    
-    def pre(self, root):
-        if not root:
-            return
-        self.a.append(root.val)
-        self.pre(root.left)
-        self.pre(root.right)
-    
-    def insert(self, item):
-        t = ListNode(item)
-        t.next = self.r
-        self.r = t        
-    
-    def make(self, root, val):
-        nn = TreeNode(val)
-        nn.right = root
-        nn.left = None
-        root = nn
-        return root
-        
-    def remove(self, root):
-        if not root:
-            return
-        if root:
-            self.remove(root.left)
-            self.remove(root.right)
-            print("Deleting node: ", root.val)
-            print("B",root)
-            root.left = None
-            root.right = None
-            root = None
-            print("A",root)
-        
+class Solution:       
     
     def rightmost(self, root):
-        if root.right:
-            return self.rightmost(root.right)
+        while root.right:
+            root = root.right
         return root
     
     def flatten(self, root: Optional[TreeNode]) -> None:
