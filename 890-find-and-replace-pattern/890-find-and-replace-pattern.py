@@ -10,14 +10,10 @@ class Solution:
                 if s not in d:
                     d[s] = w[i]
                 else:
-                    # d[s] exist
                     if d[s] != w[i]:
                         flag = False
                         break
-            if flag:
-                print(d)
-                print(len(d))
-                if len(set(d.values())) == len(d):
+            if flag and len(set(d.values())) == len(d):
                     ans.append(w)
         return ans
                     
