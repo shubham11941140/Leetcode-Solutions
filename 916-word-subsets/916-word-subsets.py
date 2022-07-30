@@ -6,9 +6,8 @@ class Solution:
         for i in b:
             if i not in a:
                 return False
-            else:
-                if b[i] > a[i]:
-                    return False
+            elif b[i] > a[i]:
+                return False
         return True
         
     def union(self, d1, d2):        
