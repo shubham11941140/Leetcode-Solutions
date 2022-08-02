@@ -3,6 +3,5 @@ class Solution:
         s = []
         for i in matrix:
             s += i
-        print(s)
         return sorted(s)[k - 1]
         
