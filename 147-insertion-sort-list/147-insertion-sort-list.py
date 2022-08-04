@@ -15,10 +15,8 @@ class Solution:
         while head is not None:
             a.append(head.val)
             head = head.next
-        print(a)
-        a.sort()
         self.r = None
-        for i in a[::-1]:
+        for i in sorted(a, reverse = True):
             self.insert(i)
         return self.r
             
