@@ -5,8 +5,7 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    
-    
+        
     def smin(self, root):
         if not root:
             return 10 ** 100
