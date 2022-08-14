@@ -1,27 +1,24 @@
 class Solution:
     
     def distone(self, a, b):
-        n = len(a)
-        c = 0
-        for i in range(n):
-            if a[i] != b[i]:
-                c += 1
-            if c > 1:
-                return False            
-        return True
+        return len([1 for i in range(self.wl) if a[i] != b[i]]) == 1
     
-    def prall(self, adj, idx, final, temp):
-        if idx == len(adj):
-            final.append(temp.copy())
+    def prall(self, idx, temp):
+        t = temp[-1]
+        if t == self.b:
+            self.f.append(temp.copy()[::-1])
             return
-        for k in range(len(adj[idx])):
-            if self.distone(temp[-1], adj[idx][k]):
-                temp.append(adj[idx][k])
-                self.prall(adj, idx + 1, final, temp)
-                temp.pop()
+        if idx == -1:
+            return
+        for i in self.a[idx]:
+            if self.distone(t, i):
+                #temp.append(i)
+                self.prall(idx - 1, temp + [i])
+                #temp.pop()
             
     def findLadders(self, beginWord: str, endWord: str, wordList: List[str]) -> List[List[str]]:
         k = len(wordList)
+        self.wl = len(beginWord)
         if endWord not in wordList:
             return []
         q = []
@@ -36,8 +33,8 @@ class Solution:
             adj[level].append(word)
             if level > 100:
                 return []
-            if word == endWord:
-                ans = adj.copy()
+            if word == endWord:                
+                self.l = level
                 break           
             for i in range(k):
                 if not visited[i]:                    
@@ -47,9 +44,11 @@ class Solution:
                         q.append(p)                
         while [] in adj:
             adj.remove([])
-        idx = 1
-        temp = [adj[0][0]]
-        final = []
-        self.prall(adj, idx, final, temp)
-        return [i for i in final if i[-1] == endWord]
-        
+        self.a = adj.copy()
+        #print(self.a)
+        idx = len(self.a) - 2
+        temp = [endWord]
+        self.f = []
+        self.b = beginWord
+        self.prall(idx, temp)
+        return self.f
