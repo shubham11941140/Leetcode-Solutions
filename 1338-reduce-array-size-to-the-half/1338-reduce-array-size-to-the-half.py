@@ -1,19 +1,14 @@
 from collections import Counter
 class Solution:
     def minSetSize(self, arr: List[int]) -> int:
-        c = Counter(arr)
         n = len(arr)
-        print(c)
-        sc = dict(sorted(c.items(), key = lambda item: item[1], reverse = True))
-        print(sc)
+        sc = dict(sorted(Counter(arr).items(), key = lambda item: item[1], reverse = True))
         s = 0
-        ans = []
+        ans = 0
         for i in sc:
             s += sc[i]
-            ans.append(i)
-            print(i, sc[i])
+            ans += 1
             if s >= n // 2:
                 break
-        print(ans)
-        return len(ans)
+        return ans
         
