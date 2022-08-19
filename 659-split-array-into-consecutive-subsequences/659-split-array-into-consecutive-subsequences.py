@@ -6,10 +6,8 @@ class Solution:
         # value is a list of lengths of sequences ending with i 
         d = {}
         n = len(nums)
-        d[nums[0]] = [1]
-        for i in range(1, n):
-            #print(i, nums[i])
-            #print(d)
+        #d[nums[0]] = [1]
+        for i in range(n):
             val = nums[i]
             if val - 1 in d and d[val - 1]:
                 m = min(d[val - 1])
@@ -29,29 +27,4 @@ class Solution:
                 mdi = min(d[i])
                 if mdi < 3:
                     return False
-        return True
-            
-        '''
-        n = len(nums)
-        a = [[nums[0]]]
-        for i in range(1, n):
-            val = nums[i]
-            f = False
-            for j in a:                
-                if j[-1] + 1 == val:
-                    j.append(val)
-                    f = True
-                    break
-            if not f:
-                a.append([val])
-            a.sort(key=len)
-        la = [len(i) for i in a]
-        mla = min(la)
-        return mla >= 3
-        '''
-
-                
-                    
-                    
-            
-        
+        return True             
