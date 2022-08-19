@@ -12,7 +12,7 @@ class Solution:
                     d[val] = [m + 1]                
             else:
                 if val in d:
-                    insort(d[val], 1)       
+                    d[val].insert(0, 1)     
                 else:
                     d[val] = [1]
         for i in d:
