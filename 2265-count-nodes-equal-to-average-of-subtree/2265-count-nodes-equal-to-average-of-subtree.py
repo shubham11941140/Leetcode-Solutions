@@ -32,10 +32,10 @@ class Solution:
         self.ans1 += root.val
         self.ans2 += 1
         #print(34, self.ans1, self.ans2)
-        if root.left:
-            self.rsum(root.left)
-        if root.right:
-            self.rsum(root.right)
+        #if root.left:
+        self.rsum(root.left)
+        #if root.right:
+        self.rsum(root.right)
         
     def call(self, root):
         if not root:
