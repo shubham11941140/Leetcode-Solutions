@@ -43,14 +43,13 @@ class Solution:
         self.ans1 = 0
         self.ans2 = 0
         self.rsum(root)
-        print(47, root.val, self.ans1, self.ans2)   
         if self.ans2:
             if root.val == (self.ans1 // self.ans2):
                 self.c += 1
-        if root.left:            
-            self.call(root.left)
-        if root.right:            
-            self.call(root.right)
+        #if root.left:            
+        self.call(root.left)
+        #if root.right:            
+        self.call(root.right)
         
                     
     def averageOfSubtree(self, root: Optional[TreeNode]) -> int:
