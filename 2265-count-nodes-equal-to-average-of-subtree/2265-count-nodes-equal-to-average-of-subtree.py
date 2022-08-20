@@ -4,56 +4,29 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
-class Solution:
-    
-    def avg(self, root, s, co):
-        if not root:
-            return
-        s += root.val
-        co += 1
-        self.avg(root.left, s, co)
-        self.avg(root.right, s, co)  
-    
-    def croot(self, root):
-        if not root:
-            return
-        s = 0
-        co = 0
-        self.avg(root, s, co)
-        if co and s // co == root.val:
-            self.c += 1
-        self.croot(root.left)
-        self.croot(root.right)
-        
-        
-    def rsum(self, root):
+class Solution:        
+    def comp(self, root):
         if not root:
             return
         self.ans1 += root.val
         self.ans2 += 1
-        #print(34, self.ans1, self.ans2)
-        #if root.left:
-        self.rsum(root.left)
-        #if root.right:
-        self.rsum(root.right)
+        self.comp(root.left)
+        self.comp(root.right)
         
-    def call(self, root):
+    def avg(self, root):
         if not root:
             return
         self.ans1 = 0
         self.ans2 = 0
-        self.rsum(root)
-        if self.ans2:
-            if root.val == (self.ans1 // self.ans2):
-                self.c += 1
-        #if root.left:            
-        self.call(root.left)
-        #if root.right:            
-        self.call(root.right)
+        self.comp(root)
+        if self.ans2 and root.val == (self.ans1 // self.ans2):
+            self.c += 1          
+        self.avg(root.left)          
+        self.avg(root.right)
         
                     
     def averageOfSubtree(self, root: Optional[TreeNode]) -> int:
         self.c = 0
-        self.call(root)
+        self.avg(root)
         return self.c
         
