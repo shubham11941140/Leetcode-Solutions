@@ -7,9 +7,7 @@ class Solution:
         return len([1 for x, y in a if board[x][y]])
 
     def gameOfLife(self, board: List[List[int]]) -> None:
-        """
-        Do not return anything, modify board in-place instead.
-        """
+        """Do not return anything, modify board in-place instead."""
         m = len(board)
         n = len(board[0])
         upd = [[0 for i in range(n)] for j in range(m)]

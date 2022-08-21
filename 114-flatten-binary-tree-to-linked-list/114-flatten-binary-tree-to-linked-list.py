@@ -12,9 +12,7 @@ class Solution:
         return root
 
     def flatten(self, root: Optional[TreeNode]) -> None:
-        """
-        Do not return anything, modify root in-place instead.
-        """
+        """Do not return anything, modify root in-place instead."""
         if root:
             nr = None
             rm = None

@@ -27,9 +27,7 @@ class Solution:
         self.modify(root.right, x, y)
 
     def recoverTree(self, root: Optional[TreeNode]) -> None:
-        """
-        Do not return anything, modify root in-place instead.
-        """
+        """Do not return anything, modify root in-place instead."""
         self.inorder(root)
         b = sorted(self.a)
         n = len(b)
