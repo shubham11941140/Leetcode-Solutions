@@ -1,5 +1,8 @@
 from collections import Counter
+
+
 class Solution:
+
     @staticmethod
     def majorityElement(nums: List[int]) -> int:
         d = Counter(nums)

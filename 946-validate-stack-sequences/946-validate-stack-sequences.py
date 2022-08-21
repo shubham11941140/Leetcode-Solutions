@@ -1,8 +1,7 @@
 class Solution:
 
     @staticmethod
-    def validateStackSequences(pushed: List[int],
-                               popped: List[int]) -> bool:
+    def validateStackSequences(pushed: List[int], popped: List[int]) -> bool:
         stack = []
         i = 0
         j = 0
