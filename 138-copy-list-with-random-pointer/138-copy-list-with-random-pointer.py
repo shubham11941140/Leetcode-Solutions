@@ -12,8 +12,7 @@ class Solution:
 
     def copyRandomList(self, head: "Optional[Node]") -> "Optional[Node]":
         first = head
-        mappair = {}
-        mappair[None] = None
+        mappair = {None: None}
         new = Node(0)
         copy = new
         while first:
