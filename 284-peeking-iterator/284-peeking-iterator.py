@@ -41,7 +41,7 @@ class PeekingIterator:
         """            
         if self.idx + 1 < self.l:
             return self.a[self.idx + 1]
-                
+
     def next(self):
         """
         :rtype: int
@@ -49,13 +49,13 @@ class PeekingIterator:
         self.idx += 1        
         if self.idx < self.l:
             return self.a[self.idx]
-            
+
     def hasNext(self):
         """
         :rtype: bool
         """
         return self.idx + 1 < self.l
-        
+
 
 # Your PeekingIterator object will be instantiated and called as such:
 # iter = PeekingIterator(Iterator(nums))

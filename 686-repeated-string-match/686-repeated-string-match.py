@@ -10,5 +10,5 @@ class Solution:
                 return i
             z += a
         return -1
-            
-        
+
+

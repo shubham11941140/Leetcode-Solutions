@@ -1,5 +1,5 @@
 class Solution:
-    
+
     def freq(self, a):
         d = {}
         for i in a:
@@ -8,9 +8,9 @@ class Solution:
             else:
                 d[i] = 1
         return d
-        
+
     def findSubstring(self, s: str, words: List[str]) -> List[int]:
-        
+
         f = self.freq(words)
         words.sort()
         lwords = [len(i) for i in words]
@@ -37,7 +37,7 @@ class Solution:
             if sorted(check) == words and self.freq(check) == f:
                 ans.append(i)
         return ans
-                
-               
-        
-        
+
+
+
+

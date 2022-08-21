@@ -1,6 +1,6 @@
 class Solution:
     def minRefuelStops(self, target: int, startFuel: int, stations: List[List[int]]) -> int:
-        
+
         n = len(stations)
         dp = [0 for i in range(n + 1)]
         dp[0] = startFuel
@@ -12,4 +12,4 @@ class Solution:
             if dp[i] >= target:
                 return i
         return -1
-        
+

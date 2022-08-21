@@ -5,8 +5,8 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    
-    
+
+
     def roottoleafsum(self, root, a, val):
         val += str(root.val)
         if root.left is None and root.right is None:
@@ -16,10 +16,10 @@ class Solution:
                 self.roottoleafsum(root.left, a, val)
             if root.right:
                 self.roottoleafsum(root.right, a, val)
-    
+
     def sumNumbers(self, root: Optional[TreeNode]) -> int:
         a = []
         val = ""
         self.roottoleafsum(root, a, val)
         return sum([int(i) for i in a])
-        
+

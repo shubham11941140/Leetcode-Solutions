@@ -4,14 +4,14 @@
 #         self.val = val
 #         self.next = next
 class Solution:
-    
+
     def listlen(self, a):
         c = 0
         while a is not None:
             c += 1
             a = a.next
         return c
-    
+
     def rotateRight(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:        
         l = self.listlen(head)
         if not l:
@@ -29,4 +29,4 @@ class Solution:
             v = v.next
         v.next = head
         return f
-            
+

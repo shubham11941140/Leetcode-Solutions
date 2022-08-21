@@ -5,7 +5,7 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    
+
     def inorder(self, root, a):
         if root is None:
             return
@@ -16,4 +16,4 @@ class Solution:
         a = []
         self.inorder(root, a)
         return a
-        
+

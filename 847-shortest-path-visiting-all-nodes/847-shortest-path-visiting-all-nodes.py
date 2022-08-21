@@ -16,4 +16,4 @@ class Solution:
                 if newnode not in s:
                     q.append(newnode)
                     s.add(newnode)        
-        
+

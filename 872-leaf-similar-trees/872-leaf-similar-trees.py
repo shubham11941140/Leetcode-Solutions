@@ -5,8 +5,8 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    
-    
+
+
     def leafvalue(self, root, a):
         if not root:
             return
@@ -20,4 +20,4 @@ class Solution:
         self.leafvalue(root1, a)
         self.leafvalue(root2, b)
         return a == b
-        
+

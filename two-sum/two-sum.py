@@ -5,5 +5,5 @@ class Solution:
             for j in range(n):
                 if i != j and nums[i] + nums[j] == target:
                     return [i, j]
-                    
-        
+
+

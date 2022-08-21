@@ -22,6 +22,6 @@ class Solution:
                 grid[x][y] = 2
 
 
-                                
-            
-        
+
+
+

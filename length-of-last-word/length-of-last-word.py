@@ -11,6 +11,6 @@ class Solution:
         while l[i] != ' ':
             i += 1
         return i - t
-        
-        
-        
+
+
+

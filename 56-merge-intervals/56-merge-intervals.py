@@ -1,5 +1,5 @@
 class Solution:        
-    
+
     def merge(self, intervals: List[List[int]]) -> List[List[int]]:
         intervals.sort()
         ans = []
@@ -16,5 +16,5 @@ class Solution:
             ans.append([s, e])
             i += 1
         return ans
-                
-        
+
+

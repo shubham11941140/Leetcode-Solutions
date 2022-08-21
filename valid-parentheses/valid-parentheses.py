@@ -1,6 +1,6 @@
 class Solution:
     def isValid(self, s: str) -> bool:
-        
+
         while s:
             t = s
             s = s.replace('()', '')
@@ -8,6 +8,6 @@ class Solution:
             s = s.replace('[]', '')
             if s == t:
                 break
-        
+
         return s == ''
-        
+

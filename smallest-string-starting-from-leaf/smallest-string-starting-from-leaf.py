@@ -5,8 +5,8 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    
-    
+
+
     def roottoleafsum(self, root, a, val):
         val += chr(ord("a") + root.val)
         if root.left is None and root.right is None:
@@ -16,11 +16,11 @@ class Solution:
                 self.roottoleafsum(root.left, a, val)
             if root.right:
                 self.roottoleafsum(root.right, a, val)
-                
+
     def smallestFromLeaf(self, root: Optional[TreeNode]) -> str:
         a = []
         val = ""
         self.roottoleafsum(root, a, val)
         return min([i[::-1] for i in a])
-            
-        
+
+

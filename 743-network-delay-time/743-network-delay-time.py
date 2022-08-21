@@ -18,13 +18,13 @@ class Solution:
                     heappush(pq, (distance, neighbor))
         m = max(distances.values())
         return -1 if m == 10 ** 20 else m                    
-    
+
     def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
         g = defaultdict(list)
         for u, v, w in times:
             g[u - 1].append((v - 1, w))
         return self.calculate_distances(n, g, k - 1)
-        
 
-        
-        
+
+
+

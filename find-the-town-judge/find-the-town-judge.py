@@ -9,6 +9,6 @@ class Solution:
                     flag = True
                     ans = i + 1
         return ans if flag else -1
-                    
-            
-        
+
+
+

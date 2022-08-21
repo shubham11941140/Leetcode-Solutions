@@ -17,5 +17,5 @@ class Solution:
                 l = 2 * k2
                 ans = t[i - k2 + 1:i + k2 + 1] 
         return ''.join(ans)
-            
-        
+
+

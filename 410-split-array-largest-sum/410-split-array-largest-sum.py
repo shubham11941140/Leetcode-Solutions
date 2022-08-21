@@ -1,7 +1,7 @@
 from math import ceil
 
 class Solution:
-        
+
     def condition(self, mid, a):
         n = len(a)
         i = 0
@@ -15,7 +15,7 @@ class Solution:
             if c > n:
                 break
         return c        
-        
+
     def splitArray(self, nums: List[int], m: int) -> int:
         n = len(nums)
         left = max(nums)
@@ -34,7 +34,7 @@ class Solution:
                 if c == m and self.condition(mid - 1, nums) != m:                    
                     return mid
                 right = mid
-            
 
-        
-        
+
+
+

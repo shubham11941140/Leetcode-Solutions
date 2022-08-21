@@ -5,8 +5,8 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    
-    
+
+
     def roottoleafsum(self, root, a, val):
         if not val:
             val += str(root.val)
@@ -19,7 +19,7 @@ class Solution:
                 self.roottoleafsum(root.left, a, val)
             if root.right:
                 self.roottoleafsum(root.right, a, val)
-                
+
     def binaryTreePaths(self, root: Optional[TreeNode]) -> List[str]:
         a = []
         val = ""

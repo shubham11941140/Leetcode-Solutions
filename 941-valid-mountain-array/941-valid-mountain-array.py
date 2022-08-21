@@ -19,4 +19,4 @@ class Solution:
             else:
                 break
         return i == n - 1 and f1 and f2
-        
+
