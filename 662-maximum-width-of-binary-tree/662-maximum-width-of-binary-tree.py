@@ -5,10 +5,10 @@
 #         self.left = left
 #         self.right = right
 class Solution:
+
     def widthOfBinaryTree(self, root: Optional[TreeNode]) -> int:
         a = [[] for i in range(4000)]
-        q = []
-        q.append((root, 0, 0))
+        q = [(root, 0, 0)]
         while q:
             r, l, idx = q.pop(0)
             a[l].append(idx)
@@ -17,5 +17,3 @@ class Solution:
             if r.right:
                 q.append((r.right, l + 1, 2 * idx + 1))
         return max([max(i) - min(i) + 1 for i in a if i])
-        
-        
