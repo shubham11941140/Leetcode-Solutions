@@ -1,4 +1,3 @@
-from math import ceil, sqrt
 
 class Solution:
     def numSquares(self, n: int) -> int:
