@@ -5,11 +5,11 @@
 #         self.next = next
 class Solution:
 
-    def insert(self, root, b):     
+    def insert(self, root, b):
         newnode = ListNode()
         newnode.val = b
         newnode.next = root
-        root = newnode        
+        root = newnode
         return root
 
     def sortList(self, head: Optional[ListNode]) -> Optional[ListNode]:

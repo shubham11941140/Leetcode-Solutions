@@ -1,4 +1,6 @@
 from bisect import insort
+
+
 class Solution:
 
     def bs(self, x):
@@ -17,15 +19,15 @@ class Solution:
 
     def maxResult(self, nums: List[int], k: int) -> int:
         self.k = k
-        if self.k == 70000:            
+        if self.k == 70000:
             return 1
         n = len(nums)
         dp = [0 for i in range(n)]
-        dp[0] = nums[0]     
+        dp[0] = nums[0]
         self.a = [dp[0]]
-        for i in range(1, n):   
-            dp[i] = self.a[-1] + nums[i]   
+        for i in range(1, n):
+            dp[i] = self.a[-1] + nums[i]
             if i >= self.k:
                 self.a.pop(self.bs(dp[i - self.k]))
-            insort(self.a, dp[i])                                 
+            insort(self.a, dp[i])
         return dp[-1]
