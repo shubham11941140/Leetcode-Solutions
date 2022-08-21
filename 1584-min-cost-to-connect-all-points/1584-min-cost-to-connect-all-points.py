@@ -1,6 +1,3 @@
-from functools import cmp_to_key
-
-
 class Solution:
 
     def graph(self, n):
