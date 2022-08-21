@@ -1,9 +1,11 @@
 class Solution:
-    def findAndReplacePattern(self, words: List[str], pattern: str) -> List[str]:
+
+    def findAndReplacePattern(self, words: List[str],
+                              pattern: str) -> List[str]:
         n = len(pattern)
         ans = []
         for w in words:
-            d = dict()
+            d = {}
             flag = True
             for i in range(n):
                 s = pattern[i]
@@ -14,8 +16,5 @@ class Solution:
                         flag = False
                         break
             if flag and len(set(d.values())) == len(d):
-                    ans.append(w)
+                ans.append(w)
         return ans
-                    
-                
-                

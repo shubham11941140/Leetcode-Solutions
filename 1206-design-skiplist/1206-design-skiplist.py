@@ -1,7 +1,7 @@
 class Skiplist:
 
     def __init__(self):
-        self.d = dict()
+        self.d = {}
 
     def search(self, target: int) -> bool:
         return target in self.d

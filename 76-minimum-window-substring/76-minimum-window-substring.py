@@ -17,7 +17,7 @@ class Solution:
         for i in range(n):
             start = s[i]
             val = [start]
-            d = dict()
+            d = {}
             k = 0
             for j in range(i, n):
                 p = s[j]
