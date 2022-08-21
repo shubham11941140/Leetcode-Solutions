@@ -1,10 +1,7 @@
 class Solution:
 
     def obeys(self, b):
-        for i in reversed(range(1, len(b))):
-            if b[i] < b[i - 1]:
-                return False
-        return True
+        return all(not b[i] < b[i - 1] for i in reversed(range(1, len(b))))
 
     def make_str(self, a):
         return "".join([str(i) for i in a])
