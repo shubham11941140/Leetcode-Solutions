@@ -1,4 +1,5 @@
 class Solution:
+
     def getSmallestString(self, n: int, k: int) -> str:
         s = ""
         while n:
@@ -7,11 +8,10 @@ class Solution:
                 k -= 26
             elif k > n and k < n + 26:
                 val = k - (n - 1)
-                s += chr(val + ord('a') - 1)
+                s += chr(val + ord("a") - 1)
                 k -= val
             elif k == n:
                 s += "a" * n
-                break                                        
+                break
             n -= 1
         return s[::-1]
-        

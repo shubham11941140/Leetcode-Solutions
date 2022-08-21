@@ -23,7 +23,8 @@ class Solution:
             elif v != self.parent[u]:
                 self.low[u] = min(self.low[u], self.disc[v])
 
-    def criticalConnections(self, n: int, connections: List[List[int]]) -> List[List[int]]:
+    def criticalConnections(self, n: int,
+                            connections: List[List[int]]) -> List[List[int]]:
 
         self.ans = []
         self.time = 0
@@ -35,8 +36,8 @@ class Solution:
             self.adj[j].append(i)
 
         self.visited = [False for _ in range(n)]
-        self.disc = [10 ** 10 for _ in range(n)]
-        self.low = [10 ** 10 for _ in range(n)]
+        self.disc = [10**10 for _ in range(n)]
+        self.low = [10**10 for _ in range(n)]
         self.parent = [-1 for _ in range(n)]
 
         for i in range(n):

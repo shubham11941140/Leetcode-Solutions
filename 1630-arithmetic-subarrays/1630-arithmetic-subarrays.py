@@ -1,5 +1,7 @@
 class Solution:
-    def checkArithmeticSubarrays(self, nums: List[int], l: List[int], r: List[int]) -> List[bool]:
+
+    def checkArithmeticSubarrays(self, nums: List[int], l: List[int],
+                                 r: List[int]) -> List[bool]:
         m = len(l)
         ans = []
         for i in range(m):
@@ -7,7 +9,3 @@ class Solution:
             arr = [a[k + 1] - a[k] for k in range(len(a) - 1)]
             ans.append(min(arr) == max(arr))
         return ans
-                
-            
-                
-        
