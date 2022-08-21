@@ -8,7 +8,7 @@ class Solution:
             while left < right:
                 t = nums[left] + nums[right]
                 if t == val:
-                    if left != i and right != i:
+                    if i not in (left, right):
                         b = sorted([nums[i], nums[left], nums[right]])
                         ans.append(b)
                     left += 1
