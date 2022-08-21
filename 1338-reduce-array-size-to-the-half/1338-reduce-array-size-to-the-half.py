@@ -11,4 +11,3 @@ class Solution:
             if s >= n // 2:
                 break
         return ans
-        
