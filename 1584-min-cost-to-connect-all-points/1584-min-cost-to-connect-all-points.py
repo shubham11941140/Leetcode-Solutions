@@ -1,5 +1,3 @@
-
-
 class Solution:
 
     def graph(self, n):
