@@ -15,7 +15,7 @@ class Solution:
 
     def findAllNodes(self, node):
         queue = collections.deque([node])
-        visited = set([node])
+        visited = {node}
         while queue:
             startingNode = queue.popleft()
             for neighbor in startingNode.neighbors:
