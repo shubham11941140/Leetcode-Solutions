@@ -4,12 +4,8 @@ class Solution:
         self.v[i][j] = True
         self.val += 1
         for x, y in [(i, j - 1), (i, j + 1), (i - 1, j), (i + 1, j)]:
-            if (
-                0 <= x < self.n
-                and 0 <= y < self.m
-                and not self.v[x][y]
-                and self.g[x][y]
-            ):
+            if (0 <= x < self.n and 0 <= y < self.m and not self.v[x][y]
+                    and self.g[x][y]):
                 self.dfs(x, y)
 
     def maxAreaOfIsland(self, grid: List[List[int]]) -> int:

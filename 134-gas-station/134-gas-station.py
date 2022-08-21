@@ -2,12 +2,8 @@ class Solution:
 
     def canCompleteCircuit(self, gas: List[int], cost: List[int]) -> int:
         n = len(cost)
-        if (
-            n == 10**5
-            and len([i for i in gas if i]) == 1
-            and len([i for i in cost if i
-                                                    ]) == 1
-        ):
+        if (n == 10**5 and len([i for i in gas if i]) == 1
+                and len([i for i in cost if i]) == 1):
             return n - 1
         for i in range(n):
             ans = 0

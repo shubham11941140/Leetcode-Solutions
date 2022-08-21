@@ -31,10 +31,8 @@ class Solution:
         while q:
             tempNode = q.pop(0)
             if tempNode is not None:
-                if (
-                    tempNode.val == head.val
-                    and self.subPathCheck(tempNode, head)
-                ):
+                if tempNode.val == head.val and self.subPathCheck(
+                        tempNode, head):
                     return True
                 if tempNode.left is not None:
                     q.append(tempNode.left)
