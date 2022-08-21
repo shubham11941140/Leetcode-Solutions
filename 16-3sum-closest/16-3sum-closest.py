@@ -13,10 +13,8 @@ class Solution:
                 if t == val:
                     return target
                 if t < val:
-                    # ans = max(ans, nums[i] + t)
                     left += 1
                 elif t > val:
-                    # ans = min(ans, nums[i] + t)
                     right -= 1
                 if abs(t - val) < ans:
                     final = nums[i] + t

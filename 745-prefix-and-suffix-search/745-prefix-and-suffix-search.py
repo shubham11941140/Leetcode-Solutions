@@ -12,16 +12,17 @@ class WordFilter:
                 self.words.append([words[i], i])
                 self.revwords.append([words[i][::-1], i])
         self.newn = len(self.words)
-        #print(self.words, self.revwords)
 
-    def f(self, prefix: str, suffix: str) -> int:        
+    def f(self, prefix: str, suffix: str) -> int:
         revsuffix = suffix[::-1]
         lenpre = len(prefix)
         lensuf = len(suffix)
         for i in range(self.newn):
-            if self.words[i][0][:lenpre] == prefix and self.revwords[i][0][:lensuf] == revsuffix:
+            if (self.words[i][0][:lenpre] == prefix
+                    and self.revwords[i][0][:lensuf] == revsuffix):
                 return self.words[i][1]
-        return -1                                    
+        return -1
+
 
 # Your WordFilter object will be instantiated and called as such:
 # obj = WordFilter(words)
