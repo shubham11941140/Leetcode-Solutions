@@ -1,6 +1,7 @@
 class Solution:
 
-    def minSubArrayLen(self, target: int, nums: List[int]) -> int:
+    @staticmethod
+    def minSubArrayLen(target: int, nums: List[int]) -> int:
         n = len(nums)
         pre = [0] * n
         pre[0] = nums[0]

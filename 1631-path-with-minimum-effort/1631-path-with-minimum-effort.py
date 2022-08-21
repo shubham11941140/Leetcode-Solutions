@@ -1,6 +1,7 @@
 class Solution:
 
-    def valid(self, i, j, n, m):
+    @staticmethod
+    def valid(i, j, n, m):
         return 0 <= i < n and 0 <= j < m
 
     def bfs(self, a, n, m, effort):

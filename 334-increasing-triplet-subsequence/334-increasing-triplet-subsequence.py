@@ -1,6 +1,7 @@
 class Solution:
 
-    def increasingTriplet(self, nums: List[int]) -> bool:
+    @staticmethod
+    def increasingTriplet(nums: List[int]) -> bool:
         n = len(nums)
         MIN = 10**100
         MAX = -1 * (10**100)

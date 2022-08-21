@@ -1,6 +1,7 @@
 class Solution:
 
-    def canCompleteCircuit(self, gas: List[int], cost: List[int]) -> int:
+    @staticmethod
+    def canCompleteCircuit(gas: List[int], cost: List[int]) -> int:
         n = len(cost)
         if (n == 10**5 and len([i for i in gas if i]) == 1
                 and len([i for i in cost if i]) == 1):

@@ -1,5 +1,6 @@
 class Solution:
-    def maximumUnits(self, boxTypes: List[List[int]], truckSize: int) -> int:
+    @staticmethod
+    def maximumUnits(boxTypes: List[List[int]], truckSize: int) -> int:
         boxTypes.sort(key = lambda x: x[1], reverse = True)
         ans = 0
         for number, units in boxTypes:

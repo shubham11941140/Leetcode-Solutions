@@ -3,7 +3,8 @@ from collections import Counter
 
 class Solution:
 
-    def minDeletions(self, s: str) -> int:
+    @staticmethod
+    def minDeletions(s: str) -> int:
         s = sorted(Counter(s).values())
         init = sum(s)
         n = len(s)

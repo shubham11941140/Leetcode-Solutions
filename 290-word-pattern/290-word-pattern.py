@@ -1,6 +1,7 @@
 class Solution:
 
-    def wordPattern(self, pattern: str, s: str) -> bool:
+    @staticmethod
+    def wordPattern(pattern: str, s: str) -> bool:
         a = s.split()
         p = list(pattern)
         b = []

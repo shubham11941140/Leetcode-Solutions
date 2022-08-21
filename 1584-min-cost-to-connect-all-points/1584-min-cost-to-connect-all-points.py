@@ -4,7 +4,8 @@ class Solution:
         self.n = n
         self.g = [[0 for i in range(n + 1)] for j in range(n + 1)]
 
-    def manhat(self, x, y):
+    @staticmethod
+    def manhat(x, y):
         return abs(x[0] - y[0]) + abs(x[1] - y[1])
 
     def minKey(self, key, mstSet):
