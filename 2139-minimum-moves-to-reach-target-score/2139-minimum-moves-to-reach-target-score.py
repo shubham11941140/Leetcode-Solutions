@@ -1,8 +1,8 @@
-class Solution:                                          
-    
+class Solution:
+
     def minMoves(self, t: int, d: int) -> int:
         c = 0
-        while d and t > 1:                
+        while d and t > 1:
             c += 1
             if t % 2:
                 t -= 1

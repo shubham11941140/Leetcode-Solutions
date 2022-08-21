@@ -2,7 +2,7 @@ class Solution:
 
     def validPalindrome(self, s: str) -> bool:
         if s == s[::-1]:
-            return True             
+            return True
         l = 0
         r = len(s) - 1
         while l <= r:
@@ -16,4 +16,3 @@ class Solution:
                 R = s[:r] + s[r + 1:]
                 return L == L[::-1] or R == R[::-1]
         return False
-        
