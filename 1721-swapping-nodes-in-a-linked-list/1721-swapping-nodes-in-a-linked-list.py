@@ -6,8 +6,7 @@
 class Solution:
 
     @staticmethod
-    def swapNodes(head: Optional[ListNode],
-                  k: int) -> Optional[ListNode]:
+    def swapNodes(head: Optional[ListNode], k: int) -> Optional[ListNode]:
         l = 0
         root = head
         while root is not None:
