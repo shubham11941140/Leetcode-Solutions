@@ -4,7 +4,7 @@ class CustomStack:
         self.s = []
         self.l = 0
         self.m = maxSize
-        
+
     def push(self, x: int) -> None:
         if self.l < self.m:
             self.s.append(x)
@@ -23,8 +23,6 @@ class CustomStack:
         else:
             for i in range(self.l):
                 self.s[i] += val
-            
-        
 
 
 # Your CustomStack object will be instantiated and called as such:
