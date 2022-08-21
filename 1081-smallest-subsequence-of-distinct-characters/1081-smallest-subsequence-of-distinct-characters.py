@@ -1,6 +1,7 @@
 class Solution:
 
-    def smallestSubsequence(self, s: str) -> str:
+    @staticmethod
+    def smallestSubsequence(s: str) -> str:
         # Check last occurrence of char
         stack = []
         last = {}

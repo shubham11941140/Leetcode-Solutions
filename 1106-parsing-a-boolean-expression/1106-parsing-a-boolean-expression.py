@@ -1,6 +1,7 @@
 class Solution:
 
-    def parseBoolExpr(self, expression: str) -> bool:
+    @staticmethod
+    def parseBoolExpr(expression: str) -> bool:
         opst = []
         bst = []
         for i, item in enumerate(expression):

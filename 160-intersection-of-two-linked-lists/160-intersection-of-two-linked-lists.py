@@ -6,7 +6,8 @@
 
 class Solution:
 
-    def length(self, head):
+    @staticmethod
+    def length(head):
         c = 0
         while head:
             c += 1

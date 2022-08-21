@@ -7,7 +7,8 @@
 
 class Solution:
 
-    def detectCycle(self, head: Optional[ListNode]) -> Optional[ListNode]:
+    @staticmethod
+    def detectCycle(head: Optional[ListNode]) -> Optional[ListNode]:
         # slow and fast pointer
         slow = head
         fast = head

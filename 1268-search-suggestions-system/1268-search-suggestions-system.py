@@ -1,6 +1,7 @@
 class Solution:
 
-    def suggestedProducts(self, products: List[str],
+    @staticmethod
+    def suggestedProducts(products: List[str],
                           searchWord: str) -> List[List[str]]:
         products.sort()
         ans = []

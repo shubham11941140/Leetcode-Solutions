@@ -1,6 +1,7 @@
 class Solution:
 
-    def candy(self, ratings: List[int]) -> int:
+    @staticmethod
+    def candy(ratings: List[int]) -> int:
         n = len(ratings)
         temp = [1] * n
         for i in range(1, n):

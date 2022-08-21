@@ -7,7 +7,8 @@
 
 class Solution:
 
-    def hasCycle(self, head: Optional[ListNode]) -> bool:
+    @staticmethod
+    def hasCycle(head: Optional[ListNode]) -> bool:
         slow = head
         fast = head
         if head is None or head.next is None:

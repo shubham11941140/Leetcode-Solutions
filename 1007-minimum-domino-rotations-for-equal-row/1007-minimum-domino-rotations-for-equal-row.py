@@ -1,6 +1,7 @@
 class Solution:
 
-    def minDominoRotations(self, tops: List[int], bottoms: List[int]) -> int:
+    @staticmethod
+    def minDominoRotations(tops: List[int], bottoms: List[int]) -> int:
         ans = 10**10
         for k in range(1, 7):
             c = len([

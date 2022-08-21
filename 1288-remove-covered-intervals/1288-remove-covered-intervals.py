@@ -1,6 +1,7 @@
 class Solution:
 
-    def can(self, y, x):
+    @staticmethod
+    def can(y, x):
         a, b = x
         c, d = y
         return c <= a and b <= d

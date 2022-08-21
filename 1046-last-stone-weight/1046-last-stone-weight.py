@@ -1,6 +1,7 @@
 class Solution:
 
-    def lastStoneWeight(self, stones: List[int]) -> int:
+    @staticmethod
+    def lastStoneWeight(stones: List[int]) -> int:
         while len(stones) > 1:
             stones.sort()
             x = stones[-2]

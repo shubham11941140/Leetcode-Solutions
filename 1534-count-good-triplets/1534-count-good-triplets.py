@@ -1,5 +1,6 @@
 class Solution:
-    def countGoodTriplets(self, arr: List[int], a: int, b: int, c: int) -> int:
+    @staticmethod
+    def countGoodTriplets(arr: List[int], a: int, b: int, c: int) -> int:
         n = len(arr)
         c2 = 0
         for i in range(n):

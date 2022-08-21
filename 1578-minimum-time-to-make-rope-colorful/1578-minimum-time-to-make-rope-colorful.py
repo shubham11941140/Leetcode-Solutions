@@ -1,5 +1,6 @@
 class Solution:
-    def minCost(self, colors: str, neededTime: List[int]) -> int:
+    @staticmethod
+    def minCost(colors: str, neededTime: List[int]) -> int:
         n = len(colors)
         i = 0
         ans = 0

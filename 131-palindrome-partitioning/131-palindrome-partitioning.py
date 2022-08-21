@@ -10,7 +10,8 @@ class Solution:
                 self.generate(s, i + 1, ans, final)
                 ans.pop()
 
-    def ispallindrome(self, a):
+    @staticmethod
+    def ispallindrome(a):
         return a == a[::-1]
 
     def check_pallindrome(self, final):

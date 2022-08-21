@@ -11,7 +11,8 @@ class Node:
 
 class Solution:
 
-    def insert(self, root, item):
+    @staticmethod
+    def insert(root, item):
         temp = Node(0)
         temp.val = item.val
         temp.left = item.left
