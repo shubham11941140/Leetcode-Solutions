@@ -1,4 +1,5 @@
 class Solution:
+
     def shortestPathLength(self, graph: List[List[int]]) -> int:
         n = len(graph)
         q = []
@@ -15,5 +16,4 @@ class Solution:
                 newnode = (mask | (1 << v)), v, cost + 1
                 if newnode not in s:
                     q.append(newnode)
-                    s.add(newnode)        
-        
+                    s.add(newnode)
