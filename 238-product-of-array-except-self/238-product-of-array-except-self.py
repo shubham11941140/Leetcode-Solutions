@@ -9,8 +9,8 @@ class Solution:
                 if i:
                     m *= i
             a = [0 for i in range(len(nums))]
-            for i in range(len(nums)):
-                if not nums[i]:
+            for i, item in enumerate(nums):
+                if not item:
                     a[i] = m
             return a
         m = 1

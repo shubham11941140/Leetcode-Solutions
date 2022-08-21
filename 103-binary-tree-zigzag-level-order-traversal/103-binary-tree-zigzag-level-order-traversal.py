@@ -5,6 +5,7 @@
 #         self.left = left
 #         self.right = right
 class Solution:
+
     def zigzagLevelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
         if not root:
             return []
@@ -15,15 +16,11 @@ class Solution:
             adj[level].append(root.val)
             adj.append([])
             if root.left:
-                q.append((root.left, level + 1))                
+                q.append((root.left, level + 1))
             if root.right:
                 q.append((root.right, level + 1))
         ans = []
-        for i in range(len(adj)):
-            if adj[i]:
-                ans.append(adj[i][::-1] if i % 2 else adj[i])
+        for i, item in enumerate(adj):
+            if item:
+                ans.append(item[::-1] if i % 2 else item)
         return ans
-                
-            
-        
-        
