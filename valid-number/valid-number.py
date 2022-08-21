@@ -66,18 +66,3 @@ class Solution:
                          ] + [str(k) for k in list(range(10))]:
                 return False
         return self.cf(s)
-
-        for i in ["+-", "--", "++", "--", "+.", "-.", "e."]:
-            if i in s:
-                return False
-
-        if s[-1] in ["+", "-"]:
-            return False
-
-        print(self.base(s))
-        if not self.base(s):
-            return False
-        if ".e" in s and s[-1] != "e" and s.index(".") > 0:
-            return True
-        return (self.isint(s) or self.isdec(s) or self.checke(s)
-                or (self.isdec(s) and self.checke(s)))
