@@ -3,7 +3,7 @@ class Solution:
         n = len(pattern)
         ans = []
         for w in words:
-            d = dict()
+            d = {}
             flag = True
             for i in range(n):
                 s = pattern[i]

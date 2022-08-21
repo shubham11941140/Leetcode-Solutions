@@ -1,7 +1,7 @@
 class Solution:
     def subdomainVisits(self, cpdomains: List[str]) -> List[str]:
         
-        d = dict()
+        d = {}
         for i in cpdomains:
             c, s = i.split()
             print(c)

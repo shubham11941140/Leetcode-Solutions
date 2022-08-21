@@ -1,7 +1,7 @@
 class Codec:    
     
     def __init__(self):
-        self.a = dict()
+        self.a = {}
         self.c = 0
 
     def encode(self, longUrl: str) -> str:

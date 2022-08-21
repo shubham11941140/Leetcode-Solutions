@@ -1,7 +1,7 @@
 class Solution:
 
     def containsNearbyDuplicate(self, nums: List[int], k: int) -> bool:
-        d = dict()
+        d = {}
         for i, item in enumerate(nums):
             if item in d:
                 d[item].append(i)

@@ -19,7 +19,7 @@ class Solution:
     def wordSubsets(self, words1: List[str], words2: List[str]) -> List[str]:
         w1 = [Counter(i) for i in words1]
         w2 = [Counter(i) for i in words2]
-        d = dict()
+        d = {}
         m = len(w1)
         for j in w2:
             d = self.union(d, j)

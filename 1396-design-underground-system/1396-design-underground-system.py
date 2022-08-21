@@ -1,8 +1,8 @@
 class UndergroundSystem:
 
     def __init__(self):        
-        self.idx = dict()
-        self.eval = dict() 
+        self.idx = {}
+        self.eval = {} 
         
     def checkIn(self, id: int, stationName: str, t: int) -> None:
         self.idx[id] = [stationName, t]

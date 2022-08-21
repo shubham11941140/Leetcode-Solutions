@@ -1,7 +1,7 @@
 class Solution:            
         
     def freq(self, a):
-        d = dict()
+        d = {}
         for i in a:
             if i in d:
                 d[i] += 1

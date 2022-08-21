@@ -1,7 +1,7 @@
 class Solution:    
     
     def Counter(self, arr):
-        d = dict()
+        d = {}
         for i in arr:
             if i in d:
                 d[i] += 1

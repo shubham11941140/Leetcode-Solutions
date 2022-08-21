@@ -10,7 +10,7 @@ class Solution:
             else:
                 c1 += 1
             d.append(c0 - c1)
-        f = dict()
+        f = {}
         f[0] = [0]
         for i in range(n):
             if d[i] in f:
