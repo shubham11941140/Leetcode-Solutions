@@ -4,10 +4,7 @@ from collections import Counter
 class Solution:
 
     def check(self, f1, f2):
-        for i in f2:
-            if (i not in f1) or f2[i] > f1[i]:
-                return False
-        return True
+        return all(not (i not in f1) or f2[i] > f1[i] for i in f2)
 
     def solve(self, s, t):
         f2 = Counter(t)
