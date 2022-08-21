@@ -1,10 +1,10 @@
 class Solution:
-        
+
     def compute(self, nums, n, ans):
         for i in range(n):
             val = -(nums[i])
             left = i + 1
-            right = n - 1  
+            right = n - 1
             while left < right:
                 t = nums[left] + nums[right]
                 if t == val:
@@ -18,9 +18,9 @@ class Solution:
                 elif t > val:
                     right -= 1
         return ans
-        
+
     def threeSum(self, nums: List[int]) -> List[List[int]]:
-        nums.sort()  
+        nums.sort()
         ans = []
         n = len(nums)
         t = self.compute(nums, n, ans)
@@ -28,6 +28,4 @@ class Solution:
         for i in t:
             if i not in r:
                 r.append(i)
-        return r           
-                        
-        
+        return r
