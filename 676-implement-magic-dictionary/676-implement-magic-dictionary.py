@@ -11,7 +11,7 @@ class MagicDictionary:
         return False
 
     def buildDict(self, dictionary: List[str]) -> None:
-        self.a = [i for i in dictionary]
+        self.a = list(dictionary)
 
     def search(self, searchWord: str) -> bool:
         return any(self.diff(searchWord, i) for i in self.a)
