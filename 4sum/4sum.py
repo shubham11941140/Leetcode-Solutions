@@ -19,14 +19,5 @@ class Solution:
 
             return res
 
-        def twoSum(nums: List[int], target: int) -> List[List[int]]:
-            res = []
-            s = set()
-            for i, item in enumerate(nums):
-                if len(res) == 0 or res[-1][1] != item and target - item in s:
-                    res.append([target - item, item])
-                s.add(item)
-            return res
-
         nums.sort()
         return kSum(nums, target, 4)
