@@ -1,6 +1,7 @@
 class Solution:
 
-    def subdomainVisits(self, cpdomains: List[str]) -> List[str]:
+    @staticmethod
+    def subdomainVisits(cpdomains: List[str]) -> List[str]:
 
         d = {}
         for i in cpdomains:

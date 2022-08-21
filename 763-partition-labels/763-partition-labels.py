@@ -1,6 +1,7 @@
 class Solution:
 
-    def partitionLabels(self, s: str) -> List[int]:
+    @staticmethod
+    def partitionLabels(s: str) -> List[int]:
         n = len(s)
         ans = []
         for i in range(1, n):

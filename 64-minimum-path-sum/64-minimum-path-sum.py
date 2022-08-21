@@ -1,6 +1,7 @@
 class Solution:
 
-    def minPathSum(self, grid: List[List[int]]) -> int:
+    @staticmethod
+    def minPathSum(grid: List[List[int]]) -> int:
         n = len(grid)
         m = len(grid[0])
         dp = [[0 for j in range(m)] for i in range(n)]

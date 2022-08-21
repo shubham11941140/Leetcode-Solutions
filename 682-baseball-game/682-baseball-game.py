@@ -1,6 +1,7 @@
 class Solution:
 
-    def calPoints(self, ops: List[str]) -> int:
+    @staticmethod
+    def calPoints(ops: List[str]) -> int:
         s = []
         for i in ops:
             if i == "+":

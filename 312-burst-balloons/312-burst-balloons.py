@@ -1,6 +1,7 @@
 class Solution:
 
-    def maxCoins(self, nums: List[int]) -> int:
+    @staticmethod
+    def maxCoins(nums: List[int]) -> int:
         nums = [1] + nums + [1]
         n = len(nums)
         dp = [[0 for i in range(n)] for j in range(n)]

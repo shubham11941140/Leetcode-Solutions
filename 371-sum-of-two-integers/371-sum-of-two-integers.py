@@ -1,4 +1,5 @@
 class Solution:
 
-    def getSum(self, a: int, b: int) -> int:
+    @staticmethod
+    def getSum(a: int, b: int) -> int:
         return a + b

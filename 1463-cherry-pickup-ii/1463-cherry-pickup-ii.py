@@ -1,6 +1,7 @@
 class Solution:  
 
-    def cherryPickup(self, grid: List[List[int]]) -> int:
+    @staticmethod
+    def cherryPickup(grid: List[List[int]]) -> int:
 
         @cache
         def rec(i, j1, j2):
