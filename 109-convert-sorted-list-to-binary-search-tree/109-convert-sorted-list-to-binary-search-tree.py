@@ -21,35 +21,12 @@ class Solution:
     def atobst(self, a):
         if not a:
             return
-        print(a)
         n = len(a) // 2
-        print(a[:n])
-        print(a[n])
-        print(a[n + 1:])
         return TreeNode(a[n], self.atobst(a[:n]), self.atobst(a[n + 1:]))
     
     def sortedListToBST(self, head: Optional[ListNode]) -> Optional[TreeNode]:
         a = self.toarr(head)
-        print(a)
         if not a:
             return None 
         return self.atobst(a)
-
-        
-        
-        '''
-        n = len(a)
-        i = n // 2
-        t = TreeNode(a[i])
-        u = t
-        root = t
-        for j in reversed(range(i)):
-            t.left = TreeNode(a[j])
-            t = t.left
-        for j in range(i + 1, n):
-            u.right = TreeNode(a[j])
-            u = u.right
-        #print("F", v)
-        return root
-        '''
         
