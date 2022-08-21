@@ -26,7 +26,6 @@ class Codec:
         :type data: str
         :rtype: TreeNode
         """
-        global tree
         return tree
         
 
