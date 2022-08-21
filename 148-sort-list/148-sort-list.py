@@ -6,11 +6,11 @@
 class Solution:
 
     @staticmethod
-    def insert(root, b):     
+    def insert(root, b):
         newnode = ListNode()
         newnode.val = b
         newnode.next = root
-        root = newnode        
+        root = newnode
         return root
 
     def sortList(self, head: Optional[ListNode]) -> Optional[ListNode]:
