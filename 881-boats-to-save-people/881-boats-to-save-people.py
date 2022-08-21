@@ -1,6 +1,7 @@
 class Solution:
 
-    def numRescueBoats(self, people: List[int], limit: int) -> int:
+    @staticmethod
+    def numRescueBoats(people: List[int], limit: int) -> int:
         people.sort()
         l = 0
         r = len(people) - 1

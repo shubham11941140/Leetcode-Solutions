@@ -1,6 +1,7 @@
 class Solution:
 
-    def canConstruct(self, ransomNote: str, magazine: str) -> bool:
+    @staticmethod
+    def canConstruct(ransomNote: str, magazine: str) -> bool:
         ransomNote = list(ransomNote)
         magazine = list(magazine)
         try:

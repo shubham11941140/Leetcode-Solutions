@@ -5,14 +5,16 @@
 #         self.next = next
 class Solution:
 
-    def listlen(self, a):
+    @staticmethod
+    def listlen(a):
         c = 0
         while a is not None:
             c += 1
             a = a.next
         return c
 
-    def insert(self, root, k):
+    @staticmethod
+    def insert(root, k):
         temp = ListNode()
         temp.val = k
         temp.next = root

@@ -1,6 +1,7 @@
 class Solution:
 
-    def maximumGap(self, nums: List[int]) -> int:
+    @staticmethod
+    def maximumGap(nums: List[int]) -> int:
         a = sorted(list(set(nums)))
         if len(a) < 2:
             return 0

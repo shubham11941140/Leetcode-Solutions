@@ -1,6 +1,7 @@
 class Solution:
 
-    def minDistance(self, word1: str, word2: str) -> int:
+    @staticmethod
+    def minDistance(word1: str, word2: str) -> int:
         m = len(word1)
         n = len(word2)
 

@@ -1,6 +1,7 @@
 class Solution:
 
-    def fib(self, n: int) -> int:
+    @staticmethod
+    def fib(n: int) -> int:
         a = [0 for i in range(n + 1)]
         if not n:
             return 0

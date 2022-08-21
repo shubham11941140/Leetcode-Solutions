@@ -1,6 +1,7 @@
 class Solution:
 
-    def distone(self, a, b):
+    @staticmethod
+    def distone(a, b):
         n = len(a)
         c = False
         for i in range(n):

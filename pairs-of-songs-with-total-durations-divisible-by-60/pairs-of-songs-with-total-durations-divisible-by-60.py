@@ -1,6 +1,7 @@
 class Solution:
 
-    def freq(self, a):
+    @staticmethod
+    def freq(a):
         d = {}
         for i in a:
             if i in d:
@@ -9,7 +10,8 @@ class Solution:
                 d[i] = 1
         return d
 
-    def con(self, a):
+    @staticmethod
+    def con(a):
         return (a * (a - 1)) // 2
 
     def numPairsDivisibleBy60(self, time: List[int]) -> int:

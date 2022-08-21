@@ -5,7 +5,8 @@
 #         self.next = next
 class Solution:
 
-    def insert(self, root, item):
+    @staticmethod
+    def insert(root, item):
         temp = ListNode(0)
         temp.val = item
         temp.next = root

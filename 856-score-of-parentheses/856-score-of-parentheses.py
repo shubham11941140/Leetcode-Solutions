@@ -1,6 +1,7 @@
 class Solution:
 
-    def check(self, s):
+    @staticmethod
+    def check(s):
         stack = []
         for i in s:
             if i == "(":

@@ -3,7 +3,8 @@ from collections import Counter
 
 class Solution:
 
-    def check(self, f1, f2):
+    @staticmethod
+    def check(f1, f2):
         return all(not (i not in f1) or f2[i] > f1[i] for i in f2)
 
     def solve(self, s, t):
