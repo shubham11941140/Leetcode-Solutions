@@ -29,8 +29,8 @@ class Solution:
             u = self.minKey(key, mstSet)
             mstSet[u] = True
             for v in range(self.n):
-                if self.g[u][v] > 0 and mstSet[
-                        v] is False and key[v] > self.g[u][v]:
+                if self.g[u][v] > 0 and mstSet[v] is False and key[v] > self.g[
+                        u][v]:
                     key[v] = self.g[u][v]
                     parent[v] = u
         return sum([self.g[i][parent[i]] for i in range(1, self.n)])
