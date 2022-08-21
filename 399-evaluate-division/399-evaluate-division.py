@@ -20,33 +20,32 @@ class Solution:
             if a not in d or b not in d:
                 ans.append(-1)
                 continue
-            elif a == b:
+            if a == b:
                 ans.append(1)
                 continue
-            else:
-                q = []
-                path = []
-                src = d[a]
-                dst = d[b]
-                path.append(src)
-                q.append(path.copy())
-                flag = False
-                while q:
-                    path = q.pop(0)
-                    last = path[-1]
-                    if last == dst:
-                        flag = True
-                        break
-                    for i, j in adj[last]:
-                        if i not in path:
-                            q.append(path.copy() + [i])
-                if not flag:
-                    ans.append(-1)
-                    continue
-                f = 1
-                for i in range(len(path) - 1):
-                    for v, w in adj[path[i]]:
-                        if v == path[i + 1]:
-                            f *= w
-                ans.append(f)
+            q = []
+            path = []
+            src = d[a]
+            dst = d[b]
+            path.append(src)
+            q.append(path.copy())
+            flag = False
+            while q:
+                path = q.pop(0)
+                last = path[-1]
+                if last == dst:
+                    flag = True
+                    break
+                for i, j in adj[last]:
+                    if i not in path:
+                        q.append(path.copy() + [i])
+            if not flag:
+                ans.append(-1)
+                continue
+            f = 1
+            for i in range(len(path) - 1):
+                for v, w in adj[path[i]]:
+                    if v == path[i + 1]:
+                        f *= w
+            ans.append(f)
         return ans
