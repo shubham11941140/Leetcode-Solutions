@@ -1,7 +1,6 @@
-   
 class Solution:
-   
-    def wordBreak(self, s: str, wordDict: List[str]) -> List[str]:            
+
+    def wordBreak(self, s: str, wordDict: List[str]) -> List[str]:
         m = len(s)
         dp = [False] * (m + 1)
         dp[0] = True
@@ -10,6 +9,3 @@ class Solution:
                 if s[j:i] in wordDict and dp[j]:
                     dp[i] = True
         return dp[m]
-        
-
-        
