@@ -22,9 +22,8 @@ class Solution:
             res = []
             s = set()
             for i, item in enumerate(nums):
-                if len(res) == 0 or res[-1][1] != item:
-                    if target - item in s:
-                        res.append([target - item, item])
+                if len(res) == 0 or res[-1][1] != item and target - item in s:
+                    res.append([target - item, item])
                 s.add(item)
             return res
 

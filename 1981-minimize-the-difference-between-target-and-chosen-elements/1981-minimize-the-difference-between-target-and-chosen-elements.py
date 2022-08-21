@@ -12,9 +12,8 @@ class Solution:
             b = list(set(mat[i - 1]))
             for k, item in enumerate(b):
                 for j in range(1, s + 1):
-                    if not dp[i][j]:
-                        if j >= item:
-                            dp[i][j] = dp[i - 1][j - item]
+                    if not dp[i][j] and j >= item:
+                        dp[i][j] = dp[i - 1][j - item]
         ans = float("INF")
         for i in range(1, s + 1):
             if dp[n][i]:

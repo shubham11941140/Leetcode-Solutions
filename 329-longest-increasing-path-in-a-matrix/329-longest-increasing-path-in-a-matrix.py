@@ -5,9 +5,9 @@ class Solution:
         if steps > self.ans:
             self.ans = steps
         for x, y in [(i - 1, j), (i + 1, j), (i, j - 1), (i, j + 1)]:
-            if 0 <= x < self.n and 0 <= y < self.m:
-                if self.l[x][y] > self.l[i][j]:
-                    self.rec(x, y, steps + 1)
+            if 0 <= x < self.n and 0 <= y < self.m and self.l[x][y] > self.l[
+                    i][j]:
+                self.rec(x, y, steps + 1)
 
     def longestIncreasingPath(self, matrix: List[List[int]]) -> int:
         self.n = len(matrix)

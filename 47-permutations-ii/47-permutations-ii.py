@@ -1,9 +1,8 @@
 class Solution:
 
     def permute(self, idx, a, ans):
-        if idx == len(a):
-            if a not in ans:
-                ans.append(a.copy())
+        if idx == len(a) and a not in ans:
+            ans.append(a.copy())
         for i in range(idx, len(a)):
             a[i], a[idx] = a[idx], a[i]
             self.permute(idx + 1, a, ans)
