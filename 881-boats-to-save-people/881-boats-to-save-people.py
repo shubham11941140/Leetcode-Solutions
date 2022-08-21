@@ -1,4 +1,5 @@
 class Solution:
+
     def numRescueBoats(self, people: List[int], limit: int) -> int:
         people.sort()
         l = 0
@@ -10,5 +11,3 @@ class Solution:
             ans += 1
             r -= 1
         return ans
-            
-        

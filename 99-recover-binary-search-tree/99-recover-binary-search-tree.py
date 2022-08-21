@@ -5,27 +5,27 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    
+
     def __init__(self):
         self.a = []
-    
+
     def inorder(self, root):
         if root is None:
             return
         self.inorder(root.left)
         self.a.append(root.val)
-        self.inorder(root.right)    
-    
+        self.inorder(root.right)
+
     def modify(self, root, x, y):
         if root is None:
-            return        
+            return
         if root.val == x:
             self.xval = root
         if root.val == y:
             self.yval = root
         self.modify(root.left, x, y)
-        self.modify(root.right, x, y)                    
-    
+        self.modify(root.right, x, y)
+
     def recoverTree(self, root: Optional[TreeNode]) -> None:
         """
         Do not return anything, modify root in-place instead.

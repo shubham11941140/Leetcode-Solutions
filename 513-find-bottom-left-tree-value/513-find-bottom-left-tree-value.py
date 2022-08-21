@@ -5,6 +5,7 @@
 #         self.left = left
 #         self.right = right
 class Solution:
+
     def findBottomLeftValue(self, root: Optional[TreeNode]) -> int:
         l = []
         a = []
@@ -18,4 +19,3 @@ class Solution:
             if root.right:
                 q.append((root.right, level + 1))
         return a[l.index(max(l))]
-        

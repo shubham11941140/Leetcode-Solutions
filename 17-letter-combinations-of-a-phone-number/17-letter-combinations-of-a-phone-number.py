@@ -1,6 +1,8 @@
 from random import choice
 
+
 class Solution:
+
     def letterCombinations(self, digits: str) -> List[str]:
         if not digits:
             return []
@@ -16,7 +18,6 @@ class Solution:
         d = [int(i) for i in digits]
         ans = []
         for _ in range(1000):
-            v = ''.join([choice(a[i]) for i in d])
+            v = "".join([choice(a[i]) for i in d])
             ans.append(v)
-        return set(ans)                
-        
+        return set(ans)

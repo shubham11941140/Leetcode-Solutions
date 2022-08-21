@@ -9,11 +9,11 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
-class Solution:            
-        
+class Solution:
+
     def subPathCheck(self, node, llHead):
         curr = llHead
-        q2 = [[node, curr]]        
+        q2 = [[node, curr]]
         while len(q2):
             newNode, llNode = q2.pop(0)
             if newNode.val == llNode.val:
@@ -24,8 +24,9 @@ class Solution:
                 if newNode.right != None and llNode.next != None:
                     q2.append([newNode.right, llNode.next])
         return False
-    
-    def isSubPath(self, head: Optional[ListNode], root: Optional[TreeNode]) -> bool:
+
+    def isSubPath(self, head: Optional[ListNode],
+                  root: Optional[TreeNode]) -> bool:
         q = [root]
         while len(q):
             tempNode = q.pop(0)
@@ -38,5 +39,3 @@ class Solution:
                 if tempNode.right != None:
                     q.append(tempNode.right)
         return False
-
-        

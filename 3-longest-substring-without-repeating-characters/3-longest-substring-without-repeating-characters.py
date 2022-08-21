@@ -1,4 +1,5 @@
 class Solution:
+
     def lengthOfLongestSubstring(self, s: str) -> int:
         # sliding window solution
         n = len(s)
@@ -13,7 +14,3 @@ class Solution:
                 a.pop(0)
             ans = max(ans, len(a))
         return ans
-                
-            
-            
-        

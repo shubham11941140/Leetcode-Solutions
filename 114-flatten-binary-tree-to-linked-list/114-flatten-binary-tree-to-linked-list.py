@@ -4,13 +4,13 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
-class Solution:       
-    
+class Solution:
+
     def rightmost(self, root):
         while root.right:
             root = root.right
         return root
-    
+
     def flatten(self, root: Optional[TreeNode]) -> None:
         """
         Do not return anything, modify root in-place instead.
@@ -20,14 +20,9 @@ class Solution:
             rm = None
         while root:
             if root.left:
-                rm = self.rightmost(root.left);
-                nr = root.right;
-                root.right = root.left;
-                root.left = None;
-                rm.right = nr;
-            root = root.right        
-        
-        
-
-
-        
+                rm = self.rightmost(root.left)
+                nr = root.right
+                root.right = root.left
+                root.left = None
+                rm.right = nr
+            root = root.right

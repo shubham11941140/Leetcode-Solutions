@@ -1,4 +1,5 @@
 class Solution:
+
     def maxScoreIndices(self, nums: List[int]) -> List[int]:
         rone = nums.count(1)
         lzero = 0
@@ -13,4 +14,3 @@ class Solution:
         a.append(lzero + rone)
         m = max(a)
         return [i for i in range(len(a)) if a[i] == m]
-            

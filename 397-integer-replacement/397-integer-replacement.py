@@ -1,4 +1,5 @@
 class Solution:
+
     def integerReplacement(self, n: int) -> int:
         # Use BFS
         steps = [[] for i in range(100)]
@@ -22,7 +23,3 @@ class Solution:
                     if i + 1 not in visited:
                         steps[step].append(i + 1)
                         visited.add(i + 1)
-            
-                
-        
-        

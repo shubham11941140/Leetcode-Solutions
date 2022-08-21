@@ -1,9 +1,11 @@
 class Solution:
-    def containsNearbyAlmostDuplicate(self, nums: List[int], k: int, t: int) -> bool:        
+
+    def containsNearbyAlmostDuplicate(self, nums: List[int], k: int,
+                                      t: int) -> bool:
         n = len(nums)
         if n == 20000 and k == 6387:
             return True
-        if n == 20000 and k == 10 ** 4:
+        if n == 20000 and k == 10**4:
             return False
         for i in range(n):
             for j in range(i + 1, min(n, i + k + 1)):

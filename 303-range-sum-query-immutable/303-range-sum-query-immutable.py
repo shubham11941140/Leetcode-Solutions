@@ -6,9 +6,11 @@ class NumArray:
         self.pre[0] = nums[0]
         for i in range(1, n):
             self.pre[i] = self.pre[i - 1] + nums[i]
-        
+
     def sumRange(self, left: int, right: int) -> int:
-        return self.pre[right] - self.pre[left - 1] if left else self.pre[right]        
+        return self.pre[right] - self.pre[left -
+                                          1] if left else self.pre[right]
+
 
 # Your NumArray object will be instantiated and called as such:
 # obj = NumArray(nums)

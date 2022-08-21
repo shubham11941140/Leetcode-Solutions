@@ -1,8 +1,8 @@
 class Solution:
-    
+
     def check(self, i, j, n, m):
         return 0 <= i < n and 0 <= j < m
-    
+
     def findPeakGrid(self, mat: List[List[int]]) -> List[int]:
         n = len(mat)
         m = len(mat[0])
@@ -17,7 +17,3 @@ class Solution:
                             s += 1
                 if t == s:
                     return [i, j]
-                        
-                
-                
-        

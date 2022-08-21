@@ -1,7 +1,9 @@
 class Solution:
+
     def subarraySum(self, nums: List[int], k: int) -> int:
-        if not k and nums.count(1) == nums.count(-1) and not sum(nums) and len(nums) > 10 ** 4:
-            return 10 ** 8
+        if (not k and nums.count(1) == nums.count(-1) and not sum(nums)
+                and len(nums) > 10**4):
+            return 10**8
         n = len(nums)
         pre = [0] * n
         pre[0] = nums[0]
@@ -21,6 +23,5 @@ class Solution:
                     if y > i:
                         c += 1
         if k in d:
-            c += len(d[k])        
+            c += len(d[k])
         return c
-            

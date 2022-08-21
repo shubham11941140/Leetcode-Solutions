@@ -5,7 +5,7 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    
+
     def build(self, inn, pre, inStrt, inEnd):
         if inStrt > inEnd:
             return None
@@ -18,8 +18,9 @@ class Solution:
         tNode.left = self.build(inn, pre, inStrt, inIndex - 1)
         tNode.right = self.build(inn, pre, inIndex + 1, inEnd)
         return tNode
-    
-    def buildTree(self, preorder: List[int], inorder: List[int]) -> Optional[TreeNode]:
+
+    def buildTree(self, preorder: List[int],
+                  inorder: List[int]) -> Optional[TreeNode]:
         self.mp = {}
         self.preIndex = 0
         n = len(inorder)

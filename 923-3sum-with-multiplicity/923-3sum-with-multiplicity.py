@@ -5,8 +5,8 @@ class Solution:
         for i in arr:
             d[i] = d[i] + 1 if i in d else 1
         return d
-               
-    def threeSumMulti(self, arr: List[int], target: int) -> int:        
+
+    def threeSumMulti(self, arr: List[int], target: int) -> int:
         ans = []
         s = list(set(arr))
         n = len(s)
@@ -21,12 +21,11 @@ class Solution:
         c = 0
         for x, y, z in ans:
             if x == y == z:
-                c += ((f[x] * (f[x] - 1) * (f[x] - 2)) // 6)
-            elif x == y and y != z:  
-                c += (((f[x] * (f[x] - 1)) // 2) * f[z])
+                c += (f[x] * (f[x] - 1) * (f[x] - 2)) // 6
+            elif x == y and y != z:
+                c += ((f[x] * (f[x] - 1)) // 2) * f[z]
             elif x != y and y == z:
-                c += (((f[y] * (f[y] - 1)) // 2) * f[x])
+                c += ((f[y] * (f[y] - 1)) // 2) * f[x]
             else:
-                c += (f[x] * f[y] * f[z])
-        return c % (10 ** 9 + 7)      
-        
+                c += f[x] * f[y] * f[z]
+        return c % (10**9 + 7)

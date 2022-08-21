@@ -7,20 +7,22 @@ class Node:
         self.random = random
 """
 
+
 class Solution:
-    def copyRandomList(self, head: 'Optional[Node]') -> 'Optional[Node]':        
+
+    def copyRandomList(self, head: "Optional[Node]") -> "Optional[Node]":
         first = head
         mappair = dict()
         mappair[None] = None
         new = Node(0)
-        copy=new
+        copy = new
         while first:
             new.next = Node(first.val)
             mappair[first] = new.next
             new = new.next
-            first = first.next            
+            first = first.next
         first = head
         while first:
             mappair[first].random = mappair[first.random]
-            first = first.next        
+            first = first.next
         return copy.next

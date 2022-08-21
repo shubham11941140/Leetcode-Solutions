@@ -1,4 +1,5 @@
-class Solution:        
+class Solution:
+
     def maximumUniqueSubarray(self, nums: List[int]) -> int:
         n = len(nums)
         pre = [0 for i in range(n)]
@@ -18,7 +19,3 @@ class Solution:
                 l += 1
             ans = max(ans, pre[r - 1] - pre[l - 1] if l else pre[r - 1])
         return ans
-            
-                
-                
-        

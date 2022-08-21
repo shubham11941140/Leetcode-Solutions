@@ -5,13 +5,13 @@ class FreqStack:
         self.m = {}
         self.max = 0
         self.l = 0
-        
+
     def push(self, val: int) -> None:
         self.s.append(val)
         self.m[val] = self.m[val] + 1 if val in self.m else 1
         self.max = max(self.m.values())
         self.l += 1
-        
+
     def pop(self) -> int:
         idx = -1
         for i in reversed(range((self.l))):
@@ -25,10 +25,6 @@ class FreqStack:
         self.s.pop(idx)
         self.l -= 1
         return val
-        
-                          
-                  
-        
 
 
 # Your FreqStack object will be instantiated and called as such:
