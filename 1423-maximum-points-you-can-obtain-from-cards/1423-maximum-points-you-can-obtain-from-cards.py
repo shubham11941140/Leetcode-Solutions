@@ -15,7 +15,7 @@ class Solution:
         for i in range(k + 1):
             if 0 <= i - 1 < n and 0 <= k - i - 1 < n:
                 val = pre[i - 1] + rpre[k - i - 1]
-            elif 0 <= i - 1 < n and not (0 <= k - i - 1 < n):
+            elif 0 <= i - 1 < n and not 0 <= k - i - 1 < n:
                 val = pre[i - 1]
             elif not (0 <= i - 1 < n) and 0 <= k - i - 1 < n:
                 val = rpre[k - i - 1]

@@ -11,7 +11,7 @@ class Solution:
             curr = arr[i]
             for j in range(i):
                 mod = arr[j]
-                if not (curr % mod):
+                if not curr % mod:
                     rem = curr // mod
                     if rem in d:
                         d[curr] = (d[curr] + (d[mod] * d[rem])) % M
