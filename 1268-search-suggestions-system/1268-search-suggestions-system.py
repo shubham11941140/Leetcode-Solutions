@@ -1,5 +1,7 @@
-class Solution:           
-    def suggestedProducts(self, products: List[str], searchWord: str) -> List[List[str]]:
+class Solution:
+
+    def suggestedProducts(self, products: List[str],
+                          searchWord: str) -> List[List[str]]:
         products.sort()
         ans = []
         for idx, i in enumerate(searchWord):
@@ -13,5 +15,3 @@ class Solution:
                         break
             ans.append(part)
         return ans
-                    
-        

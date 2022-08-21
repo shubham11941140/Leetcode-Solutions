@@ -5,12 +5,12 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    
+
     def height(self, root) -> int:
         if root is None:
             return 0
-        return max(self.height(root.left), self.height(root.right)) + 1             
-    
+        return max(self.height(root.left), self.height(root.right)) + 1
+
     def deepestLeavesSum(self, root: Optional[TreeNode]) -> int:
         q = [(root, 0)]
         h = self.height(root)
