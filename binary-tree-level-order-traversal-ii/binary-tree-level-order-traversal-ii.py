@@ -5,20 +5,18 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    
-    
+
     def level(self, root, ans, level):
         if root is None:
             return
         ans[level].append(root.val)
         self.level(root.left, ans, level + 1)
         self.level(root.right, ans, level + 1)
-        
-        
+
     def levelOrderBottom(self, root: Optional[TreeNode]) -> List[List[int]]:
         level = 0
         ans = [[] for i in range(3000)]
         self.level(root, ans, level)
         while [] in ans:
             ans.remove([])
-        return ans[::-1]        
+        return ans[::-1]

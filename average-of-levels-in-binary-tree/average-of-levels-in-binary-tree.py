@@ -5,18 +5,17 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    
-    
+
     def level(self, root, ans, level):
         if root is None:
             return
         ans[level].append(root.val)
         self.level(root.left, ans, level + 1)
         self.level(root.right, ans, level + 1)
-        
+
     def avg(self, a):
-        return sum(a)/len(a)
-        
+        return sum(a) / len(a)
+
     def averageOfLevels(self, root: Optional[TreeNode]) -> List[float]:
         level = 0
         ans = [[] for i in range(3000)]
@@ -24,4 +23,3 @@ class Solution:
         while [] in ans:
             ans.remove([])
         return [self.avg(i) for i in ans]
-                  

@@ -1,5 +1,5 @@
 class Solution:
-    
+
     @cache
     def check(self, s):
         m = len(s)
@@ -9,8 +9,8 @@ class Solution:
             if s[j] == self.s[i]:
                 j += 1
             i += 1
-        return j == m        
-        
+        return j == m
+
     def numMatchingSubseq(self, s: str, words: List[str]) -> int:
         dis = set()
         self.s = s
@@ -24,4 +24,3 @@ class Solution:
                     ans += 1
                     dis.add(i)
         return ans
-        

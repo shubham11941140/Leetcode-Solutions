@@ -5,18 +5,17 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    
-    
+
     def roottoleafsum(self, root, a, val):
         val += root.val
         if root.left is None and root.right is None:
             a.append(val)
-        else:            
+        else:
             if root.left:
                 self.roottoleafsum(root.left, a, val)
             if root.right:
                 self.roottoleafsum(root.right, a, val)
-                
+
     def hasPathSum(self, root: Optional[TreeNode], targetSum: int) -> bool:
         a = []
         val = 0
