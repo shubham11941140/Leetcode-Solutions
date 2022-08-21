@@ -12,4 +12,3 @@ class Solution:
                 ans += (truckSize * units)
                 break
         return ans
-        

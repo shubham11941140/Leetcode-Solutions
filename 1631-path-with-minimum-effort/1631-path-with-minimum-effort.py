@@ -1,8 +1,8 @@
 class Solution:
-    
+
     def valid(self, i, j, n, m):
         return 0 <= i < n and 0 <= j < m
-            
+
     def bfs(self, a, n, m, effort):
         v = [[False for j in range(m)] for i in range(n)]
         q = [(0, 0)]
@@ -33,6 +33,5 @@ class Solution:
                 right = mid
             else:
                 left = mid + 1
-                
-        
-        
+
+

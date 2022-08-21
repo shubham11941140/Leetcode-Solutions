@@ -14,7 +14,7 @@ class MinStack:
 
     def getMin(self) -> int:
         return min(self.s)
-        
+
 
 
 # Your MinStack object will be instantiated and called as such:

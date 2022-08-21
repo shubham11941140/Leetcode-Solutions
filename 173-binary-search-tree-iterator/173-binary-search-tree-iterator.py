@@ -18,14 +18,14 @@ class BSTIterator:
         self.inorder(root.left)
         self.a.append(root.val)
         self.inorder(root.right)
-            
+
     def next(self) -> int:
         self.idx += 1
         return self.a[self.idx]                
 
     def hasNext(self) -> bool:
         return self.idx + 1 < self.l 
-        
+
 
 
 # Your BSTIterator object will be instantiated and called as such:

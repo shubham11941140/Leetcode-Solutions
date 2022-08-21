@@ -8,4 +8,3 @@ class Solution:
                     if abs(arr[i] - arr[j]) <= a and abs(arr[j] - arr[k]) <= b and abs(arr[i] - arr[k]) <= c:
                         c2 += 1
         return c2
-        
