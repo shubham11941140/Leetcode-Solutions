@@ -13,4 +13,3 @@ class Solution:
                 ans += (sum(f) - max(f))
             i += 1
         return ans
-        
