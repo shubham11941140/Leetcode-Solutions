@@ -1,6 +1,7 @@
 class Solution:
 
-    def largestRectangleArea(self, heights: List[int]) -> int:
+    @staticmethod
+    def largestRectangleArea(heights: List[int]) -> int:
         ans = -1
         n = len(heights)
         l = [-1] * n

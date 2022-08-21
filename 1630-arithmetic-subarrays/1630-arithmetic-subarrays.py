@@ -1,6 +1,7 @@
 class Solution:
 
-    def checkArithmeticSubarrays(self, nums: List[int], l: List[int],
+    @staticmethod
+    def checkArithmeticSubarrays(nums: List[int], l: List[int],
                                  r: List[int]) -> List[bool]:
         m = len(l)
         ans = []

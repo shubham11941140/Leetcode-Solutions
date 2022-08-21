@@ -3,7 +3,8 @@ from math import ceil, sqrt
 
 class Solution:
 
-    def countPrimes(self, n: int) -> int:
+    @staticmethod
+    def countPrimes(n: int) -> int:
         if n < 3:
             return 0
         prime = [False] * (n + 1)

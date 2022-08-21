@@ -1,6 +1,7 @@
 class Solution:
 
-    def freq(self, a):
+    @staticmethod
+    def freq(a):
         d = {}
         for i in a:
             if i in d:

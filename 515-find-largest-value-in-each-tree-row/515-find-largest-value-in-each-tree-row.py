@@ -6,7 +6,8 @@
 #         self.right = right
 class Solution:
 
-    def largestValues(self, root: Optional[TreeNode]) -> List[int]:
+    @staticmethod
+    def largestValues(root: Optional[TreeNode]) -> List[int]:
         if root is None:
             return []
         a = [[] for i in range(10**5)]

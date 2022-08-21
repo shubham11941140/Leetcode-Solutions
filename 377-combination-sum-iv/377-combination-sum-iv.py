@@ -1,6 +1,7 @@
 class Solution:
 
-    def combinationSum4(self, nums: List[int], target: int) -> int:
+    @staticmethod
+    def combinationSum4(nums: List[int], target: int) -> int:
         nums.sort()
         n = len(nums)
         dp = [0 for i in range(target + 1)]

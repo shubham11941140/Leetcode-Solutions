@@ -1,6 +1,7 @@
 class Solution:
 
-    def licenseKeyFormatting(self, s: str, k: int) -> str:
+    @staticmethod
+    def licenseKeyFormatting(s: str, k: int) -> str:
         a = list(s.upper())
         while "-" in a:
             a.remove("-")

@@ -1,6 +1,7 @@
 class Solution:
 
-    def generateParenthesis(self, n: int) -> List[str]:
+    @staticmethod
+    def generateParenthesis(n: int) -> List[str]:
         if n == 1:
             return ["()"]
         if n == 2:

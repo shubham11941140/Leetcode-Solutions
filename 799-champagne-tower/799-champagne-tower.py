@@ -1,6 +1,7 @@
 class Solution:
 
-    def champagneTower(self, poured: int, query_row: int,
+    @staticmethod
+    def champagneTower(poured: int, query_row: int,
                        query_glass: int) -> float:
         # print(inorder)
 

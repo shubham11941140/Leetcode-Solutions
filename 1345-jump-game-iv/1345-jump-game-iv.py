@@ -1,6 +1,7 @@
 class Solution:
 
-    def freq(self, arr, MAX):
+    @staticmethod
+    def freq(arr, MAX):
         d = {}
         for i in arr:
             if i not in d:

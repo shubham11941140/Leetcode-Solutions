@@ -3,7 +3,8 @@ from collections import Counter
 
 class Solution:
 
-    def comp(self, a, b):
+    @staticmethod
+    def comp(a, b):
         for i in b:
             if i not in a:
                 return False
@@ -11,7 +12,8 @@ class Solution:
                 return False
         return True
 
-    def union(self, d1, d2):
+    @staticmethod
+    def union(d1, d2):
         for i in d2:
             d1[i] = d2[i] if i not in d1 else max(d1[i], d2[i])
         return d1
