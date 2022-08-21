@@ -5,7 +5,8 @@
 #         self.next = next
 class Solution:
 
-    def swapNodes(self, head: Optional[ListNode],
+    @staticmethod
+    def swapNodes(head: Optional[ListNode],
                   k: int) -> Optional[ListNode]:
         l = 0
         root = head

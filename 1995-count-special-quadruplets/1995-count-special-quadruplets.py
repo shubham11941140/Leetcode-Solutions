@@ -1,6 +1,7 @@
 class Solution:
 
-    def countQuadruplets(self, nums: List[int]) -> int:
+    @staticmethod
+    def countQuadruplets(nums: List[int]) -> int:
         c1 = 0
         n = len(nums)
         for a in range(n):

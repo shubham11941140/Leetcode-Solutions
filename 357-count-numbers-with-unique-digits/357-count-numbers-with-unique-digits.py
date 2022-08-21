@@ -1,6 +1,7 @@
 class Solution:
 
-    def countNumbersWithUniqueDigits(self, n: int) -> int:
+    @staticmethod
+    def countNumbersWithUniqueDigits(n: int) -> int:
         if n == 8:
             return 2345851
         c = 10**n

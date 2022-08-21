@@ -3,7 +3,8 @@ from math import log2
 
 class Solution:
 
-    def minimumDeviation(self, nums: List[int]) -> int:
+    @staticmethod
+    def minimumDeviation(nums: List[int]) -> int:
         s = sorted(nums)
         b = [i for i in s if pow(2, int(log2(i))) == i]
         if len(s) == len(b):

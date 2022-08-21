@@ -1,6 +1,7 @@
 class Solution:
 
-    def canPartition(self, nums: List[int]) -> bool:
+    @staticmethod
+    def canPartition(nums: List[int]) -> bool:
         # SOlve using DP
         # Subset suim proble,
         n = len(nums)

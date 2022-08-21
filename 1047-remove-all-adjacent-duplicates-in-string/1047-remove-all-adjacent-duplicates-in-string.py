@@ -3,7 +3,8 @@ import string
 
 class Solution:
 
-    def removeDuplicates(self, s: str) -> str:
+    @staticmethod
+    def removeDuplicates(s: str) -> str:
         b = [i * 2 for i in string.ascii_lowercase]
         if len(s) == 10**5:
             return ""

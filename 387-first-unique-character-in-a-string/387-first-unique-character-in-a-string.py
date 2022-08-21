@@ -3,7 +3,8 @@ from collections import Counter
 
 class Solution:
 
-    def firstUniqChar(self, s: str) -> int:
+    @staticmethod
+    def firstUniqChar(s: str) -> int:
         c = Counter(s)
         n = len(s)
         for i in range(n):

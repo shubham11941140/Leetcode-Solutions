@@ -17,7 +17,8 @@ class Solution:
             cursum -= cand[i]
             a.pop()
 
-    def check(self, a, b):
+    @staticmethod
+    def check(a, b):
         d1 = Counter(a)
         d2 = Counter(b)
         for i in d2:

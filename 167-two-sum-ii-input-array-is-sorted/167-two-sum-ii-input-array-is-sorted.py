@@ -1,6 +1,7 @@
 class Solution:
 
-    def twoSum(self, numbers: List[int], target: int) -> List[int]:
+    @staticmethod
+    def twoSum(numbers: List[int], target: int) -> List[int]:
         n = len(numbers)
         start = 0
         end = n - 1

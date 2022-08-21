@@ -1,6 +1,7 @@
 class Solution:
 
-    def getSmallestString(self, n: int, k: int) -> str:
+    @staticmethod
+    def getSmallestString(n: int, k: int) -> str:
         s = ""
         while n:
             if k > n - 1 + 26:

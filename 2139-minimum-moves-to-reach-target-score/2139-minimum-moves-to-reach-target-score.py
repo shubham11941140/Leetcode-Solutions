@@ -1,6 +1,7 @@
 class Solution:
 
-    def minMoves(self, t: int, d: int) -> int:
+    @staticmethod
+    def minMoves(t: int, d: int) -> int:
         c = 0
         while d and t > 1:
             c += 1

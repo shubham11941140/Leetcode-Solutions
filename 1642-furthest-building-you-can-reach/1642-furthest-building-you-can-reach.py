@@ -1,6 +1,7 @@
 class Solution:
 
-    def generate(self, a):
+    @staticmethod
+    def generate(a):
         return [(a[i + 1] - a[i]) for i in range(len(a) - 1)
                 if a[i + 1] > a[i]]
 

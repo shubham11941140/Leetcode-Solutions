@@ -13,7 +13,8 @@ class Solution:
         # return the cloned node which has the same val as the given node
         return mapping[node]
 
-    def findAllNodes(self, node):
+    @staticmethod
+    def findAllNodes(node):
         queue = collections.deque([node])
         visited = {node}
         while queue:
@@ -25,13 +26,15 @@ class Solution:
                 queue.append(neighbor)
         return list(visited)
 
-    def cloneAllNodes(self, allNodes):
+    @staticmethod
+    def cloneAllNodes(allNodes):
         mapping = {}
         for node in allNodes:
             mapping[node] = Node(node.val)
         return mapping
 
-    def cloneAllSides(self, mapping, allNodes):
+    @staticmethod
+    def cloneAllSides(mapping, allNodes):
         for node in allNodes:
             clonedNode = mapping[node]
             for neighbor in node.neighbors:

@@ -12,7 +12,8 @@ class Solution:
         self.a = self.toarr(head)
         self.l = len(self.a)
 
-    def toarr(self, root):
+    @staticmethod
+    def toarr(root):
         a = []
         while root is not None:
             a.append(root.val)

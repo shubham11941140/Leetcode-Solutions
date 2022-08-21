@@ -1,6 +1,7 @@
 class Solution:
 
-    def compute(self, nums, n, target):
+    @staticmethod
+    def compute(nums, n, target):
         ans = 10**10
         final = 10**10
         for i in range(n):

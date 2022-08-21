@@ -1,6 +1,7 @@
 class Solution:
 
-    def countSmaller(self, nums: List[int]) -> List[int]:
+    @staticmethod
+    def countSmaller(nums: List[int]) -> List[int]:
         arr = sorted(nums)
         a = []
         for num in nums:

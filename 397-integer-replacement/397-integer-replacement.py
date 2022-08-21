@@ -1,6 +1,7 @@
 class Solution:
 
-    def integerReplacement(self, n: int) -> int:
+    @staticmethod
+    def integerReplacement(n: int) -> int:
         # Use BFS
         steps = [[] for i in range(100)]
         steps[0].append(n)
