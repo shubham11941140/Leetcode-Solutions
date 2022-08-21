@@ -3,7 +3,8 @@ from math import ceil
 
 class Solution:
 
-    def depth_iterate(self, s, t, ans):
+    @staticmethod
+    def depth_iterate(s, t, ans):
         rep = {t}
         for steps in range(40000):
             if s in ans[steps]:

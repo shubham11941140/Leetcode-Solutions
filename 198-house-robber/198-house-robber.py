@@ -1,6 +1,7 @@
 class Solution:
 
-    def rob(self, nums: List[int]) -> int:
+    @staticmethod
+    def rob(nums: List[int]) -> int:
         n = len(nums)
         if n < 3:
             return max(nums)

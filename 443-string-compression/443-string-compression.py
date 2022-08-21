@@ -1,6 +1,7 @@
 class Solution:
 
-    def compress(self, chars: List[str]) -> int:
+    @staticmethod
+    def compress(chars: List[str]) -> int:
         a = []
         n = len(chars)
         i = 0

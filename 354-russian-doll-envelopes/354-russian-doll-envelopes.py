@@ -1,6 +1,7 @@
 class Solution:
 
-    def maxEnvelopes(self, envelopes: List[List[int]]) -> int:
+    @staticmethod
+    def maxEnvelopes(envelopes: List[List[int]]) -> int:
         if len(envelopes) == 100000 and envelopes[0] == [827, 312]:
             return 465
         envelopes.sort()

@@ -6,7 +6,8 @@
 #         self.right = right
 class Solution:
 
-    def findBottomLeftValue(self, root: Optional[TreeNode]) -> int:
+    @staticmethod
+    def findBottomLeftValue(root: Optional[TreeNode]) -> int:
         l = []
         a = []
         q = [(root, 0)]

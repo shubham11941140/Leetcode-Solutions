@@ -1,6 +1,7 @@
 class Solution:
 
-    def findPairs(self, nums: List[int], k: int) -> int:
+    @staticmethod
+    def findPairs(nums: List[int], k: int) -> int:
         if k == 0:
             h = list(set(nums))
             return len([i for i in h if nums.count(i) > 1])

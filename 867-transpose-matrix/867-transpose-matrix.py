@@ -1,6 +1,7 @@
 class Solution:
 
-    def transpose(self, matrix: List[List[int]]) -> List[List[int]]:
+    @staticmethod
+    def transpose(matrix: List[List[int]]) -> List[List[int]]:
         m = len(matrix)
         n = len(matrix[0])
         mat = [[0 for i in range(m)] for j in range(n)]

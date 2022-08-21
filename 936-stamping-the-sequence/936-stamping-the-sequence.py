@@ -1,6 +1,7 @@
 class Solution:
 
-    def movesToStamp(self, stamp: str, target: str) -> List[int]:
+    @staticmethod
+    def movesToStamp(stamp: str, target: str) -> List[int]:
         n, m = len(stamp), len(target)
         s = {
             "#" * i + stamp[i:n - j] + "#" * j

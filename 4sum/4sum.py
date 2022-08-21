@@ -1,6 +1,7 @@
 class Solution:
 
-    def fourSum(self, nums: List[int], target: int) -> List[List[int]]:
+    @staticmethod
+    def fourSum(nums: List[int], target: int) -> List[List[int]]:
 
         def kSum(nums: List[int], target: int, k: int) -> List[List[int]]:
             res = []
