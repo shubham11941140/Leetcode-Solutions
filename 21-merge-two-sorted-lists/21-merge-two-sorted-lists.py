@@ -13,7 +13,8 @@ class Solution:
         root = temp
         return root
 
-    def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+    def mergeTwoLists(self, list1: Optional[ListNode],
+                      list2: Optional[ListNode]) -> Optional[ListNode]:
 
         a = []
 
@@ -27,15 +28,13 @@ class Solution:
 
         while list1 is not None:
             a.append(list1.val)
-            list1 = list1.next 
+            list1 = list1.next
 
         while list2 is not None:
             a.append(list2.val)
-            list2 = list2.next      
+            list2 = list2.next
 
         root = None
         for i in reversed(range(len(a))):
             root = self.insert(root, a[i])
         return root
-
-

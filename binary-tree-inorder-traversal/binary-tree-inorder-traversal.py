@@ -12,8 +12,8 @@ class Solution:
         self.inorder(root.left, a)
         a.append(root.val)
         self.inorder(root.right, a)
+
     def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
         a = []
         self.inorder(root, a)
         return a
-

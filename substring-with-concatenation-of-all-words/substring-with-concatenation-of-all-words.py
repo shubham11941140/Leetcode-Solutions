@@ -19,12 +19,12 @@ class Solution:
         ub = max(lwords)
         ans = []
         for i in range(len(s)):
-            b = s[i:i+tlen]
+            b = s[i:i + tlen]
             idx = 0
             check = []
-            while idx <= tlen:  
+            while idx <= tlen:
                 Flag = False
-                #print(idx)
+                # print(idx)
                 for j in range(lb, ub + 1):
                     c = b[idx:idx + j]
                     if c in words:
@@ -37,7 +37,3 @@ class Solution:
             if sorted(check) == words and self.freq(check) == f:
                 ans.append(i)
         return ans
-
-
-
-

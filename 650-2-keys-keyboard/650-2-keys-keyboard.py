@@ -17,6 +17,3 @@ class Solution:
                     dp[i] = min(dp[i], dp[j] + 1 + (i // j) - 1)
         print(dp)
         return dp[n]
-
-
-

@@ -6,12 +6,11 @@
 #         self.right = right
 class Solution:
 
-
     def roottoleafsum(self, root, a, val):
         val += chr(ord("a") + root.val)
         if root.left is None and root.right is None:
             a.append(val)
-        else:            
+        else:
             if root.left:
                 self.roottoleafsum(root.left, a, val)
             if root.right:
@@ -22,5 +21,3 @@ class Solution:
         val = ""
         self.roottoleafsum(root, a, val)
         return min([i[::-1] for i in a])
-
-
