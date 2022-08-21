@@ -24,7 +24,7 @@ class Solution:
             if visited[i] == -1:
                 visited[i] = 1
                 f = self.dfs(v, graph, visited, i)                
-                if f == False:
+                if f is False:
                     return False       
         return True
             

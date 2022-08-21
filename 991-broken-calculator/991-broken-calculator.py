@@ -22,7 +22,7 @@ class Solution:
         ans = [[] for i in range(40050)]
         ans[0].append(target)
         steps = self.depth_iterate(startValue, target, ans)
-        if steps == None:
+        if steps is None:
             p = ceil(target / 2)
             if target % 2:
                 p -= 1
