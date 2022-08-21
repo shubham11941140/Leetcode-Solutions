@@ -4,6 +4,7 @@
 #         self.val = val
 #         self.next = next
 class Solution:
+
     def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
         r = head
         while head is not None:
@@ -13,6 +14,3 @@ class Solution:
                 head = head.next
             c.next = head
         return r
-            
-            
-        
