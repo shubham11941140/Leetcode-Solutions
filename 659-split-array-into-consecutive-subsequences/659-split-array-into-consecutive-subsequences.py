@@ -17,7 +17,6 @@ class Solution:
                 else:
                     d[val] = [1]
         for i in d:
-            if d[i]:
-                if d[i][0] < 3:
-                    return False
+            if d[i] and d[i][0] < 3:
+                return False
         return True             

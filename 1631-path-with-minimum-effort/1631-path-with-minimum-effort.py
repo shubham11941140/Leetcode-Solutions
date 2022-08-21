@@ -12,11 +12,13 @@ class Solution:
                 return True
             move = [(i - 1, j), (i + 1, j), (i, j - 1), (i, j + 1)]
             for x, y in move:
-                if self.valid(x, y, n, m):               
-                    if not v[x][y]:
-                        if abs(a[i][j] - a[x][y]) <= effort:
-                            v[x][y] = True
-                            q.append((x, y))
+                if (
+                    self.valid(x, y, n, m)
+                    and not v[x][y]
+                    and abs(a[i][j] - a[x][y]) <= effort
+                ):
+                    v[x][y] = True
+                    q.append((x, y))
         return False                                                                                                                    
     def minimumEffortPath(self, heights: List[List[int]]) -> int:
         n = len(heights)

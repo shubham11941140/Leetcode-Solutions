@@ -29,9 +29,8 @@ class Solution:
             if word == endWord:
                 return level + 1
             for i in range(k):
-                if not visited[i]:
-                    if self.distone(word, wordList[i]):
-                        visited[i] = True
-                        p = (wordList[i], level + 1)
-                        q.append(p)
+                if not visited[i] and self.distone(word, wordList[i]):
+                    visited[i] = True
+                    p = (wordList[i], level + 1)
+                    q.append(p)
         return 0

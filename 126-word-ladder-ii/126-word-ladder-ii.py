@@ -34,10 +34,9 @@ class Solution:
             if word == endWord:
                 break
             for i in range(k):
-                if not visited[i]:
-                    if self.distone(word, wordList[i]):
-                        visited[i] = True
-                        q.append((wordList[i], level + 1))
+                if not visited[i] and self.distone(word, wordList[i]):
+                    visited[i] = True
+                    q.append((wordList[i], level + 1))
         while [] in adj:
             adj.remove([])
         self.a = adj.copy()
