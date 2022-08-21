@@ -1,7 +1,8 @@
 class Solution:
+
     def canPartition(self, nums: List[int]) -> bool:
-        # SOlve using DP 
-        #Subset suim proble,
+        # SOlve using DP
+        # Subset suim proble,
         n = len(nums)
         s = sum(nums)
         if s % 2:

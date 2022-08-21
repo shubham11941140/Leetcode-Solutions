@@ -1,5 +1,5 @@
 class Solution:
-    
+
     def rec(self, cursum, target, a, cand, n, ans):
         if cursum == target:
             b = sorted(a.copy())
@@ -13,11 +13,11 @@ class Solution:
                 self.rec(cursum, target, a, cand, n, ans)
             cursum -= cand[i]
             a.pop()
-    
-    def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
+
+    def combinationSum(self, candidates: List[int],
+                       target: int) -> List[List[int]]:
         n = len(candidates)
         ans = []
         a = []
         self.rec(0, target, a, candidates, n, ans)
         return ans
-        
