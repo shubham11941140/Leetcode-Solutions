@@ -9,10 +9,10 @@ class Solution:
                     d[j] = k
                     k += 1
         adj = [[] for i in range(k)]
-        for i in range(len(values)):
+        for i, item in enumerate(values):
             a, b = equations[i]
-            adj[d[a]].append([d[b], values[i]])
-            adj[d[b]].append([d[a], 1/values[i]])
+            adj[d[a]].append([d[b], item])
+            adj[d[b]].append([d[a], 1/item])
         ans = []
         for a, b in queries:
             if a not in d or b not in d:

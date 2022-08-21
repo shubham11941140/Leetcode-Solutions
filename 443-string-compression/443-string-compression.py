@@ -20,8 +20,8 @@ class Solution:
             if j > 1:
                 b += list(str(j))
                 
-        for i in range(len(b)):
-            chars[i] = b[i]
+        for i, item in enumerate(b):
+            chars[i] = item
             
         while len(chars) > len(b):
             chars.pop()

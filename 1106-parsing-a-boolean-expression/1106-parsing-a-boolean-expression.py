@@ -2,17 +2,17 @@ class Solution:
     def parseBoolExpr(self, expression: str) -> bool:
         opst = []        
         bst = []
-        for i in range(len(expression)):
-            if expression[i] in ['!', '|', '&']:
-                opst.append(expression[i])
-            elif expression[i] in ['(', 't', 'f']:
-                if expression[i] == 't':
+        for i, item in enumerate(expression):
+            if item in ['!', '|', '&']:
+                opst.append(item)
+            elif item in ['(', 't', 'f']:
+                if item == 't':
                     bst.append(True)
-                elif expression[i] == 'f':
+                elif item == 'f':
                     bst.append(False)                    
                 else:
-                    bst.append(expression[i])
-            elif expression[i] == ')':
+                    bst.append(item)
+            elif item == ')':
                 op = opst.pop()
                 ans = True
                 if op == '|':

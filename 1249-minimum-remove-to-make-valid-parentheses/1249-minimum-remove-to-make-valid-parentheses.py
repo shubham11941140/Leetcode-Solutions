@@ -2,10 +2,10 @@ class Solution:
     def minRemoveToMakeValid(self, s: str) -> str:
         os = []
         cs = []
-        for i in range(len(s)):
-            if s[i] == '(':
+        for i, item in enumerate(s):
+            if item == '(':
                 os.append(i)
-            elif s[i] == ')':
+            elif item == ')':
                 if os:
                     os.pop()
                 else:

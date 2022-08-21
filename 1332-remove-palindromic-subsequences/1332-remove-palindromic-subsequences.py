@@ -62,8 +62,8 @@ class Solution:
 
         ans = ""
 
-        for x in range(len(lcs)) :
-            ans += lcs[x]
+        for x, item in enumerate(lcs) :
+            ans += item
 
         return ans
 

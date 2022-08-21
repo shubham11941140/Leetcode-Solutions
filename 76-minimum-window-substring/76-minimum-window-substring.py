@@ -42,7 +42,7 @@ class Solution:
                 return ""
         f1 = Counter(s)
         f2 = Counter(t)
-        for i in range(len(s)):
-            if f2[s[i]] > f1[s[i]]:
+        for i, item in enumerate(s):
+            if f2[item] > f1[item]:
                 return ""            
         return self.solve(s, t)        

@@ -19,9 +19,9 @@ class Solution:
             if root.right:
                 q.append((root.right, level + 1))
         ans = []
-        for i in range(len(adj)):
-            if adj[i]:
-                ans.append(adj[i][::-1] if i % 2 else adj[i])
+        for i, item in enumerate(adj):
+            if item:
+                ans.append(item[::-1] if i % 2 else item)
         return ans
                 
             

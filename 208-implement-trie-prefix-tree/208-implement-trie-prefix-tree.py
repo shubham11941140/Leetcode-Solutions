@@ -6,8 +6,8 @@ class Trie:
 
     def insert(self, word: str) -> None:
         p = self
-        for i in range(len(word)):
-            idx = ord(word[i]) - ord('a')
+        for i, item in enumerate(word):
+            idx = ord(item) - ord('a')
             if not p.arr[idx]:
                 p.arr[idx] = Trie()   
             p = p.arr[idx]
@@ -15,8 +15,8 @@ class Trie:
         
     def search(self, word: str) -> bool:
         p = self
-        for i in range(len(word)):
-            idx = ord(word[i]) - ord('a')
+        for i, item in enumerate(word):
+            idx = ord(item) - ord('a')
             if p.arr[idx] is None:
                 return False
             p = p.arr[idx]            
@@ -24,8 +24,8 @@ class Trie:
         
     def startsWith(self, prefix: str) -> bool:
         p = self
-        for i in range(len(prefix)):
-            idx = ord(prefix[i]) - ord('a')
+        for i, item in enumerate(prefix):
+            idx = ord(item) - ord('a')
             if not p.arr[idx]:
                 return False
             p = p.arr[idx]            

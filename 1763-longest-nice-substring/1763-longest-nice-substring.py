@@ -2,8 +2,8 @@ class Solution:
 
     def check(self, a):
         h = list(set(a))
-        for i in range(len(h)):
-            if (h[i] == h[i].lower() and h[i].upper() not in h) or (h[i] == h[i].upper() and h[i].lower() not in h):
+        for i, item in enumerate(h):
+            if (item == item.lower() and item.upper() not in h) or (item == item.upper() and item.lower() not in h):
                 return False
         return True
 

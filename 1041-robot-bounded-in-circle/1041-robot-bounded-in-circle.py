@@ -7,8 +7,8 @@ class Solution:
         path = [(0, 0)]
         x = 0
         y = 0
-        for i in range(len(d)):
-            if d[i] == "G":
+        for i, item in enumerate(d):
+            if item == "G":
                 # Go 1 unit in that particualr iidrectons
                 if direction == "N":
                     y += 1
@@ -20,15 +20,15 @@ class Solution:
                     x -= 1
                 if (x, y) not in path:
                     path.append((x, y))
-            elif d[i] == "L":
+            elif item == "L":
                 didx = (didx + 3) % 4
-            elif d[i] == "R":
+            elif item == "R":
                 didx = (didx + 1) % 4
             direction = ad[didx]        
         j = path.copy()
         d = instructions
-        for i in range(len(d)):
-            if d[i] == "G":
+        for i, item in enumerate(d):
+            if item == "G":
                 if direction == "N":
                     y += 1
                 elif direction == "S":
@@ -39,9 +39,9 @@ class Solution:
                     x -= 1
                 if (x, y) not in path:
                     path.append((x, y))
-            elif d[i] == "L":
+            elif item == "L":
                 didx = (didx + 3) % 4
-            elif d[i] == "R":
+            elif item == "R":
                 didx = (didx + 1) % 4
             direction = ad[didx]              
         return j == path
