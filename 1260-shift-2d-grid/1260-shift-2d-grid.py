@@ -1,4 +1,5 @@
 class Solution:
+
     @staticmethod
     def shiftGrid(grid: List[List[int]], k: int) -> List[List[int]]:
         m = len(grid)

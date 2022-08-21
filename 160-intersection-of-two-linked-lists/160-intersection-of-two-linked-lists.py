@@ -4,6 +4,7 @@
 #         self.val = x
 #         self.next = None
 
+
 class Solution:
 
     @staticmethod
@@ -14,7 +15,8 @@ class Solution:
             head = head.next
         return c
 
-    def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> Optional[ListNode]:
+    def getIntersectionNode(self, headA: ListNode,
+                            headB: ListNode) -> Optional[ListNode]:
 
         la = self.length(headA)
         lb = self.length(headB)
@@ -40,7 +42,3 @@ class Solution:
             lb -= 1
 
         return None
-
-
-
-
