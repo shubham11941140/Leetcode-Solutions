@@ -1,4 +1,5 @@
 class Solution:
+
     def maxProduct(self, words: List[str]) -> int:
         n = len(words)
         s = [set(i) for i in words]
@@ -8,7 +9,5 @@ class Solution:
             for j in range(i + 1, n):
                 if s[i].intersection(s[j]) == set():
                     val = l[i] * l[j]
-                    ans = max(ans, val)                    
+                    ans = max(ans, val)
         return ans
-        
-        

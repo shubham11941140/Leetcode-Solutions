@@ -1,6 +1,7 @@
 class Solution:
+
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        s = [''.join(sorted(i)) for i in strs]
+        s = ["".join(sorted(i)) for i in strs]
         d = {}
         n = len(s)
         for i in range(n):
@@ -9,5 +10,3 @@ class Solution:
             else:
                 d[s[i]] = [strs[i]]
         return d.values()
-                
-        

@@ -1,4 +1,5 @@
 class Solution:
+
     def minPathSum(self, grid: List[List[int]]) -> int:
         n = len(grid)
         m = len(grid[0])
@@ -14,4 +15,3 @@ class Solution:
                 else:
                     dp[i][j] = min(dp[i][j - 1], dp[i - 1][j]) + grid[i][j]
         return dp[n - 1][m - 1]
-        

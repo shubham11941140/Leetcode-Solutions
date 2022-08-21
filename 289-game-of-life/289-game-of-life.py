@@ -1,9 +1,11 @@
 class Solution:
-    
+
     def nc(self, board, i, j, m, n):
-        a = [(x, y) for x in [(i - 1), i, (i + 1)] for y in [(j - 1), j, (j + 1)] if (x, y) != (i, j) and 0 <= x < m and 0 <= y < n]
+        a = [(x, y) for x in [(i - 1), i, (i + 1)]
+             for y in [(j - 1), j, (j + 1)]
+             if (x, y) != (i, j) and 0 <= x < m and 0 <= y < n]
         return len([1 for x, y in a if board[x][y]])
-    
+
     def gameOfLife(self, board: List[List[int]]) -> None:
         """
         Do not return anything, modify board in-place instead.
@@ -27,6 +29,3 @@ class Solution:
         for i in range(m):
             for j in range(n):
                 board[i][j] = upd[i][j]
-                
-            
-        
