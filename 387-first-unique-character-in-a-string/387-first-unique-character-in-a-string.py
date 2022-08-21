@@ -1,5 +1,8 @@
 from collections import Counter
+
+
 class Solution:
+
     def firstUniqChar(self, s: str) -> int:
         c = Counter(s)
         n = len(s)
@@ -7,4 +10,3 @@ class Solution:
             if c[s[i]] == 1:
                 return i
         return -1
-        
