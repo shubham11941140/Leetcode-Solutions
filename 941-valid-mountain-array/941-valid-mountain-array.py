@@ -1,4 +1,5 @@
 class Solution:
+
     def validMountainArray(self, arr: List[int]) -> bool:
         i = 0
         n = len(arr)
@@ -19,4 +20,3 @@ class Solution:
             else:
                 break
         return i == n - 1 and f1 and f2
-        
