@@ -8,6 +8,7 @@ class Node:
         self.next = next
 """
 
+
 class Solution:
 
     def insert(self, root, item):
@@ -17,9 +18,9 @@ class Solution:
         temp.right = item.right
         temp.next = root
         root = temp
-        return root                
-    
-    def connect(self, root: 'Node') -> 'Node':
+        return root
+
+    def connect(self, root: "Node") -> "Node":
         if not root:
             return
         head = root
@@ -33,7 +34,7 @@ class Solution:
             if root.left:
                 q.append((root.left, level + 1))
             if root.right:
-                q.append((root.right, level + 1))                           
+                q.append((root.right, level + 1))
         for level in range(7000):
             if adj[level]:
                 r = None
@@ -47,4 +48,3 @@ class Solution:
             else:
                 break
         return head
-        

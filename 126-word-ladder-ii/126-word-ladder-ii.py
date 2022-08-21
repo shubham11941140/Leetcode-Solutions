@@ -1,8 +1,8 @@
 class Solution:
-    
+
     def distone(self, a, b):
         return [1 for i in range(self.wl) if a[i] != b[i]] == [1]
-    
+
     def produce_all(self, idx, temp):
         t = temp[-1]
         if t == self.b:
@@ -13,8 +13,9 @@ class Solution:
         for i in self.a[idx]:
             if self.distone(t, i):
                 self.produce_all(idx - 1, temp + [i])
-            
-    def findLadders(self, beginWord: str, endWord: str, wordList: List[str]) -> List[List[str]]:
+
+    def findLadders(self, beginWord: str, endWord: str,
+                    wordList: List[str]) -> List[List[str]]:
         k = len(wordList)
         self.wl = len(beginWord)
         if endWord not in wordList:
@@ -30,13 +31,13 @@ class Solution:
             adj[level].append(word)
             if level > 100:
                 return []
-            if word == endWord:                
-                break           
+            if word == endWord:
+                break
             for i in range(k):
-                if not visited[i]:                    
+                if not visited[i]:
                     if self.distone(word, wordList[i]):
                         visited[i] = True
-                        q.append((wordList[i], level + 1))                
+                        q.append((wordList[i], level + 1))
         while [] in adj:
             adj.remove([])
         self.a = adj.copy()
