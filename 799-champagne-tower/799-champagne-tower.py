@@ -1,8 +1,7 @@
 class Solution:
 
     @staticmethod
-    def champagneTower(poured: int, query_row: int,
-                       query_glass: int) -> float:
+    def champagneTower(poured: int, query_row: int, query_glass: int) -> float:
         # print(inorder)
 
         # Store all child in an array
