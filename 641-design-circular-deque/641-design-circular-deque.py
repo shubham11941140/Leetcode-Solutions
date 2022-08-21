@@ -17,13 +17,13 @@ class MyCircularDeque:
         return False            
 
     def deleteFront(self) -> bool:
-        if len(self.a):
+        if self.a:
             self.a.pop(0)
             return True
         return False
         
     def deleteLast(self) -> bool:
-        if len(self.a):
+        if self.a:
             self.a.pop()
             return True
         return False

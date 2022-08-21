@@ -18,7 +18,7 @@ class FrontMiddleBackQueue:
         return self.a.pop(0) if self.a else -1                            
 
     def popMiddle(self) -> int:
-        if len(self.a):
+        if self.a:
             return self.a.pop((len(self.a) - 1) // 2)        
         return -1
         

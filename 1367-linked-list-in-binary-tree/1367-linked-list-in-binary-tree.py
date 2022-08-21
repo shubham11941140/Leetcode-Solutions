@@ -14,7 +14,7 @@ class Solution:
     def subPathCheck(self, node, llHead):
         curr = llHead
         q2 = [[node, curr]]
-        while len(q2):
+        while q2:
             newNode, llNode = q2.pop(0)
             if newNode.val == llNode.val:
                 if llNode.next is None:
@@ -28,7 +28,7 @@ class Solution:
     def isSubPath(self, head: Optional[ListNode],
                   root: Optional[TreeNode]) -> bool:
         q = [root]
-        while len(q):
+        while q:
             tempNode = q.pop(0)
             if tempNode is not None:
                 if tempNode.val == head.val:
