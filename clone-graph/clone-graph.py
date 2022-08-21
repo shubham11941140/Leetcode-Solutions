@@ -1,5 +1,6 @@
 class Solution:
-    def cloneGraph(self, node: 'Node') -> 'Node':
+
+    def cloneGraph(self, node: "Node") -> "Node":
         if not node:
             return None
         # 1. Find all the nodes
@@ -22,12 +23,12 @@ class Solution:
                     continue
                 visited.add(neighbor)
                 queue.append(neighbor)
-        return list(visited)   
+        return list(visited)
 
     def cloneAllNodes(self, allNodes):
         mapping = {}
         for node in allNodes:
-            mapping[node] = Node(node.val) 
+            mapping[node] = Node(node.val)
         return mapping
 
     def cloneAllSides(self, mapping, allNodes):
