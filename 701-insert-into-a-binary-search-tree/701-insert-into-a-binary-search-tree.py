@@ -13,7 +13,8 @@ class Solution:
         a.append(root.val)
         self.inorder(root.right, a)
 
-    def reconstruct(self, a, n):
+    @staticmethod
+    def reconstruct(a, n):
         c = TreeNode()
         b = c
         for i in range(n):

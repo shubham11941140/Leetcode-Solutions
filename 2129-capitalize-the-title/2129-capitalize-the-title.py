@@ -1,6 +1,7 @@
 class Solution:
 
-    def capitalizeTitle(self, title: str) -> str:
+    @staticmethod
+    def capitalizeTitle(title: str) -> str:
         a = title.split()
         ans = []
         for i in a:

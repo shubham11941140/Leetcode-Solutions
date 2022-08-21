@@ -1,6 +1,7 @@
 class Solution:
 
-    def canPlaceFlowers(self, flowerbed: List[int], n: int) -> bool:
+    @staticmethod
+    def canPlaceFlowers(flowerbed: List[int], n: int) -> bool:
         flowerbed = [0] + flowerbed + [0]
         c = 0
         for i in range(1, len(flowerbed) - 1):

@@ -3,7 +3,8 @@ class MagicDictionary:
     def __init__(self):
         self.a = []
 
-    def diff(self, a, b):
+    @staticmethod
+    def diff(a, b):
         if len(a) == len(b):
             n = len(a)
             l = len([1 for i in range(n) if a[i] != b[i]])

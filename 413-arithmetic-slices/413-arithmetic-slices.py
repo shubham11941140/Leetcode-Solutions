@@ -1,9 +1,11 @@
 class Solution:
 
-    def sn(self, n):
+    @staticmethod
+    def sn(n):
         return (n * (n + 1)) // 2
 
-    def numberOfArithmeticSlices(self, nums: List[int]) -> int:
+    @staticmethod
+    def numberOfArithmeticSlices(nums: List[int]) -> int:
         n = len(nums)
         b = [nums[i + 1] - nums[i] for i in range(n - 1)]
         li = 0

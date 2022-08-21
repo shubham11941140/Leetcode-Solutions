@@ -1,6 +1,7 @@
 class Solution:
 
-    def nc(self, board, i, j, m, n):
+    @staticmethod
+    def nc(board, i, j, m, n):
         a = [(x, y) for x in [(i - 1), i, (i + 1)]
              for y in [(j - 1), j, (j + 1)]
              if (x, y) != (i, j) and 0 <= x < m and 0 <= y < n]

@@ -1,6 +1,7 @@
 class Solution:
 
-    def findMaxLength(self, nums: List[int]) -> int:
+    @staticmethod
+    def findMaxLength(nums: List[int]) -> int:
         c0 = 0
         c1 = 0
         n = len(nums)

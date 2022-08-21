@@ -1,6 +1,7 @@
 class Solution:
 
-    def Counter(self, arr):
+    @staticmethod
+    def Counter(arr):
         d = {}
         for i in arr:
             if i in d:

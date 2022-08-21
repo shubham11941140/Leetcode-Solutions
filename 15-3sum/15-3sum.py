@@ -1,6 +1,7 @@
 class Solution:
 
-    def compute(self, nums, n, ans):
+    @staticmethod
+    def compute(nums, n, ans):
         for i in range(n):
             val = -(nums[i])
             left = i + 1

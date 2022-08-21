@@ -6,7 +6,8 @@
 #         self.right = right
 class Solution:
 
-    def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
+    @staticmethod
+    def rightSideView(root: Optional[TreeNode]) -> List[int]:
         if root is None:
             return []
         q = [(root, 0)]

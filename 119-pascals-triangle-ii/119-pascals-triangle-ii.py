@@ -1,6 +1,7 @@
 class Solution:
 
-    def getRow(self, rowIndex: int) -> List[int]:
+    @staticmethod
+    def getRow(rowIndex: int) -> List[int]:
         a = [[] for i in range(35)]
         a[0].append(1)
         for i in range(1, 35):

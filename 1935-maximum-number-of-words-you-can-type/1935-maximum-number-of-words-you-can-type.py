@@ -1,6 +1,7 @@
 class Solution:
 
-    def canBeTypedWords(self, text: str, brokenLetters: str) -> int:
+    @staticmethod
+    def canBeTypedWords(text: str, brokenLetters: str) -> int:
         l = text.split()
         c = 0
         for i in l:

@@ -1,5 +1,6 @@
 class Solution:        
-    def maximumUniqueSubarray(self, nums: List[int]) -> int:
+    @staticmethod
+    def maximumUniqueSubarray(nums: List[int]) -> int:
         n = len(nums)
         pre = [0 for i in range(n)]
         pre[0] = nums[0]

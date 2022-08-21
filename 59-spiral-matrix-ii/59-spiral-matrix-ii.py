@@ -1,6 +1,7 @@
 class Solution:
 
-    def generateMatrix(self, n: int) -> List[List[int]]:
+    @staticmethod
+    def generateMatrix(n: int) -> List[List[int]]:
         mat = [[0 for i in range(n)] for j in range(n)]
         v = [[False for i in range(n)] for j in range(n)]
         c = 1
