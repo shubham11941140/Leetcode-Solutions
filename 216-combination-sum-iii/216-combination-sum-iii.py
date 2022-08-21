@@ -11,8 +11,7 @@ class Solution:
             if i not in b:
                 if i > n:
                     break
-                else:
-                    self.rec(k - 1, n - i, b + [i])                
+                self.rec(k - 1, n - i, b + [i])                
     
     def combinationSum3(self, k: int, n: int) -> List[List[int]]:
         b = []

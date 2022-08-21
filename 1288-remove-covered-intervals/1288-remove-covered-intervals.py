@@ -15,7 +15,7 @@ class Solution:
                 if self.can(intervals[i], intervals[i + 1]):
                     intervals.remove(intervals[i + 1])
                     break
-                elif self.can(intervals[i + 1], intervals[i]):
+                if self.can(intervals[i + 1], intervals[i]):
                     intervals.remove(intervals[i])
                     break
             nex = len(intervals)

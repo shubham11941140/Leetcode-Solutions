@@ -12,8 +12,7 @@ class Solution:
             if b != -1:
                 if i < b:
                     break
-                else:
-                    self.pall(i, k - 1)
+                self.pall(i, k - 1)
             else:
                 self.pall(i, k - 1)
 
