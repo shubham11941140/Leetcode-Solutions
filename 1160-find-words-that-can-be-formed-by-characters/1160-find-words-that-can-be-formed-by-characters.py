@@ -1,6 +1,7 @@
 class Solution:
 
-    def countCharacters(self, words: List[str], chars: str) -> int:
+    @staticmethod
+    def countCharacters(words: List[str], chars: str) -> int:
         ans = 0
         for i, item in enumerate(words):
             s = list(chars).copy()

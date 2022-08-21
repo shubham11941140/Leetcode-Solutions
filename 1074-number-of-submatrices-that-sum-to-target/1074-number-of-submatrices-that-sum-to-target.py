@@ -1,6 +1,7 @@
 class Solution:
 
-    def numSubmatrixSumTarget(self, matrix: List[List[int]],
+    @staticmethod
+    def numSubmatrixSumTarget(matrix: List[List[int]],
                               target: int) -> int:
         m, n = len(matrix), len(matrix[0])
         ms = [[0 for _ in range(n)] for _ in range(m)]

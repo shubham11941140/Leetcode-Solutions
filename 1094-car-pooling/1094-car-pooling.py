@@ -1,6 +1,7 @@
 class Solution:
 
-    def carPooling(self, trips: List[List[int]], capacity: int) -> bool:
+    @staticmethod
+    def carPooling(trips: List[List[int]], capacity: int) -> bool:
         val = [0] * 1005
         for i, item in enumerate(trips):
             for j in range(item[1], item[2]):

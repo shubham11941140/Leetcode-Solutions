@@ -5,7 +5,8 @@
 #         self.next = next
 class Solution:
 
-    def isPalindrome(self, head: Optional[ListNode]) -> bool:
+    @staticmethod
+    def isPalindrome(head: Optional[ListNode]) -> bool:
         a = []
         while head is not None:
             a.append(head.val)

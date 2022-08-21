@@ -1,6 +1,7 @@
 class Solution:
 
-    def rep(self, n):
+    @staticmethod
+    def rep(n):
         return sum([pow(int(i), 2) for i in str(n)])
 
     def isHappy(self, n: int) -> bool:

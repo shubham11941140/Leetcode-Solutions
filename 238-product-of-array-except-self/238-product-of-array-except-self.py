@@ -1,6 +1,7 @@
 class Solution:
 
-    def productExceptSelf(self, nums: List[int]) -> List[int]:
+    @staticmethod
+    def productExceptSelf(nums: List[int]) -> List[int]:
         if nums.count(0) > 1:
             return [0 for i in nums]
         if nums.count(0) == 1:

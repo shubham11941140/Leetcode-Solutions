@@ -3,7 +3,8 @@ from collections import Counter
 
 class Solution:
 
-    def minSetSize(self, arr: List[int]) -> int:
+    @staticmethod
+    def minSetSize(arr: List[int]) -> int:
         n = len(arr)
         sc = dict(
             sorted(Counter(arr).items(),

@@ -1,6 +1,7 @@
 class Solution:
 
-    def long(self, arr, n, k):
+    @staticmethod
+    def long(arr, n, k):
         d = {}
         s = 0
         m = 0

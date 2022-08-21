@@ -1,6 +1,7 @@
 class Solution:
 
-    def maxProduct(self, words: List[str]) -> int:
+    @staticmethod
+    def maxProduct(words: List[str]) -> int:
         n = len(words)
         s = [set(i) for i in words]
         l = [len(i) for i in words]

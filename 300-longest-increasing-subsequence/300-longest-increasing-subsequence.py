@@ -3,7 +3,8 @@ from bisect import bisect_left
 
 class Solution:
 
-    def lengthOfLIS(self, nums: List[int]) -> int:
+    @staticmethod
+    def lengthOfLIS(nums: List[int]) -> int:
         n = len(nums)
         t = [0 for i in range(n + 1)]
         l = 1

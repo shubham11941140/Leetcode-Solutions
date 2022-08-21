@@ -1,6 +1,7 @@
 class Solution:
 
-    def tribonacci(self, n: int) -> int:
+    @staticmethod
+    def tribonacci(n: int) -> int:
         a = [0 for i in range(50 + 1)]
         a[0] = 0
         a[1] = 1

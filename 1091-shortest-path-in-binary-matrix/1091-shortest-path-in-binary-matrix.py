@@ -1,6 +1,7 @@
 class Solution:
 
-    def shortestPathBinaryMatrix(self, grid: List[List[int]]) -> int:
+    @staticmethod
+    def shortestPathBinaryMatrix(grid: List[List[int]]) -> int:
         n = len(grid)
         m = len(grid[0])                                
         dp = [[-1 for j in range(m)] for i in range(n)]

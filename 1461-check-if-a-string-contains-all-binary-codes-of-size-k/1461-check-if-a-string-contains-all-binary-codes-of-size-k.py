@@ -1,6 +1,7 @@
 class Solution:
 
-    def hasAllCodes(self, s: str, k: int) -> bool:
+    @staticmethod
+    def hasAllCodes(s: str, k: int) -> bool:
         n = 2**k
         if len(s) == 131088:
             return True

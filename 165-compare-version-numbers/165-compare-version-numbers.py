@@ -1,6 +1,7 @@
 class Solution:
 
-    def compareVersion(self, version1: str, version2: str) -> int:
+    @staticmethod
+    def compareVersion(version1: str, version2: str) -> int:
         a1 = [int(i) for i in version1.split(".")]
         a2 = [int(i) for i in version2.split(".")]
         diff = abs(len(a2) - len(a1))

@@ -3,7 +3,8 @@ from random import choice
 
 class Solution:
 
-    def letterCombinations(self, digits: str) -> List[str]:
+    @staticmethod
+    def letterCombinations(digits: str) -> List[str]:
         if not digits:
             return []
         a = [[] for i in range(10)]

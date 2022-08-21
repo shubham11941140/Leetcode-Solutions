@@ -1,5 +1,6 @@
 class Solution:
-    def containsNearbyAlmostDuplicate(self, nums: List[int], k: int, t: int) -> bool:        
+    @staticmethod
+    def containsNearbyAlmostDuplicate(nums: List[int], k: int, t: int) -> bool:        
         n = len(nums)
         if n == 20000 and k == 6387:
             return True

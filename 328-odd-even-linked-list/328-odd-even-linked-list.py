@@ -5,14 +5,16 @@
 #         self.next = next
 class Solution:
 
-    def toarr(self, head):
+    @staticmethod
+    def toarr(head):
         a = []
         while head:
             a.append(head.val)
             head = head.next
         return a
 
-    def insert(self, root, val):
+    @staticmethod
+    def insert(root, val):
         temp = ListNode()
         temp.val = val
         temp.next = root

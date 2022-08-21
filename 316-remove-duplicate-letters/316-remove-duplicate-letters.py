@@ -1,6 +1,7 @@
 class Solution:
 
-    def removeDuplicateLetters(self, s: str) -> str:
+    @staticmethod
+    def removeDuplicateLetters(s: str) -> str:
         # Check last occurrence of char
         stack = []
         last = {}

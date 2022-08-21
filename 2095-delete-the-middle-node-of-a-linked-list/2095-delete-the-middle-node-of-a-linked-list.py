@@ -5,7 +5,8 @@
 #         self.next = next
 class Solution:
 
-    def getlen(self, head):
+    @staticmethod
+    def getlen(head):
         l = 0
         while head is not None:
             l += 1

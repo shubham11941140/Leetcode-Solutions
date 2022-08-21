@@ -1,6 +1,7 @@
 class Solution:
 
-    def minimizeTheDifference(self, mat: List[List[int]], target: int) -> int:
+    @staticmethod
+    def minimizeTheDifference(mat: List[List[int]], target: int) -> int:
         n = len(mat)
         m = len(mat[0])
         s = sum([max(i) for i in mat])
