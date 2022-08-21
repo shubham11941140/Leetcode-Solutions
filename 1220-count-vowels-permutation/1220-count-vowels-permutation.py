@@ -1,6 +1,7 @@
 class Solution:
 
-    def countVowelPermutation(self, n: int) -> int:
+    @staticmethod
+    def countVowelPermutation(n: int) -> int:
         M = 10**9 + 7
         dp = [[0 for i in range(5)] for i in range(n)]
         for j in range(5):

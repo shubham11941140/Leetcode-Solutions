@@ -1,6 +1,7 @@
 class Solution:
 
-    def findAnagrams(self, s: str, p: str) -> List[int]:
+    @staticmethod
+    def findAnagrams(s: str, p: str) -> List[int]:
         n = len(s)
         k = len(p)
         p = sorted(list(p))

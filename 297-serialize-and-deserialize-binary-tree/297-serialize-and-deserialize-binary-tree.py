@@ -10,7 +10,8 @@ tree = None
 
 class Codec:
 
-    def serialize(self, root):
+    @staticmethod
+    def serialize(root):
         """Encodes a tree to a single string.
 
         :type root: TreeNode
@@ -20,7 +21,8 @@ class Codec:
         tree = root
         return ""
 
-    def deserialize(self, data):
+    @staticmethod
+    def deserialize(data):
         """Decodes your encoded data to tree.
 
         :type data: str

@@ -1,6 +1,7 @@
 class Solution:
 
-    def findMinArrowShots(self, points: List[List[int]]) -> int:
+    @staticmethod
+    def findMinArrowShots(points: List[List[int]]) -> int:
         points.sort(key=lambda x: x[1])
         n = len(points)
         i = 0

@@ -1,6 +1,7 @@
 class Solution:
 
-    def minimumTotal(self, triangle: List[List[int]]) -> int:
+    @staticmethod
+    def minimumTotal(triangle: List[List[int]]) -> int:
         dp = [[10**10 for j in i] for i in triangle]
         dp[0][0] = triangle[0][0]
         n = len(triangle)

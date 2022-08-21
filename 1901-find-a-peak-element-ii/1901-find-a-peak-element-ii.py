@@ -1,6 +1,7 @@
 class Solution:
 
-    def check(self, i, j, n, m):
+    @staticmethod
+    def check(i, j, n, m):
         return 0 <= i < n and 0 <= j < m
 
     def findPeakGrid(self, mat: List[List[int]]) -> List[int]:

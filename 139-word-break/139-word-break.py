@@ -1,6 +1,7 @@
 class Solution:
 
-    def wordBreak(self, s: str, wordDict: List[str]) -> List[str]:
+    @staticmethod
+    def wordBreak(s: str, wordDict: List[str]) -> List[str]:
         m = len(s)
         dp = [False] * (m + 1)
         dp[0] = True

@@ -1,6 +1,7 @@
 class Solution:
 
-    def isSubsequence(self, s: str, t: str) -> bool:
+    @staticmethod
+    def isSubsequence(s: str, t: str) -> bool:
         # solve using DP
         # Simple ARR traversal
         ns = len(s)

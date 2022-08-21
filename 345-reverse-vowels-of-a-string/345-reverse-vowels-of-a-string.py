@@ -1,6 +1,7 @@
 class Solution:
 
-    def reverseVowels(self, s: str) -> str:
+    @staticmethod
+    def reverseVowels(s: str) -> str:
         s = list(s)
         l = 0
         r = len(s) - 1

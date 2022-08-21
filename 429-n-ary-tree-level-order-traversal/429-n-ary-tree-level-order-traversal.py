@@ -9,7 +9,8 @@ class Node:
 
 class Solution:
 
-    def levelOrder(self, root: "Node") -> List[List[int]]:
+    @staticmethod
+    def levelOrder(root: "Node") -> List[List[int]]:
         if root is None:
             return []
         a = [[] for i in range(10**5)]

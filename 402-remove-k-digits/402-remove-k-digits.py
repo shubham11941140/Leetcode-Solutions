@@ -1,6 +1,7 @@
 class Solution:
 
-    def call(self, a, s, k):
+    @staticmethod
+    def call(a, s, k):
         h = 0
         for i in a:
             while i in s:
@@ -12,7 +13,8 @@ class Solution:
                 break
         return "".join(s)
 
-    def new(self, num, k):
+    @staticmethod
+    def new(num, k):
         s = list(num).copy()
         while k:
             if s[0] < s[1]:
@@ -22,7 +24,8 @@ class Solution:
             k -= 1
         return "".join(s)
 
-    def removeKdigits(self, num: str, k: int) -> str:
+    @staticmethod
+    def removeKdigits(num: str, k: int) -> str:
         st = []
         for n in num:
             while st and k and st[-1] > n:

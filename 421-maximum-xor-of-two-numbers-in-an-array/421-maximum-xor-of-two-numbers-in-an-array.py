@@ -1,6 +1,7 @@
 class Solution:
 
-    def findMaximumXOR(self, nums: List[int]) -> int:
+    @staticmethod
+    def findMaximumXOR(nums: List[int]) -> int:
         maxx = 0
         mask = 0
         n = len(nums)
