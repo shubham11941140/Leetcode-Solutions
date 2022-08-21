@@ -1,7 +1,7 @@
 class Solution:
     def movesToStamp(self, stamp: str, target: str) -> List[int]:
         n, m = len(stamp), len(target)
-        s = set(['#' * i + stamp[i:n - j] + '#' * j for i in range(n) for j in range(n - i)])
+        s = {'#' * i + stamp[i:n - j] + '#' * j for i in range(n) for j in range(n - i)}
         end = '#'*m
         r = []
         while target != end:
