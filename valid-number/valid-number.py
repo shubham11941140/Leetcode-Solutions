@@ -11,44 +11,39 @@ class Solution:
            
         if s in ['.', '+.', '-.'] or '.' not in s or s.count('.') > 1:
             return False
-        else:
-            idx = s.index('.')            
-            if not s[idx + 1:]:
-                s += '1'
-            if not s[:idx]:
-                s = '1' + s
-            print(s)
-            try:
-                idx = s.index('.')                
-                print(s[:idx])
-                valb = self.isint(s[:idx] + '1')
-                print(valb)
-                vala = self.isint(s[idx + 1:]) or self.checke(s[idx + 1:])
-                print(vala)
-                c = s[idx + 1:]
-                if c[0] in ['+', '-']:
-                    return False
-                if valb and vala:
-                    return True
-                else:
-                    return False
-            except:
-                return False  
-            
+        idx = s.index('.')            
+        if not s[idx + 1:]:
+            s += '1'
+        if not s[:idx]:
+            s = '1' + s
+        print(s)
+        try:
+            idx = s.index('.')                
+            print(s[:idx])
+            valb = self.isint(s[:idx] + '1')
+            print(valb)
+            vala = self.isint(s[idx + 1:]) or self.checke(s[idx + 1:])
+            print(vala)
+            c = s[idx + 1:]
+            if c[0] in ['+', '-']:
+                return False
+            if valb and vala:
+                return True
+            return False
+        except:
+            return False  
     def checke(self, s):
         if 'e' not in s or s in ['e', 'e.', '.e'] or s.count('e') > 1:
             return False
-        else:
-            idx = s.index('e')
-            try:
-                #print(s[:idx], s[idx + 1:])
-                valb = int(s[:idx])
-                vala = int(s[idx + 1:])
-                #print("H")
-                return True
-            except:
-                return False
-            
+        idx = s.index('e')
+        try:
+            #print(s[:idx], s[idx + 1:])
+            valb = int(s[:idx])
+            vala = int(s[idx + 1:])
+            #print("H")
+            return True
+        except:
+            return False
         
     def base(self, s):         
         if s.count('.') > 1 or s.count('e') > 1:

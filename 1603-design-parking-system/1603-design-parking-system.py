@@ -12,10 +12,10 @@ class ParkingSystem:
         if carType == 1 and self.b < self.big:
             self.b += 1
             return True
-        elif carType == 2 and self.m < self.medium:
+        if carType == 2 and self.m < self.medium:
             self.m += 1
             return True
-        elif carType == 3 and self.s < self.small:
+        if carType == 3 and self.s < self.small:
             self.s += 1
             return True                
         return False        

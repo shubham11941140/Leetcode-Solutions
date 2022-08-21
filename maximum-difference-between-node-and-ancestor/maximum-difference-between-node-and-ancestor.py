@@ -9,18 +9,16 @@ class Solution:
     def minimum(self, node):
         if node is None:
             return 10 ** 10
-        else:
-            l = self.minimum(node.left) if node.left else 10 ** 10
-            r = self.minimum(node.right) if node.right else 10 ** 10
-            return min(node.val, l, r)
+        l = self.minimum(node.left) if node.left else 10 ** 10
+        r = self.minimum(node.right) if node.right else 10 ** 10
+        return min(node.val, l, r)
         
     def maximum(self, node):
         if node is None:
             return -1
-        else:
-            l = self.maximum(node.left) if node.left else -1
-            r = self.maximum(node.right) if node.right else -1
-            return max(node.val, l, r)        
+        l = self.maximum(node.left) if node.left else -1
+        r = self.maximum(node.right) if node.right else -1
+        return max(node.val, l, r)        
         
     def diff(self, root, arr):
         if root.left is None and root.right is None:

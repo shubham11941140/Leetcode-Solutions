@@ -18,9 +18,8 @@ class Solution:
         self.l = len(matchsticks)
         if n % 4:
             return False
-        else:
-            self.k = n // 4
-            idx = 0
-            self.m = sorted(matchsticks, reverse = True)
-            return self.dfs(0, 0, 0, 0, idx)                                        
+        self.k = n // 4
+        idx = 0
+        self.m = sorted(matchsticks, reverse = True)
+        return self.dfs(0, 0, 0, 0, idx)                                        
         

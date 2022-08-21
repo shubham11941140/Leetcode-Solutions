@@ -4,6 +4,6 @@ class Solution:
             for j in i:
                 if j > target:
                     return False
-                elif j == target:
+                if j == target:
                     return True
         

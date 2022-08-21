@@ -7,7 +7,7 @@ class Solution:
             val = numbers[start] + numbers[end]
             if val == target:
                 return [start + 1, end + 1]
-            elif val < target:
+            if val < target:
                 start += 1
             elif val > target:
                 end -= 1

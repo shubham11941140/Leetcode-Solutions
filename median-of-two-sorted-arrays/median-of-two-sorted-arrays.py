@@ -4,6 +4,5 @@ class Solution:
         l = len(a) // 2 
         if len(a) % 2:
             return a[l]
-        else:
-            return (a[l] + a[l - 1]) / 2
+        return (a[l] + a[l - 1]) / 2
         

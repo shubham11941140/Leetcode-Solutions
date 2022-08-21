@@ -4,9 +4,9 @@ class Solution:
         f = [i for i in range(n - 1) if nums[i] > nums[i + 1]]
         if not f:
             return True
-        elif len(f) > 1:
+        if len(f) > 1:
             return False
-        elif len(f) == 1:
+        if len(f) == 1:
             nums1 = nums.copy()
             nums2 = nums.copy()
             nums1[f[0]] = nums1[f[0] + 1]

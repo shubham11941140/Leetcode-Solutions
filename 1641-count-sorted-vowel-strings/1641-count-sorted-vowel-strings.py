@@ -8,15 +8,14 @@ class Solution:
         if not k:
             self.c += 1
             return
-        else:
-            for i in self.a:
-                if b != -1:
-                    if i < b:
-                        break
-                    else:
-                        self.pall(i, k - 1)
+        for i in self.a:
+            if b != -1:
+                if i < b:
+                    break
                 else:
                     self.pall(i, k - 1)
+            else:
+                self.pall(i, k - 1)
     
     
     def countVowelStrings(self, n: int) -> int: 

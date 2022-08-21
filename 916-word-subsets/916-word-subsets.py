@@ -6,7 +6,7 @@ class Solution:
         for i in b:
             if i not in a:
                 return False
-            elif b[i] > a[i]:
+            if b[i] > a[i]:
                 return False
         return True
         

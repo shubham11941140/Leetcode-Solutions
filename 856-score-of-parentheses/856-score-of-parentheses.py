@@ -14,8 +14,7 @@ class Solution:
             return 1        
         if len(s) > 2 and self.check(s[1:len(s) - 1]):
             return 2 * self.scoreOfParentheses(s[1:len(s) - 1])        
-        else:
-            for i in range(1, len(s) - 1):
-                if self.check(s[:i]) and self.check(s[i:]):
-                    return self.scoreOfParentheses(s[:i]) + self.scoreOfParentheses(s[i:])
+        for i in range(1, len(s) - 1):
+            if self.check(s[:i]) and self.check(s[i:]):
+                return self.scoreOfParentheses(s[:i]) + self.scoreOfParentheses(s[i:])
         

@@ -6,9 +6,8 @@ class Solution:
         # Check at 1 and n - 1
         if len(nums) == 1:
             return 0
-        else:
-            if nums[0] > nums[1]:
-                return 0
-            elif nums[-2] < nums[-1]:
-                return len(nums) - 1
+        if nums[0] > nums[1]:
+            return 0
+        if nums[-2] < nums[-1]:
+            return len(nums) - 1
         

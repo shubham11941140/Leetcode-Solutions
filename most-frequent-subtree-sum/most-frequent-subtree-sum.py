@@ -10,18 +10,14 @@ class Solution:
     def ssum(self, root):
         if root is None:
             return 0
-        else:
-            return root.val + self.ssum(root.left) + self.ssum(root.right)
+        return root.val + self.ssum(root.left) + self.ssum(root.right)
     
     def all(self, root, a):
         if root is None:
             return
-        else:
-            a.append(self.ssum(root))
-            self.all(root.left, a)
-            self.all(root.right, a)    
-    
-            
+        a.append(self.ssum(root))
+        self.all(root.left, a)
+        self.all(root.right, a)    
     def findFrequentTreeSum(self, root: Optional[TreeNode]) -> List[int]:
         a = []
         self.all(root, a)

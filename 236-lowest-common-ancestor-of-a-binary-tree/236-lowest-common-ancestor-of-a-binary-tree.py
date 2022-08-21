@@ -34,10 +34,10 @@ class Solution:
         if (LP and RQ) or (LQ and RP):
             self.ansarr.append(root)
             return root
-        elif LP and LQ:
+        if LP and LQ:
             self.ansarr.append(root.left)
             return self.call(root.left, p, q)
-        elif RP and RQ:
+        if RP and RQ:
             self.ansarr.append(root.right)
             return self.call(root.right, p, q)        
     

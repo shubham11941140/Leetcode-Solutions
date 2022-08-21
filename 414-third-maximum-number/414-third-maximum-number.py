@@ -3,6 +3,5 @@ class Solution:
         s = set(nums)
         if len(s) > 2:            
             return sorted(list(s))[-3]
-        else:
-            return max(s)
+        return max(s)
         

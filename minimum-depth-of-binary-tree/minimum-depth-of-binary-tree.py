@@ -9,10 +9,9 @@ class Solution:
     def replace(self, root):
         if root is None:
             return
-        else:
-            root.val = 1
-            self.replace(root.left)
-            self.replace(root.right)
+        root.val = 1
+        self.replace(root.left)
+        self.replace(root.right)
     
     def rtols(self, root, a, v):
         v += root.val

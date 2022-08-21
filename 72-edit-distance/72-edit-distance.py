@@ -5,9 +5,9 @@ class Solution:
         
         if not m and not n:
             return 0
-        elif not m:
+        if not m:
             return n
-        elif not n:
+        if not n:
             return m
         
         if m == 1 and n == 1:

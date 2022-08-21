@@ -13,8 +13,7 @@ class Solution:
             if a1[i] != a2[i]:
                 if a1[i] < a2[i]:
                     return -1
-                else:
-                    return 1
+                return 1
         return 0
             
         

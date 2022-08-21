@@ -55,6 +55,5 @@ class Solution:
             elif val >= 2 ** 31:
                 return 2 ** 31 - 1
             return val                        
-        else:
-            return 0
+        return 0
         

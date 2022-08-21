@@ -12,7 +12,7 @@ class Solution:
                 print(nums[i] + t)
                 if t == val:
                     return target
-                elif t < val:
+                if t < val:
                     #ans = max(ans, nums[i] + t)
                     left += 1
                 elif t > val:     

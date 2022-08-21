@@ -8,15 +8,14 @@ class Solution:
             if b not in ans:
                 ans.append(b)
             return
-        else:
-            for i in range(idx, n):
-                a.append(cand[i])
-                cursum += cand[i]
-                if cursum <= target:
-                    self.rec(cursum, target, a, cand, n, ans, idx + 1)
-                cursum -= cand[i]
-                a.pop()
-                
+        for i in range(idx, n):
+            a.append(cand[i])
+            cursum += cand[i]
+            if cursum <= target:
+                self.rec(cursum, target, a, cand, n, ans, idx + 1)
+            cursum -= cand[i]
+            a.pop()
+            
     def check(self, a, b):
         d1 = Counter(a)
         d2 = Counter(b)

@@ -11,7 +11,6 @@ class Solution:
             return 0
         if flag:
             return -1*ans
-        else:
-            return ans
+        return ans
         
         

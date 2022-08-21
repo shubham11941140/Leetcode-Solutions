@@ -19,14 +19,13 @@ class Solution:
         if k > 6:
             if str(n) == "1" * k:
                 return "9" * (k - 1)
-            else:
-                ans = 0
-                for i in range(k):
-                    if d[i] > 1:
-                        store = self.make_str(d[:i]) + str(d[i] - 1) + "9" * (k - i - 1)
-                        if self.obeys([int(z) for z in store]):
-                            ans = max(ans, int(store))
-                return ans
+            ans = 0
+            for i in range(k):
+                if d[i] > 1:
+                    store = self.make_str(d[:i]) + str(d[i] - 1) + "9" * (k - i - 1)
+                    if self.obeys([int(z) for z in store]):
+                        ans = max(ans, int(store))
+            return ans
         while n:
             # make list
             d = [int(i) for i in str(n)]

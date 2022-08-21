@@ -13,7 +13,7 @@ class Solution:
         root.right = self.trimBST(root.right, low, high)
         if root.val < low:
             return root.right
-        elif root.val > high:
+        if root.val > high:
             return root.left
         return root
         
