@@ -3,7 +3,9 @@ class Solution:
     def check(self, a):
         h = list(set(a))
         for i, item in enumerate(h):
-            if (item == item.lower() and item.upper() not in h) or (item == item.upper() and item.lower() not in h):
+            if (item == item.lower()
+                    and item.upper() not in h) or (item == item.upper()
+                                                   and item.lower() not in h):
                 return False
         return True
 

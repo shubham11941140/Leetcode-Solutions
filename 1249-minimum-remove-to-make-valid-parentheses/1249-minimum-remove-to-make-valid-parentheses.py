@@ -1,17 +1,14 @@
 class Solution:
+
     def minRemoveToMakeValid(self, s: str) -> str:
         os = []
         cs = []
         for i, item in enumerate(s):
-            if item == '(':
+            if item == "(":
                 os.append(i)
-            elif item == ')':
+            elif item == ")":
                 if os:
                     os.pop()
                 else:
                     cs.append(i)
-        return ''.join([s[i] for i in range(len(s)) if i not in os + cs])
-                
-            
-        
-        
+        return "".join([s[i] for i in range(len(s)) if i not in os + cs])
