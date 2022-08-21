@@ -1,8 +1,8 @@
 class Solution:
-    
+
     def remneg(self, a):
         return [i for i in a if i > 0]
-    
+
     def firstMissingPositive(self, nums: List[int]) -> int:
         nums = self.remneg(nums)
         if not nums:
@@ -14,11 +14,9 @@ class Solution:
             f = sorted(list(set(nums)))
             l = len(f)
             i = 0
-            #print(f)
+            # print(f)
             while i + 1 == f[i]:
                 i += 1
                 if i == l:
                     return l + 1
             return i + 1
-                    
-        

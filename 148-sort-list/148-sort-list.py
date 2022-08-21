@@ -4,14 +4,14 @@
 #         self.val = val
 #         self.next = next
 class Solution:
-    
-    def insert(self, root, b):     
+
+    def insert(self, root, b):
         newnode = ListNode()
         newnode.val = b
         newnode.next = root
-        root = newnode        
+        root = newnode
         return root
-    
+
     def sortList(self, head: Optional[ListNode]) -> Optional[ListNode]:
         b = []
         while head is not None:
@@ -22,4 +22,3 @@ class Solution:
         for i in b[::-1]:
             root = self.insert(root, i)
         return root
-        

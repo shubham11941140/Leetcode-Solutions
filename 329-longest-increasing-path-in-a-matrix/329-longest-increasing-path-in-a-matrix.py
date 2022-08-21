@@ -1,5 +1,5 @@
 class Solution:
-    
+
     @cache
     def rec(self, i, j, steps):
         if steps > self.ans:
@@ -7,9 +7,9 @@ class Solution:
         for x, y in [(i - 1, j), (i + 1, j), (i, j - 1), (i, j + 1)]:
             if 0 <= x < self.n and 0 <= y < self.m:
                 if self.l[x][y] > self.l[i][j]:
-                    self.rec(x, y, steps + 1)                    
-    
-    def longestIncreasingPath(self, matrix: List[List[int]]) -> int:        
+                    self.rec(x, y, steps + 1)
+
+    def longestIncreasingPath(self, matrix: List[List[int]]) -> int:
         self.n = len(matrix)
         self.m = len(matrix[0])
         self.l = matrix.copy()
@@ -24,4 +24,3 @@ class Solution:
             for j in range(self.m):
                 self.rec(i, j, 1)
         return self.ans
-        

@@ -5,25 +5,27 @@
 #         self.left = None
 #         self.right = None
 
-class Solution:                
-    
+
+class Solution:
+
     def present(self, root, key):
         if not root:
             return False
         if root.val == key:
             return True
-        return self.present(root.left, key) or self.present(root.right, key)    
-    
+        return self.present(root.left, key) or self.present(root.right, key)
+
     def findpath(self, root, p, ans1):
         if not root:
             return False
         if root.val == p.val:
             ans1.append(root)
             return True
-        if self.findpath(root.left, p, ans1) or self.findpath(root.right, p, ans1):
+        if self.findpath(root.left, p, ans1) or self.findpath(
+                root.right, p, ans1):
             ans1.append(root)
         return False
-    
+
     def call(self, root, p, q):
         if not root:
             return root
@@ -39,15 +41,16 @@ class Solution:
             return self.call(root.left, p, q)
         elif RP and RQ:
             self.ansarr.append(root.right)
-            return self.call(root.right, p, q)        
-    
-    def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':             
-        if max(p.val, q.val) < 1500:   
-            self.ansarr = []  
-            self.call(root, p, q)      
-            return root if not self.ansarr else self.ansarr[-1]    
-        
-        ansp = []        
+            return self.call(root.right, p, q)
+
+    def lowestCommonAncestor(self, root: "TreeNode", p: "TreeNode",
+                             q: "TreeNode") -> "TreeNode":
+        if max(p.val, q.val) < 1500:
+            self.ansarr = []
+            self.call(root, p, q)
+            return root if not self.ansarr else self.ansarr[-1]
+
+        ansp = []
         ansq = []
         self.findpath(root, p, ansp)
         self.findpath(root, q, ansq)
@@ -55,8 +58,5 @@ class Solution:
         ansq = ansq[::-1]
         i = 0
         while i < min(len(ansp), len(ansq)) and ansp[i].val == ansq[i].val:
-            i += 1 
-        return ansp[i - 1]        
-        
-        
-        
+            i += 1
+        return ansp[i - 1]

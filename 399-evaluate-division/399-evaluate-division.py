@@ -1,5 +1,7 @@
 class Solution:
-    def calcEquation(self, equations: List[List[str]], values: List[float], queries: List[List[str]]) -> List[float]:
+
+    def calcEquation(self, equations: List[List[str]], values: List[float],
+                     queries: List[List[str]]) -> List[float]:
         # Solve using connected componenets of a graph
         d = {}
         k = 0
@@ -12,7 +14,7 @@ class Solution:
         for i in range(len(values)):
             a, b = equations[i]
             adj[d[a]].append([d[b], values[i]])
-            adj[d[b]].append([d[a], 1/values[i]])
+            adj[d[b]].append([d[a], 1 / values[i]])
         ans = []
         for a, b in queries:
             if a not in d or b not in d:
@@ -31,7 +33,7 @@ class Solution:
                 flag = False
                 while q:
                     path = q.pop(0)
-                    last = path[- 1]
+                    last = path[-1]
                     if last == dst:
                         flag = True
                         break
@@ -48,5 +50,3 @@ class Solution:
                             f *= w
                 ans.append(f)
         return ans
-
-            

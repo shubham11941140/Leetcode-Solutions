@@ -5,6 +5,7 @@
 #         self.left = left
 #         self.right = right
 class Solution:
+
     def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
         if root is None:
             return []
@@ -16,6 +17,5 @@ class Solution:
             if root.left:
                 q.append((root.left, level + 1))
             if root.right:
-                q.append((root.right, level + 1))       
+                q.append((root.right, level + 1))
         return [i[-1] for i in adj if i]
-        

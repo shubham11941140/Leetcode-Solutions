@@ -1,4 +1,5 @@
 class Solution:
+
     def isPrefixString(self, s: str, words: List[str]) -> bool:
         check = ""
         for i in words:
@@ -6,4 +7,3 @@ class Solution:
             if check == s:
                 return True
         return False
-        

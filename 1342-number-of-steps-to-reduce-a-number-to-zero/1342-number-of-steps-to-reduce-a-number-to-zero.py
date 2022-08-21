@@ -1,4 +1,5 @@
 class Solution:
+
     def numberOfSteps(self, num: int) -> int:
         c = 0
         while num:
@@ -8,6 +9,3 @@ class Solution:
             else:
                 num //= 2
         return c
-        
-        
-        

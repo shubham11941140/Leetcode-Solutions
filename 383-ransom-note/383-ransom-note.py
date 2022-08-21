@@ -1,4 +1,5 @@
 class Solution:
+
     def canConstruct(self, ransomNote: str, magazine: str) -> bool:
         ransomNote = list(ransomNote)
         magazine = list(magazine)
@@ -9,5 +10,3 @@ class Solution:
         except:
             return False
             pass
-
-        

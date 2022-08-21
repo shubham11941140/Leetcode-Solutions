@@ -1,4 +1,5 @@
 class Solution:
+
     def findUnsortedSubarray(self, nums: List[int]) -> int:
         n = len(nums)
         s = sorted(nums)

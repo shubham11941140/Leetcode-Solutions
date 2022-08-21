@@ -1,6 +1,7 @@
 class Solution:
-    def isRobotBounded(self, instructions: str) -> bool:        
-        d = instructions * 15        
+
+    def isRobotBounded(self, instructions: str) -> bool:
+        d = instructions * 15
         ad = ["N", "E", "S", "W"]
         didx = 0
         direction = ad[didx]
@@ -24,7 +25,7 @@ class Solution:
                 didx = (didx + 3) % 4
             elif d[i] == "R":
                 didx = (didx + 1) % 4
-            direction = ad[didx]        
+            direction = ad[didx]
         j = path.copy()
         d = instructions
         for i in range(len(d)):
@@ -43,6 +44,5 @@ class Solution:
                 didx = (didx + 3) % 4
             elif d[i] == "R":
                 didx = (didx + 1) % 4
-            direction = ad[didx]              
+            direction = ad[didx]
         return j == path
-        

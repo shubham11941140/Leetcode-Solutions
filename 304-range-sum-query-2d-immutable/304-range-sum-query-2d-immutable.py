@@ -1,12 +1,12 @@
 class NumMatrix:
 
-    def __init__(self, matrix: List[List[int]]):        
+    def __init__(self, matrix: List[List[int]]):
 
         M = len(matrix)
         N = len(matrix[0])
-        
+
         self.aux = [[0 for j in range(N)] for i in range(M)]
-        
+
         for i in range(N):
             self.aux[0][i] = matrix[0][i]
 
@@ -27,12 +27,11 @@ class NumMatrix:
 
         if col1:
             res -= self.aux[row2][col1 - 1]
-            
+
         if row1 and col1:
             res += self.aux[row1 - 1][col1 - 1]
 
         return res
-
 
 
 # Your NumMatrix object will be instantiated and called as such:

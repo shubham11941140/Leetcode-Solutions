@@ -1,4 +1,5 @@
 class Solution:
+
     def findMaxLength(self, nums: List[int]) -> int:
         c0 = 0
         c1 = 0
@@ -19,5 +20,3 @@ class Solution:
                 f[d[i]] = [i + 1]
         t = [f[i][-1] - f[i][0] for i in f if len(f[i]) > 1]
         return 0 if not t else max(t)
-            
-        

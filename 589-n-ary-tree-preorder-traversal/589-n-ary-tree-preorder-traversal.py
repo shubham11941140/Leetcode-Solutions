@@ -6,16 +6,17 @@ class Node:
         self.children = children
 """
 
+
 class Solution:
-        
+
     def preorder_nary(self, root, a):
         if root is None:
             return
-        a.append(root.val) 
+        a.append(root.val)
         for i in root.children:
-            self.preorder_nary(i, a)           
-    
-    def preorder(self, root: 'Node') -> List[int]:
+            self.preorder_nary(i, a)
+
+    def preorder(self, root: "Node") -> List[int]:
         a = []
         self.preorder_nary(root, a)
-        return a    
+        return a

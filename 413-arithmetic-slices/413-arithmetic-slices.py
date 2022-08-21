@@ -1,15 +1,15 @@
 class Solution:
-    
+
     def sn(self, n):
         return (n * (n + 1)) // 2
-    
+
     def numberOfArithmeticSlices(self, nums: List[int]) -> int:
         n = len(nums)
         b = [nums[i + 1] - nums[i] for i in range(n - 1)]
         li = 0
         ri = -1
         c = []
-        b.append(10 ** 10)
+        b.append(10**10)
         for i in range(1, n - 1):
             if b[i] != b[i - 1]:
                 li = i
@@ -22,4 +22,3 @@ class Solution:
             t = right - left
             ans += (t * (t + 1)) // 2
         return ans
-        

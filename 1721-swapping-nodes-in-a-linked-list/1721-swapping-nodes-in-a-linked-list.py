@@ -4,7 +4,9 @@
 #         self.val = val
 #         self.next = next
 class Solution:
-    def swapNodes(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
+
+    def swapNodes(self, head: Optional[ListNode],
+                  k: int) -> Optional[ListNode]:
         l = 0
         root = head
         while root is not None:
@@ -30,6 +32,5 @@ class Solution:
                 root.val = b1
             if c == l - k + 1:
                 root.val = b2
-            root = root.next        
+            root = root.next
         return head
-        

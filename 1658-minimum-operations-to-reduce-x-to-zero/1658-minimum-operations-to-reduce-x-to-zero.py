@@ -1,5 +1,5 @@
-class Solution:  
-    
+class Solution:
+
     def long(self, arr, n, k):
         d = {}
         s = 0
@@ -12,19 +12,17 @@ class Solution:
                 m = max(m, i - d[s - k])
             if s not in d:
                 d[s] = i
-        return m    
-            
+        return m
+
     def minOperations(self, nums: List[int], x: int) -> int:
         s = sum(nums)
         if x > s:
             return -1
         n = len(nums)
         if x == s:
-            return n        
+            return n
         val = s - x
         l = self.long(nums, n, val)
         if not l:
             return -1
         return n - l
-            
-        

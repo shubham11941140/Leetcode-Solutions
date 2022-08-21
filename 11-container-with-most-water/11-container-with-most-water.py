@@ -1,5 +1,5 @@
-class Solution:   
-        
+class Solution:
+
     def maxArea(self, height: List[int]) -> int:
         # Find farthest greater element on left and right
         l = 0
@@ -13,12 +13,11 @@ class Solution:
             else:
                 r -= 1
         return ans
-        
-        
+
         n = len(height)
         rh = self.far_great_right(height, n)
         lh = self.far_great_left(height, n)
-        '''
+        """
         rh = [-1] * n
         lh = [-1] * n
         for i in range(n):
@@ -30,7 +29,7 @@ class Solution:
                 if height[j] >= height[i]:
                     lh[i] = j
                     break
-        '''
+        """
         ans = -1
         for i in range(n):
             if rh[i] != -1 and lh[i] != -1:
@@ -44,7 +43,3 @@ class Solution:
             con = diff * height[i]
             ans = max(ans, con)
         return ans
-            
-            
-        
-        

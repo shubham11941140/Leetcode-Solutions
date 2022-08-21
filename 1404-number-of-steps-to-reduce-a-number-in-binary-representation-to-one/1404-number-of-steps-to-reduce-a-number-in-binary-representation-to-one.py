@@ -1,4 +1,5 @@
 class Solution:
+
     def numSteps(self, s: str) -> int:
         n = int(s, 2)
         c = 0
@@ -9,4 +10,3 @@ class Solution:
             else:
                 n //= 2
         return c
-        

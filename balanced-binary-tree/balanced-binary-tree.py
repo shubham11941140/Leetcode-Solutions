@@ -5,13 +5,13 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    
+
     def height(self, root):
         if root is None:
             return 0
         else:
             return 1 + max(self.height(root.left), self.height(root.right))
-        
+
     def balanced(self, root):
         if root is None:
             return True
@@ -22,8 +22,6 @@ class Solution:
                 return False
             else:
                 return self.balanced(root.left) and self.balanced(root.right)
-        
-        
+
     def isBalanced(self, root: Optional[TreeNode]) -> bool:
         return self.balanced(root)
-        

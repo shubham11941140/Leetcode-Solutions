@@ -1,14 +1,16 @@
 from collections import Counter
 
+
 class Solution:
-    def champagneTower(self, poured: int, query_row: int, query_glass: int) -> float:
+
+    def champagneTower(self, poured: int, query_row: int,
+                       query_glass: int) -> float:
         # print(inorder)
-        
+
         # Store all child in an array
-        
+
         # Apply dp
-        
-        
+
         if not poured:
             return 0
         c = [[0 for i in range(101)] for j in range(101)]
@@ -20,10 +22,7 @@ class Solution:
                     c[r + 1][col] += left
                     c[r + 1][col + 1] += left
         return min(1, c[query_row][query_glass])
-        
 
-        
-        
         ca = [[] for i in range(110)]
         c = [0]
         ca[1].append(0)
@@ -36,22 +35,21 @@ class Solution:
             c.append(Counter(ca[i]))
             ca[i] = sorted(list(set(ca[i])))
         # Allocate glasses in ca
-        #for i in ca:            print(*i)
+        # for i in ca:            print(*i)
         print(23)
-        #for i in c:              print(i)
+        # for i in c:              print(i)
         p = poured
         d = [0]
         for i in range(1, 101):
             if p == 0:
                 break
             if p < i:
-                # Freq allocation                
+                # Freq allocation
                 print(31)
                 print(p, i)
                 print(c[i])
                 s = sum(c[i].values())
-                
-                
+
                 break
             if p >= i:
                 p -= i
@@ -60,8 +58,3 @@ class Solution:
                     z.append((j, 1))
                 d.append(z)
         print(d)
-                
-        
-        
-        
-        
