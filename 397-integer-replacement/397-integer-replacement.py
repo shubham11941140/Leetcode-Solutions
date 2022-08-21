@@ -4,8 +4,7 @@ class Solution:
         # Use BFS
         steps = [[] for i in range(100)]
         steps[0].append(n)
-        visited = set()
-        visited.add(n)
+        visited = {n}
         for step in range(1, 100):
             for i in steps[step - 1]:
                 if i == 1:

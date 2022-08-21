@@ -4,8 +4,7 @@ from math import ceil
 class Solution:
 
     def depth_iterate(self, s, t, ans):
-        rep = set()
-        rep.add(t)
+        rep = {t}
         for steps in range(40000):
             if s in ans[steps]:
                 return steps
