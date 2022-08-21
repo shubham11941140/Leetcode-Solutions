@@ -14,10 +14,7 @@ class MagicDictionary:
         self.a = [i for i in dictionary]
 
     def search(self, searchWord: str) -> bool:
-        for i in self.a:
-            if self.diff(searchWord, i):
-                return True
-        return False
+        return any(self.diff(searchWord, i) for i in self.a)
 
 
 # Your MagicDictionary object will be instantiated and called as such:
