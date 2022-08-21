@@ -17,11 +17,11 @@ class Solution:
         while len(q2):
             newNode, llNode = q2.pop(0)
             if newNode.val == llNode.val:
-                if llNode.next == None:
+                if llNode.next is None:
                     return True
-                if newNode.left != None and llNode.next != None:
+                if newNode.left is not None and llNode.next is not None:
                     q2.append([newNode.left, llNode.next])
-                if newNode.right != None and llNode.next != None:
+                if newNode.right is not None and llNode.next is not None:
                     q2.append([newNode.right, llNode.next])
         return False
 
@@ -30,12 +30,12 @@ class Solution:
         q = [root]
         while len(q):
             tempNode = q.pop(0)
-            if tempNode != None:
+            if tempNode is not None:
                 if tempNode.val == head.val:
                     if self.subPathCheck(tempNode, head):
                         return True
-                if tempNode.left != None:
+                if tempNode.left is not None:
                     q.append(tempNode.left)
-                if tempNode.right != None:
+                if tempNode.right is not None:
                     q.append(tempNode.right)
         return False
