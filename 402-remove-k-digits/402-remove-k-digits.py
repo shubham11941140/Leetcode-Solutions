@@ -33,25 +33,3 @@ class Solution:
         if k:
             st = st[0:-k]            
         return ''.join(st) or '0'
-        
-        
-        
-        if len(num) == k:
-            return "0"        
-        v = self.new(num, k)
-
-        a = list(range(10))[::-1]
-        a = [str(i) for i in a]
-        s = list(num)
-        ret = "9" * (10 ** 6)
-        for i in range(10):
-            l = s.copy()
-            v1 = self.call(a[i:], l, k)
-            if len(v1) == len(s) - k:
-                if v1 < ret:
-                    ret = v1
-        if not ret or not v:
-            return "0"
-        print("V", v)
-        print("RET", ret)
-        return str(min(int(ret), int(v)))
