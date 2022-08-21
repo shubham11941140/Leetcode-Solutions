@@ -1,11 +1,12 @@
 from math import ceil, sqrt
 
+
 class Solution:
-    
+
     def __init__(self):
         self.a = []
         self.b = []
-        
+
     def isprime(self, n):
         if n == 1:
             return False
@@ -17,13 +18,13 @@ class Solution:
             if n % i == 0:
                 return False
         return True
-        
+
     def createPalindrome(self, inp, b, isOdd):
         n = inp
         palin = inp
-        if (isOdd):
+        if isOdd:
             n = n // b
-        while (n > 0):
+        while n > 0:
             palin = palin * b + (n % b)
             n = n // b
         return palin
@@ -31,19 +32,17 @@ class Solution:
     def generatePalindromes(self, n):
         for j in range(2):
             i = 1
-            while (self.createPalindrome(i, 10, j % 2) < n):
+            while self.createPalindrome(i, 10, j % 2) < n:
                 self.a.append(self.createPalindrome(i, 10, j % 2))
-                i = i + 1     
-    
+                i = i + 1
+
     def gen(self):
-        n = 10 ** 8 + 10 ** 6
+        n = 10**8 + 10**6
         self.generatePalindromes(n)
         self.b = sorted([i for i in self.a if self.isprime(i)])
-    
+
     def primePalindrome(self, n: int) -> int:
         self.gen()
         for i in self.b:
             if i >= n:
                 return i
-        
-        

@@ -1,4 +1,5 @@
 class Solution:
+
     def partitionLabels(self, s: str) -> List[int]:
         n = len(s)
         ans = []
@@ -20,7 +21,3 @@ class Solution:
         for i in range(1, len(ans)):
             r.append(ans[i] - ans[i - 1])
         return r
-        
-                    
-            
-        

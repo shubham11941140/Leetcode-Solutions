@@ -1,18 +1,18 @@
 class MyHashSet:
 
     def __init__(self):
-        self.h = set()      
+        self.h = set()
 
     def add(self, key: int) -> None:
-        self.h.add(key)     
+        self.h.add(key)
 
     def remove(self, key: int) -> None:
         if self.contains(key):
             self.h.remove(key)
-        
+
     def contains(self, key: int) -> bool:
         return key in self.h
-        
+
 
 # Your MyHashSet object will be instantiated and called as such:
 # obj = MyHashSet()
