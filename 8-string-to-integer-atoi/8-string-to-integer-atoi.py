@@ -51,7 +51,7 @@ class Solution:
 
             if val < -1 * (2**31):
                 return -1 * (2**31)
-            elif val >= 2**31:
+            if val >= 2**31:
                 return 2**31 - 1
             return val
         return 0
