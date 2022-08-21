@@ -7,7 +7,7 @@ class MagicDictionary:
         if len(a) == len(b):
             n = len(a)
             l = len([1 for i in range(n) if a[i] != b[i]])
-            return True if l == 1 else False
+            return l == 1
         return False
 
     def buildDict(self, dictionary: List[str]) -> None:
