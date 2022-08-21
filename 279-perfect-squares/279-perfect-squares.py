@@ -1,6 +1,7 @@
 class Solution:
 
-    def numSquares(self, n: int) -> int:
+    @staticmethod
+    def numSquares(n: int) -> int:
         gen = [(i * i) for i in range(1, 110)]
         k = len(gen)
         dp = [10**5 for i in range(n + 1)]

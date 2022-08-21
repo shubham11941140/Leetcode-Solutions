@@ -3,7 +3,8 @@ from math import ceil
 
 class Solution:
 
-    def satisfy(self, a, k):
+    @staticmethod
+    def satisfy(a, k):
         return sum([ceil(a[i] / k) for i in range(len(a))])
 
     def minEatingSpeed(self, piles: List[int], h: int) -> int:

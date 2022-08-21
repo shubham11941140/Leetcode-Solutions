@@ -1,6 +1,7 @@
 class Solution:
 
-    def uniqueMorseRepresentations(self, words: List[str]) -> int:
+    @staticmethod
+    def uniqueMorseRepresentations(words: List[str]) -> int:
         m = [
             ".-",
             "-...",

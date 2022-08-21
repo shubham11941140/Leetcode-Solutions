@@ -1,6 +1,7 @@
 class Solution:
 
-    def jump(self, nums: List[int]) -> int:
+    @staticmethod
+    def jump(nums: List[int]) -> int:
         n = len(nums)
         dp = [0 for i in range(n)]
         m = max(nums)

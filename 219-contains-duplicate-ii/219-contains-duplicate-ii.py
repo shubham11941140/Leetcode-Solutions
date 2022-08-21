@@ -1,6 +1,7 @@
 class Solution:
 
-    def containsNearbyDuplicate(self, nums: List[int], k: int) -> bool:
+    @staticmethod
+    def containsNearbyDuplicate(nums: List[int], k: int) -> bool:
         d = {}
         for i, item in enumerate(nums):
             if item in d:

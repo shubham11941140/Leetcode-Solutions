@@ -1,6 +1,7 @@
 class Solution:
 
-    def simplifyPath(self, path: str) -> str:
+    @staticmethod
+    def simplifyPath(path: str) -> str:
         path += "/"
         n = len(path)
         stack = []

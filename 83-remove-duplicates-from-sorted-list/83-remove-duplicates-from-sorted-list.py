@@ -5,7 +5,8 @@
 #         self.next = next
 class Solution:
 
-    def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
+    @staticmethod
+    def deleteDuplicates(head: Optional[ListNode]) -> Optional[ListNode]:
         r = head
         while head is not None:
             c = head

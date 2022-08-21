@@ -13,7 +13,8 @@ class Solution:
         self.level(root.left, ans, level + 1)
         self.level(root.right, ans, level + 1)
 
-    def avg(self, a):
+    @staticmethod
+    def avg(a):
         return sum(a) / len(a)
 
     def averageOfLevels(self, root: Optional[TreeNode]) -> List[float]:

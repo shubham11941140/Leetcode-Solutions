@@ -1,6 +1,7 @@
 class Solution:
 
-    def findDifferentBinaryString(self, nums: List[str]) -> str:
+    @staticmethod
+    def findDifferentBinaryString(nums: List[str]) -> str:
         n = len(nums[0])
         s = [bin(i)[2:] for i in range(2**n)]
         t = []

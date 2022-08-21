@@ -1,6 +1,7 @@
 class Solution:
 
-    def isValid(self, s: str) -> bool:
+    @staticmethod
+    def isValid(s: str) -> bool:
         while s:
             t = s
             s = s.replace("()", "")

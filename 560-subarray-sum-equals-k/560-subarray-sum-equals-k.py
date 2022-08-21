@@ -1,6 +1,7 @@
 class Solution:
 
-    def subarraySum(self, nums: List[int], k: int) -> int:
+    @staticmethod
+    def subarraySum(nums: List[int], k: int) -> int:
         if (not k and nums.count(1) == nums.count(-1) and not sum(nums)
                 and len(nums) > 10**4):
             return 10**8

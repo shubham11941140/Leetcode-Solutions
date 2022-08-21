@@ -1,6 +1,7 @@
 class Solution:
 
-    def isint(self, s):
+    @staticmethod
+    def isint(s):
         try:
             val = int(s)
             return True
@@ -33,7 +34,8 @@ class Solution:
         except:
             return False
 
-    def checke(self, s):
+    @staticmethod
+    def checke(s):
         if "e" not in s or s in ["e", "e.", ".e"] or s.count("e") > 1:
             return False
         idx = s.index("e")
@@ -44,12 +46,14 @@ class Solution:
         except:
             return False
 
-    def base(self, s):
+    @staticmethod
+    def base(s):
         if s.count(".") > 1 or s.count("e") > 1:
             return False
         return True
 
-    def cf(self, s):
+    @staticmethod
+    def cf(s):
         try:
             float(s)
             return True

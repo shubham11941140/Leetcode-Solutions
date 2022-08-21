@@ -1,6 +1,7 @@
 class Solution:
 
-    def freq(self, arr):
+    @staticmethod
+    def freq(arr):
         d = {}
         for i in arr:
             d[i] = d[i] + 1 if i in d else 1
