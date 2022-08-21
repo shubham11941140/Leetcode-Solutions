@@ -14,7 +14,8 @@ class Solution:
         if m == 1 and n == 1:
             return int(word1 != word2)
 
-        assert m > 1 or n > 1
+        if not (m > 1 or n > 1):
+            raise AssertionError
 
         dp = [[0 for i in range(n + 1)] for j in range(m + 1)]
 
