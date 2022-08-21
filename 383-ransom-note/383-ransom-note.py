@@ -8,6 +8,5 @@ class Solution:
             return True
         except:
             return False
-            pass
 
         

@@ -77,15 +77,3 @@ class Solution:
 
     def removePalindromeSub(self, s: str) -> int:
         return 1 if s == s[::-1] else 2
-
-        c = 0
-        while s and c < 100:
-            c += 1
-            if s == s[::-1]:
-                s = ""
-            l = self.lps(s)
-            print("L", l, s)
-            # Remove the subsequence from the string
-            s = s.replace(l, "")
-            print("S", s)
-        return c

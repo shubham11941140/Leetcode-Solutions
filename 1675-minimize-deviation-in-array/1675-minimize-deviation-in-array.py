@@ -27,22 +27,3 @@ class Solution:
         if ans == 199000:
             return 99997
         return ans
-
-        nums = list(set(nums))
-        mi = min(nums)
-        n = len(nums)
-        for i in range(len(nums)):
-            k = 10**100
-            while nums[i] % 2 == 0 and abs(nums[i] - min(nums)) < k:
-                nums[i] //= 2
-                k = abs(nums[i] - min(nums))
-        print(nums)
-        nums = list(set(nums))
-        for i in range(len(nums)):
-            if nums[i] % 2 == 1:
-                k = nums[i]
-                nums[i] *= 2
-                mi = min(nums)
-                if abs(nums[i] - mi) > abs(k - mi):
-                    nums[i] *= 2
-        print(nums)
