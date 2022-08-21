@@ -16,7 +16,7 @@ class WordDictionary:
             newNodes = []
             for node in nodes:
                 if ch == '.': 
-                    newNodes += [v for v in node.values()]
+                    newNodes += list(node.values())
                 elif ch in node: 
                     newNodes.append(node[ch])
             if not newNodes:
