@@ -11,8 +11,7 @@ class Solution:
         if root is None:
             return []
         a = [[] for i in range(10 ** 5)]
-        q = []
-        q.append((root, 0))
+        q = [(root, 0)]
         while q:
             r, level = q.pop(0)
             a[level].append(r.val)  
