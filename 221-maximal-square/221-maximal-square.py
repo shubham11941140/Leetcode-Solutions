@@ -1,6 +1,7 @@
 class Solution:
 
-    def maximalSquare(self, matrix: List[List[str]]) -> int:
+    @staticmethod
+    def maximalSquare(matrix: List[List[str]]) -> int:
         n = len(matrix)
         m = len(matrix[0])
         dp = [[0 for j in range(m)] for i in range(n)]

@@ -1,6 +1,7 @@
 class Solution:
 
-    def lengthOfLongestSubstring(self, s: str) -> int:
+    @staticmethod
+    def lengthOfLongestSubstring(s: str) -> int:
         # sliding window solution
         n = len(s)
         a = []

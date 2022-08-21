@@ -1,12 +1,14 @@
 class Solution:
 
-    def isint(self, a):
+    @staticmethod
+    def isint(a):
         try:
             return int(a)
         except:
             return -1
 
-    def check(self, a):
+    @staticmethod
+    def check(a):
         n = len(a)
         return len(set(a)) == n and a == sorted(a)
 

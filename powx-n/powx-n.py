@@ -1,4 +1,5 @@
 class Solution:
 
-    def myPow(self, x: float, n: int) -> float:
+    @staticmethod
+    def myPow(x: float, n: int) -> float:
         return x**n

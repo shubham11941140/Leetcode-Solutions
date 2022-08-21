@@ -1,6 +1,7 @@
 class Solution:
 
-    def minCostClimbingStairs(self, cost: List[int]) -> int:
+    @staticmethod
+    def minCostClimbingStairs(cost: List[int]) -> int:
         n = len(cost)
         dp = [cost[0]] + [cost[1]] + [0 for i in range(n - 2)]
         for i in range(2, n):

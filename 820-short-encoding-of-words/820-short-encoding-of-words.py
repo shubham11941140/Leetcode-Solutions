@@ -1,6 +1,7 @@
 class Solution:
 
-    def minimumLengthEncoding(self, words: List[str]) -> int:
+    @staticmethod
+    def minimumLengthEncoding(words: List[str]) -> int:
         w = sorted(words, key=len, reverse=True)
         r = []
         for s in w:

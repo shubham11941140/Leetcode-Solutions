@@ -1,6 +1,7 @@
 class Solution:
 
-    def longestValidParentheses(self, s: str) -> int:
+    @staticmethod
+    def longestValidParentheses(s: str) -> int:
         n = len(s)
         dp, stack = [0] * (n + 1), []
         for i in range(n):

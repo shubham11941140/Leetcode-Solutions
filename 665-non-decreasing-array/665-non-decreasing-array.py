@@ -1,6 +1,7 @@
 class Solution:
 
-    def checkPossibility(self, nums: List[int]) -> bool:
+    @staticmethod
+    def checkPossibility(nums: List[int]) -> bool:
         n = len(nums)
         f = [i for i in range(n - 1) if nums[i] > nums[i + 1]]
         if not f:

@@ -1,6 +1,7 @@
 class Solution:
 
-    def binarySearch(self, arr, x):
+    @staticmethod
+    def binarySearch(arr, x):
         l = 0
         r = len(arr)
         while l <= r:

@@ -1,6 +1,7 @@
 class Solution:
 
-    def remneg(self, a):
+    @staticmethod
+    def remneg(a):
         return [i for i in a if i > 0]
 
     def firstMissingPositive(self, nums: List[int]) -> int:

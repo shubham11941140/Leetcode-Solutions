@@ -1,6 +1,7 @@
 class Solution:
 
-    def findAndReplacePattern(self, words: List[str],
+    @staticmethod
+    def findAndReplacePattern(words: List[str],
                               pattern: str) -> List[str]:
         n = len(pattern)
         ans = []

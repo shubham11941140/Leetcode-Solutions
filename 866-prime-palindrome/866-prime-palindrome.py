@@ -7,7 +7,8 @@ class Solution:
         self.a = []
         self.b = []
 
-    def isprime(self, n):
+    @staticmethod
+    def isprime(n):
         if n == 1:
             return False
         if n <= 3:
@@ -19,7 +20,8 @@ class Solution:
                 return False
         return True
 
-    def createPalindrome(self, inp, b, isOdd):
+    @staticmethod
+    def createPalindrome(inp, b, isOdd):
         n = inp
         palin = inp
         if isOdd:

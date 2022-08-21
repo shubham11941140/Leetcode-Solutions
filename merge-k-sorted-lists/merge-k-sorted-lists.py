@@ -5,14 +5,16 @@
 #         self.next = next
 class Solution:
 
-    def toarray(self, a):
+    @staticmethod
+    def toarray(a):
         b = []
         while a is not None:
             b.append(a.val)
             a = a.next
         return b
 
-    def insert(self, root, item):
+    @staticmethod
+    def insert(root, item):
         temp = ListNode()
         temp.val = item
         temp.next = root

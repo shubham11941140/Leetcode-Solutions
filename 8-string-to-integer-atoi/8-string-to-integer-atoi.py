@@ -1,6 +1,7 @@
 class Solution:
 
-    def remw(self, s):
+    @staticmethod
+    def remw(s):
         n = len(s)
         i = 0
         while s[i] == " ":

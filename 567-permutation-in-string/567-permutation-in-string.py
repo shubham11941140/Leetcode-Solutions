@@ -3,7 +3,8 @@ from collections import Counter
 
 class Solution:
 
-    def checkInclusion(self, s1: str, s2: str) -> bool:
+    @staticmethod
+    def checkInclusion(s1: str, s2: str) -> bool:
         k = len(s1)
         n = len(s2)
         sm = Counter(s1)

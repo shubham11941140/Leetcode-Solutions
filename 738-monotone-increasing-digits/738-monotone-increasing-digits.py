@@ -1,9 +1,11 @@
 class Solution:
 
-    def obeys(self, b):
+    @staticmethod
+    def obeys(b):
         return all(not b[i] < b[i - 1] for i in reversed(range(1, len(b))))
 
-    def make_str(self, a):
+    @staticmethod
+    def make_str(a):
         return "".join([str(i) for i in a])
 
     def monotoneIncreasingDigits(self, n: int) -> int:

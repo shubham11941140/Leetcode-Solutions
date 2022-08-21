@@ -1,6 +1,7 @@
 class Solution:
 
-    def numFactoredBinaryTrees(self, arr: List[int]) -> int:
+    @staticmethod
+    def numFactoredBinaryTrees(arr: List[int]) -> int:
         M = 10**9 + 7
         n = len(arr)
         d = {}
