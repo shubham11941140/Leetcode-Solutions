@@ -1,4 +1,5 @@
 class Solution:
 
-    def hammingWeight(self, n: int) -> int:
+    @staticmethod
+    def hammingWeight(n: int) -> int:
         return bin(n).count("1")

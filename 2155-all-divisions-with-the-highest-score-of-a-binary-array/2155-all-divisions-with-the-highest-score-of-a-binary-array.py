@@ -1,6 +1,7 @@
 class Solution:
 
-    def maxScoreIndices(self, nums: List[int]) -> List[int]:
+    @staticmethod
+    def maxScoreIndices(nums: List[int]) -> List[int]:
         rone = nums.count(1)
         lzero = 0
         n = len(nums)

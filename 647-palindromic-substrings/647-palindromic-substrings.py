@@ -1,6 +1,7 @@
 class Solution:
 
-    def countSubstrings(self, s: str) -> int:
+    @staticmethod
+    def countSubstrings(s: str) -> int:
         n = len(s)
         return len([
             1 for i in range(n) for j in range(i + 1, n + 1)

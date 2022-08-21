@@ -1,6 +1,7 @@
 class Solution:
 
-    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+    @staticmethod
+    def groupAnagrams(strs: List[str]) -> List[List[str]]:
         s = ["".join(sorted(i)) for i in strs]
         d = {}
         n = len(s)

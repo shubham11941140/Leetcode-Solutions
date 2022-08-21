@@ -1,6 +1,7 @@
 class Solution:
 
-    def canJump(self, nums: List[int]) -> bool:
+    @staticmethod
+    def canJump(nums: List[int]) -> bool:
         n = len(nums)
         dp = [False for i in range(n)]
         dp[0] = True

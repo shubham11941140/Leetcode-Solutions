@@ -6,7 +6,8 @@
 #         self.right = right
 class Solution:
 
-    def widthOfBinaryTree(self, root: Optional[TreeNode]) -> int:
+    @staticmethod
+    def widthOfBinaryTree(root: Optional[TreeNode]) -> int:
         a = [[] for i in range(4000)]
         q = [(root, 0, 0)]
         while q:

@@ -1,6 +1,7 @@
 class Solution:
 
-    def check(self, a):
+    @staticmethod
+    def check(a):
         h = list(set(a))
         for i, item in enumerate(h):
             if (item == item.lower()

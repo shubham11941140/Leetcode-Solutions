@@ -1,6 +1,7 @@
 class Solution:
 
-    def validPalindrome(self, s: str) -> bool:
+    @staticmethod
+    def validPalindrome(s: str) -> bool:
         if s == s[::-1]:
             return True
         l = 0

@@ -1,6 +1,7 @@
 class Solution:
 
-    def findMaxIndex(self, index, a, curr):
+    @staticmethod
+    def findMaxIndex(index, a, curr):
         ans = -1
         index = 0
         for i in range(index, len(a)):

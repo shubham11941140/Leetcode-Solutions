@@ -1,6 +1,7 @@
 class Solution:
 
-    def summaryRanges(self, nums: List[int]) -> List[str]:
+    @staticmethod
+    def summaryRanges(nums: List[int]) -> List[str]:
         n = len(nums)
         i = 0
         ans = []

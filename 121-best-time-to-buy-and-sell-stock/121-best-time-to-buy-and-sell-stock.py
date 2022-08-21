@@ -1,6 +1,7 @@
 class Solution:
 
-    def maxProfit(self, prices: List[int]) -> int:
+    @staticmethod
+    def maxProfit(prices: List[int]) -> int:
         n = len(prices)
         msf = [0 for i in range(n)]
         msf[0] = prices[0]

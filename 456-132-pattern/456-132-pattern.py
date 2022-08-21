@@ -1,6 +1,7 @@
 class Solution:
 
-    def find132pattern(self, nums: List[int]) -> bool:
+    @staticmethod
+    def find132pattern(nums: List[int]) -> bool:
         if nums == sorted(nums) or nums == sorted(nums, reverse=True):
             return False
         n = len(nums)

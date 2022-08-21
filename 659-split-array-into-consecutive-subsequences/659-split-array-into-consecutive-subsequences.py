@@ -3,7 +3,8 @@ from bisect import insort
 
 class Solution:
 
-    def isPossible(self, nums: List[int]) -> bool:
+    @staticmethod
+    def isPossible(nums: List[int]) -> bool:
         d = {}
         for val in nums:
             if val - 1 in d and d[val - 1]:

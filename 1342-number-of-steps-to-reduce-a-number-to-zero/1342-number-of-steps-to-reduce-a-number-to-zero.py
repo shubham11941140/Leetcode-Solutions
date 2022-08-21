@@ -1,6 +1,7 @@
 class Solution:
 
-    def numberOfSteps(self, num: int) -> int:
+    @staticmethod
+    def numberOfSteps(num: int) -> int:
         c = 0
         while num:
             c += 1

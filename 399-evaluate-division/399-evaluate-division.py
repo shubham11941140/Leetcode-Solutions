@@ -1,6 +1,7 @@
 class Solution:
 
-    def calcEquation(self, equations: List[List[str]], values: List[float],
+    @staticmethod
+    def calcEquation(equations: List[List[str]], values: List[float],
                      queries: List[List[str]]) -> List[float]:
         # Solve using connected componenets of a graph
         d = {}

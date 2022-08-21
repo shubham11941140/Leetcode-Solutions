@@ -1,6 +1,7 @@
 class Solution:
 
-    def isRobotBounded(self, instructions: str) -> bool:
+    @staticmethod
+    def isRobotBounded(instructions: str) -> bool:
         d = instructions * 15
         ad = ["N", "E", "S", "W"]
         didx = 0

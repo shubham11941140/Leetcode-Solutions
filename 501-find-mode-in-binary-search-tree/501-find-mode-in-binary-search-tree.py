@@ -13,7 +13,8 @@ class Solution:
         a.append(root.val)
         self.inorder(root.right, a)
 
-    def freq(self, a):
+    @staticmethod
+    def freq(a):
         d = {}
         for i in a:
             if i in d:

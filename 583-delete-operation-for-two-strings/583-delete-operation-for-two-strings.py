@@ -1,6 +1,7 @@
 class Solution:
 
-    def minDistance(self, X: str, Y: str) -> int:
+    @staticmethod
+    def minDistance(X: str, Y: str) -> int:
         m = len(X)
         n = len(Y)
         L = [[0] * (n + 1) for i in range(m + 1)]
