@@ -6,7 +6,6 @@ class Solution:
         visited = set()
         visited.add(n)
         for step in range(1, 100):
-            # print(steps[step - 1])
             for i in steps[step - 1]:
                 if i == 1:
                     return step - 1

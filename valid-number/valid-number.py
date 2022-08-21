@@ -38,10 +38,8 @@ class Solution:
             return False
         idx = s.index("e")
         try:
-            # print(s[:idx], s[idx + 1:])
             valb = int(s[:idx])
             vala = int(s[idx + 1:])
-            # print("H")
             return True
         except:
             return False

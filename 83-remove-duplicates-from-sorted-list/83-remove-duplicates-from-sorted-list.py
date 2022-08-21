@@ -12,7 +12,6 @@ class Solution:
             while head is not None and head.val == c.val:
                 head = head.next
             c.next = head
-            #head = head.next
         return r
             
             

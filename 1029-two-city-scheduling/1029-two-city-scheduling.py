@@ -8,7 +8,6 @@ class Solution:
         for i in costs:
             print(abs(i[1] - i[0]))
 
-        # costs.sort()
         print(costs)
         n = len(costs) // 2
         a = 0

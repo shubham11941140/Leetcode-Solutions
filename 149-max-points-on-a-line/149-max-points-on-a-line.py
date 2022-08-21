@@ -20,7 +20,6 @@ class Solution:
         for i in range(n):
             for j in range(i + 1, n):
                 a, c = self.equ(points[i], points[j])
-                #print("AC", a, c)
                 cp = 0                
                 for k in range(n):
                     if a == 10 ** 15:

@@ -12,7 +12,6 @@ class WordFilter:
                 self.words.append([words[i], i])
                 self.revwords.append([words[i][::-1], i])
         self.newn = len(self.words)
-        #print(self.words, self.revwords)
 
     def f(self, prefix: str, suffix: str) -> int:        
         revsuffix = suffix[::-1]

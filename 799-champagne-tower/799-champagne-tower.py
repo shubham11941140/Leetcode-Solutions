@@ -38,7 +38,6 @@ class Solution:
         # Allocate glasses in ca
         #for i in ca:            print(*i)
         print(23)
-        #for i in c:              print(i)
         p = poured
         d = [0]
         for i in range(1, 101):
