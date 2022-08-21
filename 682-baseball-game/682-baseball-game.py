@@ -1,4 +1,5 @@
 class Solution:
+
     def calPoints(self, ops: List[str]) -> int:
         s = []
         for i in ops:
@@ -11,4 +12,3 @@ class Solution:
             else:
                 s.append(int(i))
         return sum(s)
-        

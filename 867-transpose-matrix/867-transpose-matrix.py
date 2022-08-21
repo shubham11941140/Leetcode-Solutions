@@ -1,4 +1,5 @@
 class Solution:
+
     def transpose(self, matrix: List[List[int]]) -> List[List[int]]:
         m = len(matrix)
         n = len(matrix[0])
@@ -7,4 +8,3 @@ class Solution:
             for j in range(n):
                 mat[j][i] = matrix[i][j]
         return mat
-        

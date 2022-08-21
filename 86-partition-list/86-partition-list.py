@@ -4,21 +4,21 @@
 #         self.val = val
 #         self.next = next
 class Solution:
-    
-    
+
     def insert(self, item):
         temp = ListNode(item)
         temp.next = self.root
         self.root = temp
-    
-    def partition(self, head: Optional[ListNode], x: int) -> Optional[ListNode]:
+
+    def partition(self, head: Optional[ListNode],
+                  x: int) -> Optional[ListNode]:
         a = []
         b = []
         while head is not None:
             if head.val < x:
                 a.append(head.val)
             else:
-                b.append(head.val)            
+                b.append(head.val)
             head = head.next
         print(a, b)
         c = a + b
