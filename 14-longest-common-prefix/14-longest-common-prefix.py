@@ -1,6 +1,7 @@
 class Solution:
 
-    def longestCommonPrefix(self, strs: List[str]) -> str:
+    @staticmethod
+    def longestCommonPrefix(strs: List[str]) -> str:
         n = len(strs)
         ans = ""
         for i in range(len(strs[0]) + 1):

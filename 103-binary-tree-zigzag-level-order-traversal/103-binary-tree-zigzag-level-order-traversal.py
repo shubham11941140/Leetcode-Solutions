@@ -6,7 +6,8 @@
 #         self.right = right
 class Solution:
 
-    def zigzagLevelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
+    @staticmethod
+    def zigzagLevelOrder(root: Optional[TreeNode]) -> List[List[int]]:
         if not root:
             return []
         adj = [[]]

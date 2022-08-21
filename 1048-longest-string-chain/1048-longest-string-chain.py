@@ -1,6 +1,7 @@
 class Solution:
 
-    def can(self, word1, word2):
+    @staticmethod
+    def can(word1, word2):
         if len(word1) + 1 == len(word2):
             for i in range(len(word2)):
                 w = list(word2)

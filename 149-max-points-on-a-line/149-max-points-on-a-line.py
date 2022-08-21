@@ -1,6 +1,7 @@
 class Solution:
 
-    def equ(self, p1, p2):
+    @staticmethod
+    def equ(p1, p2):
         n = p1[1] - p2[1]
         d = p1[0] - p2[0]
         if d == 0:
@@ -9,7 +10,8 @@ class Solution:
         c = p1[1] - (a * p1[0])
         return a, c
 
-    def lies(self, a, c, p):
+    @staticmethod
+    def lies(a, c, p):
         return abs(p[1] - (a * p[0] + c)) < 10**(-5)
 
     def maxPoints(self, points: List[List[int]]) -> int:

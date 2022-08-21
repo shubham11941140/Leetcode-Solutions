@@ -1,6 +1,7 @@
 class Solution:
 
-    def generate(self, numRows: int) -> List[List[int]]:
+    @staticmethod
+    def generate(numRows: int) -> List[List[int]]:
         a = [[] for i in range(32)]
         a[0].append(1)
         for i in range(1, 32):

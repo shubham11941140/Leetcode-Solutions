@@ -1,6 +1,7 @@
 class Solution:
 
-    def twoCitySchedCost(self, costs: List[List[int]]) -> int:
+    @staticmethod
+    def twoCitySchedCost(costs: List[List[int]]) -> int:
 
         # Sort based on decreasing order in the absolute value
         costs.sort(key=lambda c: abs(c[1] - c[0]), reverse=True)

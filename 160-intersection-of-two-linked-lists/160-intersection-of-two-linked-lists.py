@@ -4,16 +4,19 @@
 #         self.val = x
 #         self.next = None
 
+
 class Solution:
 
-    def length(self, head):
+    @staticmethod
+    def length(head):
         c = 0
         while head:
             c += 1
             head = head.next
         return c
 
-    def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> Optional[ListNode]:
+    def getIntersectionNode(self, headA: ListNode,
+                            headB: ListNode) -> Optional[ListNode]:
 
         la = self.length(headA)
         lb = self.length(headB)
@@ -39,7 +42,3 @@ class Solution:
             lb -= 1
 
         return None
-
-
-
-

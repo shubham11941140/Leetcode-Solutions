@@ -6,7 +6,8 @@
 #         self.right = right
 class Solution:
 
-    def rightmost(self, root):
+    @staticmethod
+    def rightmost(root):
         while root.right:
             root = root.right
         return root

@@ -11,7 +11,8 @@
 #         self.right = right
 class Solution:
 
-    def subPathCheck(self, node, llHead):
+    @staticmethod
+    def subPathCheck(node, llHead):
         curr = llHead
         q2 = [[node, curr]]
         while q2:

@@ -1,6 +1,7 @@
 class Solution:
 
-    def maxScore(self, cardPoints: List[int], k: int) -> int:
+    @staticmethod
+    def maxScore(cardPoints: List[int], k: int) -> int:
         a = cardPoints.copy()
         b = a[::-1]
         n = len(a)

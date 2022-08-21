@@ -11,7 +11,8 @@
 #         self.right = right
 class Solution:
 
-    def toarr(self, head):
+    @staticmethod
+    def toarr(head):
         a = []
         while head is not None:
             a.append(head.val)

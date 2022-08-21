@@ -1,6 +1,7 @@
 class Solution:
 
-    def minRemoveToMakeValid(self, s: str) -> str:
+    @staticmethod
+    def minRemoveToMakeValid(s: str) -> str:
         os = []
         cs = []
         for i, item in enumerate(s):

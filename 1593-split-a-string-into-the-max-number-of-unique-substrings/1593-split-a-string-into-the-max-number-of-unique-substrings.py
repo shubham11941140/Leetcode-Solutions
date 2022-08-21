@@ -11,7 +11,8 @@ class Solution:
         for i in range(1, len(s)):
             self.rec(s[i:], a + [s[:i]])
 
-    def distinct(self, a):
+    @staticmethod
+    def distinct(a):
         b = []
         for i in a:
             if i not in b:

@@ -1,7 +1,8 @@
 class Solution:
 
     # Returns LCS X and Y
-    def lcs_(self, X, Y):
+    @staticmethod
+    def lcs_(X, Y):
 
         m = len(X)
         n = len(Y)
@@ -75,5 +76,6 @@ class Solution:
         print(string, rev)
         return self.lcs_(string, rev)
 
-    def removePalindromeSub(self, s: str) -> int:
+    @staticmethod
+    def removePalindromeSub(s: str) -> int:
         return 1 if s == s[::-1] else 2
