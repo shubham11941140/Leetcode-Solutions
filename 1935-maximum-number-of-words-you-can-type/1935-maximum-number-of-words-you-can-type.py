@@ -1,4 +1,5 @@
 class Solution:
+
     def canBeTypedWords(self, text: str, brokenLetters: str) -> int:
         l = text.split()
         c = 0
@@ -8,4 +9,3 @@ class Solution:
                     c += 1
                     break
         return len(l) - c
-        

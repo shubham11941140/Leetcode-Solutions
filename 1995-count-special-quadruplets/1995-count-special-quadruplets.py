@@ -1,4 +1,5 @@
 class Solution:
+
     def countQuadruplets(self, nums: List[int]) -> int:
         c1 = 0
         n = len(nums)
@@ -9,4 +10,3 @@ class Solution:
                         if nums[a] + nums[b] + nums[c] == nums[d]:
                             c1 += 1
         return c1
-        

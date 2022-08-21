@@ -16,4 +16,4 @@ class Solution:
     def preorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
         a = []
         self.preorder(root, a)
-        return a            
+        return a
