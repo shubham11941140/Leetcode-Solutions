@@ -1,24 +1,21 @@
 class Solution:
-    
-    def subset(self, a, temp, idx):
-        if idx == len(a):
-            self.ans.append(temp.copy())
+
+    def subset(self, temp, idx):
+        if idx == self.n:
+            self.ans.add(temp)
             return
-        self.subset(a, temp + [a[idx]], idx + 1)
-        self.subset(a, temp, idx + 1)
+        self.subset(temp + self.a[idx], idx + 1)
+        self.subset(temp, idx + 1)               
     
     def checkPowersOfThree(self, n: int) -> bool:
         x = 1
-        a = []
+        self.a = []
         while x <= 10 ** 7:
-            a.append(x)
+            self.a.append(x)
             x *= 3
-        temp = []
+        temp = 0
         idx = 0
-        self.ans = []
-        self.subset(a, temp, idx)
-        #print(self.ans)
-        #print(len(self.ans))
-        b = [sum(i) for i in self.ans]
-        #print(b)
-        return n in b
+        self.n = len(self.a)
+        self.ans = set()
+        self.subset(temp, idx)
+        return n in self.ans
