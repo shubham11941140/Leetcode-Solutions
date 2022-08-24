@@ -5,12 +5,12 @@ class Solution:
             self.ans.add(temp)
             return
         self.subset(temp + self.a[idx], idx + 1)
-        self.subset(temp, idx + 1)               
-    
+        self.subset(temp, idx + 1)
+
     def checkPowersOfThree(self, n: int) -> bool:
         x = 1
         self.a = []
-        while x <= 10 ** 7:
+        while x <= 10**7:
             self.a.append(x)
             x *= 3
         temp = 0
