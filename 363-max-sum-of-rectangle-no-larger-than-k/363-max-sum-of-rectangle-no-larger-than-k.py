@@ -1,42 +1,43 @@
 from copy import deepcopy
-import bisect
+from bisect import bisect_left, insort
 
 class Solution:
     
     @staticmethod
-    def transpose(matrix):
-        return [[matrix[i][j] for i in range(len(matrix))] for j in range(len(matrix[0]))]            
+    def transpose(m):
+        return [[m[i][j] for i in range(len(m))] for j in range(len(m[0]))]
+    
     def maxSumSubmatrix(self, matrix: List[List[int]], k: int) -> int:
                 
         
         if len(matrix) > len(matrix[0]):
             matrix = self.transpose(matrix)
 
-        numRows = len(matrix)
-        numCols = len(matrix[0])
+        r = len(matrix)
+        c = len(matrix[0])
 
-        partialSumMatrix = deepcopy(matrix)
+        pm = deepcopy(matrix)
 
-        for i in range(numRows):
-            for j in range(numCols):
-                if i > 0:         partialSumMatrix[i][j] += partialSumMatrix[i - 1][j]
-                if j > 0:         partialSumMatrix[i][j] += partialSumMatrix[i][j - 1]
-                if i > 0 and j > 0: partialSumMatrix[i][j] -= partialSumMatrix[i - 1][j - 1]
+        for i in range(r):
+            for j in range(c):
+                if i:  
+                    pm[i][j] += pm[i - 1][j]
+                if j:
+                    pm[i][j] += pm[i][j - 1]
+                if i and j: 
+                    pm[i][j] -= pm[i - 1][j - 1]
 
-        # enumerate all first and last rows, then determine best among different cols
         ret = float("-inf")
-        for firstRow in range(numRows):
-            for lastRow in range(firstRow, numRows):
-                sortedSums = [0]
-
-                for j in range(numCols):
-                    nextSum = partialSumMatrix[lastRow][j] - (partialSumMatrix[firstRow - 1][j] if firstRow > 0 else 0)
-                    ind = bisect.bisect_left(sortedSums, nextSum - k)
-                    if ind < len(sortedSums):
-                        ret = max(ret, nextSum - sortedSums[ind])
-                        if ret == k: # shortcut
+        for f in range(r):
+            for l in range(f, r):
+                ss = [0]
+                for j in range(c):
+                    ns = pm[l][j] - (pm[f - 1][j] if f else 0)
+                    ind = bisect_left(ss, ns - k)
+                    if ind < len(ss):
+                        ret = max(ret, ns - ss[ind])
+                        if ret == k:
                             return ret
-                    bisect.insort(sortedSums, nextSum)
-
+                    insort(ss, ns)
         return ret
         
