@@ -1,10 +1,11 @@
 class Solution:
+
     def diagonalSort(self, mat: List[List[int]]) -> List[List[int]]:
         n = len(mat)
         m = len(mat[0])
         s = set()
-        #i - j == k
-        
+        # i - j == k
+
         for k in range(1):
             for i in range(n):
                 for j in range(m):
@@ -12,7 +13,7 @@ class Solution:
                     print(diff)
                     s.add(diff)
         print(14)
-                    
+
         for k in s:
             b = []
             for i in range(n):
@@ -31,4 +32,3 @@ class Solution:
                         c += 1
         print(mat)
         return mat
-        
