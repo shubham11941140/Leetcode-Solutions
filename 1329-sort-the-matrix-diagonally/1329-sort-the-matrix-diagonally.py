@@ -7,9 +7,8 @@ class Solution:
             b = sorted([mat[i][i - k] for i in range(n) if 0 <= (i - k) < m])
             c = 0
             for i in range(n):
-                for j in range(m):
-                    if i - j == k:
-                        mat[i][j] = b[c]
-                        c += 1
+                if 0 <= (i - k) < m:
+                    mat[i][i - k] = b[c]
+                    c += 1
         return mat
         
