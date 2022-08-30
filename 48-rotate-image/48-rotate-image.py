@@ -6,13 +6,8 @@ class Solution:
         n = len(matrix)
         a = [[0 for i in range(n)] for j in range(n)]
         for j in range(n):
-            t = []
-            for i in reversed(range(n)):
-                t.append(matrix[i][j])
-            print(t)
             for i in range(n):
-                a[j][i] = t[i]
-        print(a)
+                a[j][i] = matrix[n - 1 - i][j]
         for i in range(n):
             for j in range(n):
                 matrix[i][j] = a[i][j]
