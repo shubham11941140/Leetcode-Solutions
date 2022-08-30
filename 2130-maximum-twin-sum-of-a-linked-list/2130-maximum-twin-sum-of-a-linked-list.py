@@ -9,14 +9,12 @@ class Solution:
         while head is not None:
             a.append(head.val)
             head = head.next
-        print(a)
         n = len(a)
         l = 0
         r = n - 1
         ans = 0
         while l < r:
-            s = a[l] + a[r]
-            ans = max(ans, s)
+            ans = max(ans, a[l] + a[r])
             l += 1
             r -= 1
         return ans
