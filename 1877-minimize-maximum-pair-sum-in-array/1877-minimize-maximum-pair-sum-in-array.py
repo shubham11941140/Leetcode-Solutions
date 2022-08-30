@@ -1,4 +1,5 @@
 class Solution:
+
     def minPairSum(self, nums: List[int]) -> int:
         nums.sort()
         n = len(nums)
@@ -10,5 +11,3 @@ class Solution:
             l += 1
             r -= 1
         return ans
-        
-        
