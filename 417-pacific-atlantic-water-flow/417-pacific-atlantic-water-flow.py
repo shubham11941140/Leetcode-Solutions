@@ -1,10 +1,7 @@
 class Solution:
-    
 
-    
-    
     @cache
-    def bfs(self):        
+    def bfs(self):
         while self.q:
             i, j = self.q.pop(0)
             self.v[i][j] = True
@@ -19,7 +16,7 @@ class Solution:
                     if self.h[x][y] <= self.h[i][j]:
                         if not self.v[x][y]:
                             self.q.append((x, y))
-            
+
     def dfs(self, v, i, j, val):
         if i < 0 or j < 0 or i >= self.n or j >= self.m:
             return
@@ -30,8 +27,7 @@ class Solution:
         v[i][j] = True
         for x, y in [(i + 1, j), (i - 1, j), (i, j - 1), (i, j + 1)]:
             self.dfs(v, x, y, self.h[i][j])
-        
-    
+
     def pacificAtlantic(self, heights: List[List[int]]) -> List[List[int]]:
         # DFS at each cell check whether we reach limits
         self.n = len(heights)
@@ -54,7 +50,3 @@ class Solution:
                     print(i, j)
                     ans.append([i, j])
         return ans
-
-                
-                
-        
