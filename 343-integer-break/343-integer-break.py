@@ -3,11 +3,7 @@ class Solution:
         # Break into positive integers
         dp = [0 for i in range(60)]
         dp[1] = 1
-        dp[2] = 1
-        dp[3] = 2
-        dp[4] = 4
-        dp[5] = 6
-        for i in range(6, 60):
+        for i in range(2, 60):
             ans = 0
             for j in range(i):
                 p = max(j, dp[j])
