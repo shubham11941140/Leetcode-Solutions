@@ -1,4 +1,5 @@
 class Solution:
+
     def integerBreak(self, n: int) -> int:
         # Break into positive integers
         dp = [0 for i in range(60)]
@@ -16,5 +17,3 @@ class Solution:
             dp[i] = ans
         print(dp)
         return dp[n]
-        
-        
