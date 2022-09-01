@@ -11,13 +11,10 @@ class Solution:
             return
         if root.val >= curr:
             self.ans += 1
-            curr = max(curr, root.val)
+            curr = root.val
         self.dfs(root.left, curr)
         self.dfs(root.right, curr)
-        
-        
-    
-    
+                        
     def goodNodes(self, root: TreeNode) -> int:        
         self.ans = 0
         self.dfs(root, root.val)
