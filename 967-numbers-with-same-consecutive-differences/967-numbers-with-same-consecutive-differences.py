@@ -4,8 +4,7 @@ class Solution:
         if len(a) == self.n:
             self.ans.append(int(''.join([str(x) for x in a])))
             return
-        prev = a[-1]
-        for i in [prev + self.k, prev - self.k]:
+        for i in [a[-1] + self.k, a[-1] - self.k]:
             if 0 <= i <= 9:
                 self.rec(a + [i])
         
