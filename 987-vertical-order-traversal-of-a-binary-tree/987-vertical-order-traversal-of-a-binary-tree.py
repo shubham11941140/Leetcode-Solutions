@@ -5,6 +5,7 @@
 #         self.left = left
 #         self.right = right
 class Solution:
+
     def verticalTraversal(self, root: Optional[TreeNode]) -> List[List[int]]:
         # BFS
         q = [(root, 0, 0)]
@@ -27,5 +28,3 @@ class Solution:
             d.append(ji)
         print(d)
         return d
-            
-        
