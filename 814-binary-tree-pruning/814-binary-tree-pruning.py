@@ -14,10 +14,7 @@ class Solution:
             root = q.pop(0)
             if root.val:
                 return False                          
-            if root.left:
-                q.append(root.left)            
-            if root.right:
-                q.append(root.right)   
+            q += [i for i in [root.left, root.right] if i]
         return True                               
         
     def rec(self, root):
