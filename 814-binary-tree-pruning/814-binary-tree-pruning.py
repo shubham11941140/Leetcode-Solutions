@@ -8,17 +8,17 @@ class Solution:
     
     def subtree(self, root):
         if not root:
-            return []
+            return False
         q = [root]
-        ans = []
         while q:
             root = q.pop(0)
-            ans.append(root.val)            
+            if root.val:
+                return False                          
             if root.left:
                 q.append(root.left)            
             if root.right:
                 q.append(root.right)   
-        return 1 not in ans                                
+        return True                               
         
     def rec(self, root):
         if not root:
