@@ -18,21 +18,14 @@ class Solution:
                 q.append(root.left)            
             if root.right:
                 q.append(root.right)   
-        return ans
-            
-            
-        
+        return 1 not in ans                                
         
     def rec(self, root):
         if not root:
             return
-        ans = self.subtree(root.left)
-        print("f", root.left, ans)  
-        if 1 not in ans:
+        if self.subtree(root.left):
             root.left = None
-        ans = self.subtree(root.right)
-        print("f", root.right, ans)  
-        if 1 not in ans:
+        if self.subtree(root.right):
             root.right = None        
         self.rec(root.left)
         self.rec(root.right)
@@ -40,8 +33,7 @@ class Solution:
     
     def pruneTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
         self.rec(root)
-        if not root.val:
-            if not root.left and not root.right:
+        if not root.val and not root.left and not root.right:
                 return None
         return root
         
