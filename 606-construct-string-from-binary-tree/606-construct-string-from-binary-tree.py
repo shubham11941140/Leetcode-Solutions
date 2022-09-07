@@ -8,12 +8,15 @@ class Solution:
     def tree2str(self, root: Optional[TreeNode]) -> str:
         if not root:
             return ''
-        if not root.left and not root.right:
-            return str(root.val)
-        if root.left and not root.right:  
-            return str(root.val) + '(' + self.tree2str(root.left) + ')'
-        if not root.left and root.right:
-            return str(root.val) + '()' + '(' + self.tree2str(root.right) + ')'
-        if root.left and root.right:
-            return str(root.val) + '(' + self.tree2str(root.left) + ')' + '(' + self.tree2str(root.right) + ')'
+        l = root.left
+        r = root.right
+        s = str(root.val)
+        if not l and not r:
+            return s
+        if l and not r:  
+            return s + '(' + self.tree2str(l) + ')'
+        if not l and r:
+            return s + '()' + '(' + self.tree2str(r) + ')'
+        if l and r:
+            return s + '(' + self.tree2str(l) + ')' + '(' + self.tree2str(r) + ')'
       
