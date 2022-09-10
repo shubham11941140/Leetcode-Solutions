@@ -2,14 +2,12 @@ class Solution:
     def hIndex(self, citations: List[int]) -> int:
         citations.sort()
         n = len(citations)
-        b = []
-        
+        b = []        
         for c in range(1001):
             ans = 0
             for cit in citations:
                 if cit >= c:
                     ans += 1
-            print(c, ans)
             if ans >= c:
                 b.append(c)
         return b[-1]
