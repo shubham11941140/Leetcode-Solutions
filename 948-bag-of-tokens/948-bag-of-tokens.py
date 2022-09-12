@@ -7,7 +7,6 @@ class Solution:
         s = 0
         ans = 0
         while l <= r:                        
-            print(l, r, s, ans)
             if power >= tokens[l]:
                 power -= tokens[l]
                 s += 1
@@ -19,7 +18,6 @@ class Solution:
             else:
                 break
             ans = max(ans, s)
-        print(s)
         return ans
                 
                 
