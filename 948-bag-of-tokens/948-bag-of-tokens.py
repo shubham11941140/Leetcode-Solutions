@@ -1,4 +1,5 @@
 class Solution:
+
     def bagOfTokensScore(self, tokens: List[int], power: int) -> int:
         tokens.sort()
         n = len(tokens)
@@ -6,7 +7,7 @@ class Solution:
         r = n - 1
         s = 0
         ans = 0
-        while l <= r:                        
+        while l <= r:
             print(l, r, s, ans)
             if power >= tokens[l]:
                 power -= tokens[l]
@@ -21,7 +22,3 @@ class Solution:
             ans = max(ans, s)
         print(s)
         return ans
-                
-                
-            
-        
