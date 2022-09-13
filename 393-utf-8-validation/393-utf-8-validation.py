@@ -12,7 +12,7 @@ class Solution:
                 else:
                     return False
             if i + 2 < n and c[i][:4] == "1110":
-                if c[i + 1][:2] == "10" and c[i + 2][:2] == "10":
+                if c[i + 1][:2] == c[i + 2][:2] == "10":
                     flag = True
                     i += 2
                 else:
