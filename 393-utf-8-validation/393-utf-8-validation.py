@@ -1,11 +1,7 @@
 class Solution:
     def validUtf8(self, data: List[int]) -> bool:
-        b = [bin(i).replace("0b", "") for i in data]        
-        print(b)
-        c = [i.zfill(8) for i in b]
-        print([i[:5] for i in c])
-        
-        print(c)
+        c = [bin(i).replace("0b", "").zfill(8) for i in data]
+        #c = [i.zfill(8) for i in b]        
         i = 0
         n = len(c)
         while i < n:
