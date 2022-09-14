@@ -23,7 +23,7 @@ class Solution:
                     f = False
                     break
             if f:
-                self.ans.append(1)
+                self.ans += 1
             return
         d[root.val] += 1
         self.rtl(root.left, d.copy())
@@ -32,9 +32,9 @@ class Solution:
     # R-to-L paths
     def pseudoPalindromicPaths (self, root: Optional[TreeNode]) -> int:
         d = defaultdict(int)
-        self.ans = []
+        self.ans = 0
         self.rtl(root, d)
-        return len(self.ans)
+        return self.ans
             
         
         
