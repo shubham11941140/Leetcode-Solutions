@@ -7,8 +7,9 @@
 
 from collections import Counter, defaultdict
 
-class Solution:            
-    
+
+class Solution:
+
     def rtl(self, root, d):
         if not root:
             return
@@ -28,15 +29,10 @@ class Solution:
         d[root.val] += 1
         self.rtl(root.left, d.copy())
         self.rtl(root.right, d.copy())
-                    
+
     # R-to-L paths
-    def pseudoPalindromicPaths (self, root: Optional[TreeNode]) -> int:
+    def pseudoPalindromicPaths(self, root: Optional[TreeNode]) -> int:
         d = defaultdict(int)
         self.ans = []
         self.rtl(root, d)
         return len(self.ans)
-            
-        
-        
-        
-        
