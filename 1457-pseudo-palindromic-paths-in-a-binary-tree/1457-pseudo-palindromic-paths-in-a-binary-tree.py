@@ -6,8 +6,6 @@
 #         self.right = right
 
 from collections import Counter, defaultdict
-import sys
-sys.setrecursionlimit(10 ** 6)
 
 class Solution:            
     
@@ -39,7 +37,6 @@ class Solution:
         d = defaultdict(int)
         self.ans = []
         self.rtl(root, d)
-        print(self.ans)
         r = 0
         for i in self.ans:
             if self.ps(i):
