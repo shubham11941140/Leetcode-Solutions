@@ -5,12 +5,14 @@
 #         self.left = left
 #         self.right = right
 
-from collections import Counter, defaultdict
 import sys
-sys.setrecursionlimit(10 ** 6)
+from collections import Counter, defaultdict
 
-class Solution:            
-    
+sys.setrecursionlimit(10**6)
+
+
+class Solution:
+
     def rtl(self, root, d):
         if not root:
             return
@@ -21,8 +23,8 @@ class Solution:
         d[root.val] += 1
         self.rtl(root.left, d.copy())
         self.rtl(root.right, d.copy())
-        #d[root.val] -= 1
-        
+        # d[root.val] -= 1
+
     def ps(self, a):
         z = 0
         for i in a.values():
@@ -31,9 +33,9 @@ class Solution:
             if z > 1:
                 return False
         return True
-                    
+
     # R-to-L paths
-    def pseudoPalindromicPaths (self, root: Optional[TreeNode]) -> int:
+    def pseudoPalindromicPaths(self, root: Optional[TreeNode]) -> int:
 
         a = []
         d = defaultdict(int)
@@ -45,8 +47,3 @@ class Solution:
             if self.ps(i):
                 r += 1
         return r
-            
-        
-        
-        
-        
