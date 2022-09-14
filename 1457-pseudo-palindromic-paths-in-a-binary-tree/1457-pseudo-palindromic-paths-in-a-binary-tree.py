@@ -15,15 +15,12 @@ class Solution:
         if not root.left and not root.right:
             d[root.val] += 1
             z = 0
-            f = True
             for i in d.values():
-                if i % 2 == 1:
+                if i % 2:
                     z += 1
                 if z > 1:
-                    f = False
-                    break
-            if f:
-                self.ans += 1
+                    return
+            self.ans += 1
             return
         d[root.val] += 1
         self.rtl(root.left, d.copy())
