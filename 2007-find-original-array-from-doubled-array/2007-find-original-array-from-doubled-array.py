@@ -10,7 +10,7 @@ class Solution:
             else:
                 return self.binary_search(mid + 1, high, x)        
         return -1        
-        
+
     def findOriginalArray(self, changed: List[int]) -> List[int]:
         cz = changed.count(0)
         if cz % 2:
@@ -23,7 +23,6 @@ class Solution:
         for i in odd:
             bs = self.binary_search(0, le - 1, 2 * i)
             if bs != -1:
-                ans.append(i)
                 del self.even[bs]
                 le -= 1
             else:
@@ -31,11 +30,12 @@ class Solution:
         if le % 2:
             return []
         else:
+            ans += odd
             while self.even:
                 m = self.even[0]
                 bs = self.binary_search(0, le - 1, 2 * m)
                 if bs != -1:
-                    ans.append(m)
+                    ans += [m]
                     del self.even[bs]
                     del self.even[0]
                     le -= 2
