@@ -22,10 +22,8 @@ class Solution:
 
         else:
             # Element is not present in the array
-            return -1    
-    
-    
-    
+            return -1
+
     def findOriginalArray(self, changed: List[int]) -> List[int]:
         # Remove all zeros before
         cz = changed.count(0)
@@ -40,30 +38,28 @@ class Solution:
             if bs != -1:
                 ans.append(i)
                 del even[bs]
-                #even.remove(2 * i)
+                # even.remove(2 * i)
             else:
                 return []
         if len(ans) < len(odd):
             return []
-        else: # Equal
+        else:  # Equal
             if len(even) % 2:
                 return []
             else:
                 # Check if split exists
                 while even:
                     # Remove smallest
-                    #m = min(even)
+                    # m = min(even)
                     m = even[0]
                     bs = self.binary_search(even, 0, len(even) - 1, 2 * m)
                     if bs != -1:
                         ans.append(m)
                         del even[bs]
                         del even[0]
-                        #even.remove(m)
-                        #even.remove(2 * m)
+                        # even.remove(m)
+                        # even.remove(2 * m)
                     else:
                         return []
         print(ans)
         return ans
-            
-                
