@@ -8,8 +8,8 @@ class Solution:
             elif self.even[mid] > x:
                 return self.binary_search(low, mid - 1, x)
             else:
-                return self.binary_search(mid + 1, high, x)        
-        return -1        
+                return self.binary_search(mid + 1, high, x)
+        return -1
 
     def findOriginalArray(self, changed: List[int]) -> List[int]:
         cz = changed.count(0)
@@ -42,5 +42,3 @@ class Solution:
                 else:
                     return []
         return ans
-            
-                
