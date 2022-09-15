@@ -8,9 +8,9 @@ class Solution:
             elif arr[mid] > x:
                 return self.binary_search(arr, low, mid - 1, x)
             else:
-                return self.binary_search(arr, mid + 1, high, x)        
-        return -1        
-        
+                return self.binary_search(arr, mid + 1, high, x)
+        return -1
+
     def findOriginalArray(self, changed: List[int]) -> List[int]:
         cz = changed.count(0)
         if cz % 2:
@@ -42,5 +42,3 @@ class Solution:
                 else:
                     return []
         return ans
-            
-                
