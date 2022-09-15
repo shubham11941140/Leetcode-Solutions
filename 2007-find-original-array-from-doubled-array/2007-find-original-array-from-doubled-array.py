@@ -18,29 +18,29 @@ class Solution:
         ans = [0 for i in range(cz // 2)]
         changed = [i for i in changed if i]
         even = sorted([i for i in changed if i % 2 == 0])
+        le = len(even)
         odd = [i for i in changed if i % 2]
         for i in odd:
-            bs = self.binary_search(even, 0, len(even) - 1, 2 * i)
+            bs = self.binary_search(even, 0, le - 1, 2 * i)
             if bs != -1:
                 ans.append(i)
                 del even[bs]
+                le -= 1
             else:
                 return []
-        if len(ans) < len(odd):
+        if le % 2:
             return []
         else:
-            if len(even) % 2:
-                return []
-            else:
-                while even:
-                    m = even[0]
-                    bs = self.binary_search(even, 0, len(even) - 1, 2 * m)
-                    if bs != -1:
-                        ans.append(m)
-                        del even[bs]
-                        del even[0]
-                    else:
-                        return []
+            while even:
+                m = even[0]
+                bs = self.binary_search(even, 0, le - 1, 2 * m)
+                if bs != -1:
+                    ans.append(m)
+                    del even[bs]
+                    del even[0]
+                    le -= 2
+                else:
+                    return []
         return ans
             
                 
