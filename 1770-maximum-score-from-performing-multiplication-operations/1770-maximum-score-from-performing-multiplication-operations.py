@@ -1,6 +1,5 @@
 class Solution:
     def maximumScore(self, num: List[int], mul: List[int]) -> int:        
-        s = 0
         n = len(num)
         m = len(mul)
         d = [[0] * (m + 1) for i in range(m + 1)]
