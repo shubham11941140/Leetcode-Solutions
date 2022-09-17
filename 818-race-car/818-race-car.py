@@ -1,15 +1,15 @@
 from collections import defaultdict, deque
 class Solution:                          
-    @cache
+    @lru_cache
     def racecar(self, target: int) -> int:
-        q = deque()
+        q = []
         q.append((0, 1, 0))
         v = defaultdict(lambda: defaultdict(lambda: False))
         #v = set()
         v[0][1] = True
         #v.add((0, 1))
         while q:
-            p, s, steps = q.popleft()
+            p, s, steps = q.pop(0)
             if p == target:
                 return steps
             npa = p + s
