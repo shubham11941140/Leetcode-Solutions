@@ -1,5 +1,8 @@
 from collections import defaultdict, deque
-class Solution:                          
+
+
+class Solution:
+
     @lru_cache
     def racecar(self, target: int) -> int:
         q = deque()
@@ -11,8 +14,9 @@ class Solution:
             if p == target:
                 return steps
             if not v[p + s][s * 2]:
-                q.append((p + s, s * 2, steps + 1))  
+                q.append((p + s, s * 2, steps + 1))
                 v[p + s][s * 2] = True
-            if (s > 0 and p + s > target) or (s < 0 and p + s < target) and not v[p][(-1 if s >= 0 else 1)]:
+            if ((s > 0 and p + s > target) or (s < 0 and p + s < target)
+                    and not v[p][(-1 if s >= 0 else 1)]):
                 q.append((p, (-1 if s >= 0 else 1), steps + 1))
                 v[p][(-1 if s >= 0 else 1)] = True
