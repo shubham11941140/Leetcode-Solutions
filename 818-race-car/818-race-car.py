@@ -1,6 +1,6 @@
 from collections import defaultdict, deque
 class Solution:                          
-    @lru_cache
+    @cache
     def racecar(self, target: int) -> int:
         q = deque()
         q.append((0, 1, 0))
