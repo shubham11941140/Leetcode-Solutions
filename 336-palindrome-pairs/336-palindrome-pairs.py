@@ -16,4 +16,4 @@ class Solution:
         return ans
             
     def palindromePairs(self, words: List[str]) -> List[List[int]]:
-        return self.opt(tuple(words), len(words)) if len(words) <= 300 else self.f(words, len(words))
+        return self.opt(tuple(words), len(words)) if len(words) <= 200 else self.f(words, len(words))
