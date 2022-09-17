@@ -1,13 +1,16 @@
 from collections import defaultdict, deque
-class Solution:                          
+
+
+class Solution:
+
     @cache
     def racecar(self, target: int) -> int:
         q = deque()
         q.append((0, 1, 0))
         v = defaultdict(lambda: defaultdict(lambda: False))
-        #v = set()
+        # v = set()
         v[0][1] = True
-        #v.add((0, 1))
+        # v.add((0, 1))
         while q:
             p, s, steps = q.popleft()
             if p == target:
@@ -15,11 +18,11 @@ class Solution:
             npa = p + s
             nsa = s * 2
             if not v[npa][nsa]:
-                q.append((npa, nsa, steps + 1))  
+                q.append((npa, nsa, steps + 1))
                 v[npa][nsa] = True
             if (s > 0 and p + s > target) or (s < 0 and p + s < target):
                 npr = p
-                nsr = (-1 if s >= 0 else 1)
+                nsr = -1 if s >= 0 else 1
                 if not v[npr][nsr]:
                     q.append((npr, nsr, steps + 1))
                     v[npr][nsr] = True
