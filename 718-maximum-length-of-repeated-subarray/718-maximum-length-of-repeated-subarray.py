@@ -1,4 +1,5 @@
 class Solution:
+
     def findLength(self, nums1: List[int], nums2: List[int]) -> int:
         n1 = len(nums1)
         n2 = len(nums2)
@@ -10,4 +11,4 @@ class Solution:
                         dp[i][j] = dp[i - 1][j - 1] + 1
                     else:
                         dp[i][j] = 1
-        return max([max(i) for i in dp])   
+        return max([max(i) for i in dp])
