@@ -1,6 +1,18 @@
 class Solution:
+
     def originalDigits(self, s: str) -> str:
-        d = {'z': 0, 'w': 2, 'u': 4, 'x': 6, 'g': 8, 'o': 1, 't': 3, 'f': 5, 's': 7, 'i': 9}
+        d = {
+            "z": 0,
+            "w": 2,
+            "u": 4,
+            "x": 6,
+            "g": 8,
+            "o": 1,
+            "t": 3,
+            "f": 5,
+            "s": 7,
+            "i": 9,
+        }
         cnt = [0 for i in range(10)]
         for c in s:
             if c in d:
@@ -13,4 +25,4 @@ class Solution:
         res = ""
         for i in range(10):
             res += str(i) * cnt[i]
-        return res       
+        return res
