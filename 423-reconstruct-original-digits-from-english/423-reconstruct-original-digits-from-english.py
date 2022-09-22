@@ -10,7 +10,4 @@ class Solution:
         cnt[5] -= cnt[4]
         cnt[7] -= cnt[6]
         cnt[9] -= cnt[5] + cnt[6] + cnt[8]
-        res = ""
-        for i in range(10):
-            res += str(i) * cnt[i]
-        return res       
+        return ''.join([str(i) * cnt[i] for i in range(10)])      
