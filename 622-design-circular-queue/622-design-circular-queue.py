@@ -3,16 +3,19 @@ class MyCircularQueue:
     def __init__(self, k: int):
         self.a = []
         self.l = k
+        self.len = 0
         
     def enQueue(self, value: int) -> bool:
-        if len(self.a) < self.l:
+        if self.len < self.l:
             self.a.append(value)
+            self.len += 1
             return True
         return False        
 
     def deQueue(self) -> bool:
-        if self.a:
+        if self.len:
             self.a.pop(0)
+            self.len -= 1
             return True
         return False        
 
@@ -26,7 +29,7 @@ class MyCircularQueue:
         return not self.a        
 
     def isFull(self) -> bool:
-        return len(self.a) == self.l
+        return self.len == self.l
 
 
 # Your MyCircularQueue object will be instantiated and called as such:
