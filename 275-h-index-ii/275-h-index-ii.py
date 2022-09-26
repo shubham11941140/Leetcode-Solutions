@@ -1,8 +1,7 @@
 class Solution:
     def hIndex(self, citations: List[int]) -> int:
-        #citations.sort()
         n = len(citations)
-        for i in range(n):
-            if citations[i] >= n - i:
+        for i, c in enumerate(citations):
+            if c >= n - i:
                 return n - i
-        return 0      
+        return 0     
