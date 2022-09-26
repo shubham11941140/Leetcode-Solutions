@@ -1,6 +1,6 @@
 class Solution:
     def addOperators(self, num: str, target: int) -> List[str]:
-        @cache
+        @lru_cache(None)
         def dfs(i, curr, prev, string):
             if i == len(num):
                 if curr == target:
