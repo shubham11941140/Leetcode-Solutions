@@ -1,6 +1,6 @@
 class Solution:
     def addOperators(self, num: str, target: int) -> List[str]:
-        # Given a string num that contains only digits and an integer target, return all possibilities to insert the binary operators '+', '-', and/or '*' between the digits of num so that the resultant expression evaluates to the target value.
+        @cache
         def dfs(i, curr, prev, string):
             if i == len(num):
                 if curr == target:
