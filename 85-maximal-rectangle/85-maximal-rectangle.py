@@ -8,12 +8,12 @@ class Solution:
             for j in range(n):
                 if matrix[i][j] == '1':
                     dp[i][j] = dp[i][j - 1] + 1 if j else 1
-        res = 0
+        r = 0
         for i in range(m):
             for j in range(n):
                 if matrix[i][j] == '1':
-                    width = dp[i][j]
-                    for k in range(i, -1, -1):
-                        width = min(width, dp[k][j])
-                        res = max(res, width * (i - k + 1))
-        return res       
+                    w = dp[i][j]
+                    for k in reversed(range(i + 1)):
+                        w = min(w, dp[k][j])
+                        r = max(r, w * (i - k + 1))
+        return r      
