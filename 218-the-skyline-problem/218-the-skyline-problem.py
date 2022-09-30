@@ -1,6 +1,8 @@
 class Solution:
+
     def getSkyline(self, buildings: List[List[int]]) -> List[List[int]]:
         import heapq
+
         h = []
         res = []
         i = 0
@@ -18,4 +20,4 @@ class Solution:
             y = len(h) and -h[0][0]
             if not res or res[-1][1] != y:
                 res.append([x, y])
-        return res   
+        return res
