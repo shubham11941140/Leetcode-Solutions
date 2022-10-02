@@ -6,5 +6,5 @@ class Solution:
             for j in range(1, target + 1):
                 for x in range(1, k + 1):
                     if j >= x:
-                        dp[i][j] = (dp[i][j] + dp[i - 1][j - x]) % (10 ** 9 + 7)
+                        dp[i][j] += dp[i - 1][j - x]
         return dp[n][target] % (10 ** 9 + 7)        
