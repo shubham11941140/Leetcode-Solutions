@@ -10,7 +10,7 @@ class Solution:
     def roottoleafsum(self, root, a, val):
         val += root.val
         if root.left is None and root.right is None:
-            a.append(val)
+            a.add(val)
         else:            
             if root.left:
                 self.roottoleafsum(root.left, a, val)
@@ -18,7 +18,7 @@ class Solution:
                 self.roottoleafsum(root.right, a, val)
                 
     def hasPathSum(self, root: Optional[TreeNode], targetSum: int) -> bool:
-        a = []
+        a = set()
         val = 0
         if root is not None:
             self.roottoleafsum(root, a, val)
