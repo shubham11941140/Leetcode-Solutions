@@ -10,8 +10,8 @@ class Solution:
             return TreeNode(val, root)
         q = [root]
         for _ in range(depth - 2):
-            q = [kid for node in q for kid in (node.left, node.right) if kid]
+            q = [i for n in q for i in (n.left, n.right) if i]
         for node in q:
             node.left = TreeNode(val, node.left)
             node.right = TreeNode(val, None, node.right)
-        return root     
+        return root    
