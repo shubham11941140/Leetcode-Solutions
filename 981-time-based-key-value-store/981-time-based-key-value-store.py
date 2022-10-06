@@ -12,7 +12,6 @@ class TimeMap:
     def get(self, key: str, timestamp: int) -> str:
         i = bisect(self.t[key], (timestamp, chr(127)))
         return self.t[key][i - 1][1] if i else ""                            
-
 # Your TimeMap object will be instantiated and called as such:
 # obj = TimeMap()
 # obj.set(key,value,timestamp)
