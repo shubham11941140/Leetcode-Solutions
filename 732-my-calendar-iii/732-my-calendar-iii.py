@@ -11,8 +11,7 @@ class MyCalendarThree:
         active = ans = 0
         for x in sorted(self.d):
             active += self.d[x]
-            if active > ans:
-                ans = active
+            ans = max(ans, active)
         return ans        
 
 # Your MyCalendarThree object will be instantiated and called as such:
