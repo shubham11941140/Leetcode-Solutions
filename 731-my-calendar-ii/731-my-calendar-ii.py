@@ -1,10 +1,11 @@
 from collections import Counter
 
+
 class MyCalendarTwo:
 
     def __init__(self):
         self.d = Counter()
-        
+
     def book(self, start: int, end: int) -> bool:
         self.d[start] += 1
         self.d[end] -= 1
@@ -15,7 +16,7 @@ class MyCalendarTwo:
                 self.d[start] -= 1
                 self.d[end] += 1
                 return False
-        return True        
+        return True
 
 
 # Your MyCalendarTwo object will be instantiated and called as such:
