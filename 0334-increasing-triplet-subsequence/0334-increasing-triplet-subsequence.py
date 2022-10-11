@@ -1,8 +1,9 @@
 class Solution:
-    def increasingTriplet(self, nums: List[int]) -> bool:        
-        n = len(nums)        
-        MIN = 10 ** 100
-        MAX = -1 * (10 ** 100)
+
+    def increasingTriplet(self, nums: List[int]) -> bool:
+        n = len(nums)
+        MIN = 10**100
+        MAX = -1 * (10**100)
         st = [[0 for i in range(n)] for j in range(3)]
         for i in range(n):
             if nums[i] < MIN:
@@ -15,7 +16,5 @@ class Solution:
             st[2][i] = MAX
         for i in range(n):
             if st[0][i] < st[1][i] < st[2][i]:
-                return True        
+                return True
         return False
-            
-        
