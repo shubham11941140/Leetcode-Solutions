@@ -1,17 +1,14 @@
 class Solution:
     def containsNearbyDuplicate(self, nums: List[int], k: int) -> bool:
-        d = dict()
-        for i in range(len(nums)):
-            if nums[i] in d:
-                d[nums[i]].append(i)
-            else:
-                d[nums[i]] = [i]
+        from collections import defaultdict
+        d = defaultdict(list)
+        for i, num in enumerate(nums):
+            d[num].append(i)
         for i in d:
             if len(d[i]) > 1:
-                l = d[i].copy()
-                for i in range(len(l) - 1):
-                     if l[i + 1] - l[i] <= k:
-                            return True
+                for j in range(len(d[i]) - 1):
+                    if d[i][j + 1] - d[i][j] <= k:
+                        return True
         return False
             
         
