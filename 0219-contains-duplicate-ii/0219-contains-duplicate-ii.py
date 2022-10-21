@@ -1,6 +1,8 @@
 class Solution:
+
     def containsNearbyDuplicate(self, nums: List[int], k: int) -> bool:
         from collections import defaultdict
+
         d = defaultdict(list)
         for i, num in enumerate(nums):
             d[num].append(i)
@@ -10,6 +12,3 @@ class Solution:
                     if d[i][j + 1] - d[i][j] <= k:
                         return True
         return False
-            
-        
-        
