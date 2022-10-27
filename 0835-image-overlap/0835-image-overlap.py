@@ -3,7 +3,5 @@ class Solution:
         n = len(img1)
         a = [(i, j) for i in range(n) for j in range(n) if img1[i][j]]
         b = [(i, j) for i in range(n) for j in range(n) if img2[i][j]]
-        d = {}
-        ans = 0
         d = Counter([(bx - ax, by - ay) for ax, ay in a for bx, by in b])
         return max(d.values() or [0])
