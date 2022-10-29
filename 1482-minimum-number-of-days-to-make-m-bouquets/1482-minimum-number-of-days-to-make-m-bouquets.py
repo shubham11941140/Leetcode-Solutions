@@ -10,8 +10,7 @@ class Solution:
                     cnt = 0
             else:
                 cnt = 0
-        return m <= 0    
-    
+        return m <= 0        
     
     def minDays(self, bloomDay: List[int], m: int, k: int) -> int:
         self.b = bloomDay
