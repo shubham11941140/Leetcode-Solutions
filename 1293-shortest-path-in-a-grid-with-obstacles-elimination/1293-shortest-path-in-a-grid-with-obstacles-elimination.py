@@ -11,7 +11,7 @@ class Solution:
             for dx, dy in ((0, 1), (0, -1), (1, 0), (-1, 0)):
                 nx, ny = x + dx, y + dy
                 if 0 <= nx < n and 0 <= ny < m:
-                    if grid[nx][ny] == 0:
+                    if not grid[nx][ny]:
                         if (nx, ny, z) not in visited:
                             if nx == n - 1 and ny == m - 1:
                                 return dist + 1
