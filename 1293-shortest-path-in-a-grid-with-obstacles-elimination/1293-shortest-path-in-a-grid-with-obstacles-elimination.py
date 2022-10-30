@@ -4,10 +4,8 @@ class Solution:
         m = len(grid[0])
         if n == 1 and m == 1:
             return 0
-        q = deque()
-        q.append((0, 0, 0, 0))
-        visited = set()
-        visited.add((0, 0, 0))
+        q = deque([(0, 0, 0, 0)])
+        visited = set((0, 0, 0))
         while q:
             x, y, z, dist = q.popleft()
             for dx, dy in ((0, 1), (0, -1), (1, 0), (-1, 0)):
@@ -27,4 +25,4 @@ class Solution:
                                 return dist + 1
                             visited.add((nx, ny, z + 1))
                             q.append((nx, ny, z + 1, dist + 1))
-        return -1        
+        return -1      
