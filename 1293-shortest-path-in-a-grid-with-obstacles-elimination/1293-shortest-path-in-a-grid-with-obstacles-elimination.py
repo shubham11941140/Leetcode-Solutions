@@ -1,4 +1,5 @@
 class Solution:
+
     def shortestPath(self, grid: List[List[int]], k: int) -> int:
         n = len(grid)
         m = len(grid[0])
@@ -27,4 +28,4 @@ class Solution:
                                 return dist + 1
                             visited.add((nx, ny, z + 1))
                             q.append((nx, ny, z + 1, dist + 1))
-        return -1        
+        return -1
