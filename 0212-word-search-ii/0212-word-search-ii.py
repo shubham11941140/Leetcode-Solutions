@@ -3,28 +3,34 @@ class Solution:
         res = []
         Trie = lambda : defaultdict(Trie)
         root = Trie()
-        def add(s):
-            cur = root
-            for c in s: cur = cur[c]
-            cur['$'] = s
                 
-        for word in words: add(word)
+        for word in words: 
+            cur = root
+            for c in word: 
+                cur = cur[c]
+            cur['$'] = word
+            
         m, n = len(board), len(board[0])
         
         def dfs(i, j, root):
             ch = board[i][j]
             cur = root.get(ch)
-            if not cur: return 
+            if not cur: 
+                return 
 
             if '$' in cur: 
                 res.append(cur['$'])
                 del cur['$']
             
             board[i][j] = '#'
-            if i<m-1: dfs(i+1, j, cur)
-            if i>0: dfs(i-1, j, cur)
-            if j<n-1: dfs(i, j+1, cur)
-            if j>0: dfs(i, j-1, cur)
+            if i < m - 1: 
+                dfs(i + 1, j, cur)
+            if i: 
+                dfs(i - 1, j, cur)
+            if j < n - 1: 
+                dfs(i, j + 1, cur)
+            if j: 
+                dfs(i, j - 1, cur)
             board[i][j] = ch
 
         for i in range(m):
