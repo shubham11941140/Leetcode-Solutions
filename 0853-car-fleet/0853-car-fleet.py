@@ -1,5 +1,7 @@
 class Solution:
-    def carFleet(self, target: int, position: List[int], speed: List[int]) -> int:
+
+    def carFleet(self, target: int, position: List[int],
+                 speed: List[int]) -> int:
         n = len(position)
         if not n:
             return 0
@@ -11,4 +13,4 @@ class Solution:
             if nt > t:
                 ans += 1
                 t = nt
-        return ans       
+        return ans
