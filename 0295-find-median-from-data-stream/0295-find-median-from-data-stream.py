@@ -13,8 +13,6 @@ class MedianFinder:
     def findMedian(self) -> float:
         return self.a[self.l // 2] if self.l % 2 else (self.a[self.l // 2] + self.a[(self.l // 2) - 1]) / 2
         
-
-
 # Your MedianFinder object will be instantiated and called as such:
 # obj = MedianFinder()
 # obj.addNum(num)
