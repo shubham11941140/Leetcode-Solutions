@@ -6,16 +6,12 @@ class MedianFinder:
         self.a = []
         self.l = 0
         
-
     def addNum(self, num: int) -> None:
         insort(self.a, num)
         self.l += 1
-        #print(self.a)
 
     def findMedian(self) -> float:
-        if self.l % 2:
-            return self.a[self.l // 2]
-        return (self.a[self.l // 2] + self.a[(self.l // 2) - 1]) / 2
+        return self.a[self.l // 2] if self.l % 2 else (self.a[self.l // 2] + self.a[(self.l // 2) - 1]) / 2
         
 
 
