@@ -27,4 +27,4 @@ class Solution:
                         vis[y] = 1
                         st.append(y)
             ans += 1
-        return n - ans        
+        return n - ans
