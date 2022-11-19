@@ -7,11 +7,7 @@ class Solution:
             return trees
         trees.sort()
         hull = []
-        for p in trees:
-            while len(hull) >= 2 and self.dist(hull[-2], hull[-1], p) < 0:
-                hull.pop()
-            hull.append(p)
-        for p in reversed(trees):
+        for p in trees + trees[::-1]:
             while len(hull) >= 2 and self.dist(hull[-2], hull[-1], p) < 0:
                 hull.pop()
             hull.append(p)
