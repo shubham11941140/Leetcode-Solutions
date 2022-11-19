@@ -5,15 +5,14 @@ class Solution:
         n = len(trees)
         if n < 4:
             return trees
-        #trees.sort(key = lambda x: (x[0], x[1]))
         trees.sort()
         hull = []
-        for i in range(n):
-            while len(hull) >= 2 and self.dist(hull[-2], hull[-1], trees[i]) < 0:
+        for p in trees:
+            while len(hull) >= 2 and self.dist(hull[-2], hull[-1], p) < 0:
                 hull.pop()
-            hull.append(trees[i])
-        for i in reversed(range(n)):
-            while len(hull) >= 2 and self.dist(hull[-2], hull[-1], trees[i]) < 0:
+            hull.append(p)
+        for p in reversed(trees):
+            while len(hull) >= 2 and self.dist(hull[-2], hull[-1], p) < 0:
                 hull.pop()
-            hull.append(trees[i])
+            hull.append(p)
         return list(set(map(tuple, hull)))
