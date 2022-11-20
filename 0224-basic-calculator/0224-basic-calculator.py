@@ -21,10 +21,9 @@ class Solution:
                 st.append(sign)
                 ans = 0
                 sign = 1
-
             elif s[i] == ')':
                 ans += sign * num
                 num = 0
                 ans *= st.pop()
                 ans += st.pop()
-        return ans + sign * num           
+        return ans + sign * num        
