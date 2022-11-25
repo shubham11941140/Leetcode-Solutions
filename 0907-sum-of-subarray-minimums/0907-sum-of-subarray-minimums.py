@@ -16,4 +16,4 @@ class Solution:
                 stack.pop()
             right[i] = stack[-1] - i if stack else n - i
             stack.append(i)
-        return sum(a * l * r for a, l, r in zip(A, left, right)) % (10 ** 9 + 7)        
+        return sum(a * l * r for a, l, r in zip(A, left, right)) % (10**9 + 7)
