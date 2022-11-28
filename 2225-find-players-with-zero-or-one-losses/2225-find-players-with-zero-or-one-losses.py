@@ -17,4 +17,3 @@ class Solution:
                 f.append(i)
         print(f, s)
         return [sorted(f), sorted(s)]
-    
