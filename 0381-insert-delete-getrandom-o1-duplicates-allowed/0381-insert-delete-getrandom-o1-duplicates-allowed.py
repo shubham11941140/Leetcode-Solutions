@@ -1,26 +1,27 @@
 import random
 
-class RandomizedCollection:
 
+class RandomizedCollection:
     def __init__(self):
-        self.a = []        
-        
+        self.a = []
+
     def insert(self, val: int) -> bool:
         flag = val not in self.a
         self.a.append(val)
         return flag
-        
+
     def remove(self, val: int) -> bool:
         if val not in self.a:
             return False
         self.a.remove(val)
-        return True      
+        return True
 
     def getRandom(self) -> int:
-        #print(self.a)
+        # print(self.a)
         return random.choice(self.a)
         return self.a[random.randrange(len(self.a))]
-        
+
+
 # Your RandomizedCollection object will be instantiated and called as such:
 # obj = RandomizedCollection()
 # param_1 = obj.insert(val)
