@@ -1,9 +1,9 @@
 from random import choice
 
-class RandomizedSet:
 
+class RandomizedSet:
     def __init__(self):
-        self.a = []    
+        self.a = []
         self.s = set()
 
     def insert(self, val: int) -> bool:
@@ -12,16 +12,16 @@ class RandomizedSet:
             self.s.add(val)
             return True
         return False
-        
+
     def remove(self, val: int) -> bool:
         if val in self.s:
             self.a.remove(val)
             self.s.remove(val)
             return True
-        return False        
+        return False
 
     def getRandom(self) -> int:
-        return random.choice(self.a)                
+        return random.choice(self.a)
 
 
 # Your RandomizedSet object will be instantiated and called as such:
