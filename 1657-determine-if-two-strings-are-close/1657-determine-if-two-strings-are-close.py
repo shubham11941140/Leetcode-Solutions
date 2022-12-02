@@ -4,6 +4,6 @@ class Solution:
             return False
         d1 = Counter(word1)
         d2 = Counter(word2)
-        if set(d1.keys()) != set(d2.keys()):
+        if d1.keys() != d2.keys():
             return False
         return sorted(d1.values()) == sorted(d2.values())        
