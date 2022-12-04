@@ -1,4 +1,5 @@
 class Solution:
+
     def minimumAverageDifference(self, nums: List[int]) -> int:
         # Find prefix sum
         n = len(nums)
@@ -6,7 +7,7 @@ class Solution:
         for i in range(n):
             s[i + 1] = s[i] + nums[i]
         # Find average difference of each index
-        ans = 10 ** 9
+        ans = 10**9
         idx = -1
         for i in range(n):
             # Sum of first half
