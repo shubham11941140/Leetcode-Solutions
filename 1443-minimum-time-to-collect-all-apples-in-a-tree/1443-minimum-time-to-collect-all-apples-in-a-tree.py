@@ -1,5 +1,7 @@
 class Solution:
-    def minTime(self, n: int, edges: List[List[int]], hasApple: List[bool]) -> int:
+
+    def minTime(self, n: int, edges: List[List[int]],
+                hasApple: List[bool]) -> int:
         graph = defaultdict(list)
         for u, v in edges:
             graph[u].append(v)
@@ -13,4 +15,4 @@ class Solution:
                 time += self.dfs(graph, hasApple, child, node)
         if (time > 0 or hasApple[node]) and parent != -1:
             time += 2
-        return time        
+        return time
