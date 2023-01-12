@@ -1,5 +1,7 @@
 class Solution:
-    def countSubTrees(self, n: int, edges: List[List[int]], labels: str) -> List[int]:
+
+    def countSubTrees(self, n: int, edges: List[List[int]],
+                      labels: str) -> List[int]:
         self.g = collections.defaultdict(list)
         self.l = labels
         for u, v in edges:
@@ -16,4 +18,4 @@ class Solution:
                 c += self.dfs(i, node)
         c[self.l[node]] += 1
         self.a[node] = c[self.l[node]]
-        return c       
+        return c
