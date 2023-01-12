@@ -1,17 +1,19 @@
 class Solution:
     def countSubTrees(self, n: int, edges: List[List[int]], labels: str) -> List[int]:
-        graph = collections.defaultdict(list)
+        self.g = collections.defaultdict(list)
+        self.l = labels
         for u, v in edges:
-            graph[u].append(v)
-            graph[v].append(u)
-        ans = [0] * n
-        def dfs(node, parent):
-            count = collections.Counter()
-            for nei in graph[node]:
-                if nei != parent:
-                    count += dfs(nei, node)
-            count[labels[node]] += 1
-            ans[node] = count[labels[node]]
-            return count
-        dfs(0, None)
-        return ans        
+            self.g[u].append(v)
+            self.g[v].append(u)
+        self.a = [0] * n
+        self.dfs(0, None)
+        return self.a
+
+    def dfs(self, node, parent):
+        c = Counter()
+        for i in self.g[node]:
+            if i != parent:
+                c += self.dfs(i, node)
+        c[self.l[node]] += 1
+        self.a[node] = c[self.l[node]]
+        return c       
