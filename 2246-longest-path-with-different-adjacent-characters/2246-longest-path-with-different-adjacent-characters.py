@@ -1,6 +1,7 @@
 class Solution:
+
     def longestPath(self, parent: List[int], s: str) -> int:
-        self.t = defaultdict(list)        
+        self.t = defaultdict(list)
         for i in range(1, len(parent)):
             self.t[parent[i]].append(i)
         self.ans = 1
@@ -18,4 +19,3 @@ class Solution:
                 self.ans = max(self.ans, l + r)
                 r = max(r, l + 1)
         return r
-        
