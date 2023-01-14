@@ -1,13 +1,12 @@
 class Solution:
-    
-    
+
     def dfs(self, g, node, visited, cc):
         for i in g[node]:
             if i not in visited:
                 visited.add(i)
                 cc.append(i)
                 self.dfs(g, i, visited, cc)
-    
+
     def smallestEquivalentString(self, s1: str, s2: str, baseStr: str) -> str:
         A = s1
         B = s2
@@ -38,4 +37,3 @@ class Solution:
                 if j in i:
                     S = S.replace(j, i[0])
         return S
-                
