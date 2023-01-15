@@ -1,9 +1,6 @@
 class Solution:
-    
     def get_root(self, i):
-        if i == self.par[i]:
-            return i
-        return self.get_root(self.par[i])
+        return i if i == self.par[i] else self.get_root(self.par[i])
 
     def connect(self, i, j):
         i, j = self.get_root(i), self.get_root(j)
