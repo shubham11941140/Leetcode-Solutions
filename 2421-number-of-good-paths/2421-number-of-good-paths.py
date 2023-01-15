@@ -1,36 +1,32 @@
 class Solution:
     
     def get_root(self, i):
-        if i == self.par[i]: 
+        if i == self.par[i]:
             return i
         return self.get_root(self.par[i])
 
+    def connect(self, i, j):
+        i, j = self.get_root(i), self.get_root(j)
+
+        if i != j:
+            if self.sz[i] < self.sz[j]: i, j = j, i
+            self.par[j] = i
+            self.sz[i] += self.sz[j]
+
+            if self.cur[i] == self.cur[j]:
+                r = self.cnt[i] * self.cnt[j]
+                self.cnt[i] += self.cnt[j]
+                return r
+
+            elif self.cur[i] < self.cur[j]:
+                self.cur[i], self.cnt[i] = self.cur[j], self.cnt[j]
+
+        return 0
 
     def numberOfGoodPaths(self, vals: List[int], edges: List[List[int]]) -> int:
-
-
-        def connect(i, j):
-            i,j = self.get_root(i), self.get_root(j)
-
-            if i != j:
-                if sz[i] < sz[j]: i, j = j, i
-                self.par[j] = i
-                sz[i] += sz[j]
-
-                if cur[i] == cur[j]:
-                    r = cnt[i] * cnt[j]
-                    cnt[i] += cnt[j]
-                    return r
-
-                elif cur[i] < cur[j]:
-                    cur[i],cnt[i] = cur[j],cnt[j]
-            return 0
-
-        n = ans =len(vals)
-        sz, cur,cnt  = [1]*n, vals,[1] *n
+        n = len(vals)
+        self.sz = [1] * n
+        self.cur = vals
+        self.cnt = [1] * n
         self.par = list(range(n))
-
-        for a, b in sorted(edges, key=lambda p: max(vals[p[0]], vals[p[1]])):
-            ans += connect(a, b)
-
-        return ans
+        return sum([self.connect(a, b) for a, b in sorted(edges, key=lambda p: max(vals[p[0]], vals[p[1]]))]) + n
