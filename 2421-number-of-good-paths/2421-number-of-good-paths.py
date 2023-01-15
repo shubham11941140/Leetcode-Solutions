@@ -1,5 +1,5 @@
 class Solution:
-    
+
     def get_root(self, i):
         if i == self.par[i]:
             return i
@@ -9,7 +9,8 @@ class Solution:
         i, j = self.get_root(i), self.get_root(j)
 
         if i != j:
-            if self.sz[i] < self.sz[j]: i, j = j, i
+            if self.sz[i] < self.sz[j]:
+                i, j = j, i
             self.par[j] = i
             self.sz[i] += self.sz[j]
 
@@ -23,10 +24,15 @@ class Solution:
 
         return 0
 
-    def numberOfGoodPaths(self, vals: List[int], edges: List[List[int]]) -> int:
+    def numberOfGoodPaths(self, vals: List[int],
+                          edges: List[List[int]]) -> int:
         n = len(vals)
         self.sz = [1] * n
         self.cur = vals
         self.cnt = [1] * n
         self.par = list(range(n))
-        return sum([self.connect(a, b) for a, b in sorted(edges, key=lambda p: max(vals[p[0]], vals[p[1]]))]) + n
+        return (sum([
+            self.connect(a, b)
+            for a, b in sorted(edges,
+                               key=lambda p: max(vals[p[0]], vals[p[1]]))
+        ]) + n)
