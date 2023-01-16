@@ -2,10 +2,10 @@ class Solution:
     def insert(self, intervals: List[List[int]], newInterval: List[int]) -> List[List[int]]:
         intervals.append(newInterval)
         intervals.sort(key=lambda x: x[0])
-        merged = []
-        for interval in intervals:
-            if not merged or merged[-1][1] < interval[0]:
-                merged.append(interval)
+        m = []
+        for i in intervals:
+            if not m or m[-1][1] < i[0]:
+                m.append(i)
             else:
-                merged[-1][1] = max(merged[-1][1], interval[1])
-        return merged        
+                m[-1][1] = max(m[-1][1], i[1])
+        return m      
