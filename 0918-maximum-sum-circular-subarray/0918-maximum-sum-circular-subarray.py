@@ -1,5 +1,7 @@
 class Solution:
+
     def maxSubarraySumCircular(self, nums: List[int]) -> int:
+
         def kadane(nums):
             cur_sum = max_sum = nums[0]
             for num in nums[1:]:
@@ -16,9 +18,9 @@ class Solution:
 
         # Find the minimum subarray sum
         min_sum = kadane([-num for num in nums])
-        
+
         print(max_sum, min_sum)
 
         # Find the maximum subarray sum circular
         max_sum_circular = sum(nums) + min_sum
-        return max(max_sum, max_sum_circular) 
+        return max(max_sum, max_sum_circular)
