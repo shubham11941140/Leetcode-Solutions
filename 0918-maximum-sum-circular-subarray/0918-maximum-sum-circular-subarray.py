@@ -9,7 +9,7 @@ class Solution:
             return max_sum
 
         # If all elements are negative, return the max element
-        if all(num < 0 for num in nums):
+        if max(nums) < 0:
             return max(nums)
 
         return max(kadane(nums), sum(nums) + kadane([-num for num in nums]))
