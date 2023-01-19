@@ -1,4 +1,5 @@
 class Solution:
+
     def subarraysDivByK(self, nums: List[int], k: int) -> int:
         c = 0
         s = 0
@@ -10,4 +11,4 @@ class Solution:
             if m[i] > 1:
                 c += (m[i] * (m[i] - 1)) // 2
         c += m[0]
-        return c      
+        return c
