@@ -1,4 +1,5 @@
 class Solution:
+
     def subarraysDivByK(self, nums: List[int], k: int) -> int:
         count = 0
         sum = 0
@@ -10,4 +11,4 @@ class Solution:
             if mod[i] > 1:
                 count += (mod[i] * (mod[i] - 1)) // 2
         count += mod[0]
-        return count        
+        return count
