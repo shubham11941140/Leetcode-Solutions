@@ -24,4 +24,4 @@ class Solution:
         quot, rem = divmod(i - 1, n)
         row = n - 1 - quot
         col = rem if row % 2 != n % 2 else n - 1 - rem
-        return row, col        
+        return row, col
