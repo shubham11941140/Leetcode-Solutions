@@ -1,4 +1,5 @@
 class Solution:
+
     def bfs(self, node1, graph):
         queue = deque()
         queue.append((node1, 0))
@@ -7,7 +8,7 @@ class Solution:
         a = defaultdict(int)
         while queue:
             node, dist = queue.popleft()
-            #if dist:
+            # if dist:
             a[node] = dist
             for neighbor in graph[node]:
                 if neighbor not in visited:
@@ -32,7 +33,8 @@ class Solution:
                     ans.append(i)
         return min(ans)
 
-    def closestMeetingNode(self, edges: List[int], node1: int, node2: int) -> int:
+    def closestMeetingNode(self, edges: List[int], node1: int,
+                           node2: int) -> int:
         # Build the graph
         graph = defaultdict(list)
         n = len(edges)
