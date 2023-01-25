@@ -1,4 +1,5 @@
 class Solution:
+    
     def bfs(self, node1):
         queue = deque()
         queue.append((node1, 0))
@@ -27,6 +28,4 @@ class Solution:
         for i in range(n):
             if edges[i] != -1:
                 self.g[i].append(edges[i])
-        a = self.bfs(node1)
-        b = self.bfs(node2)
-        return self.process(a, b)
+        return self.process(self.bfs(node1), self.bfs(node2))
