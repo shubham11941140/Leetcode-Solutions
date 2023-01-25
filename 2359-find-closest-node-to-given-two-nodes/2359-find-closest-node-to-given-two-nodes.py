@@ -1,5 +1,5 @@
 class Solution:
-    def bfs(self, node1, graph):
+    def bfs(self, node1):
         queue = deque()
         queue.append((node1, 0))
         visited = set()
@@ -7,39 +7,26 @@ class Solution:
         a = defaultdict(int)
         while queue:
             node, dist = queue.popleft()
-            #if dist:
             a[node] = dist
-            for neighbor in graph[node]:
+            for neighbor in self.g[node]:
                 if neighbor not in visited:
                     visited.add(neighbor)
                     queue.append((neighbor, dist + 1))
         return a
 
     def process(self, a, b):
-        v = set()
-        for i in a:
-            if i in b:
-                m = max(a[i], b[i])
-                v.add(m)
+        v = [max(a[i], b[i]) for i in a if i in b]
         if not v:
             return -1
         mv = min(v)
-        ans = []
-        for i in a:
-            if i in b:
-                m = max(a[i], b[i])
-                if m == mv:
-                    ans.append(i)
-        return min(ans)
+        return min([i for i in a if i in b and max(a[i], b[i]) == mv])
 
     def closestMeetingNode(self, edges: List[int], node1: int, node2: int) -> int:
-        # Build the graph
-        graph = defaultdict(list)
+        self.g = defaultdict(list)
         n = len(edges)
         for i in range(n):
             if edges[i] != -1:
-                graph[i].append(edges[i])
-        a = self.bfs(node1, graph)
-        b = self.bfs(node2, graph)
-        print(a, b)
+                self.g[i].append(edges[i])
+        a = self.bfs(node1)
+        b = self.bfs(node2)
         return self.process(a, b)
