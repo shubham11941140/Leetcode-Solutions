@@ -5,9 +5,8 @@ class Solution:
 
     def dfs(self, word):
         for i in range(1, len(word)):
-            prefix = word[:i]
-            suffix = word[i:]
-            if prefix in self.w:
-                if suffix in self.w or self.dfs(suffix):
-                    return True
+            p = word[:i]
+            s = word[i:]
+            if p in self.w and (s in self.w or self.dfs(s)):
+                return True
         return False
