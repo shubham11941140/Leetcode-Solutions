@@ -7,8 +7,7 @@ class Solution:
         for i in range(1, len(word)):
             prefix = word[:i]
             suffix = word[i:]
-            if prefix in self.w and suffix in self.w:
-                return True
-            if prefix in self.w and self.dfs(suffix):
-                return True
+            if prefix in self.w:
+                if suffix in self.w or self.dfs(suffix):
+                    return True
         return False
