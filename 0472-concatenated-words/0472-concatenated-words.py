@@ -1,4 +1,5 @@
 class Solution:
+
     def findAllConcatenatedWordsInADict(self, words: List[str]) -> List[str]:
         words = set(words)
         res = []
@@ -15,4 +16,4 @@ class Solution:
                 return True
             if prefix in words and self.dfs(suffix, words):
                 return True
-        return False        
+        return False
