@@ -21,8 +21,6 @@ class SummaryRanges:
         res.append([start, end])
         return res
         
-
-
 # Your SummaryRanges object will be instantiated and called as such:
 # obj = SummaryRanges()
 # obj.addNum(value)
