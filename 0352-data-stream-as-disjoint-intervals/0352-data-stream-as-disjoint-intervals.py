@@ -2,9 +2,9 @@ class SummaryRanges:
 
     def __init__(self):
         self.s = []
-        
+
     def addNum(self, value: int) -> None:
-        self.s.append(value)     
+        self.s.append(value)
 
     def getIntervals(self) -> List[List[int]]:
         self.s = sorted(list(set(self.s)))
@@ -20,7 +20,6 @@ class SummaryRanges:
                 end = self.s[i]
         res.append([start, end])
         return res
-        
 
 
 # Your SummaryRanges object will be instantiated and called as such:
