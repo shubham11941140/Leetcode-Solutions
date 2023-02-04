@@ -1,6 +1,8 @@
 from collections import Counter
 
+
 class Solution:
+
     def checkInclusion(self, s1: str, s2: str) -> bool:
         k = len(s1)
         n = len(s2)
@@ -9,4 +11,3 @@ class Solution:
             if Counter(s2[i:i + k]) == sm:
                 return True
         return False
-        
