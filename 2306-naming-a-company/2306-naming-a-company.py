@@ -1,5 +1,5 @@
-class Solution:      
-    def distinctNames(self, ideas : List[str]) -> int:        
+class Solution:
+    def distinctNames(self, ideas: List[str]) -> int:
         h = defaultdict(set)
         for w in ideas:
             h[w[0]].add(w[1:])
