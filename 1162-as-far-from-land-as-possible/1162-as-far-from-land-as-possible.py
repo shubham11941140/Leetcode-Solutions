@@ -18,4 +18,4 @@ class Solution:
                     if 0 <= x < len(grid) and 0 <= y < len(grid[0]) and grid[x][y] == 0:
                         grid[x][y] = 1
                         queue.append((x, y))
-        return ans - 1        
+        return ans - 1
