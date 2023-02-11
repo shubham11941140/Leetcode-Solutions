@@ -5,7 +5,6 @@ class Solution:
             graph[u][0].append(v)
         for u, v in blueEdges:
             graph[u][1].append(v)
-        # print(graph)
         res = [float('inf')] * n
         res[0] = 0
         q = deque([(0, 0, 0), (0, 1, 0)])
@@ -17,6 +16,5 @@ class Solution:
                     res[nei] = min(res[nei], dist + 1)
                     q.append((nei, 1 - color, dist + 1))
                     visited.add((nei, 1 - color))
-        print(res)
         return [x if x != float('inf') else -1 for x in res]
                 
