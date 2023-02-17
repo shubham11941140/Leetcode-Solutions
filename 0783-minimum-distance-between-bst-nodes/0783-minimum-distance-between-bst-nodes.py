@@ -10,4 +10,5 @@ class Solution:
         return self.inorder(root.left) + [root.val] + self.inorder(root.right) if root else []
 
     def minDiffInBST(self, root: TreeNode) -> int:
-        return min(b - a for a, b in zip(self.inorder(root), self.inorder(root)[1:]))       
+        a = self.inorder(root)
+        return min(a[i + 1] - a[i] for i in range(len(a) - 1))      
