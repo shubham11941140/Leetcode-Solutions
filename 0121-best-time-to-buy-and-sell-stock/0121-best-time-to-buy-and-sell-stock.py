@@ -1,4 +1,5 @@
 class Solution:
+
     def maxProfit(self, prices: List[int]) -> int:
         n = len(prices)
         msf = [0 for i in range(n)]
@@ -9,5 +10,3 @@ class Solution:
         for i in range(n):
             ans = max(ans, prices[i] - msf[i])
         return ans
-            
-        
