@@ -9,8 +9,7 @@ class Solution:
         self.d = defaultdict(int)
         self.res = []
         self.helper(root)
-        return self.res
-    
+        return self.res    
     def helper(self, root):
         if not root:
             return '#'
@@ -18,4 +17,4 @@ class Solution:
         self.d[s] += 1
         if self.d[s] == 2:
             self.res.append(root)
-        return s        
+        return s                
