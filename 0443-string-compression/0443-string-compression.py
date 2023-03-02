@@ -10,14 +10,12 @@ class Solution:
                 count += 1
                 i += 1
                 if i == n:
-                    print(cc, count)
                     break
             a.append([cc, count])
-        print(a)
         chars.clear()
         for i in a:
             chars.append(i[0])
             if i[1] > 1:
                 for j in str(i[1]):
                     chars.append(j)
-        return len(chars)        
+        return len(chars)       
