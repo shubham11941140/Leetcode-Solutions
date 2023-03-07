@@ -1,11 +1,7 @@
 class Solution:
     def minimumTime(self, time: List[int], totalTrips: int) -> int:
         def check(t):
-            trips = 0
-            for i in range(len(time)):
-                trips += t // time[i]
-            return trips >= totalTrips
-        
+            return sum([t // i for i in time]) >= totalTrips
         l, r = 0, 10 ** 18
         while l < r:
             m = (l + r) // 2
