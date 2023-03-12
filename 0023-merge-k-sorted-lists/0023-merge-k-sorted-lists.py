@@ -4,7 +4,6 @@
 #         self.val = val
 #         self.next = next
 class Solution:
-    
     def toarray(self, a):
         b = []
         while a is not None:
@@ -30,13 +29,4 @@ class Solution:
         for i in lists:
             d += self.toarray(i)
         return self.tolist(sorted(d))
-            
-        
-        
-        
-        
-        
-        
-        
-        
         
