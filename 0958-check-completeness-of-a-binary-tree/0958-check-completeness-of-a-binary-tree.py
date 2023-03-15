@@ -6,11 +6,11 @@
 #         self.right = right
 class Solution:
     def isCompleteTree(self, root: Optional[TreeNode]) -> bool:
-        queue = [root]
-        while queue[0] is not None:
-            node = queue.pop(0)
-            queue.append(node.left)
-            queue.append(node.right)
-        while queue and queue[0] is None:
-            queue.pop(0)
-        return len(queue) == 0        
+        q = [root]
+        while q[0] is not None:
+            node = q.pop(0)
+            q.append(node.left)
+            q.append(node.right)
+        while q and q[0] is None:
+            q.pop(0)
+        return not any(q)      
