@@ -5,6 +5,7 @@
 #         self.left = left
 #         self.right = right
 class Solution:
+
     def isCompleteTree(self, root: Optional[TreeNode]) -> bool:
         queue = [root]
         while queue[0] is not None:
@@ -13,4 +14,4 @@ class Solution:
             queue.append(node.right)
         while queue and queue[0] is None:
             queue.pop(0)
-        return len(queue) == 0        
+        return len(queue) == 0
