@@ -7,4 +7,4 @@ class Solution:
             else:
                 count = 0
             nums[i] = count
-        return sum(nums)     
+        return sum(nums)
