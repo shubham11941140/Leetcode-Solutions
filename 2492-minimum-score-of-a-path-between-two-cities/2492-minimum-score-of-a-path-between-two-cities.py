@@ -21,4 +21,4 @@ class Solution:
         for u, v, w in roads:
             if u in c:
                 m.append(w)
-        return min(m)        
+        return min(m)
