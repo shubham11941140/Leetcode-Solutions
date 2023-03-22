@@ -16,9 +16,4 @@ class Solution:
                 visited.add(u)
                 for v, w in graph[u]:
                     q.append(v)
-        # Find the minimum weight edge in the component
-        m = []
-        for u, v, w in roads:
-            if u in c:
-                m.append(w)
-        return min(m)        
+        return min([w for u, v, w in roads if u in c])       
