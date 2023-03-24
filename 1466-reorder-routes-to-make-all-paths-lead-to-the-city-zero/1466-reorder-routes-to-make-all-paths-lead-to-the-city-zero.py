@@ -5,7 +5,7 @@ class Solution:
             graph[u].append(v)
             graph[v].append(-u)
         return self.dfs(graph, 0, set())
-    
+
     def dfs(self, graph, node, visited):
         visited.add(node)
         count = 0
@@ -15,4 +15,4 @@ class Solution:
             if nei > 0:
                 count += 1
             count += self.dfs(graph, abs(nei), visited)
-        return count        
+        return count
