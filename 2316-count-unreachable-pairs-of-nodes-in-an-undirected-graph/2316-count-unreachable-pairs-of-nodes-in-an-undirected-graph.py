@@ -12,15 +12,16 @@ class Solution:
                 component = []
                 self.dfs(node, graph, visited, component)
                 components.append(component)
-        #print(components)  
+        # print(components)
         l = [len(component) for component in components]
         c = 0
         for i in range(len(l)):
             c += l[i] * (n - l[i])
-        return c // 2       
+        return c // 2
+
     def dfs(self, node, graph, visited, component):
         visited.add(node)
         component.append(node)
         for neighbor in graph[node]:
             if neighbor not in visited:
-                self.dfs(neighbor, graph, visited, component)        
+                self.dfs(neighbor, graph, visited, component)
