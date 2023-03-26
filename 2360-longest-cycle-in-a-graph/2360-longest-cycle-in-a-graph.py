@@ -1,7 +1,7 @@
 class Solution:
     def longestCycle(self, edges: List[List[str]]) -> int:
         n = len(edges)
-        bl = [False]*n
+        bl = [False] * n
         mp = defaultdict(int)
         mx = -1
         for i in range(n):
@@ -18,5 +18,3 @@ class Solution:
                 if x != -1 and x in st:
                     mx = max(mx, l - mp[x])
         return mx
-
-
