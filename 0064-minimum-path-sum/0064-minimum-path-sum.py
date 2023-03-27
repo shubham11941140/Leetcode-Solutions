@@ -13,4 +13,4 @@ class Solution:
                     dp[i][j] = dp[i - 1][j] + grid[i][j]
                 else:
                     dp[i][j] = min(dp[i][j - 1], dp[i - 1][j]) + grid[i][j]
-        return dp[n - 1][m - 1]        
+        return dp[n - 1][m - 1]
