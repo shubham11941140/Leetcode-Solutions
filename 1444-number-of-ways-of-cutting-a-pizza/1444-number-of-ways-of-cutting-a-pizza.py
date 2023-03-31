@@ -8,18 +8,16 @@ class Solution:
                 g[i][j] = g[i + 1][j] + g[i][j + 1] - g[i + 1][j + 1] + (pizza[i][j] == 'A')
         @lru_cache(None)
         def dp(i, j, k):
-            if g[i][j] == 0:
+            if not g[i][j]:
                 return 0
-            if k == 0:
+            if not k:
                 return 1
             ans = 0
             for x in range(i + 1, r):
-                if g[i][j] - g[x][j] > 0:
+                if g[i][j] > g[x][j]:
                     ans += dp(x, j, k - 1)
-                    ans %= mod
             for y in range(j + 1, c):
-                if g[i][j] - g[i][y] > 0:
+                if g[i][j] > g[i][y]:
                     ans += dp(i, y, k - 1)
-                    ans %= mod
-            return ans
-        return dp(0, 0, k - 1)        
+            return ans % mod
+        return dp(0, 0, k - 1)           
