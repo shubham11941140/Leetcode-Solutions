@@ -12,12 +12,5 @@ class Solution:
                 return 0
             if not k:
                 return 1
-            ans = 0
-            for x in range(i + 1, r):
-                if g[i][j] > g[x][j]:
-                    ans += dp(x, j, k - 1)
-            for y in range(j + 1, c):
-                if g[i][j] > g[i][y]:
-                    ans += dp(i, y, k - 1)
-            return ans % mod
-        return dp(0, 0, k - 1)           
+            return (sum([dp(x, j, k - 1) for x in range(i + 1, r) if g[i][j] > g[x][j]]) + sum([dp(i, y, k - 1) for y in range(j + 1, c) if g[i][j] > g[i][y]])) % mod
+        return dp(0, 0, k - 1)            
