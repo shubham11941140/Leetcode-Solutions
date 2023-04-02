@@ -6,14 +6,12 @@ class Solution:
             left = 0
             right = n -1
             pos = -1
-            while left<=right:
-                mid = (left+right)//2
-                if s*potions[mid] >= success:
+            while left <= right:
+                mid = (left + right) // 2
+                if s * potions[mid] >= success:
                     right = mid -1
                 else:
                     left = mid + 1
-            return n-left
-        ans = []
-        for i in spells:
-            ans.append(bsearch(i))
-        return ans        
+            return n - left
+        return [bsearch(i) for i in spells]
+        
