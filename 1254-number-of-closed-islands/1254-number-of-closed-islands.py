@@ -12,6 +12,7 @@ class Solution:
             right = dfs(i, j + 1)
             return up and down and left and right
 
+        return len([1 for i in range(len(grid)) for j in range(len(grid[0])) if not grid[i][j] and dfs(i, j)])
         count = 0
         for i in range(len(grid)):
             for j in range(len(grid[0])):
