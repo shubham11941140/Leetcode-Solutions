@@ -6,10 +6,12 @@ class Node:
         self.neighbors = neighbors if neighbors is not None else []
 """
 
+
 class Solution:
     def __init__(self):
         self.visited = {}
-    def cloneGraph(self, node: 'Node') -> 'Node':
+
+    def cloneGraph(self, node: "Node") -> "Node":
         if not node:
             return None
         if node in self.visited:
@@ -18,4 +20,4 @@ class Solution:
         self.visited[node] = clone_node
         for neighbor in node.neighbors:
             clone_node.neighbors.append(self.cloneGraph(neighbor))
-        return clone_node        
+        return clone_node
