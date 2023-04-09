@@ -9,19 +9,21 @@ class Solution:
         q = collections.deque([i for i in range(n) if indegree[i] == 0])
         dp = [[0] * 26 for _ in range(n)]
         for i in range(n):
-            dp[i][ord(colors[i]) - ord('a')] = 1
+            dp[i][ord(colors[i]) - ord("a")] = 1
         while q:
             u = q.popleft()
             for v in graph[u]:
                 for i in range(26):
-                    dp[v][i] = max(dp[v][i], dp[u][i] + (i == ord(colors[v]) - ord('a')))
+                    dp[v][i] = max(
+                        dp[v][i], dp[u][i] + (i == ord(colors[v]) - ord("a"))
+                    )
                 indegree[v] -= 1
                 if indegree[v] == 0:
                     q.append(v)
         if any(indegree):
             return -1
-        return max(max(dp[i]) for i in range(n))        
-        if colors == "bbbhb" and edges == [[0,2],[3,0],[1,3],[4,1]]:
+        return max(max(dp[i]) for i in range(n))
+        if colors == "bbbhb" and edges == [[0, 2], [3, 0], [1, 3], [4, 1]]:
             return 4
         graph = defaultdict(list)
         for u, v in edges:
@@ -47,9 +49,11 @@ class Solution:
             return -1
         dp = [[0] * 26 for _ in range(n)]
         for i in range(n):
-            dp[i][ord(colors[i]) - ord('a')] = 1
+            dp[i][ord(colors[i]) - ord("a")] = 1
         for u in visited:
             for v in graph[u]:
                 for i in range(26):
-                    dp[v][i] = max(dp[v][i], dp[u][i] + (colors[v] == chr(i + ord('a'))))
-        return max(max(row) for row in dp)         
+                    dp[v][i] = max(
+                        dp[v][i], dp[u][i] + (colors[v] == chr(i + ord("a")))
+                    )
+        return max(max(row) for row in dp)
