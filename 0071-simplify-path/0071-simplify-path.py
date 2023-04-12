@@ -21,6 +21,5 @@ class Solution:
         if curr:
             stack.append(curr)
         s = ''.join([('/' + ''.join(k)) for k in stack])
-        if s == "":
-            return "/"
-        return s        
+        return "/" if not s else s
+      
