@@ -1,5 +1,7 @@
 class Solution:
-    def validateStackSequences(self, pushed: List[int], popped: List[int]) -> bool:
+
+    def validateStackSequences(self, pushed: List[int],
+                               popped: List[int]) -> bool:
         stack = []
         i = 0
         j = 0
@@ -14,4 +16,4 @@ class Solution:
             else:
                 stack.append(pushed[i])
                 i += 1
-        return True        
+        return True
