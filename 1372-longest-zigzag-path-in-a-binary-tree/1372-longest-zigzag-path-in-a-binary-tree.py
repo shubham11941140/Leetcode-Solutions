@@ -13,9 +13,6 @@ class Solution:
             left = dfs(node.left, 0)
             right = dfs(node.right, 1)
             self.ans = max(self.ans, left, right)
-            if direction == 0:
-                return right + 1
-            else:
-                return left + 1
+            return 1 + (right if not direction else left)
         dfs(root, 0)
-        return self.ans       
+        return self.ans      
