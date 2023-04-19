@@ -5,8 +5,10 @@
 #         self.left = left
 #         self.right = right
 class Solution:
+
     def longestZigZag(self, root: Optional[TreeNode]) -> int:
         self.ans = 0
+
         def dfs(node, direction):
             if not node:
                 return 0
@@ -17,5 +19,6 @@ class Solution:
                 return right + 1
             else:
                 return left + 1
+
         dfs(root, 0)
-        return self.ans       
+        return self.ans
