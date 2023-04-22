@@ -1,4 +1,5 @@
 class Solution:
+
     def minInsertions(self, s: str) -> int:
         # reverse the string
         t = s[::-1]
@@ -12,4 +13,4 @@ class Solution:
                 else:
                     dp[i][j] = max(dp[i - 1][j], dp[i][j - 1])
         # return the minimum number of insertions
-        return n - dp[n][n]        
+        return n - dp[n][n]
