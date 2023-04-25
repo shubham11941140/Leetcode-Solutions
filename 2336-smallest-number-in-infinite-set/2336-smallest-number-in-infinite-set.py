@@ -1,7 +1,7 @@
 class SmallestInfiniteSet:
 
     def __init__(self):
-        self.a = [i for i in range(1, 5000)]
+        self.a = [i for i in range(1, 2000)]
             
     def popSmallest(self) -> int:        
         return self.a.pop(0)        
