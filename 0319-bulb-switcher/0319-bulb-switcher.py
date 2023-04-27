@@ -11,4 +11,5 @@ class Solution:
             # increment i by 1
             i += 1
         # return the final value of count
+        return int(sqrt(n))
         return count      
