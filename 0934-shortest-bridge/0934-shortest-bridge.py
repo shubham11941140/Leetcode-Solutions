@@ -11,6 +11,7 @@ class Solution:
             for x, y in [(i + 1, j), (i - 1, j), (i, j + 1), (i, j - 1)]:
                 if 0 <= x < n and 0 <= y < m and not v[x][y] and grid[x][y]:
                     dfs(x, y)    
+        @cache
         def nei(i, j, c):
             t = 0
             for x, y in [(i + 1, j), (i - 1, j), (i, j + 1), (i, j - 1)]:
