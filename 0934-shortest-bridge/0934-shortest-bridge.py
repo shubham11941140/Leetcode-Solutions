@@ -33,17 +33,9 @@ class Solution:
         print(len(is1), len(is2))
         
         m = 10 ** 5
-        d = []
         for x in is1:
             for y in is2:
                 s = abs(x[0] - y[0]) + abs(x[1] - y[1])
-                d.append(s)
                 m = min(m, s)
         return m - 1
-        
-        return 0
-                    
-                
-            
-
       
