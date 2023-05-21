@@ -4,6 +4,7 @@ class Solution:
         m = len(grid[0])   
         c = 2
         v = [[False for i in range(m)] for i in range(n)]        
+        @cache
         def dfs(i, j):
             v[i][j] = True
             grid[i][j] = c
@@ -30,7 +31,6 @@ class Solution:
                     is1.append((i, j))
                 if grid[i][j] == 3 and nei(i, j, 3) <= 3:
                     is2.append((i, j))
-        print(len(is1), len(is2))
         
         m = 10 ** 5
         for x in is1:
