@@ -18,4 +18,3 @@ class Solution:
                 window_sum -= dp[i - maxPts]
 
         return probability
-   
