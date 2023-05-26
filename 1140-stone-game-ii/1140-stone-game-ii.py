@@ -2,7 +2,7 @@ class Solution:
     def stoneGameII(self, piles: List[int]) -> int:
         n = len(piles)
         suffix_sum = [0] * (n + 1)
-        for i in range(n - 1, -1, -1):
+        for i in reversed(range(n)):
             suffix_sum[i] = suffix_sum[i + 1] + piles[i]
 
         memo = {}
