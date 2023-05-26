@@ -14,12 +14,10 @@ class Solution:
             if start + 2 * M >= n:
                 return suffix_sum[start]
 
-            res = float('-inf')
+            res = float("-inf")
             for i in range(1, 2 * M + 1):
                 res = max(res, suffix_sum[start] - dp(start + i, max(i, M)))
             memo[(start, M)] = res
             return res
 
         return dp(0, 1)
-
-        
