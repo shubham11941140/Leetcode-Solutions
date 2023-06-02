@@ -14,26 +14,20 @@ class Solution:
     
     def maximumDetonation(self, bombs: List[List[int]]) -> int:   
         nb = [(i[0], i[1], i[2]) for i in bombs]
+        c = Counter(nb)
         #print(nb)
         m = []
         for i in nb:
             d = set()
             u = nb.copy()
             self.dfs(i, d, u)
-            #print(i, d, u)
-            #print(i, len(d), len(u))
             s = len(d)
             #print(s)
             for i in d:
-                b = nb.count(i)
+                b = c[i]
                 if b > 1:
                     s += (b - 1)
-                
-            
-            
-            
             m.append(s)
-            #break
         return max(m)
 
        
