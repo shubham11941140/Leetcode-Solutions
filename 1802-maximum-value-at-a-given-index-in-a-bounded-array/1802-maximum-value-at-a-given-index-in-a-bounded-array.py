@@ -1,13 +1,10 @@
 class Solution:
-    
-    def sn(self, r):
-        return (r * (r + 1)) // 2
-    
-    def calc(self, m, ele):
-        if ele >= m - 1:
-            return ((m * (m - 1)) // 2) + ele - m + 1
+     
+    def calc(self, m, e):
+        if e >= m - 1:
+            return ((m * (m - 1)) // 2) + e - m + 1
         else:
-            return ((m * (m - 1)) // 2) - (((m - ele - 1) * (m - ele)) // 2)
+            return ((m * (m - 1)) // 2) - (((m - e - 1) * (m - e)) // 2)
 
     
     def help(self, n, idx, m):               
