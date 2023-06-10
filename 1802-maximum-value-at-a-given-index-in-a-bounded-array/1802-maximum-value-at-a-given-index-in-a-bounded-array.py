@@ -57,7 +57,6 @@ class Solution:
                         return i
             m = (l + r) // 2
             s = self.help(n, index, m)
-            print(s, m)
             if s > maxSum:
                 r = m
             if s <= maxSum:
