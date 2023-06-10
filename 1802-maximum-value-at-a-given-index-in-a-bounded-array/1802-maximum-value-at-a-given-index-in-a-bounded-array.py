@@ -4,14 +4,10 @@ class Solution:
         return (r *(r + 1)) // 2
     
     def calc(self, m, ele):
-        #print("M", m, ele)
-        s = 0
         if ele >= m - 1:
-            s = ((m * (m - 1)) // 2) + 1 * (ele - (m - 1))
-        if ele < m - 1:
-            rem = m - 1 - ele
-            s = ((m * (m - 1)) // 2) - self.sn(rem)
-        return s
+            return ((m * (m - 1)) // 2) + 1 * (ele - (m - 1))
+        else:
+            return ((m * (m - 1)) // 2) - self.sn(m - 1 - ele)
 
     
     def help(self, n, idx, m):               
@@ -30,7 +26,6 @@ class Solution:
             if s > maxSum:
                 r = m
             if s <= maxSum:
-                # call test
                 if self.help(n, index, m + 1) > maxSum:
                     return m                
                 l = m
