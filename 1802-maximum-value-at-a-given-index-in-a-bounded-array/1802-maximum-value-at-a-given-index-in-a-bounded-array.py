@@ -1,13 +1,12 @@
 class Solution:
-     
+
     def calc(self, m, e):
         if e >= m - 1:
             return ((m * (m - 1)) // 2) + e - m + 1
         else:
             return ((m * (m - 1)) // 2) - (((m - e - 1) * (m - e)) // 2)
 
-    
-    def help(self, n, idx, m):               
+    def help(self, n, idx, m):
         return self.calc(m, idx) + self.calc(m, n - 1 - idx) + m
 
     def maxValue(self, n: int, index: int, maxSum: int) -> int:
@@ -24,6 +23,6 @@ class Solution:
                 r = m
             if s <= maxSum:
                 if self.help(n, index, m + 1) > maxSum:
-                    return m                
+                    return m
                 l = m
         return 0
