@@ -1,9 +1,10 @@
 class Solution:
-     
+
     def calc(self, m, e):
-        return ((m * (m - 1)) // 2) + e - m + 1 if e >= m - 1 else ((m * (m - 1)) // 2) - (((m - e - 1) * (m - e)) // 2)
-               
-    def help(self, m):               
+        return (((m * (m - 1)) // 2) + e - m + 1 if e >= m - 1 else
+                ((m * (m - 1)) // 2) - (((m - e - 1) * (m - e)) // 2))
+
+    def help(self, m):
         return self.calc(m, self.i) + self.calc(m, self.n - 1 - self.i) + m
 
     def maxValue(self, n: int, index: int, maxSum: int) -> int:
@@ -22,6 +23,6 @@ class Solution:
                 r = m
             if s <= maxSum:
                 if self.help(m + 1) > maxSum:
-                    return m                
+                    return m
                 l = m
         return 0
