@@ -1,11 +1,11 @@
 class Solution:
     
     def sn(self, r):
-        return (r *(r + 1)) // 2
+        return (r * (r + 1)) // 2
     
     def calc(self, m, ele):
         if ele >= m - 1:
-            return ((m * (m - 1)) // 2) + 1 * (ele - (m - 1))
+            return ((m * (m - 1)) // 2) + ele - m + 1
         else:
             return ((m * (m - 1)) // 2) - self.sn(m - 1 - ele)
 
