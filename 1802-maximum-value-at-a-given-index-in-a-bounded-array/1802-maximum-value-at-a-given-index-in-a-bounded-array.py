@@ -41,9 +41,6 @@ class Solution:
             if val2 <= 0:
                 break
             nums[i] = val2                
-        if s1 + s2 + m != sum(nums):
-            print(nums, m - 1, idx, n - 1- idx)
-            print(4111111111111, s1, s2, s1 + s2 + m, sum(nums))
         return sum(nums)
     
     def maxValue(self, n: int, index: int, maxSum: int) -> int:
