@@ -14,43 +14,13 @@ class Solution:
         return s
 
     
-    def help(self, n, idx, m):
-        
-        # Have idx elements before
-        s1 = self.calc(m, idx)
-        
-        # n - idx - 1
-        s2 = self.calc(m, n - 1 - idx)
-        
-        #print(s1, s2, m)
-        
-        return s1 + s2 + m
-        
-        
-        nums = [1 for i in range(n)]
-        nums[idx] = m
-        val1 = nums[idx]
-        val2 = nums[idx]
-        for i in range(idx + 1, n):
-            val1 -= 1
-            if val1 <= 0:
-                break
-            nums[i] = val1
-        for i in reversed(range(idx)):
-            val2 -= 1
-            if val2 <= 0:
-                break
-            nums[i] = val2                
-        return sum(nums)
-    
+    def help(self, n, idx, m):               
+        return self.calc(m, idx) + self.calc(m, n - 1 - idx) + m
+
     def maxValue(self, n: int, index: int, maxSum: int) -> int:
         l = 1
         r = maxSum
-        c = 0
         while l <= r:
-            c += 1
-            if c > 100:
-                break
             if r - l <= 100:
                 for i in reversed(range(l, r + 1)):
                     if self.help(n, index, i) <= maxSum:
