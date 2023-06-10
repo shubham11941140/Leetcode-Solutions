@@ -7,7 +7,7 @@ class Solution:
         if ele >= m - 1:
             return ((m * (m - 1)) // 2) + ele - m + 1
         else:
-            return ((m * (m - 1)) // 2) - self.sn(m - 1 - ele)
+            return ((m * (m - 1)) // 2) - (((m - ele - 1) * (m - ele)) // 2)
 
     
     def help(self, n, idx, m):               
