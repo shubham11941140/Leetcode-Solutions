@@ -1,16 +1,10 @@
 class SnapshotArray:
 
     def __init__(self, length: int):
-        self.l = length
-        self.a = [0 for i in range(length)]
-        self.s = 0
-        self.d = defaultdict(dict)
         self.snap_id = 0
         self.array = [[[-1, 0]] for _ in range(length)]        
 
     def set(self, index: int, val: int) -> None:
-        #self.d[self.s][index] = val
-        #self.a[index] = val
         if self.array[index][-1][0] == self.snap_id:
             self.array[index][-1][1] = val
         else:
@@ -20,11 +14,7 @@ class SnapshotArray:
 
     def snap(self) -> int:
         self.snap_id += 1
-        return self.snap_id - 1        
-        self.s += 1
-        #self.d[self.s] = self.a.copy()
-        self.d[self.s] = self.d[self.s - 1].copy()
-        return self.s - 1     
+        return self.snap_id - 1         
     
 
     def get(self, index: int, snap_id: int) -> int:
