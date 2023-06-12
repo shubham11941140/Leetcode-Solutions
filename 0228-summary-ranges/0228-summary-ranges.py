@@ -7,7 +7,6 @@ class Solution:
             curr = nums[i]
             while i < n - 1 and nums[i + 1] == nums[i] + 1:                
                 i += 1
-            nex = nums[i]
             if curr == nums[i]:
                 ans.append(str(curr))
             else:
