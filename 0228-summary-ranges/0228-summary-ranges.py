@@ -7,10 +7,7 @@ class Solution:
             curr = nums[i]
             while i < n - 1 and nums[i + 1] == nums[i] + 1:                
                 i += 1
-            if curr == nums[i]:
-                ans.append(str(curr))
-            else:
-                ans.append(str(curr) + "->" + str(nums[i]))                                    
+            ans.append(str(curr) if curr == nums[i] else str(curr) + "->" + str(nums[i])) 
             i += 1
         return ans
         
