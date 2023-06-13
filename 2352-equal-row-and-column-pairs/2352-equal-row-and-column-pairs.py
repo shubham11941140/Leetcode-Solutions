@@ -1,4 +1,5 @@
 class Solution:
+
     def equalPairs(self, grid: List[List[int]]) -> int:
         n = len(grid)
         c = 0
@@ -7,5 +8,3 @@ class Solution:
                 if i == [grid[j][k] for j in range(n)]:
                     c += 1
         return c
-                    
-        
