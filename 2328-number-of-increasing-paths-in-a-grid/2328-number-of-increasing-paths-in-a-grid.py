@@ -1,14 +1,21 @@
-class Solution:        
+class Solution:
+
     def countPaths(self, grid: List[List[int]]) -> int:
         rows = len(grid)
         cols = len(grid[0])
-        mod = 10 ** 9 + 7
+        mod = 10**9 + 7
 
         @lru_cache(None)
         def count(row, col):
             res = 1
-            for dx, dy in [[row, col + 1], [row, col - 1], [row + 1, col], [row - 1, col]]:
-                if 0 <= dx < rows and 0 <= dy < cols and grid[dx][dy] > grid[row][col]:
+            for dx, dy in [
+                [row, col + 1],
+                [row, col - 1],
+                [row + 1, col],
+                [row - 1, col],
+            ]:
+                if 0 <= dx < rows and 0 <= dy < cols and grid[dx][dy] > grid[
+                        row][col]:
                     res += count(dx, dy) % mod
             return res
 
@@ -19,4 +26,3 @@ class Solution:
         path_sum = sum(count_values) % mod
 
         return path_sum
-      
