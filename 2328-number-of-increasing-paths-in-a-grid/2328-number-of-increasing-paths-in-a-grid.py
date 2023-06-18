@@ -13,10 +13,6 @@ class Solution:
             return res
 
         count_values = []
-        for i in range(rows):
-            for j in range(cols):
-                count_values.append(count(i, j))
-        path_sum = sum(count_values) % mod
+        return sum([count(i, j) for i in range(rows) for j in range(cols)]) % mod
 
-        return path_sum
       
