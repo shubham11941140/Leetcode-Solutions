@@ -1,4 +1,5 @@
 class Solution:
+
     def getAverages(self, nums: List[int], k: int) -> List[int]:
         n = len(nums)
         p = [0] * (n + 1)
@@ -6,7 +7,7 @@ class Solution:
             p[i + 1] = p[i] + nums[i]
         r = [-1] * n
         for i in range(n):
-            if i >= k and i + k < n:  
-                avg = (p[i + k + 1] - p[i - k])//(2 *k + 1)
+            if i >= k and i + k < n:
+                avg = (p[i + k + 1] - p[i - k]) // (2 * k + 1)
                 r[i] = avg
         return r
