@@ -5,8 +5,7 @@ class Solution:
         for i in range(n):
             p[i + 1] = p[i] + nums[i]
         r = [-1] * n
-        for i in range(n):
-            if i >= k and i + k < n:  
-                avg = (p[i + k + 1] - p[i - k])//(2 *k + 1)
-                r[i] = avg
+        for i in range(k, n):
+            if i + k < n:  
+                r[i] = (p[i + k + 1] - p[i - k]) // (2 * k + 1)
         return r
