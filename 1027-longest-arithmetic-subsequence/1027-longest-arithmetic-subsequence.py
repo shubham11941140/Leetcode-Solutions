@@ -6,10 +6,7 @@ class Solution:
         for i in range(n):
             for j in range(i):
                 d = nums[i] - nums[j]
-                if d in dp[j]:
-                    dp[i][d] = dp[j][d] + 1
-                else:
-                    dp[i][d] = 2
+                dp[i][d] = (dp[j][d] + 1 if d in dp[j] else 2)
                 res = max(res, dp[i][d])
         return res
        
