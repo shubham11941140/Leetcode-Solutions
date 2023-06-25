@@ -5,13 +5,8 @@ class Solution:
             if remaining_fuel < 0:
                 return 0
             else:
-                if curr == finish:
-                    result = 1
-                    
-                else:
-                    result = 0
-            for next_loc in range(len(locations)):
-                    
+                result = int(curr == finish)
+            for next_loc in range(len(locations)):                    
                 if curr != next_loc:
                     cost = abs(locations[curr] - locations[next_loc])
                     result += dfs(next_loc, remaining_fuel - cost)
