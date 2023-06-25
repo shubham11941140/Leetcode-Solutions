@@ -8,7 +8,6 @@ class Solution:
                 result = int(curr == finish)
             for loc in range(len(locations)):                    
                 if curr != loc:
-                    cost = abs(locations[curr] - locations[loc])
-                    result += dfs(loc, rem - cost)
+                    result += dfs(loc, rem - abs(locations[curr] - locations[loc]))
             return result        
         return dfs(start, fuel) % (10 ** 9 + 7)   
