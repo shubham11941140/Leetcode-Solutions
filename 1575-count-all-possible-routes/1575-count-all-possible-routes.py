@@ -6,10 +6,9 @@ class Solution:
                 return 0
             else:
                 result = int(curr == finish)
-            for next_loc in range(len(locations)):                    
-                if curr != next_loc:
-                    cost = abs(locations[curr] - locations[next_loc])
-                    result += dfs(next_loc, remaining_fuel - cost)
-            return result
-        
+            for loc in range(len(locations)):                    
+                if curr != loc:
+                    cost = abs(locations[curr] - locations[loc])
+                    result += dfs(loc, remaining_fuel - cost)
+            return result        
         return dfs(start, fuel) % (10 ** 9 + 7)   
