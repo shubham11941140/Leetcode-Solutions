@@ -15,6 +15,6 @@ class Solution:
                 if curr != next_loc:
                     cost = abs(locations[curr] - locations[next_loc])
                     result += dfs(next_loc, remaining_fuel - cost)
-            return result % 1000000007
+            return result
         
-        return dfs(start, fuel)       
+        return dfs(start, fuel) % (10 ** 9 + 7)   
