@@ -1,5 +1,6 @@
 class Solution:
-    def totalCost(self, costs: List[int], k: int, candidates: int) -> int:                 
+
+    def totalCost(self, costs: List[int], k: int, candidates: int) -> int:
         heap1 = []
         heap2 = []
         l, r = 0, len(costs) - 1
@@ -15,21 +16,21 @@ class Solution:
         for i in range(k):
             if not heap1:
                 cost, idx = heappop(heap2)
-                if l <= r:                    
+                if l <= r:
                     heappush(heap2, (costs[r], r))
                     r -= 1
-                t += cost   
+                t += cost
                 continue
             if not heap2 or heap1[0] <= heap2[0]:
                 cost, idx = heappop(heap1)
-                if l <= r:                    
+                if l <= r:
                     heappush(heap1, (costs[l], l))
                     l += 1
                 t += cost
             else:
                 cost, idx = heapq.heappop(heap2)
-                if l <= r:                    
+                if l <= r:
                     heappush(heap2, (costs[r], r))
                     r -= 1
                 t += cost
-        return t      
+        return t
