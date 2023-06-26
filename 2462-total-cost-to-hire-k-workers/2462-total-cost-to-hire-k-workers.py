@@ -33,10 +33,8 @@ class Solution:
                     l += 1
                 total_cost += cost
                 continue
-            m1 = heap1[0]
-            m2 = heap2[0]
             #print(heap1, heap2)
-            if m1 <= m2:
+            if not heap2 or heap1[0] <= heap2[0]:
                 cost, idx = heapq.heappop(heap1)
                 if l <= r:                    
                     heapq.heappush(heap1, (costs[l], l))
