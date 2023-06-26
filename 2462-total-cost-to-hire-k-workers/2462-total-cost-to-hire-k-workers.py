@@ -26,14 +26,6 @@ class Solution:
                     r -= 1
                 total_cost += cost   
                 continue
-            if not heap2:
-                cost, idx = heapq.heappop(heap1)
-                if l <= r:                    
-                    heapq.heappush(heap1, (costs[l], l))
-                    l += 1
-                total_cost += cost
-                continue
-            #print(heap1, heap2)
             if not heap2 or heap1[0] <= heap2[0]:
                 cost, idx = heapq.heappop(heap1)
                 if l <= r:                    
