@@ -1,19 +1,19 @@
 class Solution:
     def maxProbability(self, n: int, edges: List[List[int]], succProb: List[float], start: int, end: int) -> float:
-        graph = defaultdict(list)
-        for idx, (i,j) in enumerate(edges):
-            graph[i].append((j,succProb[idx]))
-            graph[j].append((i,succProb[idx]))
-        stack = [(-1,start)]
-        visit = set([start])
-        probability = [0]*n
-        while stack:
-            prob,a= heapq.heappop(stack)
-            if probability[a] != 0:
+        g = defaultdict(list)
+        for idx, (i, j) in enumerate(edges):
+            g[i].append((j, succProb[idx]))
+            g[j].append((i, succProb[idx]))
+        s = [(-1, start)]
+        vi = set([start])
+        pr = [0] * n
+        while s:
+            prob, a = heappop(s)
+            if pr[a]:
                 continue
-            probability[a] = prob
-            for v,p in graph[a]:
-                if probability[v] == 0:
-                    visit.add(v)
-                    heapq.heappush(stack,(prob*p,v))
-        return - probability[end]        
+            pr[a] = prob
+            for v, p in g[a]:
+                if pr[v] == 0:
+                    vi.add(v)
+                    heappush(s, (prob * p, v))
+        return - pr[end]        
