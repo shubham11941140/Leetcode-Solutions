@@ -1,0 +1,48 @@
+class Solution:
+    def shortestPathAllKeys(self, grid: List[str]) -> int:
+        DIRS = [(0, 1), (0, -1), (1, 0), (-1, 0)]
+        R, C = len(grid), len(grid[0])
+        def inRange(r, c):
+            return r >= 0 and r < R and c >= 0 and c < C
+        def isStart(ch):
+            return ch == '@'
+        def isWall(ch):
+            return ch == '#'
+        def isKey(ch):
+            return ch.islower()
+        def isLock(ch):
+            return ch.isupper()
+        def keyIdx(k):
+            return ord(k) - ord('a')
+        def addKey(keys, k):
+            return keys | (1 << keyIdx(k))
+        def hasKey(keys, k):
+            return (keys & (1 << keyIdx(k))) != 0
+        def keyOf(lock):
+            return lock.lower()
+        dist = [[[float('inf')] * 64 for _ in range(C)] for _ in range(R)]
+        queue = []
+        targetKeys = 0
+        for r in range(R):
+            for c in range(C):
+                ch = grid[r][c]
+                if isStart(ch):
+                    queue.append((r, c, 0, 0))
+                    dist[r][c][0] = 0
+                elif isKey(ch):
+                    targetKeys = addKey(targetKeys, ch)
+        while queue:
+            r, c, step, keys = queue.pop(0)
+            if keys == targetKeys:
+                return step
+            for dr, dc in DIRS:
+                nr, nc = r + dr, c + dc
+                if not inRange(nr, nc) or isWall(grid[nr][nc]):
+                    continue
+                if isLock(grid[nr][nc]) and not hasKey(keys, keyOf(grid[nr][nc])):
+                    continue
+                nk = addKey(keys, grid[nr][nc]) if isKey(grid[nr][nc]) else keys
+                if step + 1 < dist[nr][nc][nk]:
+                    dist[nr][nc][nk] = step + 1
+                    queue.append((nr, nc, step + 1, nk))
+        return -1        
