@@ -29,7 +29,7 @@ class Solution:
                 nr, nc = r + dr, c + dc
                 if not (0 <= nr < R and 0 <= nc < C) or grid[nr][nc] == '#':
                     continue
-                if grid[nr][nc].isupper() and not hasKey(keys, keyOf(grid[nr][nc])):
+                if grid[nr][nc].isupper() and not hasKey(keys, grid[nr][nc].lower()):
                     continue
                 nk = addKey(keys, grid[nr][nc]) if grid[nr][nc].islower() else keys
                 if step + 1 < dist[nr][nc][nk]:
