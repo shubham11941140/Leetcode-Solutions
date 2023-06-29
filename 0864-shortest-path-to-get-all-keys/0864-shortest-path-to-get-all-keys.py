@@ -2,8 +2,6 @@ class Solution:
     def shortestPathAllKeys(self, grid: List[str]) -> int:
         DIRS = [(0, 1), (0, -1), (1, 0), (-1, 0)]
         R, C = len(grid), len(grid[0])
-        def inRange(r, c):
-            return r >= 0 and r < R and c >= 0 and c < C
         def keyIdx(k):
             return ord(k) - ord('a')
         def addKey(keys, k):
@@ -29,7 +27,7 @@ class Solution:
                 return step
             for dr, dc in DIRS:
                 nr, nc = r + dr, c + dc
-                if not inRange(nr, nc) or grid[nr][nc] == '#':
+                if not (0 <= nr < R and 0 <= nc < C) or grid[nr][nc] == '#':
                     continue
                 if grid[nr][nc].isupper() and not hasKey(keys, keyOf(grid[nr][nc])):
                     continue
