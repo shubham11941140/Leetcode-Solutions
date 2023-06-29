@@ -8,8 +8,6 @@ class Solution:
             return ch == '@'
         def isWall(ch):
             return ch == '#'
-        def isKey(ch):
-            return ch.islower()
         def isLock(ch):
             return ch.isupper()
         def keyIdx(k):
@@ -26,10 +24,10 @@ class Solution:
         for r in range(R):
             for c in range(C):
                 ch = grid[r][c]
-                if isStart(ch):
+                if ch == '@':
                     queue.append((r, c, 0, 0))
                     dist[r][c][0] = 0
-                elif isKey(ch):
+                elif ch.islower():
                     targetKeys = addKey(targetKeys, ch)
         while queue:
             r, c, step, keys = queue.pop(0)
@@ -41,7 +39,7 @@ class Solution:
                     continue
                 if isLock(grid[nr][nc]) and not hasKey(keys, keyOf(grid[nr][nc])):
                     continue
-                nk = addKey(keys, grid[nr][nc]) if isKey(grid[nr][nc]) else keys
+                nk = addKey(keys, grid[nr][nc]) if grid[nr][nc].islower() else keys
                 if step + 1 < dist[nr][nc][nk]:
                     dist[nr][nc][nk] = step + 1
                     queue.append((nr, nc, step + 1, nk))
