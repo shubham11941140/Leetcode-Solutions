@@ -4,8 +4,6 @@ class Solution:
         R, C = len(grid), len(grid[0])
         def inRange(r, c):
             return r >= 0 and r < R and c >= 0 and c < C
-        def isLock(ch):
-            return ch.isupper()
         def keyIdx(k):
             return ord(k) - ord('a')
         def addKey(keys, k):
@@ -33,7 +31,7 @@ class Solution:
                 nr, nc = r + dr, c + dc
                 if not inRange(nr, nc) or grid[nr][nc] == '#':
                     continue
-                if isLock(grid[nr][nc]) and not hasKey(keys, keyOf(grid[nr][nc])):
+                if grid[nr][nc].isupper() and not hasKey(keys, keyOf(grid[nr][nc])):
                     continue
                 nk = addKey(keys, grid[nr][nc]) if grid[nr][nc].islower() else keys
                 if step + 1 < dist[nr][nc][nk]:
