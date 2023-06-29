@@ -1,7 +1,7 @@
 class Solution:
     def shortestPathAllKeys(self, grid: List[str]) -> int:
         R, C = len(grid), len(grid[0])
-        def addKey(keys, k):
+        def ak(keys, k):
             return keys | (1 << (ord(k) - ord('a')))
         def hasKey(keys, k):
             return (keys & (1 << (ord(k) - ord('a')))) != 0
@@ -15,7 +15,7 @@ class Solution:
                     queue.append((r, c, 0, 0))
                     dist[r][c][0] = 0
                 elif ch.islower():
-                    targetKeys = addKey(targetKeys, ch)
+                    targetKeys = ak(targetKeys, ch)
         while queue:
             r, c, step, keys = queue.pop(0)
             if keys == targetKeys:
@@ -26,7 +26,7 @@ class Solution:
                     continue
                 if grid[nr][nc].isupper() and not hasKey(keys, grid[nr][nc].lower()):
                     continue
-                nk = addKey(keys, grid[nr][nc]) if grid[nr][nc].islower() else keys
+                nk = ak(keys, grid[nr][nc]) if grid[nr][nc].islower() else keys
                 if step + 1 < dist[nr][nc][nk]:
                     dist[nr][nc][nk] = step + 1
                     queue.append((nr, nc, step + 1, nk))
