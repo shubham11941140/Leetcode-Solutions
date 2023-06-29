@@ -1,12 +1,10 @@
 class Solution:
     def shortestPathAllKeys(self, grid: List[str]) -> int:
         R, C = len(grid), len(grid[0])
-        def keyIdx(k):
-            return ord(k) - ord('a')
         def addKey(keys, k):
-            return keys | (1 << keyIdx(k))
+            return keys | (1 << (ord(k) - ord('a')))
         def hasKey(keys, k):
-            return (keys & (1 << keyIdx(k))) != 0
+            return (keys & (1 << (ord(k) - ord('a')))) != 0
         dist = [[[float('inf')] * 64 for _ in range(C)] for _ in range(R)]
         queue = []
         targetKeys = 0
