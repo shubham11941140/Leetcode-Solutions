@@ -3,7 +3,7 @@ class Solution:
         R, C = len(grid), len(grid[0])
         def ak(keys, k):
             return keys | (1 << (ord(k) - ord('a')))
-        def hasKey(keys, k):
+        def hk(keys, k):
             return (keys & (1 << (ord(k) - ord('a')))) != 0
         dist = [[[float('inf')] * 64 for _ in range(C)] for _ in range(R)]
         queue = []
@@ -24,7 +24,7 @@ class Solution:
                 nr, nc = r + dr, c + dc
                 if not (0 <= nr < R and 0 <= nc < C) or grid[nr][nc] == '#':
                     continue
-                if grid[nr][nc].isupper() and not hasKey(keys, grid[nr][nc].lower()):
+                if grid[nr][nc].isupper() and not hk(keys, grid[nr][nc].lower()):
                     continue
                 nk = ak(keys, grid[nr][nc]) if grid[nr][nc].islower() else keys
                 if step + 1 < dist[nr][nc][nk]:
