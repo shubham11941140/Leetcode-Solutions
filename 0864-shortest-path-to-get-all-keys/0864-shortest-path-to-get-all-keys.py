@@ -4,10 +4,6 @@ class Solution:
         R, C = len(grid), len(grid[0])
         def inRange(r, c):
             return r >= 0 and r < R and c >= 0 and c < C
-        def isStart(ch):
-            return ch == '@'
-        def isWall(ch):
-            return ch == '#'
         def isLock(ch):
             return ch.isupper()
         def keyIdx(k):
@@ -35,7 +31,7 @@ class Solution:
                 return step
             for dr, dc in DIRS:
                 nr, nc = r + dr, c + dc
-                if not inRange(nr, nc) or isWall(grid[nr][nc]):
+                if not inRange(nr, nc) or grid[nr][nc] == '#':
                     continue
                 if isLock(grid[nr][nc]) and not hasKey(keys, keyOf(grid[nr][nc])):
                     continue
