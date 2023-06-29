@@ -1,6 +1,5 @@
 class Solution:
     def shortestPathAllKeys(self, grid: List[str]) -> int:
-        DIRS = [(0, 1), (0, -1), (1, 0), (-1, 0)]
         R, C = len(grid), len(grid[0])
         def keyIdx(k):
             return ord(k) - ord('a')
@@ -8,8 +7,6 @@ class Solution:
             return keys | (1 << keyIdx(k))
         def hasKey(keys, k):
             return (keys & (1 << keyIdx(k))) != 0
-        def keyOf(lock):
-            return lock.lower()
         dist = [[[float('inf')] * 64 for _ in range(C)] for _ in range(R)]
         queue = []
         targetKeys = 0
@@ -25,7 +22,7 @@ class Solution:
             r, c, step, keys = queue.pop(0)
             if keys == targetKeys:
                 return step
-            for dr, dc in DIRS:
+            for dr, dc in [(0, 1), (0, -1), (1, 0), (-1, 0)]:
                 nr, nc = r + dr, c + dc
                 if not (0 <= nr < R and 0 <= nc < C) or grid[nr][nc] == '#':
                     continue
