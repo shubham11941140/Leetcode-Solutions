@@ -7,6 +7,7 @@ class Solution:
                 r, c = cells[i][0] - 1, cells[i][1] - 1
                 grid[r][c] = 1
             
+            @cache
             def dfs(r, c):
                 if r < 0 or r >= row or c < 0 or c >= col or grid[r][c] != 0:
                     return False
