@@ -5,9 +5,8 @@ class Solution:
         
         def dfs(idx):
             if idx == n:
-                self.ans = min(self.ans,max(children))
-                return
-            
+                self.ans = min(self.ans, max(children))
+                return            
             seen = set()
             for i in range(k):
                 if children[i] in seen:
@@ -15,7 +14,7 @@ class Solution:
                 seen.add(children[i])
                 children[i] += cookies[idx]
                 if children[i] <self.ans:
-                    dfs(idx+1)
+                    dfs(idx + 1)
                 children[i] -= cookies[idx]
                 
         children = [0 for i in range(k)]
