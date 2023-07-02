@@ -1,14 +1,11 @@
 class Solution:
-    
-    
+        
     def satisfy(self, a):
         b = [0] * self.n
         for i in a:
             b[i[0]] -= 1
             b[i[1]] += 1
-        if b.count(0) == self.n:
-            return len(a)
-        return 0    
+        return len(a) if b.count(0) == self.n else 0
     
     def sub(self, idx, curr):
         if idx == self.r:
