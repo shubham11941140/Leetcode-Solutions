@@ -10,20 +10,20 @@ class Solution:
             return len(a)
         return 0    
     
-    def sub(self, req, idx, curr):
+    def sub(self, idx, curr):
         if idx == self.r:
             c = self.satisfy(curr)
             self.m = max(self.m, c)
             return
-        self.sub(req, idx + 1, curr + [req[idx]])
-        self.sub(req, idx + 1, curr)
+        self.sub(idx + 1, curr + [self.req[idx]])
+        self.sub(idx + 1, curr)
                                   
     def maximumRequests(self, n: int, requests: List[List[int]]) -> int:
         self.n = n
         self.r = len(requests)
-        self.a = []
+        self.req = requests.copy()
         self.m = 0
-        self.sub(requests, 0, [])
+        self.sub(0, [])
         return self.m
             
             
