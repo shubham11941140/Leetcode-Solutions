@@ -6,13 +6,12 @@ class Solution:
         if not z or lz == 1:
             return n - 1
         ls = 0
-        for i in range(lz):
-            if i == 0:
-                ss = (z[i + 1] - z[i] - 1) + z[i]
-            if 0 < i < lz - 1:
-                ss = (z[i] - z[i - 1] - 1) + (z[i + 1] - z[i] - 1) 
-            if i == lz - 1:
-                ss = (z[i] - z[i - 1] - 1) + (n - z[i] - 1)
+        ss = (z[1] - z[0] - 1) + z[0]
+        ls = max(ls, ss)
+        ss = (z[-1] - z[-2] - 1) + (n - z[-1] - 1)
+        ls = max(ls, ss)
+        for i in range(1, lz - 1):
+            ss = (z[i] - z[i - 1] - 1) + (z[i + 1] - z[i] - 1)                
             ls = max(ls, ss)            
         return ls
         
