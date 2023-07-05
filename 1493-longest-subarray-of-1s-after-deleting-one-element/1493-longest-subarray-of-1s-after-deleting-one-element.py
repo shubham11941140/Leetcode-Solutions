@@ -6,10 +6,7 @@ class Solution:
         if not z or lz == 1:
             return n - 1
         ls = 0
-        ss = z[1] - 1
-        ls = max(ls, ss)
-        ss = n - z[-2] - 2
-        ls = max(ls, ss)
+        ls = max(ls, z[1] - 1, n - z[-2] - 2)
         for i in range(1, lz - 1):
             ss = (z[i] - z[i - 1] - 1) + (z[i + 1] - z[i] - 1)                
             ls = max(ls, ss)            
