@@ -8,7 +8,7 @@ class Solution:
         ls = 0
         ls = max(ls, z[1] - 1, n - z[-2] - 2)
         for i in range(1, lz - 1):
-            ss = (z[i] - z[i - 1] - 1) + (z[i + 1] - z[i] - 1)                
+            ss = z[i + 1] - z[i - 1] - 2            
             ls = max(ls, ss)            
         return ls
         
