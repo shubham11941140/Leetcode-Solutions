@@ -1,4 +1,5 @@
 class Solution:
+
     def longestSubarray(self, nums: List[int]) -> int:
         n = len(nums)
         z = [i for i in range(n) if not nums[i]]
@@ -8,7 +9,6 @@ class Solution:
         ls = 0
         ls = max(ls, z[1] - 1, n - z[-2] - 2)
         for i in range(1, lz - 1):
-            ss = (z[i] - z[i - 1] - 1) + (z[i + 1] - z[i] - 1)                
-            ls = max(ls, ss)            
+            ss = (z[i] - z[i - 1] - 1) + (z[i + 1] - z[i] - 1)
+            ls = max(ls, ss)
         return ls
-        
