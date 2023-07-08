@@ -1,4 +1,5 @@
 class Solution:
+
     def putMarbles(self, weights: List[int], k: int) -> int:
         length = len(weights)
         if k in [1, length]:
@@ -6,10 +7,12 @@ class Solution:
         answer = 0
         ans1 = 0
         k -= 1
-        res1 = sorted([(weights[i] + weights[i + 1]) for i in range(length - 1)], reverse = True)
+        res1 = sorted([(weights[i] + weights[i + 1])
+                       for i in range(length - 1)],
+                      reverse=True)
         result = res1[::-1]
         for i in range(k):
             ans1 += res1[i]
         for i in range(k):
             answer += result[i]
-        return ans1 - answer        
+        return ans1 - answer
