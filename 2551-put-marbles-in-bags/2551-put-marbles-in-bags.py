@@ -8,8 +8,5 @@ class Solution:
         k -= 1
         res1 = sorted([(weights[i] + weights[i + 1]) for i in range(length - 1)], reverse = True)
         result = res1[::-1]
-        for i in range(k):
-            ans1 += res1[i]
-        for i in range(k):
-            answer += result[i]
-        return ans1 - answer        
+        return sum([(res1[i] - result[i]) for i in range(k)])
+      
