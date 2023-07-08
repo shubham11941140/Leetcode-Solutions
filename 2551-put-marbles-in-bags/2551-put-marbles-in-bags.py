@@ -1,4 +1,5 @@
 class Solution:
+
     def putMarbles(self, weights: List[int], k: int) -> int:
         length = len(weights)
         if k in [1, length]:
@@ -14,4 +15,4 @@ class Solution:
             ans1 += res1[i]
         for i in range(k):
             answer += result[i]
-        return ans1 - answer        
+        return ans1 - answer
