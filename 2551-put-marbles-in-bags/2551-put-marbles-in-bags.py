@@ -6,9 +6,8 @@ class Solution:
         answer = 0
         ans1 = 0
         k -= 1
-        res1 = [(weights[i] + weights[i + 1]) for i in range(length - 1)]
-        result = sorted(res1)
-        res1.sort(reverse=True)
+        res1 = sorted([(weights[i] + weights[i + 1]) for i in range(length - 1)], reverse = True)
+        result = res1[::-1]
         for i in range(k):
             ans1 += res1[i]
         for i in range(k):
