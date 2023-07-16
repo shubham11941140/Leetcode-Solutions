@@ -1,5 +1,7 @@
 class Solution:
-    def smallestSufficientTeam(self, req_skills: List[str], people: List[List[str]]) -> List[int]:
+
+    def smallestSufficientTeam(self, req_skills: List[str],
+                               people: List[List[str]]) -> List[int]:
         n = len(req_skills)
         skill_to_idx = {skill: idx for idx, skill in enumerate(req_skills)}
         target = (1 << n) - 1
@@ -19,4 +21,4 @@ class Solution:
                 if new_skills not in dp or len(dp[new_skills]) > len(team) + 1:
                     dp[new_skills] = team + [i]
 
-        return dp[target]        
+        return dp[target]
