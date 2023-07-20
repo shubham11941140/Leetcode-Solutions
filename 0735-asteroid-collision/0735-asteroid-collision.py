@@ -17,16 +17,12 @@ class Solution:
                     # Do nonsense
                     if s[-1] == abs(i):
                         s.pop()
-                        continue
                     elif s[-1] < abs(i):
-                        s.pop()
-                        s.append(i)
-                        continue
+                        s[-1] = i
                     elif s[-1] > abs(i):
                         continue                                           
                 else:
                     s.append(i)
-                    continue
             self.s.append(s)
             if len(self.s) > 2 and self.s[-2] == self.s[-1]:
                 break
