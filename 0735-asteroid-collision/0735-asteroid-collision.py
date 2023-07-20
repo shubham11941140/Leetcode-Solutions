@@ -18,6 +18,5 @@ class Solution:
                     s.append(i)
             self.s.append(s)
             if len(self.s) > 2 and self.s[-2] == self.s[-1]:
-                break
-        return self.s[-1]
+                return self.s[-1]
             
