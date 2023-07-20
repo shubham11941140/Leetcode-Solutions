@@ -16,7 +16,8 @@ class Solution:
                         s[-1] = i                                          
                 else:
                     s.append(i)
-            self.s.append(s)
-            if len(self.s) > 2 and self.s[-2] == self.s[-1]:
-                return self.s[-1]
+            if s == asteroids:
+                return s
+            else:
+                asteroids = s
             
