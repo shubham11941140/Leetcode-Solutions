@@ -1,4 +1,5 @@
 class Solution:
+
     def asteroidCollision(self, asteroids: List[int]) -> List[int]:
         self.s = []
         for _ in range(300):
@@ -11,7 +12,7 @@ class Solution:
                     continue
                 # Check sign of s[-1] and i
                 # If both have same sign proceeed
-                
+
                 print(s[-1], i)
                 if s[-1] > 0 and i < 0:
                     # Do nonsense
@@ -20,11 +21,10 @@ class Solution:
                     elif s[-1] < abs(i):
                         s[-1] = i
                     elif s[-1] > abs(i):
-                        continue                                           
+                        continue
                 else:
                     s.append(i)
             self.s.append(s)
             if len(self.s) > 2 and self.s[-2] == self.s[-1]:
                 break
         return self.s[-1]
-            
