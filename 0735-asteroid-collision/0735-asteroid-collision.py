@@ -1,6 +1,6 @@
 class Solution:
     def asteroidCollision(self, asteroids: List[int]) -> List[int]:
-        for _ in range(300):
+        while True:
             s = []
             for i in asteroids:
                 if not s:
