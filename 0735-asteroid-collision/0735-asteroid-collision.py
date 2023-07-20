@@ -1,10 +1,7 @@
 class Solution:
     def asteroidCollision(self, asteroids: List[int]) -> List[int]:
-        self.s = []
         for _ in range(300):
             s = []
-            if self.s:
-                asteroids = self.s[-1].copy()
             for i in asteroids:
                 if not s:
                     s.append(i)
