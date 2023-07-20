@@ -9,18 +9,11 @@ class Solution:
                 if not s:
                     s.append(i)
                     continue
-                # Check sign of s[-1] and i
-                # If both have same sign proceeed
-                
-                print(s[-1], i)
                 if s[-1] > 0 and i < 0:
-                    # Do nonsense
                     if s[-1] == abs(i):
                         s.pop()
                     elif s[-1] < abs(i):
-                        s[-1] = i
-                    elif s[-1] > abs(i):
-                        continue                                           
+                        s[-1] = i                                          
                 else:
                     s.append(i)
             self.s.append(s)
