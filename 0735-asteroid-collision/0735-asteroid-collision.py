@@ -1,4 +1,5 @@
 class Solution:
+
     def asteroidCollision(self, asteroids: List[int]) -> List[int]:
         self.s = []
         for _ in range(300):
@@ -13,11 +14,10 @@ class Solution:
                     if s[-1] == abs(i):
                         s.pop()
                     elif s[-1] < abs(i):
-                        s[-1] = i                                          
+                        s[-1] = i
                 else:
                     s.append(i)
             self.s.append(s)
             if len(self.s) > 2 and self.s[-2] == self.s[-1]:
                 break
         return self.s[-1]
-            
