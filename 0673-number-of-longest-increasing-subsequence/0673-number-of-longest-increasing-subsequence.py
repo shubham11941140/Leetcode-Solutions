@@ -1,12 +1,10 @@
 class Solution:
     def findNumberOfLIS(self, nums: List[int]) -> int:
         n = len(nums)
-        if n == 0:
+        if not n:
             return 0
-
-        lengths = [1] * n  # Initialize the lengths array with 1, as each element is a valid subsequence of length 1
-        counts = [1] * n   # Initialize the counts array with 1, as each element is a valid LIS of length 1
-
+        lengths = [1] * n
+        counts = [1] * n   
         for i in range(n):
             for j in range(i):
                 if nums[i] > nums[j]:
