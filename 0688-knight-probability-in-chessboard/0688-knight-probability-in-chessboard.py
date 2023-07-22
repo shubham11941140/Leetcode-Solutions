@@ -9,7 +9,7 @@ class Solution:
         memo = {}
 
         def dp(k, x, y):
-            if not is_valid(x, y):
+            if not (0 <= x < n and 0 <= y < n):
                 return 0
             if k == 0:
                 return 1
