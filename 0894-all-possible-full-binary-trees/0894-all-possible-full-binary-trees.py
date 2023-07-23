@@ -5,6 +5,7 @@
 #         self.left = left
 #         self.right = right
 class Solution:
+
     def allPossibleFBT(self, n: int) -> List[Optional[TreeNode]]:
         if n % 2 == 0:
             return []
@@ -20,4 +21,4 @@ class Solution:
                     root.left = l
                     root.right = r
                     res.append(root)
-        return res       
+        return res
