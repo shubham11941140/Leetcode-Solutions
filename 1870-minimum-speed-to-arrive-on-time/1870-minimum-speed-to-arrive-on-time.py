@@ -2,10 +2,7 @@ class Solution:
     def minSpeedOnTime(self, dist: List[int], hour: float) -> int:
         n = len(dist)
         def check(speed):
-            res = 0
-            for i in range(n):
-                res += (dist[i] / speed) if i == len(dist) - 1 else math.ceil(dist[i] / speed)
-            return res <= hour
+            return sum([ceil(dist[i] / speed) for i in range(n - 1)]) + (dist[-1] / speed) <= hour
         
         left, right = 1, 10**7        
         while left < right:
