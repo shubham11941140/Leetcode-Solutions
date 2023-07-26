@@ -1,6 +1,7 @@
 class Solution:
     def minSpeedOnTime(self, dist: List[int], hour: float) -> int:
         n = len(dist)
+        @cache
         def check(s):
             return sum([ceil(dist[i] / s) for i in range(n - 1)]) + (dist[-1] / s) <= hour        
         left, right = 1, 10**7        
