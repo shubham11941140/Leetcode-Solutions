@@ -6,7 +6,7 @@ class Solution:
         while low < high:
             guess = high - (high - low) // 2
             if cannot_run(guess):
-                high =guess -1
+                high = guess - 1
             else:
-                low =guess
+                low = guess
         return low      
