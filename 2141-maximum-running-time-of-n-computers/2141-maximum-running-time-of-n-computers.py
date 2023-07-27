@@ -3,10 +3,7 @@ class Solution:
         def cannot_run(n,batteries,time):
             curr_sum =0
             for t in batteries:
-                if t <time:
-                    curr_sum +=t
-                else:
-                    curr_sum +=time
+                curr_sum += min(t, time)
             return curr_sum <n *time
         
         low,high =0,sum(batteries)// n
