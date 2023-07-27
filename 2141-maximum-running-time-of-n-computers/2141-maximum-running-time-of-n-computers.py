@@ -1,10 +1,7 @@
 class Solution:
     def maxRunTime(self, n: int, batteries: List[int]) -> int:
-        def cannot_run(n,batteries,time):
-            curr_sum =0
-            for t in batteries:
-                curr_sum += min(t, time)
-            return curr_sum <n *time
+        def cannot_run(n,batteries,time):            
+            return sum([min(t, time) for t in batteries]) < n * time
         
         low,high =0,sum(batteries)// n
         while low <high:
