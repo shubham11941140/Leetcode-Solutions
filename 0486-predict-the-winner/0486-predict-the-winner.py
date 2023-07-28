@@ -15,18 +15,5 @@ class Solution:
         for diagonal in range(1, len(nums)):
             for i in range(len(nums) - diagonal):
                 j = i + diagonal
-
-                # Player 1 can either choose the number at index i or index j
-                # If they choose the number at index i, then player 2 will play optimally
-                # and take the maximum score difference for the subarray starting at index i+1 and ending at j
-                # Player 1 will then be left with the subarray starting at index i+2 and ending at j, where they
-                # can choose either the number at index i+2 or index j
-                # If they choose the number at index j, then player 2 will play optimally
-                # and take the maximum score difference for the subarray starting at index i and ending at j-1
-                # Player 1 will then be left with the subarray starting at index i+1 and ending at j-1, where they
-                # can choose either the number at index i+1 or index j-1
                 dp[i][j] = max(nums[i] - dp[i+1][j], nums[j] - dp[i][j-1])
-
-        # If the maximum score difference for the subarray starting at index 0
-        # and ending at the last index is greater than or equal to 0, then player 1 can win
         return dp[0][-1] >= 0        
