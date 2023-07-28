@@ -1,4 +1,5 @@
 class Solution:
+
     def PredictTheWinner(self, nums: List[int]) -> bool:
         # Create a 2D array to store the maximum score difference between
         # player 1 and player 2 for the subarray starting at index i and
@@ -25,8 +26,8 @@ class Solution:
                 # and take the maximum score difference for the subarray starting at index i and ending at j-1
                 # Player 1 will then be left with the subarray starting at index i+1 and ending at j-1, where they
                 # can choose either the number at index i+1 or index j-1
-                dp[i][j] = max(nums[i] - dp[i+1][j], nums[j] - dp[i][j-1])
+                dp[i][j] = max(nums[i] - dp[i + 1][j], nums[j] - dp[i][j - 1])
 
         # If the maximum score difference for the subarray starting at index 0
         # and ending at the last index is greater than or equal to 0, then player 1 can win
-        return dp[0][-1] >= 0        
+        return dp[0][-1] >= 0
