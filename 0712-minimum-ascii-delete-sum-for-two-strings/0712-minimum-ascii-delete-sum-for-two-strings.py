@@ -1,4 +1,5 @@
 class Solution:
+
     def minimumDeleteSum(self, s1: str, s2: str) -> int:
         m, n = len(s1), len(s2)
 
@@ -18,10 +19,8 @@ class Solution:
                 if s1[i - 1] == s2[j - 1]:
                     dp[i][j] = dp[i - 1][j - 1]
                 else:
-                    dp[i][j] = min(
-                        dp[i - 1][j] + ord(s1[i - 1]),
-                        dp[i][j - 1] + ord(s2[j - 1])
-                    )
+                    dp[i][j] = min(dp[i - 1][j] + ord(s1[i - 1]),
+                                   dp[i][j - 1] + ord(s2[j - 1]))
 
         # The answer will be in the bottom-right cell of the DP table
-        return dp[m][n]        
+        return dp[m][n]
