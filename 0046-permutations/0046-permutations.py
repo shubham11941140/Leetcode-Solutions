@@ -11,5 +11,4 @@ class Solution:
             rem = nums[:i] + nums[i + 1:]
             for x in self.permute(rem):
                 res.append([cur] + x)
-        return res        
-        
+        return res
