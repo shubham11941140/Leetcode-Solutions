@@ -1,13 +1,14 @@
 class Solution:
     def permute(self, nums: List[int]) -> List[List[int]]:
-        if len(nums) == 0:
+        n = len(nums)
+        if not n:
             return []
-        if len(nums) == 1:
+        if n == 1:
             return [nums]
         res = []
-        for i in range(len(nums)):
+        for i in range(n):
             cur = nums[i]
-            rem = nums[:i] + nums[i+1:]
+            rem = nums[:i] + nums[i + 1:]
             for x in self.permute(rem):
                 res.append([cur] + x)
         return res        
