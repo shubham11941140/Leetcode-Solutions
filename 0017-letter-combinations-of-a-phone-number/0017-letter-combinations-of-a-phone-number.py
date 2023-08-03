@@ -14,9 +14,5 @@ class Solution:
         a[8] = list("tuv")
         a[9] = list("wxyz")
         d = [int(i) for i in digits]
-        ans = []
-        for _ in range(1000):
-            v = ''.join([choice(a[i]) for i in d])
-            ans.append(v)
-        return set(ans)                
+        return set([''.join([choice(a[i]) for i in d]) for _ in range(1000)])              
         
