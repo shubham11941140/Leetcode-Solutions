@@ -6,15 +6,15 @@
 #         self.right = right
 class Solution:
     def generateTrees(self, n: int) -> List[Optional[TreeNode]]:
-        if n == 0:
+        if not n:
             return []
         def dfs(start, end):
             if start > end:
                 return [None]
             res = []
-            for i in range(start, end+1):
-                left = dfs(start, i-1)
-                right = dfs(i+1, end)
+            for i in range(start, end + 1):
+                left = dfs(start, i - 1)
+                right = dfs(i + 1, end)
                 for l in left:
                     for r in right:
                         root = TreeNode(i)
