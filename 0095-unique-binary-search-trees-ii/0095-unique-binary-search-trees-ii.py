@@ -8,13 +8,14 @@ class Solution:
     def generateTrees(self, n: int) -> List[Optional[TreeNode]]:
         if n == 0:
             return []
+
         def dfs(start, end):
             if start > end:
                 return [None]
             res = []
-            for i in range(start, end+1):
-                left = dfs(start, i-1)
-                right = dfs(i+1, end)
+            for i in range(start, end + 1):
+                left = dfs(start, i - 1)
+                right = dfs(i + 1, end)
                 for l in left:
                     for r in right:
                         root = TreeNode(i)
@@ -22,4 +23,5 @@ class Solution:
                         root.right = r
                         res.append(root)
             return res
-        return dfs(1, n)        
+
+        return dfs(1, n)
