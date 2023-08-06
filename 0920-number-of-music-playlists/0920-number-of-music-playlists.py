@@ -10,4 +10,4 @@ class Solution:
                 dp[i][j] += dp[i - 1][j - 1] * (N - i + 1)
                 dp[i][j] += dp[i][j - 1] * max(i - K, 0)
                 dp[i][j] %= 10**9 + 7
-        return dp[N][L]        
+        return dp[N][L]
