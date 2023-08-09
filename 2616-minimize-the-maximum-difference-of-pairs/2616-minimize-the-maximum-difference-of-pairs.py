@@ -2,8 +2,7 @@ class Solution:
     def minimizeMax(self, nums: List[int], p: int) -> int:
         nums.sort()
         n = len(nums)
-        lo, hi = 0, nums[n - 1] - nums[0]
-        
+        lo, hi = 0, nums[n - 1] - nums[0]        
         while lo < hi:
             mid = lo + (hi - lo) // 2                        
             c = 0
@@ -15,6 +14,7 @@ class Solution:
                     i += 1
                 if c >= p:
                     f = True
+                    break
                 i += 1                 
             if f:
                 hi = mid
