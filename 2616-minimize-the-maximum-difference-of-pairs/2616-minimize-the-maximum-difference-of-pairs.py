@@ -1,6 +1,5 @@
 class Solution:
-    
-    
+
     def solve(self, nums, d, p):
         n = len(nums)
         c = 0
@@ -13,18 +12,17 @@ class Solution:
                 return True
             i += 1
         return False
-    
+
     def minimizeMax(self, nums: List[int], p: int) -> int:
         nums.sort()
         n = len(nums)
         lo, hi = 0, nums[n - 1] - nums[0]
-        
+
         while lo < hi:
             mid = lo + (hi - lo) // 2
-            
+
             if self.solve(nums, mid, p):
                 hi = mid
             else:
                 lo = mid + 1
         return lo
-    
