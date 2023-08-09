@@ -1,6 +1,5 @@
 class Solution:
-    
-    
+        
     def solve(self, nums, d, p):
         n = len(nums)
         c = 0
@@ -22,7 +21,19 @@ class Solution:
         while lo < hi:
             mid = lo + (hi - lo) // 2
             
-            if self.solve(nums, mid, p):
+            n = len(nums)
+            c = 0
+            i = 0
+            f = False
+            while i < n - 1:
+                if nums[i + 1] - nums[i] <= mid:
+                    c += 1
+                    i += 1
+                if c >= p:
+                    f = True
+                i += 1     
+            
+            if f:
                 hi = mid
             else:
                 lo = mid + 1
