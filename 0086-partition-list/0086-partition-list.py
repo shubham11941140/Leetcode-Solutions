@@ -12,9 +12,9 @@ class Solution:
             else:
                 b.append(head.val)            
             head = head.next
-        self.root = None
+        r = None
         for i in reversed(a + b):
             temp = ListNode(i)
-            temp.next = self.root
-            self.root = temp
-        return self.root
+            temp.next =r
+            r = temp
+        return r
