@@ -1,4 +1,5 @@
 class Solution:
+
     def maximalNetworkRank(self, n: int, roads: List[List[int]]) -> int:
         graph = defaultdict(set)
         for v, u in roads:
@@ -8,5 +9,6 @@ class Solution:
         for v in graph:
             for u in graph:
                 if u != v:
-                    res = max(res, len(graph[v]) + len(graph[u]) - (v in graph[u]))
-        return res        
+                    res = max(res,
+                              len(graph[v]) + len(graph[u]) - (v in graph[u]))
+        return res
