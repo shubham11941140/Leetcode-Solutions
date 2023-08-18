@@ -1,6 +1,6 @@
 class Solution:
     def maximalNetworkRank(self, n: int, roads: List[List[int]]) -> int:
-        graph = collections.defaultdict(set)
+        graph = defaultdict(set)
         for v, u in roads:
             graph[v].add(u)
             graph[u].add(v)
