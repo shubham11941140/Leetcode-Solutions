@@ -5,6 +5,6 @@ class Solution:
             if not (n % i) and s[:i] * (n // i) == s:
                 return True
             if i > n // 2:
-                break
+                return False
         return False
         
