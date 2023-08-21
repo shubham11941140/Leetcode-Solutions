@@ -2,12 +2,9 @@ class Solution:
     def repeatedSubstringPattern(self, s: str) -> bool:
         n = len(s)
         for i in range(1, n):            
-            if n % i == 0:
-                #print(i, s[:i])
+            if not (n % i):
                 t = s[:i]
-                r = n // i
-                #print(t * r)
-                if t * r == s:
+                if t * (n // i) == s:
                     return True
         return False
         
