@@ -1,4 +1,5 @@
 class Solution:
+
     def reorganizeString(self, s: str) -> str:
         char_count = Counter(s)
         max_heap = [(-count, char) for char, count in char_count.items()]
@@ -11,4 +12,4 @@ class Solution:
             if prev_count < 0:
                 heapq.heappush(max_heap, (prev_count, prev_char))
             prev_count, prev_char = count + 1, char
-        return "".join(result) if len(result) == len(s) else ""       
+        return "".join(result) if len(result) == len(s) else ""
