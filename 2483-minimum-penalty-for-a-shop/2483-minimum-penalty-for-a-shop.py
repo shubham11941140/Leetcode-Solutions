@@ -10,6 +10,6 @@ class Solution:
                 hour = h
                 min_p = pen
             if h < n:
-                n_found += (1 if customers[h] == 'N' else 0)
-                y_found += (1 if customers[h] == 'Y' else 0)
+                n_found += int(customers[h] == 'N')
+                y_found += int(customers[h] == 'Y')
         return hour       
