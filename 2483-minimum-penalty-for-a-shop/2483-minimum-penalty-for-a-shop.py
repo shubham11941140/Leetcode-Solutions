@@ -4,8 +4,7 @@ class Solution:
         Y = customers.count('Y')
         min_p, hour, y_found, n_found = n, n, 0, 0
         for h in range(n + 1):
-            y_remaining = Y - y_found
-            pen = y_remaining + n_found
+            pen = Y - y_found + n_found
             if pen < min_p:
                 hour = h
                 min_p = pen
