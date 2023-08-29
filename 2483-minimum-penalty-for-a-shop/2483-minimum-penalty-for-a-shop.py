@@ -1,8 +1,7 @@
 class Solution:
     def bestClosingTime(self, customers: str) -> int:
-        n, Y = len(customers), 0
-        for i in range(n):
-            Y += (1 if customers[i] == 'Y' else 0)
+        n = len(customers)
+        Y = customers.count('Y')
         min_p, hour, y_found, n_found = n, n, 0, 0
         for h in range(n + 1):
             y_remaining = Y - y_found
