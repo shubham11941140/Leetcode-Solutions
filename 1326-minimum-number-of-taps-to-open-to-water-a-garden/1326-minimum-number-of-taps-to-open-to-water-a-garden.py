@@ -1,6 +1,8 @@
 class Solution:
+
     def minTaps(self, n: int, ranges: List[int]) -> int:
-        inter = sorted([(max(0, i - ranges[i]), min(n, i + ranges[i])) for i in range(n + 1)])
+        inter = sorted([(max(0, i - ranges[i]), min(n, i + ranges[i]))
+                        for i in range(n + 1)])
         taps = 0  # Number of taps used
         ce = 0  # The current rightmost point covered by taps
         i = 0
@@ -19,4 +21,3 @@ class Solution:
             if ce >= n:
                 return taps
         return -1
-       
