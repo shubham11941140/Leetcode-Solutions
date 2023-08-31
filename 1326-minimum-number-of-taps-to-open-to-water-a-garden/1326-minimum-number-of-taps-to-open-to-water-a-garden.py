@@ -7,22 +7,16 @@ class Solution:
 
         while i <= n:
             # Find the farthest tap we can reach from the current position
-            farthest = ce
+            f = ce
 
             while i <= n and inter[i][0] <= ce:
-                farthest = max(farthest, inter[i][1])
+                f = max(f, inter[i][1])
                 i += 1
-
-            # If we couldn't find a tap that covers the current position, return -1
-            if farthest == ce:
+            if f == ce:
                 return -1
-
-            # Increment the taps count and update the current end
             taps += 1
-            ce = farthest
+            ce = f
             if ce >= n:
                 return taps
-
-        return -1  # If we can't cover the entire garden
-
+        return -1
        
