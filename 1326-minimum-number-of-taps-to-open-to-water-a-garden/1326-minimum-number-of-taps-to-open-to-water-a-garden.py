@@ -1,7 +1,9 @@
 class Solution:
+
     def minTaps(self, n: int, ranges: List[int]) -> int:
         # Create a list of intervals representing the coverage of each tap
-        intervals = [(max(0, i - ranges[i]), min(n, i + ranges[i])) for i in range(n + 1)]
+        intervals = [(max(0, i - ranges[i]), min(n, i + ranges[i]))
+                     for i in range(n + 1)]
 
         # Sort the intervals by their starting point
         intervals.sort()
@@ -32,5 +34,3 @@ class Solution:
                 return taps
 
         return -1  # If we can't cover the entire garden
-
-       
