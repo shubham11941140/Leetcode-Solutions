@@ -1,9 +1,7 @@
 class Solution:
     def minExtraChar(self, s: str, dictionary: List[str]) -> int:
         n = len(s) + 1
-        dp = [n] * (n)
-        
-        dp[0] = 0
+        dp = [0] + [n] * (n - 1)        
         word_set = set(dictionary)
         
         for i in range(1, n):
