@@ -1,10 +1,10 @@
 class Solution:
     def minExtraChar(self, s: str, dictionary: List[str]) -> int:
-        max_len = len(s) + 1  # Maximum length of a valid substring
-        dp = [max_len] * (max_len)  # Initialize an array to store minimum extra characters needed for substrings
+        max_len = len(s) + 1
+        dp = [max_len] * (max_len)
         
-        dp[0] = 0  # No extra characters needed for an empty string
-        word_set = set(dictionary)  # Convert the dictionary into a set for efficient word look-up
+        dp[0] = 0
+        word_set = set(dictionary)
         
         for i in range(1, max_len):
             dp[i] = dp[i - 1] + 1  # Initialize with a worst-case scenario (one more character than previous)
