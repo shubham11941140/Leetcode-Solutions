@@ -11,7 +11,6 @@ class Solution:
             
             for length in range(1, i + 1):
                 if s[i - length:i] in word_set:
-                    # If it does, update dp[i] with the minimum of current dp[i] and dp[i-length]
                     dp[i] = min(dp[i], dp[i - length])
                     
-        return dp[-1]  # Return the minimum extra characters needed for the entire string
+        return dp[-1]
