@@ -6,8 +6,8 @@ class Solution:
         for i in range(1, n):
             dp[i] = dp[i - 1] + 1
             
-            for length in range(1, i + 1):
-                if s[i - length:i] in w:
-                    dp[i] = min(dp[i], dp[i - length])
+            for l in range(1, i + 1):
+                if s[i - l:i] in w:
+                    dp[i] = min(dp[i], dp[i - l])
                     
         return dp[-1]
