@@ -24,44 +24,7 @@ class Solution:
 
         
         
-        ca = [[] for i in range(110)]
-        c = [0]
-        ca[1].append(0)
-        c.append(Counter(ca[1]))
-        for i in range(2, 101):
-            b = ca[i - 1]
-            for j in b:
-                ca[i].append(j - 1)
-                ca[i].append(j + 1)
-            c.append(Counter(ca[i]))
-            ca[i] = sorted(list(set(ca[i])))
-        # Allocate glasses in ca
-        #for i in ca:            print(*i)
-        print(23)
-        #for i in c:              print(i)
-        p = poured
-        d = [0]
-        for i in range(1, 101):
-            if p == 0:
-                break
-            if p < i:
-                # Freq allocation                
-                print(31)
-                print(p, i)
-                print(c[i])
-                s = sum(c[i].values())
-                
-                
-                break
-            if p >= i:
-                p -= i
-                z = []
-                for j in ca[i]:
-                    z.append((j, 1))
-                d.append(z)
-        print(d)
-                
-        
+
         
         
         
