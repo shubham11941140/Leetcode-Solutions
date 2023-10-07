@@ -2,7 +2,7 @@ class Solution:
     
     def dp(self,i,n,m,k,last,dct):
         if i==n:
-            return int(k == 0)
+            return int(not k)
         if (i, k, last) in dct:
             return dct[(i, k, last)]
         val = 0
