@@ -16,5 +16,5 @@ class Solution:
         return val%1000000007
 
     def numOfArrays(self, n: int, m: int, k: int) -> int:
-        return self.dp(0,n,m,k,-1,{})%1000000007
+        return self.dp(0, n, m, k, -1, {}) % (10 ** 9 + 7)
         
