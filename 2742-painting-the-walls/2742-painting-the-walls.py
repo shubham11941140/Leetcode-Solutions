@@ -7,8 +7,11 @@ class Solution:
             if ctime >= n:
                 return 0
             if index == n:
-                return 10 ** 20
+                return 10**20
 
-            return min(calc(ctime + time[index] + 1, index + 1) + cost[index], calc(ctime, index + 1))
+            return min(
+                calc(ctime + time[index] + 1, index + 1) + cost[index],
+                calc(ctime, index + 1),
+            )
 
-        return min(10 ** 20, calc(0, 0))      
+        return min(10**20, calc(0, 0))
