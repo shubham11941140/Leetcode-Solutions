@@ -12,4 +12,3 @@ class Solution:
                 if j + 1 <= maxColumn:
                     dp[i][j] = (dp[i][j] + dp[i - 1][j + 1]) % mod
         return dp[steps][0]
-        
