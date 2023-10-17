@@ -7,16 +7,16 @@ class Solution:
                 in_degree[child] += 1
                 if in_degree[child] > 1:
                     return False
-
-        # find root
         for i in range(n):
             if not in_degree[i]:
                 if root == -1:
                     root = i
                 else:
                     return False
-
-        return False if root == -1 else self.dfs(root, leftChild, rightChild) == n
+        def dfs(root):
+            return 0 if root == -1 else 1 + dfs(leftChild[root]) + dfs(rightChild[root])            
+        
+        return False if root == -1 else dfs(root) == n
 
     def dfs(self, root, leftChild, rightChild):
         return 0 if root == -1 else 1 + self.dfs(leftChild[root], leftChild, rightChild) + self.dfs(rightChild[root], leftChild, rightChild)
