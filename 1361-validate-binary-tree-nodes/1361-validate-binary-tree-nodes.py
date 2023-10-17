@@ -2,15 +2,7 @@ class Solution:
     def validateBinaryTreeNodes(self, n: int, leftChild: List[int], rightChild: List[int]) -> bool:
         in_degree = [0] * n
         root = -1
-
-        # update inDegree count for leftChild and rightChild
-        for child in leftChild:
-            if child != -1:
-                in_degree[child] += 1
-                if in_degree[child] > 1:
-                    return False
-
-        for child in rightChild:
+        for child in (leftChild + rightChild):
             if child != -1:
                 in_degree[child] += 1
                 if in_degree[child] > 1:
