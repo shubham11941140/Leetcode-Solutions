@@ -1,5 +1,7 @@
 class Solution:
-    def validateBinaryTreeNodes(self, n: int, leftChild: List[int], rightChild: List[int]) -> bool:
+    def validateBinaryTreeNodes(
+        self, n: int, leftChild: List[int], rightChild: List[int]
+    ) -> bool:
         in_degree = [0] * n
         root = -1
 
@@ -38,5 +40,8 @@ class Solution:
         if root == -1:
             return 0
         else:
-            return 1 + self.dfs(leftChild[root], leftChild, rightChild) + self.dfs(rightChild[root], leftChild, rightChild)
-        
+            return (
+                1
+                + self.dfs(leftChild[root], leftChild, rightChild)
+                + self.dfs(rightChild[root], leftChild, rightChild)
+            )
