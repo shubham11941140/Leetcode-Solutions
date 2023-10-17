@@ -14,10 +14,5 @@ class Solution:
                 else:
                     return False
         def dfs(root):
-            return 0 if root == -1 else 1 + dfs(leftChild[root]) + dfs(rightChild[root])            
-        
+            return 0 if root == -1 else 1 + dfs(leftChild[root]) + dfs(rightChild[root])                    
         return False if root == -1 else dfs(root) == n
-
-    def dfs(self, root, leftChild, rightChild):
-        return 0 if root == -1 else 1 + self.dfs(leftChild[root], leftChild, rightChild) + self.dfs(rightChild[root], leftChild, rightChild)
-        
