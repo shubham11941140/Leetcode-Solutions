@@ -13,6 +13,7 @@ class Solution:
                     root = i
                 else:
                     return False
+        @cache
         def dfs(root):
             return 0 if root == -1 else 1 + dfs(leftChild[root]) + dfs(rightChild[root])                    
         return False if root == -1 else dfs(root) == n
