@@ -19,13 +19,8 @@ class Solution:
         # if no root
         if root == -1:
             return False
-
-        # check if all nodes are reachable from root
         return self.dfs(root, leftChild, rightChild) == n
 
     def dfs(self, root, leftChild, rightChild):
-        if root == -1:
-            return 0
-        else:
-            return 1 + self.dfs(leftChild[root], leftChild, rightChild) + self.dfs(rightChild[root], leftChild, rightChild)
+        return 0 if root == -1 else 1 + self.dfs(leftChild[root], leftChild, rightChild) + self.dfs(rightChild[root], leftChild, rightChild)
         
