@@ -10,7 +10,7 @@ class Solution:
 
         # find root
         for i in range(n):
-            if in_degree[i] == 0:
+            if not in_degree[i]:
                 if root == -1:
                     root = i
                 else:
@@ -21,10 +21,7 @@ class Solution:
             return False
 
         # check if all nodes are reachable from root
-        if self.dfs(root, leftChild, rightChild) == n:
-            return True
-        else:
-            return False
+        return self.dfs(root, leftChild, rightChild) == n
 
     def dfs(self, root, leftChild, rightChild):
         if root == -1:
