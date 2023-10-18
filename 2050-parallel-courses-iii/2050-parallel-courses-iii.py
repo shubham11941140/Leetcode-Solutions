@@ -2,7 +2,7 @@ class Solution:
     def minimumTime(self, n: int, relations: List[List[int]], time: List[int]) -> int:
         graph = [[] for _ in range(n)]
         indegree = [0] * n
-        maxTime = [0] * n
+        maxTime = time.copy()
 
         for edge in relations:
             graph[edge[0] - 1].append(edge[1] - 1)
@@ -14,8 +14,6 @@ class Solution:
             if indegree[i] == 0:
                 queue.append(i)
 
-            maxTime[i] = time[i]
-
         while queue:
             node = queue.popleft()
 
@@ -26,5 +24,5 @@ class Solution:
                 if indegree[neighbor] == 0:
                     queue.append(neighbor)
         return max(maxTime)
-        return ans
+
         
