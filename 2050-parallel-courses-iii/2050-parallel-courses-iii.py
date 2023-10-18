@@ -12,12 +12,11 @@ class Solution:
         while queue:
             node = queue.popleft()
 
-            for neighbor in graph[node]:
-                m[neighbor] = max(m[neighbor], m[node] + time[neighbor])
-                indegree[neighbor] -= 1
-
-                if not indegree[neighbor]:
-                    queue.append(neighbor)
+            for i in graph[node]:
+                m[i] = max(m[i], m[node] + time[i])
+                indegree[i] -= 1
+                if not indegree[i]:
+                    queue.append(i)
         return max(m)
 
         
