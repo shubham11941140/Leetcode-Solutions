@@ -16,7 +16,7 @@ class Solution:
                 maxTime[neighbor] = max(maxTime[neighbor], maxTime[node] + time[neighbor])
                 indegree[neighbor] -= 1
 
-                if indegree[neighbor] == 0:
+                if not indegree[neighbor]:
                     queue.append(neighbor)
         return max(maxTime)
 
