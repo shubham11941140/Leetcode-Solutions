@@ -25,12 +25,6 @@ class Solution:
 
                 if indegree[neighbor] == 0:
                     queue.append(neighbor)
-
-        ans = 0
-
-        for node in range(n):
-            ans = max(ans, maxTime[node])
-
-        return ans
+        return max(maxTime)
         return ans
         
