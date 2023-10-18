@@ -20,7 +20,9 @@ class Solution:
             node = queue.popleft()
 
             for neighbor in graph[node]:
-                maxTime[neighbor] = max(maxTime[neighbor], maxTime[node] + time[neighbor])
+                maxTime[neighbor] = max(
+                    maxTime[neighbor], maxTime[node] + time[neighbor]
+                )
                 indegree[neighbor] -= 1
 
                 if indegree[neighbor] == 0:
@@ -33,4 +35,3 @@ class Solution:
 
         return ans
         return ans
-        
