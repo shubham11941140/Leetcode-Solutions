@@ -8,12 +8,7 @@ class Solution:
             graph[edge[0] - 1].append(edge[1] - 1)
             indegree[edge[1] - 1] += 1
 
-        queue = deque()
-
-        for i in range(n):
-            if indegree[i] == 0:
-                queue.append(i)
-
+        queue = deque([i for i in range(n) if not indegree[i]])
         while queue:
             node = queue.popleft()
 
