@@ -14,4 +14,3 @@ class Solution:
             res = max(res, min_num * (j - i + 1))
 
         return res
-        
