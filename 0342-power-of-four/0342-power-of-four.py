@@ -3,4 +3,3 @@ class Solution:
         if n <= 0:
             return False
         return 4 ** round(log(n, 4)) == n
-        
