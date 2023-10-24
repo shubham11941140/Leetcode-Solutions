@@ -8,7 +8,7 @@ class Solution:
     def largestValues(self, root: Optional[TreeNode]) -> List[int]:
         if root is None:
             return []
-        a = [[] for i in range(10 ** 5)]
+        a = [[] for i in range(10 ** 4 + 100)]
         q = [(root, 0)]
         while q:
             r, level = q.pop(0)
