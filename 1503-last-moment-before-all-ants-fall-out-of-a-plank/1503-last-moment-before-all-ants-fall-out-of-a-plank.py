@@ -5,4 +5,3 @@ class Solution:
         if not right:  # if right list is empty
             return max(left)
         return max(max(left), n - min(right))
-        
