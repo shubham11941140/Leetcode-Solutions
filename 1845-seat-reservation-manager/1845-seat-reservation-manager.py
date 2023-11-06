@@ -4,7 +4,6 @@ class SeatManager:
         self.seats = list(range(1, n+1))
         heapify(self.seats)
         
-
     def reserve(self) -> int:
         return heappop(self.seats)
 
