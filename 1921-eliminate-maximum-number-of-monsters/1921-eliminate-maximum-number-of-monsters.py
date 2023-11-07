@@ -5,4 +5,4 @@ class Solution:
         for i in range(len(time)):
             if i >= time[i]:
                 return i
-        return len(time)        
+        return len(time)
