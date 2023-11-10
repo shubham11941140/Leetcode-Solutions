@@ -3,8 +3,7 @@ class Solution:
 
         numToAdjs = defaultdict(list)
 
-        for pair in adjacentPairs:
-            u, v = pair
+        for u, v in adjacentPairs:
             numToAdjs[u].append(v)
             numToAdjs[v].append(u)
 
