@@ -1,6 +1,5 @@
 class Solution:
     def restoreArray(self, adjacentPairs: List[List[int]]) -> List[int]:
-
         numToAdjs = defaultdict(list)
 
         for u, v in adjacentPairs:
@@ -24,4 +23,3 @@ class Solution:
                 ans.append(adjs[1])
 
         return ans
-        
