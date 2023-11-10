@@ -18,10 +18,7 @@ class Solution:
             tail = ans[-1]
             prev = ans[-2]
             adjs = numToAdjs[tail]
-            if adjs[0] != prev:
-                ans.append(adjs[0])
-            else:
-                ans.append(adjs[1])
+            ans.append(adjs[0] if adjs[0] != prev else adjs[1])
 
         return ans
         
