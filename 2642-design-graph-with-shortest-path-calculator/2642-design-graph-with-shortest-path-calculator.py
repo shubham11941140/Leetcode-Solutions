@@ -7,8 +7,8 @@ class Graph:
             self.g[source][dest] = cost
             
     def addEdge(self, edge: List[int]) -> None:
-        source, dest, cost = edge
-        self.g[source][dest] = cost     
+        s, d, c = edge
+        self.g[s][d] = c    
 
     def shortestPath(self, node1: int, node2: int) -> int:
         INF = float("inf")
