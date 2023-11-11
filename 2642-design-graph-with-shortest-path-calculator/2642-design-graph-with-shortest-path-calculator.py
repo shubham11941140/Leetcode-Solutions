@@ -15,13 +15,12 @@ class Graph:
         d = {i: INF for i in range(self.n)}
         d[node1] = 0
         h = [(0, node1)]
-
         while h:
             cd, cn = heappop(h)
             if cd > d[cn]:
                 continue
-            for neighbor, weight in self.g[cn].items():
-                dist = cd + weight
+            for neighbor, w in self.g[cn].items():
+                dist = cd + w
                 if dist < d[neighbor]:
                     d[neighbor] = dist
                     heappush(h, (dist, neighbor))
