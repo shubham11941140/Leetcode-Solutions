@@ -3,8 +3,8 @@ class Graph:
     def __init__(self, n: int, edges: List[List[int]]):
         self.n = n
         self.g = {i: {} for i in range(n)}
-        for source, dest, cost in edges:
-            self.g[source][dest] = cost
+        for s, d, c in edges:
+            self.g[s][d] = c
             
     def addEdge(self, edge: List[int]) -> None:
         s, d, c = edge
