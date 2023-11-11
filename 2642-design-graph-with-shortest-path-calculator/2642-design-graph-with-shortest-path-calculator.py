@@ -1,14 +1,13 @@
 class Graph:
-
     def __init__(self, n: int, edges: List[List[int]]):
         self.n = n
         self.g = {i: {} for i in range(n)}
         for s, d, c in edges:
             self.g[s][d] = c
-            
+
     def addEdge(self, edge: List[int]) -> None:
         s, d, c = edge
-        self.g[s][d] = c    
+        self.g[s][d] = c
 
     def shortestPath(self, node1: int, node2: int) -> int:
         INF = float("inf")
@@ -25,7 +24,8 @@ class Graph:
                 if dist < d[neighbor]:
                     d[neighbor] = dist
                     heappush(h, (dist, neighbor))
-        return d[node2] if d[node2] != INF else -1      
+        return d[node2] if d[node2] != INF else -1
+
 
 # Your Graph object will be instantiated and called as such:
 # obj = Graph(n, edges)
