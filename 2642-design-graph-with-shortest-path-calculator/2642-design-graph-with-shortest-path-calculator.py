@@ -19,11 +19,11 @@ class Graph:
             cd, cn = heappop(h)
             if cd > d[cn]:
                 continue
-            for neighbor, w in self.g[cn].items():
+            for ne, w in self.g[cn].items():
                 dist = cd + w
-                if dist < d[neighbor]:
-                    d[neighbor] = dist
-                    heappush(h, (dist, neighbor))
+                if dist < d[ne]:
+                    d[ne] = dist
+                    heappush(h, (dist, ne))
         return d[node2] if d[node2] != INF else -1      
 
 # Your Graph object will be instantiated and called as such:
