@@ -17,14 +17,14 @@ class Graph:
         heap = [(0, node1)]
 
         while heap:
-            curr_dist, curr_node = heapq.heappop(heap)
+            curr_dist, curr_node = heappop(heap)
             if curr_dist > distances[curr_node]:
                 continue
             for neighbor, weight in self.g[curr_node].items():
                 dist = curr_dist + weight
                 if dist < distances[neighbor]:
                     distances[neighbor] = dist
-                    heapq.heappush(heap, (dist, neighbor))
+                    heappush(heap, (dist, neighbor))
         return distances[node2] if distances[node2] != INF else -1      
 
 # Your Graph object will be instantiated and called as such:
