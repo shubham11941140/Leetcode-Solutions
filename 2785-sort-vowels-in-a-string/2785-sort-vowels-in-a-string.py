@@ -5,14 +5,10 @@ class Solution:
         vowels = set("aeiouAEIOU")
         n = len(s)
         r = [" " for i in range(n)]
-        a = []
+        a = sorted([s[i] for i in range(n) if s[i] in vowels])
         for i in range(n):
             if s[i] not in vowels:
                 r[i] = s[i]
-            else:
-                a.append(s[i])
-        a.sort()
-        print(a)
         j = 0
         for i in range(n):
             if r[i] == " ":
