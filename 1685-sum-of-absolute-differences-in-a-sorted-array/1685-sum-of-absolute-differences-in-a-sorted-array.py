@@ -1,4 +1,5 @@
 class Solution:
+
     def getSumAbsoluteDifferences(self, nums: List[int]) -> List[int]:
         prefix = [0]
         for num in nums:
@@ -7,4 +8,4 @@ class Solution:
         res = []
         for i, num in enumerate(nums):
             res.append(total - 2 * prefix[i] + num * (2 * i - len(nums)))
-        return res        
+        return res
