@@ -1,4 +1,5 @@
 class Solution:
+
     def largestSubmatrix(self, matrix: List[List[int]]) -> int:
         m, n = len(matrix), len(matrix[0])
         for i in range(1, m):
@@ -10,4 +11,4 @@ class Solution:
             row = sorted(matrix[i], reverse=True)
             for j in range(n):
                 res = max(res, row[j] * (j + 1))
-        return res        
+        return res
