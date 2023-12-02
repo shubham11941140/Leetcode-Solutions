@@ -9,7 +9,7 @@ class Solution:
             for node in range(10):
                 for nei in moves[node]:
                     dp2[nei] += dp[node]
-                    dp2[nei] %= MOD
+                    dp2[nei]
             dp = dp2
             
         return sum(dp) % MOD        
