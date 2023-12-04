@@ -1,8 +1,6 @@
 class Solution:
     def largestGoodInteger(self, num: str) -> str:
         a = [str(i) * 3 for i in range(10)]
-        print(a)
-        print(max(a))
         n = len(num)
         b = []
         for i in range(n - 2):
