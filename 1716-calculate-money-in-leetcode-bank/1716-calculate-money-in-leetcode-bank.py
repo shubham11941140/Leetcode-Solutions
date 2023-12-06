@@ -3,5 +3,5 @@ class Solution:
         weeks = n // 7
         remainder = n % 7
         total = sum([sum(range(i + 1, i + 8)) for i in range(weeks)])
-        total += sum(range(weeks+1, weeks+1+remainder))
-        return total        
+        total += sum(range(weeks + 1, weeks + 1 + remainder))
+        return total
