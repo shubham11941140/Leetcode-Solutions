@@ -11,5 +11,5 @@ class Solution:
         diff = [[0] * n for _ in range(m)]
         for i in range(m):
             for j in range(n):
-                diff[i][j] = rows[i] + cols[j] - (n - rows[i]) - (m - cols[j])
+                diff[i][j] = 2 * (rows[i] + cols[j]) - (n + m)
         return diff        
