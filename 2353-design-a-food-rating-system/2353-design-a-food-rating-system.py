@@ -1,6 +1,3 @@
-import collections
-import itertools
-
 from sortedcontainers import SortedList
 
 class FoodRatings:
@@ -8,7 +5,7 @@ class FoodRatings:
     def __init__(self, foods: List[str], cuisines: List[str], ratings: List[int]):
         self.fc = {}
         self.fr = {}
-        self.c = collections.defaultdict(SortedList)
+        self.c = defaultdict(SortedList)
         for food, cuisine, rating in zip(foods, cuisines, ratings):
             self.fc[food] = cuisine
             self.fr[food] = rating
