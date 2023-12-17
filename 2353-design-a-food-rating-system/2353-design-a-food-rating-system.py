@@ -6,10 +6,10 @@ class FoodRatings:
         self.fc = {}
         self.fr = {}
         self.c = defaultdict(SortedList)
-        for food, cuisine, rating in zip(foods, cuisines, ratings):
-            self.fc[food] = cuisine
-            self.fr[food] = rating
-            self.c[cuisine].add((-rating, food))        
+        for f, c, r in zip(foods, cuisines, ratings):
+            self.fc[f] = c
+            self.fr[f] = r
+            self.c[c].add((-r, f))        
 
     def changeRating(self, food: str, newRating: int) -> None:
         old_rating = self.fr[food]
