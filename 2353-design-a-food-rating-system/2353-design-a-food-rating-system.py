@@ -6,19 +6,19 @@ from sortedcontainers import SortedList
 class FoodRatings:
 
     def __init__(self, foods: List[str], cuisines: List[str], ratings: List[int]):
-        self.__food_to_cuisine = {}
-        self.__food_to_rating = {}
+        self.fc = {}
+        self.fr = {}
         self.__cusine_to_rating_foods = collections.defaultdict(SortedList)
         for food, cuisine, rating in zip(foods, cuisines, ratings):
-            self.__food_to_cuisine[food] = cuisine
-            self.__food_to_rating[food] = rating
+            self.fc[food] = cuisine
+            self.fr[food] = rating
             self.__cusine_to_rating_foods[cuisine].add((-rating, food))        
 
     def changeRating(self, food: str, newRating: int) -> None:
-        old_rating = self.__food_to_rating[food]
-        cuisine = self.__food_to_cuisine[food]
+        old_rating = self.fr[food]
+        cuisine = self.fc[food]
         self.__cusine_to_rating_foods[cuisine].remove((-old_rating, food))
-        self.__food_to_rating[food] = newRating
+        self.fr[food] = newRating
         self.__cusine_to_rating_foods[cuisine].add((-newRating, food))        
 
     def highestRated(self, cuisine: str) -> str:
