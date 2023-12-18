@@ -18,4 +18,4 @@ class Solution:
         max_product_difference = largest_product - smallest_product
 
         # Return the computed maximum product difference.
-        return max_product_difference        
+        return max_product_difference
