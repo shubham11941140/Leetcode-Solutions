@@ -12,4 +12,4 @@ class Solution:
             return money - cost
         else:
             # If you cannot afford, return the initial amount of money
-            return money        
+            return money
