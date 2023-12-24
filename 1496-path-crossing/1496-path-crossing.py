@@ -2,7 +2,7 @@ class Solution:
     def isPathCrossing(self, path: str) -> bool:
         x, y = 0, 0
         visited = {(x, y)}
-        direction = {'N': [0, 1], 'S': [0, -1], 'E': [1, 0], 'W': [-1, 0]}
+        direction = {"N": [0, 1], "S": [0, -1], "E": [1, 0], "W": [-1, 0]}
 
         for move in path:
             dx, dy = direction[move]
@@ -11,4 +11,4 @@ class Solution:
                 return True
             visited.add((x, y))
 
-        return False        
+        return False
