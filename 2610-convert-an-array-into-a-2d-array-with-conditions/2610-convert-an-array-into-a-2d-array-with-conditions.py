@@ -7,7 +7,3 @@ class Solution:
             b = [i for i in f if c <= f[i]]
             a.append(b)
         return a
-                    
-                
-            
-              
