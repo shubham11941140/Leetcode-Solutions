@@ -11,7 +11,3 @@ class Solution:
                     b.append(i)
             a.append(b)
         return a
-                    
-                
-            
-              
