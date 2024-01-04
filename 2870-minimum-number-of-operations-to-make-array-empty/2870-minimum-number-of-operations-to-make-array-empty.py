@@ -6,14 +6,12 @@ class Solution:
         else:
             ans = 0
             for i in c:
-                rem = c[i] % 6
-                op = c[i] // 6
-                if rem == 0:
-                    ans += (2 * op)
+                rem = c[i] % 6 
+                ans += (2 * (c[i] // 6))
                 if rem in [1, 2, 3]:
-                    ans += (2 * op + 1)
+                    ans += 1
                 if rem in [4, 5]:
-                    ans += (2 * op + 2)
+                    ans += 2
             return ans
                     
                 
