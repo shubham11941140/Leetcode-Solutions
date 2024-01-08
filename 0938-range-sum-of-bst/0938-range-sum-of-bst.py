@@ -6,4 +6,10 @@
 #         self.right = right
 class Solution:
     def rangeSumBST(self, root: Optional[TreeNode], low: int, high: int) -> int:
-        return 0 if not root else self.rangeSumBST(root.right, low, high) + self.rangeSumBST(root.left, low, high) + int(low <= root.val <= high) * root.val
+        return (
+            0
+            if not root
+            else self.rangeSumBST(root.right, low, high)
+            + self.rangeSumBST(root.left, low, high)
+            + int(low <= root.val <= high) * root.val
+        )
