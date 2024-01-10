@@ -24,34 +24,24 @@ class Solution:
         q = [(r, 0)]
         s = set()
         while q:
-            root, level = q.pop(0)   
-            
-            if not root:
+            root, level = q.pop(0)               
+            if not root or root.val in s:
                 continue
-            if root.val in s:
-                continue
-            #print(39, root.val, level)
             self.m = max(self.m, level)
             s.add(root.val)
             if root.left:
                 q.append((root.left, level + 1))
-            #print(38, q)
             if root.right:
                 q.append((root.right, level + 1))  
             if root.val in self.p:
                 q.append((self.p[root.val], level + 1))
-            #print(42, q)
-
-        
-            
-    
+                    
     def amountOfTime(self, root: Optional[TreeNode], start: int) -> int:
         self.p = dict()
         self.cp(root)
-        r = self.find(root, start)
+        self.find(root, start)
         self.m = 0
-        self.bfs(self.r)
-        
+        self.bfs(self.r)        
         return self.m
         
 
