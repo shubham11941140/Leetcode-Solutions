@@ -7,18 +7,12 @@
 class Solution:
        
     def cp(self, root):
+        if root.val == self.s:
+            self.r = root        
         for i in [root.left, root.right]:
             if i:
                 self.p[i.val] = root
-                self.cp(i)
-    
-    def find(self, root, start):
-        if root.val == start:
-            self.r = root
-            return root
-        for i in [root.left, root.right]:
-            if i:
-                self.find(i, start)            
+                self.cp(i)              
     
     def bfs(self, r):
         q = [(r, 0)]
@@ -38,11 +32,8 @@ class Solution:
                     
     def amountOfTime(self, root: Optional[TreeNode], start: int) -> int:
         self.p = dict()
+        self.s = start
         self.cp(root)
-        self.find(root, start)
         self.m = 0
         self.bfs(self.r)        
-        return self.m
-        
-
-        
+        return self.m                
