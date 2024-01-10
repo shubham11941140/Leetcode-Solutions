@@ -7,17 +7,13 @@
 class Solution:
        
     def cp(self, root):
-        if root.left:
-            self.p[root.left.val] = root
-            self.cp(root.left)
-        if root.right:
-            self.p[root.right.val] = root
-            self.cp(root.right)
+        for i in [root.left, root.right]:
+            if i:
+                self.p[i.val] = root
+                self.cp(i)
     
     def find(self, root, start):
-        #print(18, root.val, start)
         if root.val == start:
-            #print(root)
             self.r = root
             return root
         if root.left:
@@ -54,9 +50,7 @@ class Solution:
     def amountOfTime(self, root: Optional[TreeNode], start: int) -> int:
         self.p = dict()
         self.cp(root)
-        #print(self.p)
         r = self.find(root, start)
-        #print(61, r, self.r)
         self.m = 0
         self.bfs(self.r)
         
