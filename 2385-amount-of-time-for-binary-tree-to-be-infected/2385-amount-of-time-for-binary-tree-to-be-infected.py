@@ -16,11 +16,9 @@ class Solution:
         if root.val == start:
             self.r = root
             return root
-        if root.left:
-            self.find(root.left, start)
-        if root.right:
-            self.find(root.right, start)
-            
+        for i in [root.left, root.right]:
+            if i:
+                self.find(i, start)            
     
     def bfs(self, r):
         q = [(r, 0)]
