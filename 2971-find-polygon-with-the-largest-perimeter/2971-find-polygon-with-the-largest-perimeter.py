@@ -11,7 +11,3 @@ class Solution:
             if p[i - 1] > nums[i]:
                 s = p[i]
         return s if s else -1
-            
-        
-        
-        
