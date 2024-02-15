@@ -7,11 +7,9 @@ class Solution:
         for i in range(1, n):
             p[i] = p[i - 1] + nums[i]
         s = 0
-        f = False
-        for i in range(len(nums)):
-            if i >= 2:
-                if p[i - 1] > nums[i]:
-                    s = p[i]
+        for i in range(2, n):
+            if p[i - 1] > nums[i]:
+                s = p[i]
         return s if s else -1
             
         
