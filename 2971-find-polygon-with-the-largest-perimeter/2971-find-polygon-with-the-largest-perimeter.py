@@ -10,7 +10,3 @@ class Solution:
             if p[i - 1] > nums[i]:
                 return p[i]
         return -1
-            
-        
-        
-        
