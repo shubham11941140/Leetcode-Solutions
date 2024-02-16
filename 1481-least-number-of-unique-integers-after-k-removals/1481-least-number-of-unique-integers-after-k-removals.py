@@ -12,4 +12,4 @@ class Solution:
                 heapq.heappush(heap, (freq - k, num))
                 k = 0
 
-        return len(heap)        
+        return len(heap)
