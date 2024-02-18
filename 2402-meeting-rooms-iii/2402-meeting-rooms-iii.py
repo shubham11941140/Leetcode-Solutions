@@ -25,7 +25,7 @@ class Solution:
                 m = min(e.values())
                 for j in d:
                     if e[j] == m:
-                        e[j] = m + i[1] - i[0]
+                        e[j] += (i[1] - i[0])
                         d[j] = i
                         l[j] += 1
                         break
