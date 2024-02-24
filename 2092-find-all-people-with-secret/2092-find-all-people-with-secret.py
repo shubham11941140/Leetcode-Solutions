@@ -1,5 +1,7 @@
 class Solution:
-    def findAllPeople(self, n: int, meetings: List[List[int]], firstPerson: int) -> List[int]:
+    def findAllPeople(
+        self, n: int, meetings: List[List[int]], firstPerson: int
+    ) -> List[int]:
         q = [(0, 0), (0, firstPerson)]
 
         graph = collections.defaultdict(list)
@@ -16,4 +18,4 @@ class Solution:
             for person_ii, meeting_time in graph[person_i]:
                 if meeting_time >= time:
                     heapq.heappush(q, (meeting_time, person_ii))
-        return list(answer)      
+        return list(answer)
