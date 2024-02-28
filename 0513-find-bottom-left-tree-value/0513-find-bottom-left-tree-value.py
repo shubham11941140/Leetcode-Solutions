@@ -18,4 +18,3 @@ class Solution:
             if root.right:
                 q.append((root.right, level + 1))
         return a[l.index(max(l))]
-        
