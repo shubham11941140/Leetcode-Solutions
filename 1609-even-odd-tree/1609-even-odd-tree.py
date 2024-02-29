@@ -16,12 +16,11 @@ class Solution:
             if root.right:
                 q.append((root.right, l + 1))
         b = [i for i in a if i]
-        print(b)
         n = len(b)
         for i in range(n):
             if i % 2:
                 o = b[i]
-                if o == sorted(o, reverse = True) == [j for j in o if j % 2 == 0] and len(o) == len(set(o)):
+                if o == sorted(o)[::-1] == [j for j in o if not (j % 2)] and len(o) == len(set(o)):
                     continue
                 else:
                     return False
