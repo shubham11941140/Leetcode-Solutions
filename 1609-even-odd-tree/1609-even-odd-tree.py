@@ -20,15 +20,11 @@ class Solution:
         for i in range(n):
             if i % 2:
                 o = b[i]
-                if o == sorted(o)[::-1] == [j for j in o if not (j % 2)] and len(o) == len(set(o)):
-                    continue
-                else:
+                if not (o == sorted(o)[::-1] == [j for j in o if not (j % 2)] and len(o) == len(set(o))):
                     return False
             else:
                 e = b[i]
-                if e == sorted(e) == [j for j in e if j % 2] and len(e) == len(set(e)):
-                    continue
-                else:
+                if not(e == sorted(e) == [j for j in e if j % 2] and len(e) == len(set(e))):
                     return False
         return True
         
