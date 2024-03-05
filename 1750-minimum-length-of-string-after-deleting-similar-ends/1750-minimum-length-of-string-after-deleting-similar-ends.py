@@ -1,13 +1,11 @@
 class Solution:
     def minimumLength(self, s: str) -> int:
-        left = 0
-        right = len(s) - 1
-        
-        while left < right and s[left] == s[right]:
-            current = s[left]
-            while left <= right and s[left] == current:
-                left += 1
-            while right >= left and s[right] == current:
-                right -= 1
-        
-        return right - left + 1       
+        l = 0
+        r = len(s) - 1        
+        while l < r and s[l] == s[r]:
+            c = s[l]
+            while l <= r and s[l] == c:
+                l += 1
+            while r >= l and s[r] == c:
+                r -= 1        
+        return r - l + 1       
