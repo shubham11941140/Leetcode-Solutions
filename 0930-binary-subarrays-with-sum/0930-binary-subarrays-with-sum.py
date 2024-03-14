@@ -1,4 +1,5 @@
 class Solution:
+
     def numSubarraysWithSum(self, nums: List[int], goal: int) -> int:
         prefix_sum = 0
         count = defaultdict(int)  # Store the count of prefix sums
@@ -9,4 +10,4 @@ class Solution:
                 total_subarrays += 1
             total_subarrays += count[prefix_sum - goal]
             count[prefix_sum] += 1
-        return total_subarrays        
+        return total_subarrays
