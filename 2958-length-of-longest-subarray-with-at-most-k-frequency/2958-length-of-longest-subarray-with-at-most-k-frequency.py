@@ -1,4 +1,5 @@
 class Solution:
+
     def maxSubarrayLength(self, nums: List[int], k: int) -> int:
         cnt = defaultdict(int)
         ans = j = 0
@@ -8,4 +9,4 @@ class Solution:
                 cnt[nums[j]] -= 1
                 j += 1
             ans = max(ans, i - j + 1)
-        return ans        
+        return ans
