@@ -1,4 +1,5 @@
 class Solution:
+
     def countSubarrays(self, nums: List[int], k: int) -> int:
         maxNum = max(nums)
         ans = count = l = 0
@@ -14,4 +15,4 @@ class Solution:
             # subarray nums [i:r+1], where i < l, it will have at least k times of the
             # maxNummum number, since nums [l - 1] equals the maxNummum number.
             ans += l
-        return ans        
+        return ans
