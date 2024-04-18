@@ -7,10 +7,7 @@ class Solution:
             for j in range(m):
                 if grid[i][j]:
                     for x, y in [(i + 1, j), (i - 1, j), (i, j + 1), (i, j - 1)]:
-                        if 0 <= x < n and 0 <= y < m and grid[x][y]:
-                            p += 0
-                        else:
-                            p += 1
+                        p += (0 if 0 <= x < n and 0 <= y < m and grid[x][y] else 1)
         return p
                     
         
