@@ -1,4 +1,5 @@
 class Solution:
+
     def islandPerimeter(self, grid: List[List[int]]) -> int:
         n = len(grid)
         m = len(grid[0])
@@ -12,5 +13,3 @@ class Solution:
                         else:
                             p += 1
         return p
-                    
-        
