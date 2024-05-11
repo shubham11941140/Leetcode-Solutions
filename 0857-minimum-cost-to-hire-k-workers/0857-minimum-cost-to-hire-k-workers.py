@@ -4,15 +4,11 @@ class Solution:
         res = float('inf')
         qsum = 0
         queue = []
-
         for r, q in workers:
-            heapq.heappush(queue, -q)
+            heappush(queue, -q)
             qsum += q
-
             if len(queue) > k:
-                qsum += heapq.heappop(queue)
-
+                qsum += heappop(queue)
             if len(queue) == k:
                 res = min(res, qsum * r)
-
         return res        
