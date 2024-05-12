@@ -6,8 +6,7 @@ class Solution:
         for i in range(n - 2):
             row = []
             for j in range(n - 2):
-                max_val = max(max(sub) for sub in [grid[x][j : j + 3] for x in range(i, i + 3)])
-                row.append(max_val)
+                row.append(max(max(s) for s in [grid[x][j : j + 3] for x in range(i, i + 3)]))
             result.append(row)
 
         return result
