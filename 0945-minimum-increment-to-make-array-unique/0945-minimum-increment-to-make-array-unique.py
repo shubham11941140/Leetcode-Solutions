@@ -1,7 +1,6 @@
 class Solution:
     def minIncrementForUnique(self, nums: List[int]) -> int:
-        A = nums.copy()
-        A.sort()
+        A = sorted(nums)
         move = 0
         for i in range(1, len(A)):
             if A[i] <= A[i - 1]:
