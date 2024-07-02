@@ -1,4 +1,5 @@
 class Solution:
+
     def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
         c = Counter(nums1)
         r = []
@@ -6,4 +7,4 @@ class Solution:
             if c[num]:
                 r.append(num)
                 c[num] -= 1
-        return r      
+        return r
