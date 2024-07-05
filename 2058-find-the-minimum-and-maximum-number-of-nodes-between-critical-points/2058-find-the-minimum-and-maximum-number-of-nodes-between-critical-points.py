@@ -4,6 +4,7 @@
 #         self.val = val
 #         self.next = next
 class Solution:
+
     def nodesBetweenCriticalPoints(self, head: Optional[ListNode]) -> List[int]:
         a = []
         while head:
@@ -23,8 +24,3 @@ class Solution:
         maxd = cp[-1] - cp[0]
         mind = min([cp[i] - cp[i - 1] for i in range(1, len(cp))])
         return [mind, maxd]
-        
-            
-        
-            
-        
