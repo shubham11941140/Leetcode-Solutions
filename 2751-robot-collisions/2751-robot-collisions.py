@@ -8,15 +8,9 @@ class Robot:
 class Solution:
     def survivedRobotsHealths(self, positions: List[int], healths: List[int], directions: str) -> List[int]:
         ans = []
-        robots = []
+        robots = sorted([Robot(i, positions[i], healths[i], directions[i]) for i in range(len(positions))], key = lambda x: x.position)
         stack = []  # The running robots
 
-        # Create Robot objects
-        for i in range(len(positions)):
-            robots.append(Robot(i, positions[i], healths[i], directions[i]))
-
-        # Sort robots by position
-        robots.sort(key=lambda x: x.position)
 
         for robot in robots:
             if robot.direction == 'R':
