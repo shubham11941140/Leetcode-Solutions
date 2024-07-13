@@ -1,41 +1,30 @@
 class Robot:
     def __init__(self, index, position, health, direction):
-        self.index = index
-        self.position = position
-        self.health = health
-        self.direction = direction
+        self.i = index
+        self.p = position
+        self.h = health
+        self.d = direction
 
 class Solution:
     def survivedRobotsHealths(self, positions: List[int], healths: List[int], directions: str) -> List[int]:
         ans = []
-        robots = sorted([Robot(i, positions[i], healths[i], directions[i]) for i in range(len(positions))], key = lambda x: x.position)
         stack = []  # The running robots
-
-
+        robots = sorted([Robot(i, positions[i], healths[i], directions[i]) for i in range(len(positions))], key = lambda x: x.p)        
         for robot in robots:
-            if robot.direction == 'R':
+            if robot.d == 'R':
                 stack.append(robot)
                 continue
-
             # Collide with robots going right
-            while stack and stack[-1].direction == 'R' and robot.health > 0:
-                if stack[-1].health == robot.health:
+            while stack and stack[-1].d == 'R' and robot.h > 0:
+                if stack[-1].h == robot.h:
                     stack.pop()
-                    robot.health = 0
-                elif stack[-1].health < robot.health:
+                    robot.h = 0
+                elif stack[-1].h < robot.h:
                     stack.pop()
-                    robot.health -= 1
+                    robot.h -= 1
                 else:
-                    stack[-1].health -= 1
-                    robot.health = 0
-
-            if robot.health > 0:
+                    stack[-1].h -= 1
+                    robot.h = 0
+            if robot.h > 0:
                 stack.append(robot)
-
-        # Sort stack by original index
-        stack.sort(key=lambda x: x.index)
-
-        for robot in stack:
-            ans.append(robot.health)
-
-        return ans        
+        return ans + [robot.h for robot in sorted(stack, key = lambda x: x.i)] 
