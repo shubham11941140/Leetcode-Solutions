@@ -1,12 +1,17 @@
 class Robot:
+
     def __init__(self, index, position, health, direction):
         self.index = index
         self.position = position
         self.health = health
         self.direction = direction
 
+
 class Solution:
-    def survivedRobotsHealths(self, positions: List[int], healths: List[int], directions: str) -> List[int]:
+
+    def survivedRobotsHealths(
+        self, positions: List[int], healths: List[int], directions: str
+    ) -> List[int]:
         ans = []
         robots = []
         stack = []  # The running robots
@@ -19,12 +24,12 @@ class Solution:
         robots.sort(key=lambda x: x.position)
 
         for robot in robots:
-            if robot.direction == 'R':
+            if robot.direction == "R":
                 stack.append(robot)
                 continue
 
             # Collide with robots going right
-            while stack and stack[-1].direction == 'R' and robot.health > 0:
+            while stack and stack[-1].direction == "R" and robot.health > 0:
                 if stack[-1].health == robot.health:
                     stack.pop()
                     robot.health = 0
@@ -44,4 +49,4 @@ class Solution:
         for robot in stack:
             ans.append(robot.health)
 
-        return ans        
+        return ans
