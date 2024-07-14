@@ -1,13 +1,14 @@
 class Solution:
+
     def countOfAtoms(self, formula: str) -> str:
         stack = [collections.Counter()]
         i = 0
 
         while i < len(formula):
-            if formula[i] == '(':
+            if formula[i] == "(":
                 stack.append(collections.Counter())
                 i += 1
-            elif formula[i] == ')':
+            elif formula[i] == ")":
                 top = stack.pop()
                 i += 1
                 start = i
@@ -28,4 +29,7 @@ class Solution:
                 count = int(formula[start:i] or 1)
                 stack[-1][name] += count
 
-        return "".join(name + (str(stack[-1][name]) if stack[-1][name] > 1 else '') for name in sorted(stack[-1]))        
+        return "".join(
+            name + (str(stack[-1][name]) if stack[-1][name] > 1 else "")
+            for name in sorted(stack[-1])
+        )
