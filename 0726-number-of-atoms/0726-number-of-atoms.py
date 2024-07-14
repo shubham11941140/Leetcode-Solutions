@@ -1,6 +1,6 @@
 class Solution:
     def countOfAtoms(self, formula: str) -> str:
-        stack = [collections.Counter()]
+        stack = [Counter()]
         i = 0
 
         while i < len(formula):
