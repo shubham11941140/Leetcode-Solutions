@@ -4,13 +4,10 @@ class Solution:
         minCitiesCount = n
         dist = self.floydWarshall(n, edges, distanceThreshold)        
         for i in range(n):
-            citiesCount = 0
-            for j in range(n):
-                if dist[i][j] <= distanceThreshold:
-                    citiesCount += 1
-            if citiesCount <= minCitiesCount:
+            cc = len([1 for j in range(n) if dist[i][j] <= distanceThreshold])
+            if cc <= minCitiesCount:
                 ans = i
-                minCitiesCount = citiesCount        
+                minCitiesCount = cc       
         return ans
     
     def floydWarshall(self, n, edges, distanceThreshold):
