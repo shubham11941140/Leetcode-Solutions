@@ -1,5 +1,7 @@
 class Solution:
-    def secondMinimum(self, n: int, edges: List[List[int]], time: int, change: int) -> int:
+
+    def secondMinimum(self, n: int, edges: List[List[int]], time: int,
+                      change: int) -> int:
         graph = defaultdict(list)
         for u, v in edges:
             graph[u].append(v)
@@ -19,7 +21,7 @@ class Solution:
             else:
                 distances[node] = currTime
             if (currTime % (2 * change)) >= change:
-                currTime += (change - currTime % change)
+                currTime += change - currTime % change
             for neighbor in graph[node]:
                 heappush(pq, (currTime + time, neighbor))
-        return secondDistances[n]     
+        return secondDistances[n]
