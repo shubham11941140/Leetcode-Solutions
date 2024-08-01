@@ -6,11 +6,5 @@ class Solution:
                 if char == '1':
                     total = total ^ nums[i]
             return total
-            # (not a and b) or (not b and a)
-
-        total = 0
-
-        for i in range(1, 1 << len(nums)):
-            total += xor(bin(i)[2:].zfill(len(nums)))
-            
-        return total      
+        return sum(xor(bin(i)[2:].zfill(len(nums))) for i in range(1, 1 << len(nums)))
+ 
