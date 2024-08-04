@@ -1,4 +1,5 @@
 class Solution:
+
     def rangeSum(self, nums: List[int], n: int, left: int, right: int) -> int:
         # Initialize an array to store the sum of contiguous subarrays
         subarray_sums = []
@@ -14,4 +15,4 @@ class Solution:
         subarray_sums.sort()
 
         # Return the sum of subarray_sums from left-1 to right-1
-        return sum(subarray_sums[left - 1:right]) % (10**9 + 7)        
+        return sum(subarray_sums[left - 1 : right]) % (10**9 + 7)
