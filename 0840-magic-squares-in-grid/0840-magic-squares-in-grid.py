@@ -17,12 +17,5 @@ class Solution:
                     grid[i][j + 2] + grid[i + 1][j + 2] + grid[i + 2][j + 2] == 15 and
                     grid[i][j] + grid[i + 1][j + 1] + grid[i + 2][j + 2] == 15 and
                     grid[i][j + 2] + grid[i + 1][j + 1] + grid[i + 2][j] == 15)
-
         rows, cols = len(grid), len(grid[0])
-        count = 0
-        for i in range(rows - 2):
-            for j in range(cols - 2):
-                if isMagic(i, j):
-                    count += 1
-        return count
-        
+        return len([1 for i in range(rows - 2) for j in range(cols - 2) if isMagic(i, j)])
