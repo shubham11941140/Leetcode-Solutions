@@ -1,7 +1,8 @@
 from collections import Counter
 
+
 class Solution:
-    
+
     def rec(self, cursum, target, a, cand, n, ans, idx):
         if cursum == target:
             b = sorted(a.copy())
@@ -16,7 +17,7 @@ class Solution:
                     self.rec(cursum, target, a, cand, n, ans, idx + 1)
                 cursum -= cand[i]
                 a.pop()
-                
+
     def check(self, a, b):
         d1 = Counter(a)
         d2 = Counter(b)
@@ -24,8 +25,9 @@ class Solution:
             if d2[i] > d1[i]:
                 return False
         return True
-            
+
     def combinationSum2(self, candidates: List[int], target: int) -> List[List[int]]:
+
         def backtrack(start, target, path):
             if target == 0:
                 result.append(path)
@@ -41,5 +43,3 @@ class Solution:
         result = []
         backtrack(0, target, [])
         return result
-
-    
