@@ -1,4 +1,5 @@
 class Solution:
+
     def lemonadeChange(self, bills: List[int]) -> bool:
         five_dollar_count = 0
         ten_dollar_count = 0
@@ -18,5 +19,4 @@ class Solution:
                     five_dollar_count -= 3
                 else:
                     return False
-        return True        
-        
+        return True
