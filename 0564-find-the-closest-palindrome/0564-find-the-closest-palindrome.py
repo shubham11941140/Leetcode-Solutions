@@ -1,22 +1,17 @@
 class Solution:
     def nearestPalindromic(self, n: str) -> str:
-        length = len(n)
-        candidates = set()
+        l = len(n)
+        c = set()
         if n == "1":
             return "0"        
-        prefix = n[:(length + 1) // 2]
-        prefix_number = int(prefix)
+        p = int(n[:(l + 1) // 2])
         for i in [-1, 0, 1]:
-            new_prefix = str(prefix_number + i)
-            if length % 2 == 0:
-                candidate = new_prefix + new_prefix[::-1]
-            else:
-                candidate = new_prefix + new_prefix[:-1][::-1]
-            candidates.add(candidate)
-        candidates.add(str(10**(length-1) - 1))
-        candidates.add(str(10**length + 1))
-        candidates.discard(n)      
-        return min(candidates, key=lambda x: (abs(int(x) - int(n)), int(x)))
+            new_prefix = str(p + i)
+            c.add(new_prefix + (new_prefix[:-1][::-1] if l % 2 else new_prefix[::-1]))
+        c.add(str(10 ** (l - 1) - 1))
+        c.add(str(10 ** l + 1))
+        c.discard(n)      
+        return min(c, key = lambda x: (abs(int(x) - int(n)), int(x)))
         
 
       
