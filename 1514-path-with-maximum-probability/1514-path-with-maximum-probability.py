@@ -13,7 +13,7 @@ class Solution:
                 continue
             pr[a] = prob
             for v, p in g[a]:
-                if pr[v] == 0:
+                if not pr[v]:
                     vi.add(v)
                     heappush(s, (prob * p, v))
         return - pr[end]        
