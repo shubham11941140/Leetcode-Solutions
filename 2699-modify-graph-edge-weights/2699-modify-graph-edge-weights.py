@@ -1,11 +1,15 @@
 class Solution:
-    def modifiedGraphEdges(self, n: int, edges: List[List[int]], source: int, destination: int, target: int) -> List[List[int]]:
+
+    def modifiedGraphEdges(
+        self, n: int, edges: List[List[int]], source: int, destination: int, target: int
+    ) -> List[List[int]]:
         graph = defaultdict(list)
         for u, v, w in edges:
-            if w < 0: continue
+            if w < 0:
+                continue
             graph[u].append((v, w))
             graph[v].append((u, w))
-        
+
         def dijktras():
             pq = [(0, source)]
             heapq.heapify(pq)
@@ -19,7 +23,7 @@ class Solution:
                         min_dist[v] = wei + w
                         heapq.heappush(pq, (min_dist[v], v))
             return min_dist[destination]
-        
+
         INF = target + 1
         shrt_dist = dijktras()
 
@@ -31,9 +35,10 @@ class Solution:
                 if w == -1:
                     edges[i][2] = INF
             return edges
-        
+
         for i, (u, v, w) in enumerate(edges):
-            if w != -1: continue
+            if w != -1:
+                continue
             edges[i][2] = 1
             graph[u].append((v, 1))
             graph[v].append((u, 1))
@@ -44,4 +49,4 @@ class Solution:
                     if edges[j][2] == -1:
                         edges[j][2] = INF
                 return edges
-        return []     
+        return []
