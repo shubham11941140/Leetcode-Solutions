@@ -1,12 +1,15 @@
 class Solution:
-    def modifiedGraphEdges(self, n: int, edges: List[List[int]], source: int, destination: int, target: int) -> List[List[int]]:
+
+    def modifiedGraphEdges(
+        self, n: int, edges: List[List[int]], source: int, destination: int, target: int
+    ) -> List[List[int]]:
         adjs = [{} for _ in range(n)]
 
         for edge in edges:
             adjs[edge[0]][edge[1]] = edge[2]
             adjs[edge[1]][edge[0]] = edge[2]
 
-        distTo = [float('inf')] * n
+        distTo = [float("inf")] * n
         distTo[source] = 0
 
         pq = [(0, source)]
@@ -53,4 +56,4 @@ class Solution:
                 if weight > 0:
                     if distTo[next_node] - weight > distTo[curr]:
                         distTo[next_node] = distTo[curr] + weight
-                        heapq.heappush(pq, (distTo[next_node], next_node))      
+                        heapq.heappush(pq, (distTo[next_node], next_node))
