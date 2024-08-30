@@ -1,56 +1,47 @@
 class Solution:
     def modifiedGraphEdges(self, n: int, edges: List[List[int]], source: int, destination: int, target: int) -> List[List[int]]:
-        adjs = [{} for _ in range(n)]
+        graph = defaultdict(list)
+        for u, v, w in edges:
+            if w < 0: continue
+            graph[u].append((v, w))
+            graph[v].append((u, w))
+        
+        def dijktras():
+            pq = [(0, source)]
+            heapq.heapify(pq)
+            min_dist = [math.inf] * n
+            min_dist[source] = 0
 
-        for edge in edges:
-            adjs[edge[0]][edge[1]] = edge[2]
-            adjs[edge[1]][edge[0]] = edge[2]
+            while pq:
+                wei, node = heapq.heappop(pq)
+                for v, w in graph[node]:
+                    if (wei + w) < min_dist[v]:
+                        min_dist[v] = wei + w
+                        heapq.heappush(pq, (min_dist[v], v))
+            return min_dist[destination]
+        
+        INF = target + 1
+        shrt_dist = dijktras()
 
-        distTo = [float('inf')] * n
-        distTo[source] = 0
-
-        pq = [(0, source)]
-        heapq.heapify(pq)
-
-        self.dijkstra(adjs, distTo, pq)
-
-        if distTo[destination] == target:
-            return self.fill(edges)
-        elif distTo[destination] < target:
+        if shrt_dist < target:
             return []
 
-        for edge in edges:
-            if edge[2] == -1:
-                edge[2] = 1
-                adjs[edge[0]][edge[1]] = 1
-                adjs[edge[1]][edge[0]] = 1
-
-                pq = [(distTo[edge[0]], edge[0]), (distTo[edge[1]], edge[1])]
-
-                self.dijkstra(adjs, distTo, pq)
-
-                if distTo[destination] == target:
-                    return self.fill(edges)
-                elif distTo[destination] < target:
-                    edge[2] += target - distTo[destination]
-                    adjs[edge[0]][edge[1]] = edge[2]
-                    adjs[edge[1]][edge[0]] = edge[2]
-                    return self.fill(edges)
-
-        return []
-
-    def fill(self, edges):
-        for edge in edges:
-            if edge[2] == -1:
-                edge[2] = int(2e9)
-        return edges
-
-    def dijkstra(self, adjs, distTo, pq):
-        while pq:
-            curr_dist, curr = heapq.heappop(pq)
-
-            for next_node, weight in adjs[curr].items():
-                if weight > 0:
-                    if distTo[next_node] - weight > distTo[curr]:
-                        distTo[next_node] = distTo[curr] + weight
-                        heapq.heappush(pq, (distTo[next_node], next_node))      
+        if shrt_dist == target:
+            for i, (u, v, w) in enumerate(edges):
+                if w == -1:
+                    edges[i][2] = INF
+            return edges
+        
+        for i, (u, v, w) in enumerate(edges):
+            if w != -1: continue
+            edges[i][2] = 1
+            graph[u].append((v, 1))
+            graph[v].append((u, 1))
+            new_dist = dijktras()
+            if new_dist <= target:
+                edges[i][2] += target - new_dist
+                for j in range(i + 1, len(edges)):
+                    if edges[j][2] == -1:
+                        edges[j][2] = INF
+                return edges
+        return []     
