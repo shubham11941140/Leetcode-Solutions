@@ -1,7 +1,8 @@
 class Solution:
+
     def getLucky(self, s: str, k: int) -> int:
         # Convert the string to a number formed by the position in the alphabet
-        num_str = ''.join(str(ord(char) - ord('a') + 1) for char in s)
+        num_str = "".join(str(ord(char) - ord("a") + 1) for char in s)
 
         # Function to sum digits of a number in string form
         def sum_of_digits(n: str) -> int:
@@ -14,4 +15,4 @@ class Solution:
         for _ in range(k):
             curr_str = str(sum_of_digits(curr_str))
 
-        return int(curr_str)        
+        return int(curr_str)
