@@ -4,7 +4,10 @@
 #         self.val = val
 #         self.next = next
 class Solution:
-    def modifiedList(self, nums: List[int], head: Optional[ListNode]) -> Optional[ListNode]:
+
+    def modifiedList(
+        self, nums: List[int], head: Optional[ListNode]
+    ) -> Optional[ListNode]:
         nums_set = set(nums)
 
         # Create a dummy node to handle edge cases
@@ -20,7 +23,10 @@ class Solution:
 
         return dummy.next
 
+
 # Helper function to create a linked list from a list
+
+
 def create_linked_list(arr):
     if not arr:
         return None
@@ -31,11 +37,14 @@ def create_linked_list(arr):
         current = current.next
     return head
 
+
 # Helper function to convert linked list to a list
+
+
 def linked_list_to_list(head):
     result = []
     current = head
     while current:
         result.append(current.val)
         current = current.next
-    return result        
+    return result
