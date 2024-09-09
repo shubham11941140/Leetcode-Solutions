@@ -18,14 +18,14 @@ class Solution:
             head = head.next
 
             # Calculate the next position
-            next_row, next_col = row + directions[dir_idx][0], col + directions[dir_idx][1]
+            nr, nc = row + directions[dir_idx][0], col + directions[dir_idx][1]
 
             # Check if the next position is within bounds and not yet filled
-            if not (0 <= next_row < m and 0 <= next_col < n and matrix[next_row][next_col] == -1):
+            if not (0 <= nr < m and 0 <= nc < n and matrix[nr][nc] == -1):
                 # Change direction
                 dir_idx = (dir_idx + 1) % 4
-                next_row, next_col = row + directions[dir_idx][0], col + directions[dir_idx][1]
+                nr, nc = row + directions[dir_idx][0], col + directions[dir_idx][1]
 
-            row, col = next_row, next_col
+            row, col = nr, nc
 
         return matrix        
