@@ -4,6 +4,7 @@
 #         self.val = val
 #         self.next = next
 class Solution:
+
     def spiralMatrix(self, m: int, n: int, head: Optional[ListNode]) -> List[List[int]]:
         matrix = [[-1] * n for _ in range(m)]
 
@@ -28,4 +29,4 @@ class Solution:
 
             row, col = nr, nc
 
-        return matrix        
+        return matrix
