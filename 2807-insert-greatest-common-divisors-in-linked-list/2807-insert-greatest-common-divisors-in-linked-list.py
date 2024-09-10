@@ -4,7 +4,10 @@
 #         self.val = val
 #         self.next = next
 class Solution:
-    def insertGreatestCommonDivisors(self, head: Optional[ListNode]) -> Optional[ListNode]:
+
+    def insertGreatestCommonDivisors(
+        self, head: Optional[ListNode]
+    ) -> Optional[ListNode]:
         current = head
         while current and current.next:
             # Calculate the GCD of current node and next node
@@ -16,4 +19,4 @@ class Solution:
             current.next = new_node
             # Move to the next pair of nodes
             current = new_node.next
-        return head        
+        return head
