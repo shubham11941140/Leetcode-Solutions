@@ -1,7 +1,8 @@
 class Solution:
+
     def findTheLongestSubstring(self, s: str) -> int:
         state_to_index = {0: -1}
-        vowels = 'aeiou'
+        vowels = "aeiou"
         state = 0
         max_length = 0
 
@@ -17,4 +18,4 @@ class Solution:
                 # Store the first occurrence of this state
                 state_to_index[state] = i
 
-        return max_length        
+        return max_length
