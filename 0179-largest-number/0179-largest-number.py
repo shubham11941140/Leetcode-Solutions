@@ -1,4 +1,5 @@
 class Solution:
+
     def largestNumber(self, nums: List[int]) -> str:
         # Custom comparator to decide the order of concatenation
         def compare(x, y):
@@ -15,7 +16,7 @@ class Solution:
         nums.sort(key=cmp_to_key(compare))
 
         # Join the sorted numbers into a single string
-        largest_num = ''.join(nums)
+        largest_num = "".join(nums)
 
         # Edge case: if the largest number is '0', return '0'
-        return '0' if largest_num[0] == '0' else largest_num        
+        return "0" if largest_num[0] == "0" else largest_num
