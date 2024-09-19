@@ -3,22 +3,17 @@ class Solution:
         @lru_cache(None)
         def compute(expr: str) -> List[int]:
             if expr.isdigit():
-                return [int(expr)]
-            
+                return [int(expr)]            
             results = []
             for i, char in enumerate(expr):
-                if char in "+-*":
-                    left_results = compute(expr[:i])
-                    right_results = compute(expr[i+1:])
-                    
-                    for left in left_results:
-                        for right in right_results:
+                if char in "+-*":                   
+                    for left in compute(expr[:i]):
+                        for right in compute(expr[i + 1:]):
                             if char == '+':
                                 results.append(left + right)
                             elif char == '-':
                                 results.append(left - right)
                             elif char == '*':
                                 results.append(left * right)
-            return results
-        
+            return results        
         return compute(expression)        
