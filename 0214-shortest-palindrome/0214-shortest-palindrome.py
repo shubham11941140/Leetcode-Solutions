@@ -1,6 +1,5 @@
 class Solution:
     def shortestPalindrome(self, s: str) -> str:
-        # Create a new string which is the original string + a special character + the reverse of the original string
         rev_s = s[::-1]
         new_s = s + "#" + rev_s
 
@@ -17,9 +16,4 @@ class Solution:
                 j += 1
                 lps[i] = j
 
-        # The length of the longest palindromic prefix
-        longest_palindromic_prefix_len = lps[-1]
-
-        # Add the necessary characters in front of the original string
-        add_on = rev_s[:len(s) - longest_palindromic_prefix_len]
-        return add_on + s        
+        return rev_s[:len(s) - lps[-1]] + s        
