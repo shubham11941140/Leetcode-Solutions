@@ -31,9 +31,5 @@ class Solution:
         trie = Trie()
         for num in arr1:
             trie.insert(str(num))
-        
-        max_length = 0
-        for num in arr2:
-            max_length = max(max_length, trie.search_prefix_length(str(num)))
-        
-        return max_length        
+        return max([trie.search_prefix_length(str(num)) for num in arr2])
+       
