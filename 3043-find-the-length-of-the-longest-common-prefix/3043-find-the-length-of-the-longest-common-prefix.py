@@ -1,9 +1,12 @@
 class TrieNode:
+
     def __init__(self):
         self.children = {}
         self.is_end_of_word = False
 
+
 class Trie:
+
     def __init__(self):
         self.root = TrieNode()
 
@@ -26,14 +29,16 @@ class Trie:
                 break
         return length
 
+
 class Solution:
+
     def longestCommonPrefix(self, arr1: List[int], arr2: List[int]) -> int:
         trie = Trie()
         for num in arr1:
             trie.insert(str(num))
-        
+
         max_length = 0
         for num in arr2:
             max_length = max(max_length, trie.search_prefix_length(str(num)))
-        
-        return max_length        
+
+        return max_length
