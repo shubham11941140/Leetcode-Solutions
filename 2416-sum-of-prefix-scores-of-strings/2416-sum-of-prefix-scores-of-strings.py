@@ -1,9 +1,12 @@
 class TrieNode:
+
     def __init__(self):
         self.children = {}
         self.count = 0
 
+
 class Trie:
+
     def __init__(self):
         self.root = TrieNode()
 
@@ -28,13 +31,14 @@ class Trie:
 
 
 class Solution:
+
     def sumPrefixScores(self, words: List[str]) -> List[int]:
         trie = Trie()
         for word in words:
             trie.insert(word)
-        
+
         result = []
         for word in words:
             result.append(trie.get_prefix_score(word))
-        
-        return result        
+
+        return result
