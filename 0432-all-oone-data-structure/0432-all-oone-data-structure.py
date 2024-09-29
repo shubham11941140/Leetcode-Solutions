@@ -62,11 +62,7 @@ class AllOne:
                 del self.count_node[count]
 
     def getMaxKey(self) -> str:
-        if self.tail.prev == self.head:
-            return ""
-        return next(iter(self.tail.prev.keys))
+        return "" if self.tail.prev == self.head else next(iter(self.tail.prev.keys))
 
     def getMinKey(self) -> str:
-        if self.head.next == self.tail:
-            return ""
-        return next(iter(self.head.next.keys))
+        return "" if self.head.next == self.tail else next(iter(self.head.next.keys))
