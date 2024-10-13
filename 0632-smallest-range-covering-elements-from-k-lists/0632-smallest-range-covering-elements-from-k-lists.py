@@ -1,14 +1,15 @@
 class Solution:
+
     def smallestRange(self, nums: List[List[int]]) -> List[int]:
         min_heap = []
-        max_val = float('-inf')
+        max_val = float("-inf")
 
         # Initialize the heap and find the initial max value
         for i in range(len(nums)):
             heapq.heappush(min_heap, (nums[i][0], i, 0))
             max_val = max(max_val, nums[i][0])
 
-        min_range = float('inf')
+        min_range = float("inf")
         result = [0, 0]
 
         while min_heap:
@@ -25,4 +26,4 @@ class Solution:
             else:
                 break
 
-        return result        
+        return result
