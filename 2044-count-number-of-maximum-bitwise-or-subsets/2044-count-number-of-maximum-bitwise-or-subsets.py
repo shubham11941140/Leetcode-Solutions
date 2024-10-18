@@ -1,4 +1,5 @@
 class Solution:
+
     def countMaxOrSubsets(self, nums: List[int]) -> int:
         max_or = 0
         for num in nums:
@@ -10,5 +11,3 @@ class Solution:
             return dfs(i + 1, current_or | nums[i]) + dfs(i + 1, current_or)
 
         return dfs(0, 0)
-
-        
