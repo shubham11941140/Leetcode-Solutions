@@ -20,8 +20,4 @@ class Solution:
                 queue.append((node.left, level + 1))
             if node.right:
                 queue.append((node.right, level + 1))
-        if k > len(level_sums):
-            return -1
-        return nlargest(k, level_sums)[-1]
-
-      
+        return -1 if k > len(level_sums) else nlargest(k, level_sums)[-1]
