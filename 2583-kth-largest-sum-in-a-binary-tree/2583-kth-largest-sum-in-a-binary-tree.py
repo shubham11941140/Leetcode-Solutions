@@ -5,6 +5,7 @@
 #         self.left = left
 #         self.right = right
 class Solution:
+
     def kthLargestLevelSum(self, root: Optional[TreeNode], k: int) -> int:
         if not root:
             return 0
@@ -23,5 +24,3 @@ class Solution:
         if k > len(level_sums):
             return -1
         return nlargest(k, level_sums)[-1]
-
-      
