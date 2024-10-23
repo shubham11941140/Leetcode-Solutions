@@ -5,24 +5,25 @@
 #         self.left = left
 #         self.right = right
 class Solution:
+
     def replaceValueInTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
         pq = deque()
-        pq.append((root.val, root))        
+        pq.append((root.val, root))
         while pq:
             n = len(pq)
             levelSum = 0
             for localSum, node in pq:
-                levelSum += node.val                
+                levelSum += node.val
             for i in range(n):
                 localSum, node = pq.popleft()
                 childSum = 0
-                if node.left: 
+                if node.left:
                     childSum += node.left.val
-                if node.right: 
+                if node.right:
                     childSum += node.right.val
-                if node.left: 
+                if node.left:
                     pq.append((childSum, node.left))
-                if node.right: 
+                if node.right:
                     pq.append((childSum, node.right))
-                node.val = levelSum - localSum                 
-        return root        
+                node.val = levelSum - localSum
+        return root
