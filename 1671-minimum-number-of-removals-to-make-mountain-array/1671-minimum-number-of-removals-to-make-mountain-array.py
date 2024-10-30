@@ -1,4 +1,5 @@
 class Solution:
+
     def minimumMountainRemovals(self, nums: List[int]) -> int:
         n = len(nums)
         left = [1] * n
@@ -16,4 +17,3 @@ class Solution:
             if left[i] > 1 and right[i] > 1:
                 max_length = max(max_length, left[i] + right[i] - 1)
         return n - max_length
-        
