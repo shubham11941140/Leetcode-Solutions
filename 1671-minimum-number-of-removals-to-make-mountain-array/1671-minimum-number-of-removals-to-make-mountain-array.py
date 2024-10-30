@@ -11,5 +11,5 @@ class Solution:
             for j in range(n - 1, i, -1):
                 if nums[i] > nums[j]:
                     r[i] = max(r[i], r[j] + 1)        
-        return n - max(l[i] + r[i] - 1 for i in range(1, n - 1) if l[i] > 1 and r[i] > 1)
+        return n - max(l[i] + r[i] - 1 for i in range(1, n - 1) if min(l[i], r[i]) > 1)
         
