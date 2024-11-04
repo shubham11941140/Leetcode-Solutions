@@ -9,7 +9,6 @@ class Solution:
             while i + 1 < n and word[i] == word[i + 1] and c < 9:
                 i += 1
                 c += 1
-            print(c, d)
             comp += str(c) + d
             i += 1
         return comp
