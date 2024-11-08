@@ -1,4 +1,5 @@
 class Solution:
+
     def getMaximumXor(self, nums: List[int], maximumBit: int) -> List[int]:
         max_val = (1 << maximumBit) - 1
         current_xor = 0
@@ -9,4 +10,3 @@ class Solution:
             result.append(current_xor ^ max_val)
             current_xor ^= nums[-(i + 1)]
         return result
-        
