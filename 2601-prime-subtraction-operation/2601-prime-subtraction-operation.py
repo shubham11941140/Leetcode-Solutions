@@ -1,4 +1,5 @@
 class Solution:
+
     def primeSubOperation(self, nums: List[int]) -> bool:
         # Helper function to generate list of primes up to max_num using Sieve of Eratosthenes
         def sieve(max_num):
@@ -9,7 +10,7 @@ class Solution:
                     for j in range(i * i, max_num + 1, i):
                         is_prime[j] = False
             return [i for i in range(2, max_num + 1) if is_prime[i]]
-        
+
         # Generate all primes up to 1000
         primes = sieve(1000)
         prev = 0  # Initialize the previous number in the strictly increasing sequence
@@ -26,4 +27,4 @@ class Solution:
             if not success and nums[i] <= prev:
                 return False
             prev = nums[i]
-        return True        
+        return True
