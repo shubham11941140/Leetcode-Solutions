@@ -1,15 +1,10 @@
 class Solution:
     def minimizedMaximum(self, n: int, quantities: List[int]) -> int:
-        def canDistribute(mid):
-            return sum([(q + mid - 1) // mid for q in quantities]) <= n
-
         left, right = 1, max(quantities)
         while left < right:
             mid = (left + right) // 2
-            if canDistribute(mid):
+            if sum([(q + mid - 1) // mid for q in quantities]) <= n:
                 right = mid
             else:
                 left = mid + 1
-
-        return left
-        
+        return left        
