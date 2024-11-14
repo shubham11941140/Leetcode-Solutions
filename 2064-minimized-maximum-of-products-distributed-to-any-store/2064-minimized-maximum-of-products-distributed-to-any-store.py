@@ -1,5 +1,7 @@
 class Solution:
+
     def minimizedMaximum(self, n: int, quantities: List[int]) -> int:
+
         def canDistribute(mid):
             return sum([(q + mid - 1) // mid for q in quantities]) <= n
 
@@ -12,4 +14,3 @@ class Solution:
                 left = mid + 1
 
         return left
-        
