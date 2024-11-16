@@ -14,10 +14,6 @@ class Solution:
         result = []
 
         for i in range(n - k + 1):
-            subarray = nums[i:i + k]
-            v = self.check(subarray)
-            power = sum(subarray) ** 2
-            result.append(v)
-
+            result.append(self.check(nums[i:i + k]))
         return result
         
