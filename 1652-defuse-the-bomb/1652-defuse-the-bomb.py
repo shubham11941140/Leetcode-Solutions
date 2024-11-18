@@ -5,12 +5,6 @@ class Solution:
 
         if k == 0:
             return result
+        return [sum(code[(i + j) % n] for j in range(1, k + 1)) if k > 0 else sum(code[(i + j) % n] for j in range(k, 0)) for i in range(n)]
 
-        for i in range(n):
-            if k > 0:
-                result[i] = sum(code[(i + j) % n] for j in range(1, k + 1))
-            else:
-                result[i] = sum(code[(i + j) % n] for j in range(k, 0))
-
-        return result
         
