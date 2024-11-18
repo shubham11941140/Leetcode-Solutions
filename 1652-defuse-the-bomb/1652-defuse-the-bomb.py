@@ -1,4 +1,5 @@
 class Solution:
+
     def decrypt(self, code: List[int], k: int) -> List[int]:
         n = len(code)
         result = [0] * n
@@ -13,4 +14,3 @@ class Solution:
                 result[i] = sum(code[(i + j) % n] for j in range(k, 0))
 
         return result
-        
