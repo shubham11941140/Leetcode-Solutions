@@ -1,4 +1,5 @@
 class Solution:
+
     def takeCharacters(self, s: str, k: int) -> int:
         if k == 0:
             return 0
