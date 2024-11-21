@@ -1,16 +1,19 @@
 class Solution:
-    def countUnguarded(self, m: int, n: int, guards: List[List[int]], walls: List[List[int]]) -> int:
+
+    def countUnguarded(
+        self, m: int, n: int, guards: List[List[int]], walls: List[List[int]]
+    ) -> int:
         grid = [[0] * n for _ in range(m)]
-        
+
         # Place guards and walls in the grid
         for r, c in guards:
             grid[r][c] = 1  # Guard
         for r, c in walls:
             grid[r][c] = 1  # Wall
-        
+
         # Directions for cardinal movement: up, down, left, right
         directions = [(-1, 0), (1, 0), (0, -1), (0, 1)]
-        
+
         # Mark cells guarded by the guards
         for r, c in guards:
             for dr, dc in directions:
@@ -22,8 +25,8 @@ class Solution:
                         grid[nr][nc] = 2
                     nr += dr
                     nc += dc
-        
+
         # Count unoccupied and unguarded cells
         unguarded_count = sum(1 for r in range(m) for c in range(n) if grid[r][c] == 0)
-        
+
         return unguarded_count
