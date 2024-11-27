@@ -1,5 +1,8 @@
 class Solution:
-    def shortestDistanceAfterQueries(self, n: int, queries: List[List[int]]) -> List[int]:
+
+    def shortestDistanceAfterQueries(
+        self, n: int, queries: List[List[int]]
+    ) -> List[int]:
         # Initialize the adjacency list
         graph = [[] for _ in range(n)]
 
@@ -8,7 +11,7 @@ class Solution:
             graph[i].append((i + 1, 1))
 
         def dijkstra():
-            dist = [float('inf')] * n
+            dist = [float("inf")] * n
             dist[0] = 0
             pq = [(0, 0)]  # (distance, node)
 
@@ -29,4 +32,3 @@ class Solution:
             result.append(dijkstra())
 
         return result
-       
