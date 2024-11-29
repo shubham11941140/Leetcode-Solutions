@@ -1,4 +1,5 @@
 class Solution:
+
     def minimumTime(self, grid: List[List[int]]) -> int:
         ROWS, COLS = len(grid), len(grid[0])
         directions = [[1, 0], [-1, 0], [0, 1], [0, -1]]
@@ -26,5 +27,5 @@ class Solution:
                             heapq.heappush(heap, [grid[nr][nc] + 1, nr, nc])
                         else:
                             heapq.heappush(heap, [grid[nr][nc], nr, nc])
-                        
-        return -1        
+
+        return -1
