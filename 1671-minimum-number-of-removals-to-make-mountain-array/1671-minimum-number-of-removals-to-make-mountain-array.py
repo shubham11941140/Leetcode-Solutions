@@ -1,4 +1,5 @@
 class Solution:
+
     def minimumMountainRemovals(self, nums: List[int]) -> int:
         n = len(nums)
         l = [1] * n
@@ -10,6 +11,5 @@ class Solution:
         for i in reversed(range(n - 1)):
             for j in range(n - 1, i, -1):
                 if nums[i] > nums[j]:
-                    r[i] = max(r[i], r[j] + 1)        
+                    r[i] = max(r[i], r[j] + 1)
         return n - max(l[i] + r[i] - 1 for i in range(1, n - 1) if min(l[i], r[i]) > 1)
-        
