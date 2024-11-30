@@ -5,8 +5,11 @@
 #         self.left = None
 #         self.right = None
 
+
 class Solution:
+
     def distanceK(self, root: TreeNode, target: TreeNode, k: int) -> List[int]:
+
         def dfs(node, par=None):
             if node:
                 node.par = par
@@ -24,4 +27,4 @@ class Solution:
                 if nei and nei not in seen:
                     seen.add(nei)
                     queue.append((nei, dist + 1))
-        return []        
+        return []
