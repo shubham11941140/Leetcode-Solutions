@@ -9,5 +9,11 @@ class Solution:
                 if mat[i][j] == 1:
                     rows[i] += 1
                     cols[j] += 1
-        return sum([1 for i in range(n) for j in range(m) if mat[i][j] == 1 and rows[i] == 1 and cols[j] == 1])
-        
+        return sum(
+            [
+                1
+                for i in range(n)
+                for j in range(m)
+                if mat[i][j] == 1 and rows[i] == 1 and cols[j] == 1
+            ]
+        )
