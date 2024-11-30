@@ -1,6 +1,9 @@
 class Solution:
+
     def dist(self, p1, p2, p3):
-        return (p2[0] - p1[0]) * (p3[1] - p1[1]) - (p2[1] - p1[1]) * (p3[0] - p1[0])    
+        return (p2[0] - p1[0]) * (p3[1] - p1[1]) - (p2[1] - p1[1]) * (p3[0] -
+                                                                      p1[0])
+
     def outerTrees(self, trees: List[List[int]]) -> List[List[int]]:
         n = len(trees)
         if n < 4:
