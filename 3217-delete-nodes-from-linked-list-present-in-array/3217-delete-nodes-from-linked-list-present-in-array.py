@@ -4,7 +4,10 @@
 #         self.val = val
 #         self.next = next
 class Solution:
-    def modifiedList(self, nums: List[int], head: Optional[ListNode]) -> Optional[ListNode]:
+
+    def modifiedList(
+        self, nums: List[int], head: Optional[ListNode]
+    ) -> Optional[ListNode]:
         nums_set = set(nums)
         # Create a dummy node to handle edge cases
         dummy = ListNode(0)
@@ -15,4 +18,4 @@ class Solution:
                 current.next = current.next.next
             else:
                 current = current.next
-        return dummy.next        
+        return dummy.next
