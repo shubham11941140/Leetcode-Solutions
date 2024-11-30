@@ -1,4 +1,5 @@
 class Solution:
+
     def validArrangement(self, pairs: List[List[int]]) -> List[List[int]]:
         graph = defaultdict(list)
         in_degree = defaultdict(int)
@@ -36,4 +37,4 @@ class Solution:
         for i in range(len(eulerian_path) - 1):
             result.append([eulerian_path[i], eulerian_path[i + 1]])
 
-        return result        
+        return result
