@@ -3,19 +3,16 @@ class Solution:
         graph = defaultdict(list)
         in_degree = defaultdict(int)
         out_degree = defaultdict(int)
-
         for u, v in pairs:
             graph[u].append(v)
             out_degree[u] += 1
             in_degree[v] += 1
-
         # Find the starting node for Eulerian path
         start = pairs[0][0]
         for node in out_degree:
             if out_degree[node] - in_degree[node] == 1:
                 start = node
                 break
-
         # Hierholzer's algorithm to find Eulerian path
         def findEulerianPath(start):
             stack = [start]
@@ -28,12 +25,5 @@ class Solution:
                 else:
                     path.append(stack.pop())
             return path[::-1]
-
-        eulerian_path = findEulerianPath(start)
-
-        # Convert Eulerian path to valid arrangement of pairs
-        result = []
-        for i in range(len(eulerian_path) - 1):
-            result.append([eulerian_path[i], eulerian_path[i + 1]])
-
-        return result        
+        e = findEulerianPath(start)
+        return [[e[i], e[i + 1]] for i in range(len(e) - 1)]       
