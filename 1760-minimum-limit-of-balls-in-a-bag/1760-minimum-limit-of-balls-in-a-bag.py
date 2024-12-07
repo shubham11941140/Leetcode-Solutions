@@ -1,12 +1,7 @@
 class Solution:
     def minimumSize(self, nums: List[int], maxOperations: int) -> int:
-        def canDivide(limit):
-            operations = 0
-            for num in nums:
-                if num > limit:
-                    operations += (num - 1) // limit
-            return operations <= maxOperations
-
+        def canDivide(limit):            
+            return sum([(num - 1) // limit for num in nums if num > limit]) <= maxOperations
         left, right = 1, max(nums)
         while left < right:
             mid = (left + right) // 2
@@ -14,5 +9,4 @@ class Solution:
                 right = mid
             else:
                 left = mid + 1
-
         return left      
