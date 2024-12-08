@@ -5,7 +5,7 @@ class Solution:
         # dp array to store the maximum value from the end to the current position
         dp = [0] * (n + 1)
         max_value = 0
-        for i in range(n - 1, -1, -1):
+        for i in reversed(range(n)):
             max_value = max(max_value, events[i][2])
             dp[i] = max_value
         result = 0
@@ -18,8 +18,5 @@ class Solution:
                     right = mid
                 else:
                     left = mid + 1
-            if left < n:
-                result = max(result, value + dp[left])
-            else:
-                result = max(result, value)
+            result = max(result, value + (dp[left] if left < n else 0))
         return result
