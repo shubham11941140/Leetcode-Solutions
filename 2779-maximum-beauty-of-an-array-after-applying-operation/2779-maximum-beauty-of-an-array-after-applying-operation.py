@@ -1,4 +1,5 @@
 class Solution:
+
     def maximumBeauty(self, nums: List[int], k: int) -> int:
         # Extend the range for each element in nums
         events = []
