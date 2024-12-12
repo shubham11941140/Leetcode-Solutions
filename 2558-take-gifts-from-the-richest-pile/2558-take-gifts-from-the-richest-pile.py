@@ -19,8 +19,7 @@ class Solution:
             heapq.heappush(max_heap, -remaining_gifts)
 
         # Convert the max-heap back to a list of positive values
-        final_piles = [-heapq.heappop(max_heap) for _ in range(len(max_heap))]
+        return -sum(max_heap)
+        final_piles = [-heappop(max_heap) for _ in range(len(max_heap))]
         final_piles.sort(reverse=True)
-
-        print(final_piles)
         return sum(final_piles)
