@@ -9,6 +9,6 @@ class Solution:
         # Distribute the extra students to maximize the overall pass ratio
         for _ in range(extraStudents):
             imp, p, t = heappop(heap)
-            heappush(heap, (-improvement(p + 1, t + 1), p + 1, t + 1))
+            heappush(heap, (-((p + 2) / (t + 2) - (p + 1) / (t + 1)), p + 1, t + 1))
         # Calculate the final average pass ratio
         return sum(p / t for _, p, t in heap) / len(classes)
