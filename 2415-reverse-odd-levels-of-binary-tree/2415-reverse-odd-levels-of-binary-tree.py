@@ -12,10 +12,10 @@ class Solution:
             ### When we are at an odd level, reverse the value of each node in the queue.
             if level % 2:
                 l = 0           ### left pointer.
-                r = len(q)-1    ### right pointer.
-                while l<r: 
+                r = len(q) - 1    ### right pointer.
+                while l < r: 
                     ### Sweep the value of the left node and right node.
-                    q[l].val,q[r].val = q[r].val,q[l].val
+                    q[l].val, q[r].val = q[r].val, q[l].val
                     l += 1
                     r -= 1
             ### Same as regular BSF, adding the node for the next level.
