@@ -5,9 +5,11 @@
 #         self.left = left
 #         self.right = right
 class Solution:
+
     def minimumOperations(self, root: Optional[TreeNode]) -> int:
+
         def min_swap(arr: List[int]) -> int:
-            pos = {m : j for j, m in enumerate(sorted(arr))}  
+            pos = {m: j for j, m in enumerate(sorted(arr))}
             visited = [0 for _ in range(len(arr))]
             num_swap = 0
             for i in range(n):
@@ -17,6 +19,7 @@ class Solution:
                     cnt += 1
                 num_swap += max(0, cnt - 1)
             return num_swap
+
         dq, res = collections.deque([root]), 0
         while dq:
             vals = []
@@ -24,9 +27,9 @@ class Solution:
             for _ in range(n):
                 node = dq.popleft()
                 vals.append(node.val)
-                if node.left: 
+                if node.left:
                     dq.append(node.left)
-                if node.right: 
+                if node.right:
                     dq.append(node.right)
             res += min_swap(vals)
-        return res        
+        return res
