@@ -6,8 +6,6 @@ class Solution:
                 return 1 if total == target else 0
             if (i, total) in memo:
                 return memo[(i, total)]
-            add = dfs(i + 1, total + nums[i])
-            subtract = dfs(i + 1, total - nums[i])
-            memo[(i, total)] = add + subtract
+            memo[(i, total)] = dfs(i + 1, total + nums[i]) + dfs(i + 1, total - nums[i])
             return memo[(i, total)]
         return dfs(0, 0)
