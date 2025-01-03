@@ -10,8 +10,6 @@ class Solution:
         count = 0        
         # Iterate through the array to find the valid splits
         for i in range(n - 1):
-            left_sum = prefix_sum[i]
-            right_sum = total_sum - left_sum
-            if left_sum >= right_sum:
+            if 2 * prefix_sum[i] >= total_sum:
                 count += 1        
         return count   
