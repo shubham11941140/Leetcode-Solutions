@@ -1,4 +1,5 @@
 class Solution:
+
     def getCollisionTimes(self, cars: List[List[int]]) -> List[float]:
         n = len(cars)
         ans = [-1] * n
@@ -15,4 +16,4 @@ class Solution:
                     break
                 st.pop()
             st.append(i)
-        return ans       
+        return ans
