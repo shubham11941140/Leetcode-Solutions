@@ -1,4 +1,5 @@
 class Solution:
+
     def minimumOperations(self, nums: List[int]) -> int:
         cnt = 0
         while True:
@@ -12,4 +13,4 @@ class Solution:
                 break
             nums = nums[min(3, len(nums)):]
             cnt += 1
-        return cnt   
+        return cnt
