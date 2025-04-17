@@ -7,8 +7,7 @@ class Solution:
             for j in range(min(i + 1, maxColumn + 1)):
                 dp[i][j] = dp[i - 1][j]
                 if j - 1 >= 0:
-                    dp[i][j] = (dp[i][j] + dp[i - 1][j - 1])
+                    dp[i][j] = dp[i][j] + dp[i - 1][j - 1]
                 if j + 1 <= maxColumn:
-                    dp[i][j] = (dp[i][j] + dp[i - 1][j + 1])
-        return dp[steps][0] % (10 ** 9 + 7)
-        
+                    dp[i][j] = dp[i][j] + dp[i - 1][j + 1]
+        return dp[steps][0] % (10**9 + 7)
