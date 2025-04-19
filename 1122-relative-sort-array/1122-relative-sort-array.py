@@ -1,4 +1,5 @@
 class Solution:
+
     def relativeSortArray(self, arr1: List[int], arr2: List[int]) -> List[int]:
         a = 0
         # Step 1: Relative Ordering
@@ -9,4 +10,4 @@ class Solution:
                     a += 1
         # Step 2: Sorting Remaining Elements
         arr1[a:] = sorted(arr1[a:])
-        return arr1        
+        return arr1
