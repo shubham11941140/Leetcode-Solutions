@@ -7,8 +7,7 @@ class Solution:
             new_frequency = Counter()
             for base_value in frequency_map: 
                 for multiplier in range(2, maxValue // base_value + 1): 
-                    combinations = comb(n - 1, array_size)
-                    total_ways += combinations * frequency_map[base_value]
+                    total_ways += comb(n - 1, array_size) * frequency_map[base_value]
                     new_frequency[multiplier * base_value] += frequency_map[base_value]
             frequency_map = new_frequency
             total_ways %= (10 ** 9 + 7)      
