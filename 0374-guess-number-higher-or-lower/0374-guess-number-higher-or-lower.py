@@ -5,6 +5,7 @@
 #          otherwise return 0
 # def guess(num: int) -> int:
 
+
 class Solution:
     def guessNumber(self, n: int) -> int:
         l = 1
@@ -17,4 +18,4 @@ class Solution:
                 l = m + 1
             else:
                 r = m
-        return l       
+        return l
