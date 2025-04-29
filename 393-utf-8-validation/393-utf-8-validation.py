@@ -1,6 +1,7 @@
 class Solution:
+
     def validUtf8(self, data: List[int]) -> bool:
-        c = [bin(i).replace("0b", "").zfill(8) for i in data]     
+        c = [bin(i).replace("0b", "").zfill(8) for i in data]
         i = 0
         n = len(c)
         while i < n:
@@ -22,11 +23,10 @@ class Solution:
                     flag = True
                     i += 1
                 else:
-                    return False                           
+                    return False
             if c[i][0] == "0":
                 flag = True
             if not flag:
                 return False
             i += 1
         return True
-        
