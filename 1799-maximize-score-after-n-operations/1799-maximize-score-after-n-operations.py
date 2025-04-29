@@ -11,7 +11,11 @@ class Solution:
                 for k in range(j + 1, len(nums)):
                     if mask & (1 << k):
                         continue
-                    res = max(res, (i + 1) * gcd(nums[j], nums[k]) + dp(mask | (1 << j) | (1 << k), i + 1))
+                    res = max(
+                        res,
+                        (i + 1) * gcd(nums[j], nums[k])
+                        + dp(mask | (1 << j) | (1 << k), i + 1),
+                    )
             return res
 
         return dp(0, 0)
