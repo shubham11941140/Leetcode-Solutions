@@ -1,4 +1,5 @@
 class Solution:
+
     def vowelStrings(self, words: List[str], queries: List[List[int]]) -> List[int]:
         n = len(words)
         p = [0] * (n + 1)
