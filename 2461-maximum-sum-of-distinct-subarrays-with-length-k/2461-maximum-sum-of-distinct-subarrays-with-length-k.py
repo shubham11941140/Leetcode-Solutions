@@ -1,4 +1,5 @@
 class Solution:
+
     def maximumSubarraySum(self, nums: List[int], k: int) -> int:
         if len(nums) < k:
             return 0
@@ -17,4 +18,4 @@ class Solution:
                     ec[left_elem] -= 1
             if len(ec) == k:
                 max_sum = max(max_sum, window_sum)
-        return max_sum        
+        return max_sum
