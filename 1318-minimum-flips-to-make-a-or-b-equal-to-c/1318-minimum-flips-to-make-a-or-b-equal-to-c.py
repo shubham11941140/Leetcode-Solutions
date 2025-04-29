@@ -1,4 +1,5 @@
 class Solution:
+
     def minFlips(self, a: int, b: int, c: int) -> int:
         res = 0
         for i in range(32):
@@ -10,4 +11,4 @@ class Solution:
             else:
                 if bit_a + bit_b == 0:
                     res += 1
-        return res        
+        return res
