@@ -4,7 +4,10 @@
 #         self.val = val
 #         self.next = next
 class Solution:
-    def mergeInBetween(self, list1: ListNode, a: int, b: int, list2: ListNode) -> ListNode:
+
+    def mergeInBetween(
+        self, list1: ListNode, a: int, b: int, list2: ListNode
+    ) -> ListNode:
         preA = list1
         for _ in range(a - 1):
             preA = preA.next
@@ -15,4 +18,4 @@ class Solution:
         while list2.next is not None:
             list2 = list2.next
         list2.next = postB
-        return list1        
+        return list1
