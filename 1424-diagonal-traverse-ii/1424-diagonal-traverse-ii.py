@@ -1,4 +1,5 @@
 class Solution:
+
     def findDiagonalOrder(self, nums: List[List[int]]) -> List[int]:
         diagonals = defaultdict(list)
         for i in range(len(nums)):
@@ -7,4 +8,4 @@ class Solution:
         result = []
         for key in sorted(diagonals.keys()):
             result.extend(diagonals[key][::-1])
-        return result        
+        return result
