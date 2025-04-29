@@ -1,5 +1,6 @@
 from random import choice
 
+
 class Solution:
     def letterCombinations(self, digits: str) -> List[str]:
         if not digits:
@@ -14,5 +15,4 @@ class Solution:
         a[8] = list("tuv")
         a[9] = list("wxyz")
         d = [int(i) for i in digits]
-        return set([''.join([choice(a[i]) for i in d]) for _ in range(1000)])              
-        
+        return set(["".join([choice(a[i]) for i in d]) for _ in range(1000)])
