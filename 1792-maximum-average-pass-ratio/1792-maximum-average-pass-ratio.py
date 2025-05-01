@@ -1,4 +1,5 @@
 class Solution:
+
     def maxAverageRatio(self, classes: List[List[int]], extraStudents: int) -> float:
         # Initialize a max-heap with the negative improvement and the corresponding class data
         heap = [(-((p + 1) / (t + 1) - (p / t)), p, t) for p, t in classes]
