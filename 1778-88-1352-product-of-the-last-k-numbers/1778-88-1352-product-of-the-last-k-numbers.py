@@ -9,10 +9,11 @@ class ProductOfNumbers:
             self.p = [1]
         else:
             # Append the new product to the list
-            self.p.append(self.p[-1] * num)        
+            self.p.append(self.p[-1] * num)
 
     def getProduct(self, k: int) -> int:
-        return 0 if k >= len(self.p) else self.p[-1] // self.p[-1 - k]  
+        return 0 if k >= len(self.p) else self.p[-1] // self.p[-1 - k]
+
 
 # Your ProductOfNumbers object will be instantiated and called as such:
 # obj = ProductOfNumbers()
