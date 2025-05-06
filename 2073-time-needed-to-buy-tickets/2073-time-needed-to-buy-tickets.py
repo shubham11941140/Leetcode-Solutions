@@ -1,4 +1,5 @@
 class Solution:
+
     def timeRequiredToBuy(self, tickets: List[int], k: int) -> int:
         t = 0
         n = len(tickets)
@@ -9,4 +10,3 @@ class Solution:
                     t += 1
                     if tickets[k] == 0:
                         return t
-        
