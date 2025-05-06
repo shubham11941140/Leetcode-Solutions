@@ -1,4 +1,5 @@
 class Solution:
+
     def finalPrices(self, prices: List[int]) -> List[int]:
         n = len(prices)
         final_prices = prices[:]
@@ -7,4 +8,4 @@ class Solution:
                 if prices[j] <= prices[i]:
                     final_prices[i] = prices[i] - prices[j]
                     break
-        return final_prices     
+        return final_prices
