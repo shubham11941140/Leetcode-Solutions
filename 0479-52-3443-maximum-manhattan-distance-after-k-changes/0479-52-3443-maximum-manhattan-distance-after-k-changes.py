@@ -1,5 +1,7 @@
 class Solution:
+
     def maxDistance(self, s: str, k: int) -> int:
+
         def simulate(primary: str, secondary: str) -> int:
             dist = 0
             max_dist = 0
@@ -16,5 +18,5 @@ class Solution:
                 max_dist = max(max_dist, dist)
             return max_dist
 
-        directions = [('N', 'E'), ('N', 'W'), ('S', 'E'), ('S', 'W')]
-        return max(simulate(a, b) for a, b in directions)        
+        directions = [("N", "E"), ("N", "W"), ("S", "E"), ("S", "W")]
+        return max(simulate(a, b) for a, b in directions)
