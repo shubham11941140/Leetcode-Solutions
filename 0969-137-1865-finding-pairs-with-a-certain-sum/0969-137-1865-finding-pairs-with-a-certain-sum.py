@@ -5,15 +5,12 @@ class FindSumPairs:
         self.n = len(nums1)
         self.n2 = nums2
         self.c = Counter(nums2)
-        
 
     def add(self, index: int, val: int) -> None:
         cur = self.n2[index]
         self.n2[index] += val
         self.c[cur] -= 1
         self.c[cur + val] += 1
-
-        
 
     def count(self, tot: int) -> int:
         ans = 0
@@ -25,9 +22,6 @@ class FindSumPairs:
                 if rem in self.c:
                     ans += self.c[rem]
         return ans
-
-
-        
 
 
 # Your FindSumPairs object will be instantiated and called as such:
