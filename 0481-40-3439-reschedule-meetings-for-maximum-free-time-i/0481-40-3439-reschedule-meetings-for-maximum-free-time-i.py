@@ -8,10 +8,8 @@ class Solution:
             prefixSum[i + 1] = prefixSum[i] + (endTime[i] - startTime[i])
 
         for i in range(k - 1, count):
-            occupied = prefixSum[i + 1] - prefixSum[i - k + 1]
             windowEnd = eventTime if i == count - 1 else startTime[i + 1]
             windowStart = 0 if i == k - 1 else endTime[i - k]
-            freeTime = windowEnd - windowStart - occupied
-            maxFree = max(maxFree, freeTime)
+            maxFree = max(maxFree, windowEnd - windowStart - (prefixSum[i + 1] - prefixSum[i - k + 1]))
 
         return maxFree        
