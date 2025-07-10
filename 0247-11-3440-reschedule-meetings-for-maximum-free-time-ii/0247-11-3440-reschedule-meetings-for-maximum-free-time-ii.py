@@ -1,5 +1,7 @@
 class Solution:
-    def maxFreeTime(self, eventTime: int, startTime: List[int], endTime: List[int]) -> int:
+
+    def maxFreeTime(self, eventTime: int, startTime: List[int],
+                    endTime: List[int]) -> int:
         gap = [startTime[0]]
         for i in range(1, len(startTime)):
             gap.append(startTime[i] - endTime[i - 1])
@@ -18,4 +20,4 @@ class Solution:
             ans = max(ans, gap[i - 1] + gap[i])
             largestLeft = max(largestLeft, gap[i - 1])
 
-        return ans        
+        return ans
