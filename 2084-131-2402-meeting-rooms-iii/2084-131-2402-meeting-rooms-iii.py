@@ -30,6 +30,4 @@ class Solution:
                         l[j] += 1
                         break
         m = max(l.values())
-        for i in l:
-            if l[i] == m:
-                return i        
+        return [i for i in l if l[i] == m][0]     
