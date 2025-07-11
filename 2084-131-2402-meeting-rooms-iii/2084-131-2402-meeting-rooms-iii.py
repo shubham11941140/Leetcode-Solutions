@@ -1,4 +1,5 @@
 class Solution:
+
     def mostBooked(self, n: int, meetings: List[List[int]]) -> int:
         meetings.sort()  # Sort by start time
         available = list(range(n))
