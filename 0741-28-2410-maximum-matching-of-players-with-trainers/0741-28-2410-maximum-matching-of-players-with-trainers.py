@@ -1,5 +1,7 @@
 class Solution:
-    def matchPlayersAndTrainers(self, players: List[int], trainers: List[int]) -> int:
+
+    def matchPlayersAndTrainers(self, players: List[int],
+                                trainers: List[int]) -> int:
         players.sort()
         trainers.sort()
         count = 0
@@ -13,4 +15,4 @@ class Solution:
             else:
                 # Try next trainer
                 j += 1
-        return count        
+        return count
