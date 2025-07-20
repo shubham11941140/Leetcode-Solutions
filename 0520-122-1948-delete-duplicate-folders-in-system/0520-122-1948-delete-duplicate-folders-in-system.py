@@ -1,4 +1,5 @@
 class Solution:
+
     def deleteDuplicateFolder(self, paths: List[List[str]]) -> List[List[str]]:
         tree = {}
         for path in paths:
@@ -37,4 +38,4 @@ class Solution:
 
         result = []
         collect(tree, [])
-        return result        
+        return result
