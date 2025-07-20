@@ -9,10 +9,7 @@ class Solution:
         def encode(node):
             if not node:
                 return "()"
-            parts = []
-            for key, sub in node.items():
-                parts.append(key + encode(sub))
-            sign = "".join(sorted(parts))
+            sign = "".join(sorted([key + encode(sub) for key, sub in node.items()]))
             store[sign].append(node)
             return "(" + sign + ")"
 
@@ -29,11 +26,10 @@ class Solution:
 
         def collect(node, path):
             for key, sub in list(node.items()):
-                if "#" in sub:
-                    continue
-                new = path + [key]
-                result.append(new)
-                collect(sub, new)
+                if "#" not in sub:
+                    new = path + [key]
+                    result.append(new)
+                    collect(sub, new)
 
         result = []
         collect(tree, [])
