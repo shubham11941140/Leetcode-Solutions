@@ -7,8 +7,7 @@ class Solution:
                 return -1
         
         count1 = Counter(basket1)
-        fruits_to_swap = [fruit for fruit, total_count in total_counts.items() for _ in range(abs(count1.get(fruit, 0) - total_count // 2))]
-        fruits_to_swap.sort()
+        fruits_to_swap = sorted([fruit for fruit, t in total_counts.items() for _ in range(abs(count1.get(fruit, 0) - t // 2))])
         
         min_val = min(total_counts.keys())
         return sum([min(fruits_to_swap[i], 2 * min_val) for i in range(len(fruits_to_swap) // 2)])     
