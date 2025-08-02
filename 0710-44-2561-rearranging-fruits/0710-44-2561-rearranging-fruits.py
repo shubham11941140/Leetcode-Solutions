@@ -17,5 +17,4 @@ class Solution:
         fruits_to_swap.sort()
         
         min_val = min(total_counts.keys())
-        swaps_to_make = len(fruits_to_swap) // 2
-        return sum([min(fruits_to_swap[i], 2 * min_val) for i in range(swaps_to_make)])     
+        return sum([min(fruits_to_swap[i], 2 * min_val) for i in range(len(fruits_to_swap) // 2)])     
