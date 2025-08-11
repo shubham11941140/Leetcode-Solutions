@@ -1,9 +1,9 @@
 class Solution:
     def mostBooked(self, n: int, meetings: List[List[int]]) -> int:
         meetings.sort(key=lambda x: x[0])
-        d = {i:[] for i in range(n)}
-        e = {i:0 for i in range(n)}
-        l = {i:0 for i in range(n)}
+        d = {i: [] for i in range(n)}
+        e = {i: 0 for i in range(n)}
+        l = {i: 0 for i in range(n)}
         for i in meetings:
             f = False
             for j in d:
@@ -32,4 +32,4 @@ class Solution:
         m = max(l.values())
         for i in l:
             if l[i] == m:
-                return i        
+                return i
