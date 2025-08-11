@@ -1,4 +1,5 @@
 class Solution:
+
     def lengthAfterTransformations(self, s: str, t: int) -> int:
         nums = [0] * 26
         for ch in s:
@@ -14,4 +15,4 @@ class Solution:
                 if nums[j]:
                     cur[j + 1] += nums[j]
             nums = cur
-        return sum(nums) % (10 ** 9 + 7)       
+        return sum(nums) % (10**9 + 7)
