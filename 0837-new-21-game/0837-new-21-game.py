@@ -15,4 +15,3 @@ class Solution:
             if i - maxPts >= 0:
                 window_sum -= dp[i - maxPts]
         return probability
-   
