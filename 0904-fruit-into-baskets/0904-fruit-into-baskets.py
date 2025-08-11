@@ -13,4 +13,4 @@ class Solution:
                     del basket[fruits[start]]
                 start += 1
             max_fruits = max(max_fruits, end - start + 1)
-        return max_fruits        
+        return max_fruits
