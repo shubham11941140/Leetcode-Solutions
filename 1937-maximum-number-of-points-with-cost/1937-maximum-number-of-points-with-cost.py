@@ -1,4 +1,5 @@
 class Solution:
+
     def maxPoints(self, points: List[List[int]]) -> int:
         m, n = len(points), len(points[0])
         dp = points[0][:]
@@ -13,4 +14,4 @@ class Solution:
                 right[j] = max(right[j + 1] - 1, dp[j])
             for j in range(n):
                 dp[j] = points[i][j] + max(left[j], right[j])
-        return max(dp)        
+        return max(dp)
