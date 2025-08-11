@@ -1,4 +1,5 @@
 class Solution:
+
     def isAlienSorted(self, words: List[str], order: str) -> bool:
         order_map = {}
         for i, c in enumerate(order):
@@ -14,4 +15,4 @@ class Solution:
             else:
                 if len(word1) > len(word2):
                     return False
-        return True        
+        return True
