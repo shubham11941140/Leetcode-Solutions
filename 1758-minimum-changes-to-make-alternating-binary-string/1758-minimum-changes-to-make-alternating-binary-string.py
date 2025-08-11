@@ -5,15 +5,15 @@ class Solution:
         # Iterate over the string
         for i in range(len(s)):
             if i % 2 == 0:  # For even indices
-                if s[i] != '0':
+                if s[i] != "0":
                     changes1 += 1
-                if s[i] != '1':
+                if s[i] != "1":
                     changes2 += 1
             else:  # For odd indices
-                if s[i] != '1':
+                if s[i] != "1":
                     changes1 += 1
-                if s[i] != '0':
+                if s[i] != "0":
                     changes2 += 1
 
         # Return the minimum number of changes
-        return min(changes1, changes2)        
+        return min(changes1, changes2)
