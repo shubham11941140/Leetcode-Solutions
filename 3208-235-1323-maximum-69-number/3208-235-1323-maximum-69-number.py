@@ -7,7 +7,7 @@ class Solution:
             if s[i] == '6':
                 t = s.copy()
                 t[i] = '9'
-                f.append(int(''.join(t)))
-        return max(f) if f else num
+                return int(''.join(t))
+        return num
                 
         
