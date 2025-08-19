@@ -1,4 +1,5 @@
 class Solution:
+
     def zeroFilledSubarray(self, nums: List[int]) -> int:
         count = 0
         for i in range(len(nums)):
@@ -7,4 +8,4 @@ class Solution:
             else:
                 count = 0
             nums[i] = count
-        return sum(nums)     
+        return sum(nums)
