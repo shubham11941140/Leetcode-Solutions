@@ -1,4 +1,5 @@
 class Solution:
+
     def minimumSum(self, grid: List[List[int]]) -> int:
         A = grid.copy()
         res = float("inf")
@@ -39,4 +40,4 @@ class Solution:
 
     def rotate(self, A: List[List[int]]) -> List[List[int]]:
         n, m = len(A), len(A[0])
-        return [[A[i][j] for i in range(n-1, -1, -1)] for j in range(m)]        
+        return [[A[i][j] for i in range(n - 1, -1, -1)] for j in range(m)]
