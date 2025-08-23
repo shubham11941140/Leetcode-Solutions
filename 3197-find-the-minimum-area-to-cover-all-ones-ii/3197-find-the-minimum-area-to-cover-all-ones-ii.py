@@ -1,4 +1,5 @@
 class Solution:
+
     def minimumSum(self, grid: List[List[int]]) -> int:
         A = grid.copy()
         res = float("inf")
@@ -7,10 +8,16 @@ class Solution:
             for i in range(1, n):
                 a1 = self.minar(A[:i])
                 for j in range(1, m):
-                    res = min(res, a1 + self.minar([row[:j] for row in A[i:]]) + self.minar([row[j:] for row in A[i:]]))
+                    res = min(
+                        res,
+                        a1 + self.minar([row[:j] for row in A[i:]]) +
+                        self.minar([row[j:] for row in A[i:]]),
+                    )
                 for i2 in range(i + 1, n):
-                    res = min(res, a1 + self.minar(A[i:i2]) + self.minar(A[i2:]))
-            A = [[A[i][j] for i in reversed(range(len(A)))] for j in range(len(A[0]))] 
+                    res = min(res,
+                              a1 + self.minar(A[i:i2]) + self.minar(A[i2:]))
+            A = [[A[i][j] for i in reversed(range(len(A)))]
+                 for j in range(len(A[0]))]
         return res
 
     def minar(self, A: List[List[int]]) -> int:
@@ -24,4 +31,4 @@ class Solution:
                     top = min(top, i)
                     right = max(right, j)
                     bottom = max(bottom, i)
-        return 0 if right == -1 else (right - left + 1) * (bottom - top + 1)  
+        return 0 if right == -1 else (right - left + 1) * (bottom - top + 1)
