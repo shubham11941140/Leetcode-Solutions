@@ -18,7 +18,7 @@ class Solution:
                     a2 = self.minimumArea(part2)
                     a3 = self.minimumArea(part3)
                     res = min(res, a1 + a2 + a3)
-            A = self.rotate(A)
+            A = [[A[i][j] for i in reversed(range(len(A)))] for j in range(len(A[0]))] 
         return res
 
     def minimumArea(self, A: List[List[int]]) -> int:
@@ -36,4 +36,4 @@ class Solution:
         return 0 if right == -1 else (right - left + 1) * (bottom - top + 1)
 
     def rotate(self, A: List[List[int]]) -> List[List[int]]:
-        return [[A[i][j] for i in reversed(range(len(A)))] for j in range(len(A[0]))]        
+        return        
