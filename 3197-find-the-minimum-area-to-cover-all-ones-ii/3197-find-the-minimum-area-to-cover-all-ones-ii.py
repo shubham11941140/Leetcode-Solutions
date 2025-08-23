@@ -7,17 +7,9 @@ class Solution:
             for i in range(1, n):
                 a1 = self.minar(A[:i])
                 for j in range(1, m):
-                    part2 = [row[:j] for row in A[i:]]
-                    part3 = [row[j:] for row in A[i:]]
-                    a2 = self.minar(part2)
-                    a3 = self.minar(part3)
-                    res = min(res, a1 + a2 + a3)
+                    res = min(res, a1 + self.minar([row[:j] for row in A[i:]]) + self.minar([row[j:] for row in A[i:]]))
                 for i2 in range(i + 1, n):
-                    part2 = A[i:i2]
-                    part3 = A[i2:]
-                    a2 = self.minar(part2)
-                    a3 = self.minar(part3)
-                    res = min(res, a1 + a2 + a3)
+                    res = min(res, a1 + self.minar(A[i:i2]) + self.minar(A[i2:]))
             A = [[A[i][j] for i in reversed(range(len(A)))] for j in range(len(A[0]))] 
         return res
 
