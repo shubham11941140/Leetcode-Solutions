@@ -28,15 +28,12 @@ class Solution:
         left, top, right, bottom = float("inf"), float("inf"), -1, -1
         for i in range(n):
             for j in range(m):
-                if A[i][j] == 1:
+                if A[i][j]:
                     left = min(left, j)
                     top = min(top, i)
                     right = max(right, j)
                     bottom = max(bottom, i)
-        if right == -1:
-            return 0
-        return (right - left + 1) * (bottom - top + 1)
+        return 0 if right == -1 else (right - left + 1) * (bottom - top + 1)
 
     def rotate(self, A: List[List[int]]) -> List[List[int]]:
-        n, m = len(A), len(A[0])
-        return [[A[i][j] for i in range(n-1, -1, -1)] for j in range(m)]        
+        return [[A[i][j] for i in reversed(range(len(A)))] for j in range(len(A[0]))]        
