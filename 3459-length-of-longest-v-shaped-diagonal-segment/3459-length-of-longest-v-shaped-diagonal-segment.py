@@ -1,5 +1,6 @@
 class Solution:
     DIRS = [(1, 1), (1, -1), (-1, -1), (-1, 1)]
+
     def lenOfVDiagonal(self, grid: List[List[int]]) -> int:
         m, n = len(grid), len(grid[0])
         memo = [[[0] * (1 << 3) for _ in range(n)] for _ in range(m)]
@@ -33,4 +34,4 @@ class Solution:
             if maxs[nk] > res:
                 res = max(res, self.dfs(i, j, nk, 0, 2 - target, grid, memo))
         memo[i][j][mask] = res + 1
-        return memo[i][j][mask]        
+        return memo[i][j][mask]
