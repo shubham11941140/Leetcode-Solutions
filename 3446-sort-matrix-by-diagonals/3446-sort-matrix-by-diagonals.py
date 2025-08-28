@@ -5,11 +5,9 @@ class Solution:
         for i in range(n):
             for j in range(m):
                 key = i - j
-                #if key not in diags:                     diags[key] = []
                 heappush(diags[key], grid[i][j] if key < 0 else -grid[i][j])
         for i in range(n):
             for j in range(m):
                 key = i - j
-                if key < 0: grid[i][j] = heappop(diags[key])
-                else: grid[i][j] = -heappop(diags[key])
+                grid[i][j] = heappop(diags[key]) if key < 0 else -heappop(diags[key])
         return grid        
