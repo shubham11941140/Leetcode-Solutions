@@ -1,9 +1,7 @@
 class Solution:
     
     def check(self, a):
-        while "." in a:
-            a.remove(".")
-        a = [int(i) for i in a]
+        a = [int(i) for i in a if i != "."]
         if not a:
             return True
         return len(set(a)) == len(a) and min(a) >= 1 and max(a) <= 9
