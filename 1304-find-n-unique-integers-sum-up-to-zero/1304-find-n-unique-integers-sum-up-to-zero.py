@@ -1,4 +1,5 @@
 class Solution:
+
     def sumZero(self, n: int) -> List[int]:
         if n == 2:
             return [-1, 1]
