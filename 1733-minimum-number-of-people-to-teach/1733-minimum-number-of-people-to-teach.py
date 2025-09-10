@@ -15,9 +15,5 @@ class Solution:
 
         ans = len(languages) + 1
         for i in range(1, n + 1):
-            cans = 0
-            for v in need:
-                if i not in languages[v]:
-                    cans += 1
-            ans = min(ans, cans)
+            ans = min(ans, len([1 for v in need if i not in languages[v]]))
         return ans        
