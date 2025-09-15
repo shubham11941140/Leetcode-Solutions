@@ -1,7 +1,5 @@
 class Solution:
-
-    @staticmethod
-    def canBeTypedWords(text: str, brokenLetters: str) -> int:
+    def canBeTypedWords(self, text: str, brokenLetters: str) -> int:
         l = text.split()
         c = 0
         for i in l:
@@ -9,4 +7,4 @@ class Solution:
                 if j in i:
                     c += 1
                     break
-        return len(l) - c
+        return len(l) - c        
