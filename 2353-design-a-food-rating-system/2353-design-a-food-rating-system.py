@@ -12,15 +12,12 @@ class FoodRatings:
             self.c[c].add((-r, f))        
 
     def changeRating(self, food: str, newRating: int) -> None:
-        old_rating = self.fr[food]
-        cuisine = self.fc[food]
-        self.c[cuisine].remove((-old_rating, food))
+        self.c[self.fc[food]].remove((-self.fr[food], food))
         self.fr[food] = newRating
-        self.c[cuisine].add((-newRating, food))        
+        self.c[self.fc[food]].add((-newRating, food))        
 
     def highestRated(self, cuisine: str) -> str:
         return self.c[cuisine][0][1]        
-
 
 # Your FoodRatings object will be instantiated and called as such:
 # obj = FoodRatings(foods, cuisines, ratings)
