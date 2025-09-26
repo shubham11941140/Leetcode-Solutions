@@ -1,4 +1,5 @@
 class Solution:
+
     def triangleNumber(self, nums: List[int]) -> int:
         nums.sort()
         n = len(nums)
@@ -11,4 +12,4 @@ class Solution:
                     right -= 1
                 else:
                     left += 1
-        return count        
+        return count
