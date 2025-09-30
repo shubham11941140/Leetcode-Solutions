@@ -1,8 +1,6 @@
 class Solution:
-
-    @staticmethod
-    def triangularSum(nums: List[int]) -> int:
+    def triangularSum(self, nums: List[int]) -> int:
         n1 = len(nums)
         for _ in range(n1 - 1):
             nums = [(nums[i] + nums[i + 1]) % 10 for i in range(len(nums) - 1)]
-        return nums[0]
+        return nums[0]                        
