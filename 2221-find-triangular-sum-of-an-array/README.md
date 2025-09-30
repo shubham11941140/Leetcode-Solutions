@@ -1,4 +1,4 @@
-<h2><a href="https://leetcode.com/problems/find-triangular-sum-of-an-array/">2221. Find Triangular Sum of an Array</a></h2><h3>Medium</h3><hr><div><p>You are given a <strong>0-indexed</strong> integer array <code>nums</code>, where <code>nums[i]</code> is a digit between <code>0</code> and <code>9</code> (<strong>inclusive</strong>).</p>
+<h2><a href="https://leetcode.com/problems/find-triangular-sum-of-an-array">2221. Find Triangular Sum of an Array</a></h2><h3>Medium</h3><hr><p>You are given a <strong>0-indexed</strong> integer array <code>nums</code>, where <code>nums[i]</code> is a digit between <code>0</code> and <code>9</code> (<strong>inclusive</strong>).</p>
 
 <p>The <strong>triangular sum</strong> of <code>nums</code> is the value of the only element present in <code>nums</code> after the following process terminates:</p>
 
@@ -12,16 +12,18 @@
 <p>Return <em>the triangular sum of</em> <code>nums</code>.</p>
 
 <p>&nbsp;</p>
-<p><strong>Example 1:</strong></p>
-<img alt="" src="https://assets.leetcode.com/uploads/2022/02/22/ex1drawio.png" style="width: 250px; height: 250px;">
-<pre><strong>Input:</strong> nums = [1,2,3,4,5]
+<p><strong class="example">Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/02/22/ex1drawio.png" style="width: 250px; height: 250px;" />
+<pre>
+<strong>Input:</strong> nums = [1,2,3,4,5]
 <strong>Output:</strong> 8
 <strong>Explanation:</strong>
 The above diagram depicts the process from which we obtain the triangular sum of the array.</pre>
 
-<p><strong>Example 2:</strong></p>
+<p><strong class="example">Example 2:</strong></p>
 
-<pre><strong>Input:</strong> nums = [5]
+<pre>
+<strong>Input:</strong> nums = [5]
 <strong>Output:</strong> 5
 <strong>Explanation:</strong>
 Since there is only one element in nums, the triangular sum is the value of that element itself.</pre>
@@ -33,4 +35,3 @@ Since there is only one element in nums, the triangular sum is the value of that
 	<li><code>1 &lt;= nums.length &lt;= 1000</code></li>
 	<li><code>0 &lt;= nums[i] &lt;= 9</code></li>
 </ul>
-</div>
