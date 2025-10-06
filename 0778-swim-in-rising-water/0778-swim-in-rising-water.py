@@ -4,9 +4,8 @@ class Solution:
         visited = [[False]*n for _ in range(n)]
         min_heap = [(grid[0][0], 0, 0)]
         max_time = 0
-
         while min_heap:
-            current_height, row, col = heapq.heappop(min_heap)
+            current_height, row, col = heappop(min_heap)
             if visited[row][col]:
                 continue
             visited[row][col] = True
