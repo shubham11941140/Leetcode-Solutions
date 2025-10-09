@@ -1,4 +1,5 @@
 class Solution:
+
     def minTime(self, skills: List[int], energy: List[int]) -> int:
         n, m = len(skills), len(energy)
         p = [0] * n
@@ -15,4 +16,4 @@ class Solution:
                     max_time = diff_time
             total_time += max_time
 
-        return total_time + p[-1] * energy[-1]        
+        return total_time + p[-1] * energy[-1]
