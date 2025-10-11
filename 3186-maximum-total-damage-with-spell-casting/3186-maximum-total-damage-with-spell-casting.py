@@ -1,19 +1,13 @@
 class Solution:
     def maximumTotalDamage(self, power: List[int]) -> int:     
-        counter = Counter(power)
-        power_cnt = []
-        for p in sorted(counter.keys()):
-            power_cnt.append((p, counter[p]))        
-        cache = {}
-        def getMaxDamage(index):
-            if index in cache:
-                return cache[index]
-            if index >= len(power_cnt):
-                return 0          
-            notDamage = getMaxDamage(index + 1)
-            curPower, curCnt = power_cnt[index] 
-            nxtIndex = bisect.bisect_left(power_cnt, (curPower+3, -1))
-            damage = curPower * curCnt + getMaxDamage(nxtIndex)
-            cache[index] = max(notDamage, damage)
-            return cache[index]        
-        return getMaxDamage(0)        
+        cnt = Counter(power)
+        arr = sorted(cnt.keys())
+        n = len(arr)
+        dp = [0]*n
+        for i in range(n):
+            val = arr[i] * cnt[arr[i]]
+            j = i - 1
+            while j>=0 and arr[i]-arr[j]<=2:
+                j -= 1
+            dp[i] = max(dp[i - 1] if i else 0, val + (dp[j] if j >= 0 else 0))
+        return dp[-1]      
