@@ -8,8 +8,7 @@ class Solution:
             if remaining == 0:
                 return 1 if odd_needed == carry.bit_count() else 0
             if index >= len(numbers):
-                return 0
-            
+                return 0            
             ans = 0
             for take in range(remaining + 1):
                 ways = math.comb(remaining, take) * pow(numbers[index], take, MOD) % MOD
