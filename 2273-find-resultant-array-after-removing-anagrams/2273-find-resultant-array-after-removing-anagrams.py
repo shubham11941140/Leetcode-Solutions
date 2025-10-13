@@ -5,12 +5,7 @@ class Solution:
 
         # determine if two words are anagrams
         def compare(word1: str, word2: str) -> bool:
-            freq = [0] * 26
-            for ch in word1:
-                freq[ord(ch) - ord("a")] += 1
-            for ch in word2:
-                freq[ord(ch) - ord("a")] -= 1
-            return all(x == 0 for x in freq)
+            return Counter(word1) == Counter(word2)
 
         for i in range(1, n):
             if compare(words[i], words[i - 1]):
