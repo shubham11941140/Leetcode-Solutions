@@ -1,8 +1,9 @@
 class Solution:
+
     def findLexSmallestString(self, s: str, a: int, b: int) -> str:
         n = len(s)
         # this map holds the new value of every digit after addition by a % 10
-        incremented = {str(n):str((n+a)%10) for n in range(10)}
+        incremented = {str(n): str((n + a) % 10) for n in range(10)}
 
         # function applying the addition operation
         def addOp(s):
@@ -13,10 +14,10 @@ class Solution:
 
         # function applying the rotation operation
         def rotOp(s):
-            return s[n-b:] + s[:n-b]
-
+            return s[n - b:] + s[:n - b]
 
         seen = set()
+
         def dfs(s):
             if s in seen:
                 return
@@ -26,4 +27,4 @@ class Solution:
             return
 
         dfs(s)
-        return min(seen)        
+        return min(seen)
