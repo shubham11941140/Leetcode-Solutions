@@ -1,4 +1,5 @@
 class Solution:
+
     def nextBeautifulNumber(self, n: int) -> int:
         i = n + 1
         while True:
@@ -11,5 +12,3 @@ class Solution:
             if f:
                 return i
             i += 1
-
-        
