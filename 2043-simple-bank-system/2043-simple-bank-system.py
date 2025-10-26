@@ -5,10 +5,9 @@ class Bank:
         self.n = len(balance)     
 
     def transfer(self, account1: int, account2: int, money: int) -> bool:
-        if account1 > self.n or account2 > self.n:
+        if max(account1, account2) > self.n:
             return False
-        a = self.b[account1 - 1]
-        if money > a:
+        if money > self.b[account1 - 1]:
             return False
         self.b[account1 - 1] -= money
         self.b[account2 - 1] += money     
@@ -20,18 +19,14 @@ class Bank:
         self.b[account - 1] += money
         return True
         
-
     def withdraw(self, account: int, money: int) -> bool:
         if account > self.n:
             return False
-        a = self.b[account - 1]
-        if money > a:
+        if money > self.b[account - 1]:
             return False
         self.b[account - 1] -= money
         return True
         
-
-
 # Your Bank object will be instantiated and called as such:
 # obj = Bank(balance)
 # param_1 = obj.transfer(account1,account2,money)
