@@ -5,9 +5,7 @@ class Bank:
         self.n = len(balance)     
 
     def transfer(self, account1: int, account2: int, money: int) -> bool:
-        if max(account1, account2) > self.n:
-            return False
-        if money > self.b[account1 - 1]:
+        if max(account1, account2) > self.n or money > self.b[account1 - 1]:
             return False
         self.b[account1 - 1] -= money
         self.b[account2 - 1] += money     
