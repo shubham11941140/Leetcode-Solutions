@@ -3,8 +3,7 @@ class Solution:
         ans, temp = 0, 0
         for s in bank:
             n = s.count('1')
-            if n == 0:
-                continue
-            ans += temp * n
-            temp = n
+            if n:
+                ans += temp * n
+                temp = n
         return ans        
