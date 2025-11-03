@@ -1,7 +1,5 @@
-class Solution:
-
-    @staticmethod
-    def minCost(colors: str, neededTime: List[int]) -> int:
+class Solution:     
+    def minCost(self, colors: str, neededTime: List[int]) -> int:
         n = len(colors)
         i = 0
         ans = 0
@@ -12,6 +10,6 @@ class Solution:
             ni = i
             if ni > oi:
                 f = neededTime[oi:ni + 1]
-                ans += sum(f) - max(f)
+                ans += (sum(f) - max(f))
             i += 1
-        return ans
+        return ans        
