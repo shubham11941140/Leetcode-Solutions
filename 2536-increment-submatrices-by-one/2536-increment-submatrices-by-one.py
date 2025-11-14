@@ -1,5 +1,7 @@
 class Solution:
-    def rangeAddQueries(self, n: int, queries: List[List[int]]) -> List[List[int]]:
+
+    def rangeAddQueries(self, n: int,
+                        queries: List[List[int]]) -> List[List[int]]:
         diff = [[0] * n for _ in range(n)]
         # diff array updates
         for row1, col1, row2, col2 in queries:
@@ -11,4 +13,4 @@ class Solution:
         for i in range(n):
             for j in range(1, n):
                 diff[i][j] += diff[i][j - 1]
-        return diff        
+        return diff
