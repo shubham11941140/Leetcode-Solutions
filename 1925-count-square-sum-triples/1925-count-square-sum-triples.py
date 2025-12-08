@@ -1,10 +1,13 @@
 class Solution:
     def countTriples(self, n: int) -> int:
-        c = 0
-        for i in range(1, n + 1):
-            for j in range(1, n + 1):
-                for k in range(1, n + 1):
-                    if i ** 2 == j ** 2 + k ** 2:
-                        c += 1
-        return c
-        
+        cnt = 0
+        # Iterate a from 1 to n
+        for a in range(1, n):
+            # Iterate b from a + 1 to n
+            for b in range(a + 1, n):
+                c = int((a * a + b * b) ** 0.5)
+                
+                # Check if c is a perfect square and within range
+                if c * c == (a * a + b * b) and c <= n:
+                    cnt += 2 # Count both (a, b, c) and (b, a, c)
+        return cnt
