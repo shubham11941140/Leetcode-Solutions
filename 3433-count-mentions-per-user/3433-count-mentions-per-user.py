@@ -1,8 +1,9 @@
 class Solution:
+
     def countMentions(self, n: int, events: List[List[str]]) -> List[int]:
         mentions = [0] * n
         back = [0] * n
-        events.sort(key = lambda e: (int(e[1]), e[0] == "MESSAGE"))
+        events.sort(key=lambda e: (int(e[1]), e[0] == "MESSAGE"))
 
         for typ, t, data in events:
             t = int(t)
@@ -18,7 +19,7 @@ class Solution:
                     for u in range(n):
                         if t >= back[u]:
                             mentions[u] += 1
-                else:  
+                else:
                     mentions[int(tok[2:])] += 1
 
-        return mentions        
+        return mentions
