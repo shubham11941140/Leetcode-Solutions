@@ -2,7 +2,6 @@ class Solution:
     def maxTwoEvents(self, events: List[List[int]]) -> int:
         events.sort()
         n = len(events)
-        # dp array to store the maximum value from the end to the current position
         dp = [0] * (n + 1)
         max_value = 0
         for i in reversed(range(n)):
