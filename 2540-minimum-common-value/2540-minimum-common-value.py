@@ -10,4 +10,4 @@ class Solution:
             else:
                 j += 1  # Move pointer in nums2
 
-        return -1        
+        return -1
