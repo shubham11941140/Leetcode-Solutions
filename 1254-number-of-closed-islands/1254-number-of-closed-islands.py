@@ -19,4 +19,4 @@ class Solution:
                 if grid[i][j] == 0:
                     if dfs(i, j):
                         count += 1
-        return count        
+        return count
