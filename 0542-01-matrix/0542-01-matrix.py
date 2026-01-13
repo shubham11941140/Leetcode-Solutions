@@ -1,9 +1,10 @@
 class Solution:
+
     def updateMatrix(self, mat: List[List[int]]) -> List[List[int]]:
         if not mat:
-            return mat        
+            return mat
         rows, cols = len(mat), len(mat[0])
-        distances = [[float('inf') for _ in range(cols)] for _ in range(rows)]
+        distances = [[float("inf") for _ in range(cols)] for _ in range(rows)]
         queue = deque()
         for i in range(rows):
             for j in range(cols):
@@ -18,7 +19,5 @@ class Solution:
                 if 0 <= nx < rows and 0 <= ny < cols:
                     if distances[nx][ny] > distances[x][y] + 1:
                         distances[nx][ny] = distances[x][y] + 1
-                        queue.append((nx, ny))        
+                        queue.append((nx, ny))
         return distances
-                        
-                
