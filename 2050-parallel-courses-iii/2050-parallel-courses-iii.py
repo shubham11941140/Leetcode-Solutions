@@ -18,5 +18,3 @@ class Solution:
                 if not indegree[i]:
                     queue.append(i)
         return max(m)
-
-        
