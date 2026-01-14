@@ -1,4 +1,5 @@
 class Solution:
+
     def validArrangement(self, pairs: List[List[int]]) -> List[List[int]]:
         graph = defaultdict(list)
         in_degree = defaultdict(int)
@@ -14,6 +15,7 @@ class Solution:
                 start = node
                 break
         # Hierholzer's algorithm to find Eulerian path
+
         def findEulerianPath(start):
             stack = [start]
             path = []
@@ -25,5 +27,6 @@ class Solution:
                 else:
                     path.append(stack.pop())
             return path[::-1]
+
         e = findEulerianPath(start)
-        return [[e[i], e[i + 1]] for i in range(len(e) - 1)]       
+        return [[e[i], e[i + 1]] for i in range(len(e) - 1)]
