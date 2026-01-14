@@ -5,4 +5,3 @@ class Solution:
         for i in c:
             if c[i] > n // 4:
                 return i
-        
