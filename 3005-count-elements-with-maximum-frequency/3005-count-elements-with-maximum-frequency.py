@@ -3,4 +3,3 @@ class Solution:
         c = Counter(nums)
         m = max(c.values())
         return sum([m for i in c if c[i] == m])
-        
