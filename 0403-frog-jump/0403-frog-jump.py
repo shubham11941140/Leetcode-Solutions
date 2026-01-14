@@ -1,4 +1,5 @@
 class Solution:
+
     def canCross(self, stones: List[int]) -> bool:
         n = len(stones)
         dp = [[False] * (n + 1) for _ in range(n)]
@@ -11,4 +12,4 @@ class Solution:
                 for x in (k - 1, k, k + 1):
                     if 0 <= x <= n:
                         dp[i][k] |= dp[j][x]
-        return any(dp[-1])        
+        return any(dp[-1])
