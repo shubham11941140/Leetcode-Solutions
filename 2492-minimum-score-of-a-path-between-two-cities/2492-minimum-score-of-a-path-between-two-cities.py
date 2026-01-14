@@ -16,4 +16,4 @@ class Solution:
                 visited.add(u)
                 for v, w in graph[u]:
                     q.append(v)
-        return min([w for u, v, w in roads if u in c])       
+        return min([w for u, v, w in roads if u in c])
