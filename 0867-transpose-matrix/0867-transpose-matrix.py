@@ -7,4 +7,3 @@ class Solution:
             for j in range(n):
                 mat[j][i] = matrix[i][j]
         return mat
-        
