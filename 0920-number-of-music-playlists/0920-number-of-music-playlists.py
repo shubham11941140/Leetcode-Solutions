@@ -4,5 +4,7 @@ class Solution:
         dp[0][0] = 1
         for i in range(1, n + 1):
             for j in range(1, goal + 1):
-                dp[i][j] += dp[i - 1][j - 1] * (n - i + 1) + dp[i][j - 1] * max(i - k, 0)
-        return dp[n][goal] % (10 ** 9 + 7)     
+                dp[i][j] += dp[i - 1][j - 1] * (n - i + 1) + dp[i][j - 1] * max(
+                    i - k, 0
+                )
+        return dp[n][goal] % (10**9 + 7)
