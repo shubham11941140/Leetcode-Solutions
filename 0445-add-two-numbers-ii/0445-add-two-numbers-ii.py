@@ -4,7 +4,9 @@
 #         self.val = val
 #         self.next = next
 class Solution:
-    def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+
+    def addTwoNumbers(self, l1: Optional[ListNode],
+                      l2: Optional[ListNode]) -> Optional[ListNode]:
         s1 = []
         s2 = []
         while l1:
@@ -24,4 +26,4 @@ class Solution:
             node.next = res
             res = node
             carry //= 10
-        return res        
+        return res
