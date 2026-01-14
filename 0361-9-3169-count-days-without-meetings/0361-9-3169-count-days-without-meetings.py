@@ -1,6 +1,7 @@
 class Solution:
+
     def countDays(self, days: int, meetings: List[List[int]]) -> int:
-        today = 0        
+        today = 0
         for i, j in sorted(meetings, key=lambda x: x[0]):
             if j <= today:
                 continue
@@ -8,5 +9,5 @@ class Solution:
                 days -= j - i + 1
             else:
                 days -= j - today
-            today = j            
+            today = j
         return days
