@@ -4,6 +4,7 @@
 #         self.val = val
 #         self.next = next
 class Solution:
+
     def reorderList(self, head: Optional[ListNode]) -> None:
         """
         Do not return anything, modify head in-place instead.
@@ -30,4 +31,4 @@ class Solution:
             nxt = second.next
             second.next = first
             second = nxt
-        return head        
+        return head
