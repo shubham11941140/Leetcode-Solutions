@@ -1,4 +1,5 @@
 class Solution:
+
     def maximumNumber(self, num: str, change: List[int]) -> str:
         n = len(num)
         res = []
@@ -10,4 +11,4 @@ class Solution:
             res.append(str(change[int(num[i])]))
             i += 1
         res += num[i:]
-        return ''.join(res)        
+        return "".join(res)
