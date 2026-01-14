@@ -1,4 +1,5 @@
 class Solution:
+
     def minimumTime(self, grid: List[List[int]]) -> int:
         ROWS, COLS = len(grid), len(grid[0])
         heap = [(grid[0][0], 0, 0)]
@@ -17,5 +18,12 @@ class Solution:
                     if grid[nr][nc] <= time + 1:
                         heappush(heap, [time + 1, nr, nc])
                     else:
-                        heappush(heap, [grid[nr][nc] + (0 if (grid[nr][nc] - time) % 2 else 1), nr, nc])                                                    
-        return -1        
+                        heappush(
+                            heap,
+                            [
+                                grid[nr][nc] + (0 if (grid[nr][nc] - time) % 2 else 1),
+                                nr,
+                                nc,
+                            ],
+                        )
+        return -1
