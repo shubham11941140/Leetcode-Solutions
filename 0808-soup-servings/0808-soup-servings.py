@@ -1,4 +1,5 @@
 class Solution:
+
     def soupServings(self, n: int) -> float:
         N = n
         if N > 4800:
@@ -11,5 +12,8 @@ class Solution:
             dp[0][i] = 1
         for i in range(1, N + 1):
             for j in range(1, N + 1):
-                dp[i][j] = 0.25 * (dp[max(i - 4, 0)][j] + dp[max(i - 3, 0)][max(j - 1, 0)] + dp[max(i - 2, 0)][max(j - 2, 0)] + dp[max(i - 1, 0)][max(j - 3, 0)])
-        return dp[N][N]        
+                dp[i][j] = 0.25 * (dp[max(i - 4, 0)][j] +
+                                   dp[max(i - 3, 0)][max(j - 1, 0)] +
+                                   dp[max(i - 2, 0)][max(j - 2, 0)] +
+                                   dp[max(i - 1, 0)][max(j - 3, 0)])
+        return dp[N][N]
