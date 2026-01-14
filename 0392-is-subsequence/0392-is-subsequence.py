@@ -1,4 +1,5 @@
 class Solution:
+
     def isSubsequence(self, s: str, t: str) -> bool:
         # solve using DP
         # Simple ARR traversal
@@ -14,5 +15,3 @@ class Solution:
             if j == nt and i != ns:
                 return False
         return True
-                    
-        
