@@ -1,6 +1,13 @@
 class Solution:
     def maxDistance(self, grid: List[List[int]]) -> int:
-        queue = deque([(i, j) for i in range(len(grid)) for j in range(len(grid[0])) if grid[i][j] == 1])
+        queue = deque(
+            [
+                (i, j)
+                for i in range(len(grid))
+                for j in range(len(grid[0]))
+                if grid[i][j] == 1
+            ]
+        )
         n = len(grid)
         m = len(grid[0])
         if not queue or len(queue) == n * m:
@@ -16,4 +23,4 @@ class Solution:
                     if 0 <= x < n and 0 <= y < m and not grid[x][y]:
                         grid[x][y] = 1
                         queue.append((x, y))
-        return ans - 1  
+        return ans - 1
