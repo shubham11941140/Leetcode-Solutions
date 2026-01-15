@@ -6,33 +6,11 @@
 #         self.right = right
 class Solution:
     def leafSimilar(self, root1: Optional[TreeNode], root2: Optional[TreeNode]) -> bool:
-        
         def getLeaf(node):
             if not node:
                 return []
             if not node.left and not node.right:
                 return [node.val]
             return getLeaf(node.left) + getLeaf(node.right)
-        
-        return getLeaf(root1) == getLeaf(root2)
-    
-   
-        
-        
-             
-            
-             
-        
-        
-      
 
-       
-         
-             
-       
-       
-       
-        
-          
-               
-        
+        return getLeaf(root1) == getLeaf(root2)
