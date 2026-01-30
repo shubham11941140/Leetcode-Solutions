@@ -5,16 +5,19 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    def getDirections(self, root: Optional[TreeNode], startValue: int, destValue: int) -> str:
+
+    def getDirections(self, root: Optional[TreeNode], startValue: int,
+                      destValue: int) -> str:
+
         def dfs(node, val, path):
             if not node:
                 return False
             if node.val == val:
                 return True
             if dfs(node.left, val, path):
-                path.append('L')
+                path.append("L")
             elif dfs(node.right, val, path):
-                path.append('R')
+                path.append("R")
             return bool(path)
 
         pathToStart, pathToDest = [], []
@@ -27,4 +30,4 @@ class Solution:
             pathToDest.pop()
 
         # Construct the final path
-        return 'U' * len(pathToStart) + ''.join(pathToDest[::-1])        
+        return "U" * len(pathToStart) + "".join(pathToDest[::-1])
