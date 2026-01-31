@@ -3,5 +3,4 @@ class Solution:
         for i in letters:
             if ord(i) > ord(target):
                 return i
-        return letters[0]
-        
+        return letters[0]        
