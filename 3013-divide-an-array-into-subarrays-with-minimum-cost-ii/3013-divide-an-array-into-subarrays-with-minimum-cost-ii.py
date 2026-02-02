@@ -1,0 +1,41 @@
+class Solution:
+    def minimumCost(self, nums: List[int], k: int, dist: int) -> int:
+        heap_used, heap_unused, used = [], [], set()
+        s, ans = 0, inf
+        for right in range(1, len(nums)):
+            left = right - dist - 1
+
+            if left > 0 and left in used:
+                used.remove(left)
+                s -= nums[left]
+                while heap_unused and heap_unused[0][1] < left:
+                    heappop(heap_unused)
+
+                if heap_unused: # If it exists, use it to calculate the cost
+                    num, i = heappop(heap_unused)
+                    heappush(heap_used, (-num, i))
+                    used.add(i)
+                    s += num
+
+            # Move the right border of the window
+            if len(used) < k - 1:
+                heappush(heap_used, (-nums[right], right))
+                used.add(right)
+                s += nums[right]
+            else:
+                while heap_used[0][1] not in used:
+                    heappop(heap_used)
+                
+                if nums[right] < -heap_used[0][0]:
+                    num, i = heapreplace(heap_used, (-nums[right], right))
+                    used.remove(i)
+                    used.add(right)
+                    s += num + nums[right]
+                    heappush(heap_unused, (-num, i))
+                else:
+                    heappush(heap_unused, (nums[right], right))
+
+            if left >= 0:
+                ans = min(s, ans)
+
+        return nums[0] + ans
