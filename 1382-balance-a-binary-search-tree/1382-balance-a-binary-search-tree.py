@@ -18,11 +18,9 @@ class Solution:
         root = nodes[mid]
         root.left = self.buildTreeUtil(nodes, start, mid - 1)
         root.right = self.buildTreeUtil(nodes, mid + 1, end)
-        return root    
+        return root
     
     def balanceBST(self, root: TreeNode) -> TreeNode:
         nodes = []
         self.storeBSTNodes(root, nodes)
-        n = len(nodes)
-        return self.buildTreeUtil(nodes, 0, n - 1)        
-        
+        return self.buildTreeUtil(nodes, 0, len(nodes) - 1)        
