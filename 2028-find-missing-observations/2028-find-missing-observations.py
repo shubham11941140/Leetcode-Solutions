@@ -1,4 +1,5 @@
 class Solution:
+
     def missingRolls(self, rolls: List[int], mean: int, n: int) -> List[int]:
         m = len(rolls)
         total_sum = mean * (n + m)
@@ -14,4 +15,4 @@ class Solution:
         for i in range(remainder):
             result[i] += 1
 
-        return result        
+        return result
