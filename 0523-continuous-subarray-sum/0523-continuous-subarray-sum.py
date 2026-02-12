@@ -1,4 +1,5 @@
 class Solution:
+
     def checkSubarraySum(self, nums: List[int], k: int) -> bool:
         if not k:
             return any(a == b and a for a, b in zip(nums, nums[1:]))
@@ -12,4 +13,4 @@ class Solution:
                     return True
             else:
                 seen[prefix] = i
-        return False      
+        return False
