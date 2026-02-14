@@ -1,4 +1,5 @@
 class Solution:
+
     def minDeletionSize(self, strs: List[str]) -> int:
         c = 0
         n = len(strs)
@@ -8,4 +9,4 @@ class Solution:
                 if strs[j][i] > strs[j + 1][i]:
                     c += 1
                     break
-        return c       
+        return c
