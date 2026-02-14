@@ -1,5 +1,7 @@
 class Solution:
-    def findAllPeople(self, n: int, meetings: List[List[int]], firstPerson: int) -> List[int]:
+    def findAllPeople(
+        self, n: int, meetings: List[List[int]], firstPerson: int
+    ) -> List[int]:
         q = [(0, 0), (0, firstPerson)]
         g = collections.defaultdict(list)
         for p, p1, t in meetings:
@@ -14,4 +16,4 @@ class Solution:
             for pii, m in g[p]:
                 if m >= t:
                     heappush(q, (m, pii))
-        return list(a)      
+        return list(a)
