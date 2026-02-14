@@ -1,4 +1,5 @@
 class Solution:
+
     def removeAnagrams(self, words: List[str]) -> List[str]:
         res = [words[0]]  # result array
         n = len(words)
@@ -11,4 +12,4 @@ class Solution:
             if compare(words[i], words[i - 1]):
                 continue
             res.append(words[i])
-        return res        
+        return res
