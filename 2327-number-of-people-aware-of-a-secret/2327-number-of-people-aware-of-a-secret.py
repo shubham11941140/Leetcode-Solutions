@@ -1,4 +1,5 @@
 class Solution:
+
     def peopleAwareOfSecret(self, n: int, delay: int, forget: int) -> int:
         share = 0
         dp = [0] * n
@@ -9,4 +10,5 @@ class Solution:
             if i - forget >= 0:
                 share -= dp[i - forget]
             dp[i] = share
-        return sum([dp[i] for i in range(n - forget, n) if i >= 0]) % (10 ** 9 + 7)   
+        return sum([dp[i]
+                    for i in range(n - forget, n) if i >= 0]) % (10**9 + 7)
