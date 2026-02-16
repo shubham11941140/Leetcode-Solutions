@@ -1,4 +1,5 @@
 class Solution:
+
     def minimumCost(self, nums: List[int], k: int, dist: int) -> int:
         heap_used, heap_unused, used = [], [], set()
         s, ans = 0, inf
@@ -11,7 +12,7 @@ class Solution:
                 while heap_unused and heap_unused[0][1] < left:
                     heappop(heap_unused)
 
-                if heap_unused: # If it exists, use it to calculate the cost
+                if heap_unused:  # If it exists, use it to calculate the cost
                     num, i = heappop(heap_unused)
                     heappush(heap_used, (-num, i))
                     used.add(i)
@@ -25,7 +26,7 @@ class Solution:
             else:
                 while heap_used[0][1] not in used:
                     heappop(heap_used)
-                
+
                 if nums[right] < -heap_used[0][0]:
                     num, i = heapreplace(heap_used, (-nums[right], right))
                     used.remove(i)
