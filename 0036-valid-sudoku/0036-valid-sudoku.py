@@ -1,16 +1,16 @@
 class Solution:
-    
+
     def check(self, a):
         a = [int(i) for i in a if i != "."]
         if not a:
             return True
         return len(set(a)) == len(a) and min(a) >= 1 and max(a) <= 9
-    
+
     def rows(self, board):
         return len([1 for i in board if self.check(i)]) == 9
-    
+
     def grid(self, board, i, j):
-        return [board[x][y] for x in range(i, i + 3) for y in range(j, j + 3)]   
+        return [board[x][y] for x in range(i, i + 3) for y in range(j, j + 3)]
 
     def isValidSudoku(self, board: List[List[str]]) -> bool:
         c = [[i[j] for i in board] for j in range(9)]
