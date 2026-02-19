@@ -1,5 +1,7 @@
 class Solution:
-    def maxFreeTime(self, eventTime: int, k: int, startTime: List[int], endTime: List[int]) -> int:
+
+    def maxFreeTime(self, eventTime: int, k: int, startTime: List[int],
+                    endTime: List[int]) -> int:
         count = len(startTime)
         prefixSum = [0] * (count + 1)
         maxFree = 0
@@ -12,4 +14,4 @@ class Solution:
             windowStart = 0 if i == k - 1 else endTime[i - k]
             maxFree = max(maxFree, windowEnd - windowStart - (prefixSum[i + 1] - prefixSum[i - k + 1]))
 
-        return maxFree        
+        return maxFree
