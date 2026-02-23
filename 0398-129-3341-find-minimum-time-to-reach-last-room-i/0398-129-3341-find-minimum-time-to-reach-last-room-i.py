@@ -1,8 +1,9 @@
 class Solution:
+
     def minTimeToReach(self, moveTime: List[List[int]]) -> int:
         n = len(moveTime)
         m = len(moveTime[0])
-        dp = [[float('inf')] * m for _ in range(n)]
+        dp = [[float("inf")] * m for _ in range(n)]
         minh = []
         heappush(minh, (0, 0, 0))
         moveTime[0][0] = 0
@@ -17,7 +18,8 @@ class Solution:
             for dr, dc in directions:
                 nextRow = currRow + dr
                 nextCol = currCol + dc
-                if 0 <= nextRow < n and 0 <= nextCol < m and dp[nextRow][nextCol] == float('inf'):
+                if (0 <= nextRow < n and 0 <= nextCol < m
+                        and dp[nextRow][nextCol] == float("inf")):
                     nextTime = max(moveTime[nextRow][nextCol], currTime) + 1
                     heappush(minh, (nextTime, nextRow, nextCol))
-        return -1        
+        return -1
