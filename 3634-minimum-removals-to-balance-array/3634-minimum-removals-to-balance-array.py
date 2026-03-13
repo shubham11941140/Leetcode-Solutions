@@ -1,4 +1,5 @@
 class Solution:
+
     def minRemoval(self, nums: List[int], k: int) -> int:
         nums.sort()
         n = len(nums)
@@ -8,4 +9,4 @@ class Solution:
             while nums[j] > nums[i] * k:
                 i += 1
             maxi = max(maxi, j - i + 1)
-        return n - maxi        
+        return n - maxi
