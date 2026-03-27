@@ -1,6 +1,7 @@
 class Solution:
     def numEnclaves(self, grid: List[List[int]]) -> int:
         A = grid.copy()
+
         def dfs(i, j):
             if i < 0 or j < 0 or i == len(A) or j == len(A[0]):
                 return
@@ -20,4 +21,4 @@ class Solution:
             dfs(0, j)
             dfs(len(A) - 1, j)
 
-        return sum(sum(row) for row in A)        
+        return sum(sum(row) for row in A)
