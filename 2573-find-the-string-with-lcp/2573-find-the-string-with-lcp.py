@@ -16,8 +16,10 @@ class Solution:
         current_char = 1
 
         for i in range(n):
-            if res[i] > 0: continue
-            if current_char > 26: return ""
+            if res[i] > 0: 
+                continue
+            if current_char > 26: 
+                return ""
 
             v = E[:, i]
             clique_indices = np.where(v > 0.5)[0]
@@ -32,11 +34,11 @@ class Solution:
 
         word = "".join(chr(ord('a') + c - 1) for c in res)
 
-        for i in range(n - 1, -1, -1):
-            for j in range(n - 1, -1, -1):
+        for i in reversed(range(n)):
+            for j in reversed(range(n)):
                 expected = 0
                 if word[i] == word[j]:
-                    expected = 1 + (lcp[i+1][j+1] if i+1 < n and j+1 < n else 0)
+                    expected = 1 + (lcp[i + 1][j + 1] if i + 1 < n and j + 1 < n else 0)
                 if lcp[i][j] != expected:
                     return ""
 
