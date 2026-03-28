@@ -7,4 +7,4 @@ class Solution:
             for j in range(i):
                 if players[j][1] <= score:
                     dp[i] = max(dp[i], dp[j] + score)
-        return max(dp)        
+        return max(dp)
