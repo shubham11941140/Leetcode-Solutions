@@ -5,6 +5,7 @@
 #         self.left = left
 #         self.right = right
 class Solution:
+
     def isCompleteTree(self, root: Optional[TreeNode]) -> bool:
         q = [root]
         while q[0] is not None:
@@ -13,4 +14,4 @@ class Solution:
             q.append(node.right)
         while q and q[0] is None:
             q.pop(0)
-        return not any(q)      
+        return not any(q)
