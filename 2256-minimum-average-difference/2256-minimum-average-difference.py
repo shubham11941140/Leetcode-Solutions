@@ -1,10 +1,11 @@
 class Solution:
+
     def minimumAverageDifference(self, nums: List[int]) -> int:
         n = len(nums)
         s = [0] * (n + 1)
         for i in range(n):
             s[i + 1] = s[i] + nums[i]
-        ans = 10 ** 9
+        ans = 10**9
         idx = -1
         for i in range(n):
             a = (s[i + 1] - s[0]) // (i + 1)
