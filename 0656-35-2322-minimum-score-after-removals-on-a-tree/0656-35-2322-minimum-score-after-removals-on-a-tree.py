@@ -1,4 +1,5 @@
 class Solution:
+
     def minimumScore(self, nums: List[int], edges: List[List[int]]) -> int:
         n = len(nums)
         graph = collections.defaultdict(list)
@@ -16,7 +17,7 @@ class Solution:
             # Initialize with the node's own value and self
             subtree_xor[node] = nums[node]
             descendants[node].add(node)
-            
+
             for neighbor in graph[node]:
                 if neighbor != parent:
                     dfs(neighbor, node)
@@ -26,9 +27,9 @@ class Solution:
 
         # Start the traversal from node 0, with -1 as a placeholder parent
         dfs(0, -1)
-        
+
         total_xor = subtree_xor[0]
-        min_score = float('inf')
+        min_score = float("inf")
 
         # Iterate through all pairs of nodes (i, j) to represent the two cuts.
         # The cuts are the edges between i/j and their parents.
@@ -37,13 +38,13 @@ class Solution:
             for j in range(i + 1, n):
                 xor_i = subtree_xor[i]
                 xor_j = subtree_xor[j]
-                
+
                 # Case 1: j's subtree is inside i's subtree (nested cuts)
                 if j in descendants[i]:
                     val1 = xor_j
                     val2 = xor_i ^ xor_j
                     val3 = total_xor ^ xor_i
-                
+
                 # Case 2: i's subtree is inside j's subtree (nested cuts)
                 elif i in descendants[j]:
                     val1 = xor_i
@@ -55,9 +56,9 @@ class Solution:
                     val1 = xor_i
                     val2 = xor_j
                     val3 = total_xor ^ xor_i ^ xor_j
-                
+
                 # Calculate score for this pair of cuts and update the minimum
                 score = max(val1, val2, val3) - min(val1, val2, val3)
                 min_score = min(min_score, score)
-                
-        return min_score        
+
+        return min_score
