@@ -18,31 +18,30 @@ class Robot:
                 maxX = min(self.x + num, self.width - 1)
                 rem  = num - (maxX - self.x)
                 num  = rem
-                if rem == 0: 
-                    self.x = maxX
-                else:        
-                    self.x = maxX
-                    self.dir = "North"
+                self.x = maxX
+                if rem: 
+                    self.dir = "North"                    
             elif self.dir == "West":
                 minX = max(self.x - num, 0)
                 rem  = num - (self.x - minX)
                 num  = rem
-                if rem == 0: self.x = minX
-                else:        self.x = minX; self.dir = "South"
+                self.x = minX
+                if rem:
+                    self.dir = "South"
             elif self.dir == "North":
                 maxY = min(self.y + num, self.height - 1)
                 rem  = num - (maxY - self.y)
                 num  = rem
-                if rem == 0: self.y = maxY
-                else:        self.y = maxY; self.dir = "West"
+                self.y = maxY
+                if rem: 
+                    self.dir = "West"
             elif self.dir == "South":
                 minY = max(self.y - num, 0)
                 rem  = num - (self.y - minY)
                 num  = rem
-                if rem == 0: 
-                    self.y = minY
-                else:        
-                    self.y = minY; self.dir = "East"
+                self.y = minY
+                if rem: 
+                    self.dir = "East"
 
     def getPos(self): 
         return [self.x, self.y]
