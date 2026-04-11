@@ -10,10 +10,7 @@ class Solution:
             return -1
         ans = 10 ** 9
         for i in d:
-            di = d[i]
-            ldi = len(di)
+            ldi = len(d[i])
             if ldi > 2:
-                for j in range(ldi - 2):
-                    val = comp(di[j:j + 3])
-                    ans = min(ans, val)
+                ans = min(ans, min([comp(d[i][j:j + 3]) for j in range(ldi - 2)]))
         return ans
