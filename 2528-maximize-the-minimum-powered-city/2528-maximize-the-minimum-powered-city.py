@@ -1,6 +1,9 @@
 class Solution:
+
     def maxPower(self, stations: List[int], r: int, k: int) -> int:
-        def canAchieve(stations: list[int], r: int, k: int, target: int) -> bool:
+
+        def canAchieve(stations: list[int], r: int, k: int,
+                       target: int) -> bool:
             n = len(stations)
             add = [0] * n
             used = 0
@@ -20,6 +23,7 @@ class Solution:
                     add[min(n - 1, i + r)] += need
                     window_sum += need
             return True
+
         low, high = 0, sum(stations) + k
         ans = 0
         while low <= high:
@@ -29,4 +33,4 @@ class Solution:
                 low = mid + 1
             else:
                 high = mid - 1
-        return ans        
+        return ans
