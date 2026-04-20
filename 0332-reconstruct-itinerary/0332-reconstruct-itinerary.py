@@ -1,4 +1,5 @@
 class Solution:
+
     def findItinerary(self, tickets: List[List[str]]) -> List[str]:
         graph = collections.defaultdict(list)
         for start, end in tickets:
@@ -11,4 +12,4 @@ class Solution:
             while graph[stack[-1]]:
                 stack.append(graph[stack[-1]].pop())
             ans.append(stack.pop())
-        return ans[::-1]        
+        return ans[::-1]
