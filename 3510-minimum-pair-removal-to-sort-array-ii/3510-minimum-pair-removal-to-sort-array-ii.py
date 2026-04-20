@@ -1,4 +1,5 @@
 class Solution:
+
     def minimumPairRemoval(self, nums: List[int]) -> int:
         n = len(nums)
         # check if sorted
@@ -13,35 +14,35 @@ class Solution:
         op = 0
         while bad > 0:
             Sum, i = heappop(heap)
-            if rmv[i] or nxt[i] == -1: 
+            if rmv[i] or nxt[i] == -1:
                 continue
             j = nxt[i]
-            if rmv[j] or nums[i] + nums[j] != Sum: 
+            if rmv[j] or nums[i] + nums[j] != Sum:
                 continue
             pi = prv[i]
             nj = nxt[j]
             # remove old violations
-            if pi != -1 and nums[pi] > nums[i]: 
+            if pi != -1 and nums[pi] > nums[i]:
                 bad -= 1
-            if nums[i] > nums[j]: 
+            if nums[i] > nums[j]:
                 bad -= 1
-            if nj != -1 and nums[j] > nums[nj]: 
+            if nj != -1 and nums[j] > nums[nj]:
                 bad -= 1
             # merge
             nums[i] = Sum
             rmv[j] = True
             nxt[i] = nj
-            if nj != -1: 
-                prv[nj] = i            
+            if nj != -1:
+                prv[nj] = i
             # add new violations
-            if pi != -1 and nums[pi] > nums[i]: 
+            if pi != -1 and nums[pi] > nums[i]:
                 bad += 1
-            if nj != -1 and nums[i] > nums[nj]: 
+            if nj != -1 and nums[i] > nums[nj]:
                 bad += 1
             # update heap
             if pi != -1:
                 heappush(heap, (nums[pi] + nums[i], pi))
             if nj != -1:
-                heappush(heap, (nums[i] + nums[nj], i))                
+                heappush(heap, (nums[i] + nums[nj], i))
             op += 1
-        return op                
+        return op
