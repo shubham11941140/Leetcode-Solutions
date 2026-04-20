@@ -1,23 +1,24 @@
 class Spreadsheet:
 
     def __init__(self, rows: int):
-        self.s = {}        
+        self.s = {}
 
     def setCell(self, cell: str, value: int) -> None:
-        self.s[cell] = value        
+        self.s[cell] = value
 
     def resetCell(self, cell: str) -> None:
         self.s[cell] = 0
-        
+
     def getValue(self, formula: str) -> int:
         formula = formula[1:]
         for i in range(len(formula)):
-            if formula[i] == '+':
-                s1, s2 = formula[:i], formula[i+1:]
+            if formula[i] == "+":
+                s1, s2 = formula[:i], formula[i + 1:]
                 left = self.s.get(s1, 0) if s1[0].isupper() else int(s1)
                 right = self.s.get(s2, 0) if s2[0].isupper() else int(s2)
                 return left + right
-        return 0        
+        return 0
+
 
 # Your Spreadsheet object will be instantiated and called as such:
 # obj = Spreadsheet(rows)
