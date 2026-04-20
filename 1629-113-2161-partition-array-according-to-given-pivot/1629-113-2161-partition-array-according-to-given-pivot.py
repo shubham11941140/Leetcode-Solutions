@@ -1,4 +1,5 @@
 class Solution:
+
     def pivotArray(self, nums: List[int], pivot: int) -> List[int]:
         less = []
         equal = []
@@ -9,5 +10,5 @@ class Solution:
             elif num == pivot:
                 equal.append(num)
             else:
-                greater.append(num)        
-        return less + equal + greater   
+                greater.append(num)
+        return less + equal + greater
