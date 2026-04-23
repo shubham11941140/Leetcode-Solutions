@@ -9,4 +9,4 @@ class Solution:
                 l += 1
             ans += 1
             r -= 1
-        return ans        
+        return ans
