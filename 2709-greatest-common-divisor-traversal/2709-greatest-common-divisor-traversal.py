@@ -7,8 +7,8 @@ class Solution:
         if 1 in nums:
             return False
         if n == 1:
-            return True        
-        nums = sorted(nums, reverse = True)
+            return True
+        nums = sorted(nums, reverse=True)
         for i in range(n - 1):
             for j in range(i + 1, n):
                 if gcd(nums[i], nums[j]) - 1:
@@ -16,4 +16,4 @@ class Solution:
                     break
             else:
                 return False
-        return True 
+        return True
