@@ -9,4 +9,4 @@ class Solution:
                 j = i + d
                 dp[i][j] = min(dp[i][k] + dp[k][j] for k in range(i + 1, j))
                 dp[i][j] += cuts[j] - cuts[i]
-        return dp[0][-1]     
+        return dp[0][-1]
