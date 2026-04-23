@@ -5,6 +5,7 @@
 #         self.left = left
 #         self.right = right
 class Solution:
+
     def verticalTraversal(self, root: Optional[TreeNode]) -> List[List[int]]:
         q = [(root, 0, 0)]
         a = [[] for i in range(2500)]
@@ -17,5 +18,3 @@ class Solution:
                 q.append((root.right, row + 1, col + 1))
         b = [sorted(i) for i in a if i]
         return [[j[1] for j in i] for i in b]
-            
-        
