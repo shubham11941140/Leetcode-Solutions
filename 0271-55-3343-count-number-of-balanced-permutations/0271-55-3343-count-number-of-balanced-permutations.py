@@ -1,4 +1,5 @@
 class Solution:
+
     def countBalancedPermutations(self, num: str) -> int:
         MOD = 10**9 + 7
         n = len(num)
@@ -39,4 +40,4 @@ class Solution:
         for cnt in digit_count:
             res = res * invFact[cnt] % MOD
 
-        return res        
+        return res
