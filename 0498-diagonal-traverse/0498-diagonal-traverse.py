@@ -1,4 +1,5 @@
 class Solution:
+
     def findDiagonalOrder(self, matrix: List[List[int]]) -> List[int]:
         if not matrix or not matrix[0]:
             return []
@@ -24,4 +25,4 @@ class Solution:
                     row += 1
                     col -= 1
 
-        return result        
+        return result
