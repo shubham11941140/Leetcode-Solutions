@@ -1,6 +1,8 @@
 from collections import Counter
 
+
 class Solution:
+
     def findErrorNums(self, nums: List[int]) -> List[int]:
         a = list(range(1, len(nums) + 1))
         b = []
