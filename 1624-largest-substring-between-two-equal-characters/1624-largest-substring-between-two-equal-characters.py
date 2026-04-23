@@ -9,4 +9,4 @@ class Solution:
             else:
                 first_occurrence[s[i]] = i
 
-        return max_length        
+        return max_length
