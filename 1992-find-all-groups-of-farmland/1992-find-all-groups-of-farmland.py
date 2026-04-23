@@ -1,4 +1,5 @@
 class Solution:
+
     def findFarmland(self, land: List[List[int]]) -> List[List[int]]:
         m, n = len(land), len(land[0])
         res = []
@@ -14,4 +15,4 @@ class Solution:
                         for q in range(j, y):
                             land[p][q] = 0
                     res.append([i, j, x - 1, y - 1])
-        return res        
+        return res
