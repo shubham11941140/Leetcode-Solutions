@@ -223,6 +223,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 ## Two Pointers
 | Problem Name | Difficulty |
 | ------- | ------- |
+| [0061-rotate-list](https://github.com/shubham11941140/Leetcode-Solutions/tree/main/0061-rotate-list/) | Medium |
 | [1855-maximum-distance-between-a-pair-of-values](https://github.com/shubham11941140/Leetcode-Solutions/tree/main/1855-maximum-distance-between-a-pair-of-values/) | Medium |
 | [3643-flip-square-submatrix-vertically](https://github.com/shubham11941140/Leetcode-Solutions/tree/main/3643-flip-square-submatrix-vertically/) | Easy |
 ## Enumeration
@@ -252,4 +253,8 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [2452-words-within-two-edits-of-dictionary](https://github.com/shubham11941140/Leetcode-Solutions/tree/main/2452-words-within-two-edits-of-dictionary/) | Medium |
+## Linked List
+| Problem Name | Difficulty |
+| ------- | ------- |
+| [0061-rotate-list](https://github.com/shubham11941140/Leetcode-Solutions/tree/main/0061-rotate-list/) | Medium |
 <!---LeetCode Topics End-->
