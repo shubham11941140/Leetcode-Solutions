@@ -1,14 +1,14 @@
 class Solution:
     def rotateTheBox(self, box: List[List[str]]) -> List[List[str]]:
-        n = len(box[0]) - 1        
-        for row in box:
-            i, j = n, n             
-            while i >= 0:                
-                if row[i] == '#':
-                    if i < j: 
-                        row[i], row[j] = '.', '#'                 
-                    j -= 1
-                elif row[i] == '*': 
-                    j = i - 1 
-                i -= 1
-        return  map(list, zip(*(box[::-1])))           
+        r, c = len(box), len(box[0])
+        rotate = [['.'] * r for _ in range(c)]
+        for i, row in enumerate(box):
+            bottom = c - 1
+            for j in reversed(range(c)):
+                if row[j] == '#':
+                    rotate[bottom][r - 1 - i] = '#'
+                    bottom -= 1
+                elif row[j] == '*':
+                    rotate[j][r - 1 - i] = '*'
+                    bottom = j - 1
+        return rotate                 
