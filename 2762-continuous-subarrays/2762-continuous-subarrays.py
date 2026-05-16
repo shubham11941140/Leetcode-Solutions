@@ -1,5 +1,8 @@
 from sortedcontainers import SortedList
+
+
 class Solution:
+
     def continuousSubarrays(self, nums: List[int]) -> int:
         sl = SortedList([])
         nums.append(-5)
@@ -16,4 +19,4 @@ class Solution:
                 sl.remove(nums[start])
                 # Move the sliding window start position
                 start += 1
-        return count        
+        return count
