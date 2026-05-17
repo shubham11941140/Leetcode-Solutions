@@ -1,4 +1,5 @@
 class Solution:
+
     def reformatNumber(self, number: str) -> str:
         number = number.replace("-", "").replace(" ", "")
         res = []
@@ -10,4 +11,4 @@ class Solution:
             res.append(number[2:])
         else:
             res.append(number)
-        return '-'.join(res)          
+        return "-".join(res)
