@@ -48,6 +48,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | [0396-rotate-function](https://github.com/shubham11941140/Leetcode-Solutions/tree/main/0396-rotate-function/) | Medium |
 | [0874-walking-robot-simulation](https://github.com/shubham11941140/Leetcode-Solutions/tree/main/0874-walking-robot-simulation/) | Medium |
 | [1306-jump-game-iii](https://github.com/shubham11941140/Leetcode-Solutions/tree/main/1306-jump-game-iii/) | Medium |
+| [1345-jump-game-iv](https://github.com/shubham11941140/Leetcode-Solutions/tree/main/1345-jump-game-iv/) | Hard |
 | [1582-special-positions-in-a-binary-matrix](https://github.com/shubham11941140/Leetcode-Solutions/tree/main/1582-special-positions-in-a-binary-matrix/) | Easy |
 | [1594-maximum-non-negative-product-in-a-matrix](https://github.com/shubham11941140/Leetcode-Solutions/tree/main/1594-maximum-non-negative-product-in-a-matrix/) | Medium |
 | [1665-minimum-initial-energy-to-finish-tasks](https://github.com/shubham11941140/Leetcode-Solutions/tree/main/1665-minimum-initial-energy-to-finish-tasks/) | Hard |
@@ -141,6 +142,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [0874-walking-robot-simulation](https://github.com/shubham11941140/Leetcode-Solutions/tree/main/0874-walking-robot-simulation/) | Medium |
+| [1345-jump-game-iv](https://github.com/shubham11941140/Leetcode-Solutions/tree/main/1345-jump-game-iv/) | Hard |
 | [1674-minimum-moves-to-make-array-complementary](https://github.com/shubham11941140/Leetcode-Solutions/tree/main/1674-minimum-moves-to-make-array-complementary/) | Medium |
 | [1980-find-unique-binary-string](https://github.com/shubham11941140/Leetcode-Solutions/tree/main/1980-find-unique-binary-string/) | Medium |
 | [2615-sum-of-distances](https://github.com/shubham11941140/Leetcode-Solutions/tree/main/2615-sum-of-distances/) | Medium |
@@ -291,6 +293,7 @@ Collection of LeetCode questions to ace the coding interview! - Created using [L
 | Problem Name | Difficulty |
 | ------- | ------- |
 | [1306-jump-game-iii](https://github.com/shubham11941140/Leetcode-Solutions/tree/main/1306-jump-game-iii/) | Medium |
+| [1345-jump-game-iv](https://github.com/shubham11941140/Leetcode-Solutions/tree/main/1345-jump-game-iv/) | Hard |
 | [3629-minimum-jumps-to-reach-end-via-prime-teleportation](https://github.com/shubham11941140/Leetcode-Solutions/tree/main/3629-minimum-jumps-to-reach-end-via-prime-teleportation/) | Medium |
 ## Number Theory
 | Problem Name | Difficulty |
