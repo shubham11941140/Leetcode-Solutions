@@ -1,4 +1,5 @@
 class Solution:
+
     def tallestBillboard(self, rods: List[int]) -> int:
         _sum = sum(rods)
         dp = [-1] * (_sum + 1)
@@ -12,6 +13,7 @@ class Solution:
                     continue
 
                 dp[i + rod] = max(dp[i + rod], dp_copy[i])
-                dp[abs(i - rod)] = max(dp[abs(i - rod)], dp_copy[i] + min(i, rod))
+                dp[abs(i - rod)] = max(dp[abs(i - rod)],
+                                       dp_copy[i] + min(i, rod))
 
-        return dp[0]        
+        return dp[0]
