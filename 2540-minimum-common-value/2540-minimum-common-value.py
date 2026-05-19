@@ -1,7 +1,6 @@
 class Solution:
     def getCommon(self, nums1: List[int], nums2: List[int]) -> int:
         i, j = 0, 0  # Pointers for both arrays
-
         while i < len(nums1) and j < len(nums2):
             if nums1[i] == nums2[j]:
                 return nums1[i]  # Found a common integer
@@ -9,5 +8,4 @@ class Solution:
                 i += 1  # Move pointer in nums1
             else:
                 j += 1  # Move pointer in nums2
-
         return -1        
