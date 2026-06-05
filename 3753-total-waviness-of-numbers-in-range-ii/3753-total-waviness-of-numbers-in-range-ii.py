@@ -21,25 +21,18 @@ class Solution:
                     ntight = tight and (d == limit)
 
                     if state == 0:
-                        if d == 0:
-                            cnt, wav = dfs(pos + 1, ntight, bool(d), d, d)
-                        else:
-                            cnt, wav = dfs(pos + 1, ntight, bool(d), d, d)
-
+                        cnt, wav = dfs(pos + 1, ntight, bool(d), d, d)
                         total_cnt += cnt
                         total_wavy += wav
 
                     elif state == 1:
                         cnt, wav = dfs(pos + 1, ntight, 2, prev1, d)
-
                         total_cnt += cnt
                         total_wavy += wav
 
                     else:  # state == 2 (at least two digits already)
                         add = 0
-                        if (prev1 > prev2 and prev1 > d) or (
-                            prev1 < prev2 and prev1 < d
-                        ):
+                        if prev1 > max(prev2, d) or prev1 < min(prev2, d):
                             add = 1
 
                         cnt, wav = dfs(pos + 1, ntight, 2, prev1, d)
