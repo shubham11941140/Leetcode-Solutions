@@ -3,17 +3,14 @@ class Solution:
         def solve(n: int) -> int:
             if n < 0:
                 return 0
-
             digits = list(map(int, str(n)))
             m = len(digits)
-
             @lru_cache(None)
             def dfs(pos, tight, state, prev2, prev1):
                 if pos == m:
                     return (1, 0)  # (count, total waviness)
 
                 limit = digits[pos] if tight else 9
-
                 total_cnt = 0
                 total_wavy = 0
 
@@ -31,12 +28,8 @@ class Solution:
                         total_wavy += wav
 
                     else:  # state == 2 (at least two digits already)
-                        add = 0
-                        if prev1 > max(prev2, d) or prev1 < min(prev2, d):
-                            add = 1
-
+                        add = int(prev1 > max(prev2, d) or prev1 < min(prev2, d))
                         cnt, wav = dfs(pos + 1, ntight, 2, prev1, d)
-
                         total_cnt += cnt
                         total_wavy += wav + cnt * add
 
