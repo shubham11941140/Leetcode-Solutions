@@ -2,14 +2,10 @@ class Solution:
 
     def dfs(self, adj, node, par):
         depth = 0
-
-        for child in adj[node]:
-            if child != par:
-                depth = max(depth, 1 + self.dfs(adj, child, node))
-        return depth
+        a = [1 + self.dfs(adj, child, node) for child in adj[node] if child != par]
+        return max(a) if a else 0
 
     def assignEdgeWeights(self, edges: List[List[int]]) -> int:
-        MOD = 10**9 + 7
         n = len(edges) + 1
         adj = [[] for _ in range(n + 1)]
 
@@ -18,7 +14,4 @@ class Solution:
             adj[v].append(u)
 
         depth = self.dfs(adj, 1, -1)
-
-        res = pow(2, depth - 1, MOD)
-
-        return res        
+        return pow(2, depth - 1, 10 ** 9 + 7)       
