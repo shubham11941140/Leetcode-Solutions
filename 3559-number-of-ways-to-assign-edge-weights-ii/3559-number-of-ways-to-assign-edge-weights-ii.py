@@ -30,5 +30,6 @@ class Solution:
         edges_x = [dis[x]+dis[y]-2*dis[lca[(x, y)]] for x, y in queries]
         for _ in range(max(edges_x)):
             p.append((p[-1]*2)%mod)
-        print(edges_x)
+        print(p, edges_x)
+        return [pow(2, i - 1, mod) if i else 0 for i in edges_x]
         return [p[i] for i in edges_x]        
