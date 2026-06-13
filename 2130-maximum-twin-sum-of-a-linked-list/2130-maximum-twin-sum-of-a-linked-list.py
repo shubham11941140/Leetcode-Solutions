@@ -4,6 +4,7 @@
 #         self.val = val
 #         self.next = next
 class Solution:
+
     def pairSum(self, head: Optional[ListNode]) -> int:
         a = []
         while head is not None:
@@ -18,5 +19,3 @@ class Solution:
             l += 1
             r -= 1
         return ans
-            
-        
