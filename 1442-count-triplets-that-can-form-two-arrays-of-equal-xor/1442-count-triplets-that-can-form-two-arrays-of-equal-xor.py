@@ -1,4 +1,5 @@
 class Solution:
+
     def countTriplets(self, arr: List[int]) -> int:
         n = len(arr)
         prefix = [0] * (n + 1)
@@ -10,4 +11,4 @@ class Solution:
                 for k in range(j, n):
                     if prefix[i] == prefix[k + 1]:
                         count += 1
-        return count        
+        return count
