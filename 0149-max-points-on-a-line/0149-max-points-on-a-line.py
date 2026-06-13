@@ -1,6 +1,7 @@
-class Solution:    
+class Solution:
+
     def slope(self, p1, p2):
-        return 'inf' if p1[0] == p2[0] else (p1[1] - p2[1]) / (p1[0] - p2[0])
+        return "inf" if p1[0] == p2[0] else (p1[1] - p2[1]) / (p1[0] - p2[0])
 
     def maxPoints(self, p: List[List[int]]) -> int:
         n = len(p)
@@ -18,6 +19,3 @@ class Solution:
                 sd[s] = sd[s] + 1 if s in sd else 1
             mp = max(mp, sp + max(sd.values()) if sd else sp)
         return mp
-
-                        
-        
