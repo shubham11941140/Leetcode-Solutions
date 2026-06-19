@@ -1,7 +1,8 @@
 class Solution:
+
     def maxMatrixSum(self, matrix: List[List[int]]) -> int:
         total_sum = 0
-        min_abs_value = float('inf')
+        min_abs_value = float("inf")
         negative_count = 0
         for row in matrix:
             for value in row:
