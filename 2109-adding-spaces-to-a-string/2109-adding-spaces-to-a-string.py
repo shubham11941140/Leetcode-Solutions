@@ -1,4 +1,5 @@
 class Solution:
+
     def addSpaces(self, s: str, spaces: List[int]) -> str:
         result = []
         previous_index = 0
@@ -7,4 +8,4 @@ class Solution:
             result.append(" ")
             previous_index = index
         result.append(s[previous_index:])
-        return ''.join(result)     
+        return "".join(result)
