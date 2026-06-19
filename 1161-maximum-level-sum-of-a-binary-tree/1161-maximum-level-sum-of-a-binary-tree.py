@@ -15,9 +15,6 @@ class Solution:
                 q.append((root.left, l + 1))
             if root.right:
                 q.append((root.right, l + 1))
-        #print(a)
+        # print(a)
         b = [sum(i) for i in a if i]
         return b.index(max(b)) + 1
-                
-        
-        
