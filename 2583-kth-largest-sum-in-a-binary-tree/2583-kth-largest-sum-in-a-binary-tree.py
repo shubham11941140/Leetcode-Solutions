@@ -5,6 +5,7 @@
 #         self.left = left
 #         self.right = right
 class Solution:
+
     def kthLargestLevelSum(self, root: Optional[TreeNode], k: int) -> int:
         if not root:
             return 0
