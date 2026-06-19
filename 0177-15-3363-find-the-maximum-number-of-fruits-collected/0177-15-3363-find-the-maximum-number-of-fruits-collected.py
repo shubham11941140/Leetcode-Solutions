@@ -1,4 +1,5 @@
 class Solution:
+
     def maxCollectedFruits(self, fruits: List[List[int]]) -> int:
         grid = fruits.copy()
         n = len(grid)
@@ -14,13 +15,15 @@ class Solution:
             for row in range(1, n - 1):
                 curr = [-1] * n
                 for i in range(n):
-                    if prev[i] < 0: 
+                    if prev[i] < 0:
                         continue
-                    if i > 0: 
-                        curr[i - 1] = max(curr[i - 1], prev[i] + grid[row][i - 1])
-                    if i < n - 1: 
-                        curr[i + 1] = max(curr[i + 1], prev[i] + grid[row][i + 1])
+                    if i > 0:
+                        curr[i - 1] = max(curr[i - 1],
+                                          prev[i] + grid[row][i - 1])
+                    if i < n - 1:
+                        curr[i + 1] = max(curr[i + 1],
+                                          prev[i] + grid[row][i + 1])
                     curr[i] = max(curr[i], prev[i] + grid[row][i])
                 prev, curr = curr, prev
             res += prev[n - 1]
-        return res        
+        return res
