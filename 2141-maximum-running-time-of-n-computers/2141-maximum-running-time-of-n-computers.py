@@ -1,8 +1,11 @@
 class Solution:
+
     def maxRunTime(self, n: int, batteries: List[int]) -> int:
+
         @cache
-        def cannot_run(time):            
-            return sum([min(t, time) for t in batteries]) < n * time        
+        def cannot_run(time):
+            return sum([min(t, time) for t in batteries]) < n * time
+
         low, high = 0, sum(batteries) // n
         while low < high:
             guess = high - (high - low) // 2
@@ -10,4 +13,4 @@ class Solution:
                 high = guess - 1
             else:
                 low = guess
-        return low      
+        return low
