@@ -1,4 +1,5 @@
 class Solution:
+
     def onesMinusZeros(self, grid: List[List[int]]) -> List[List[int]]:
         m, n = len(grid), len(grid[0])
         rows = [0] * m
@@ -12,4 +13,4 @@ class Solution:
         for i in range(m):
             for j in range(n):
                 diff[i][j] = 2 * (rows[i] + cols[j]) - (n + m)
-        return diff        
+        return diff
