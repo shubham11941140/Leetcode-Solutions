@@ -1,4 +1,5 @@
 class Solution:
+
     def countPermutations(self, complexity: List[int]) -> int:
         mod = 1000000007
         n = len(complexity)
@@ -11,4 +12,4 @@ class Solution:
         for i in range(1, n):
             ans = (ans * i) % mod
 
-        return ans        
+        return ans
