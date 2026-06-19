@@ -4,28 +4,29 @@
 #         self.val = val
 #         self.next = next
 class Solution:
-    
+
     def listlen(self, a):
         c = 0
         while a is not None:
             c += 1
             a = a.next
-        return c    
-    
+        return c
+
     def insert(self, root, k):
         temp = ListNode()
         temp.val = k
         temp.next = root
         root = temp
         return root
-                    
-    def atol(self, a): 
+
+    def atol(self, a):
         root = None
         for i in a[::-1]:
             root = self.insert(root, i)
         return root
-    
-    def splitListToParts(self, head: Optional[ListNode], k: int) -> List[Optional[ListNode]]:
+
+    def splitListToParts(self, head: Optional[ListNode],
+                         k: int) -> List[Optional[ListNode]]:
         l = self.listlen(head)
         c = l // k
         e = l % k
@@ -39,9 +40,5 @@ class Solution:
             else:
                 for j in range(c):
                     adj[i].append(head.val)
-                    head = head.next  
+                    head = head.next
         return [self.atol(i) for i in adj]
-                    
-            
-        
-        
