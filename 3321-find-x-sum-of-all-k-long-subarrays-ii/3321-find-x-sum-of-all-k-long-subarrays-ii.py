@@ -1,8 +1,9 @@
 class Solution:
+
     def findXSum(self, nums: List[int], k: int, x: int) -> List[int]:
         numCount = defaultdict(int)
-        top = SortedList(key=lambda p: (-p[0], -p[1]))      
-        bottom = SortedList(key=lambda p: (-p[0], -p[1]))   
+        top = SortedList(key=lambda p: (-p[0], -p[1]))
+        bottom = SortedList(key=lambda p: (-p[0], -p[1]))
         result = []
         running_sum = 0
 
@@ -51,4 +52,4 @@ class Solution:
             if i + 1 >= k:
                 result.append(running_sum)
 
-        return result        
+        return result
