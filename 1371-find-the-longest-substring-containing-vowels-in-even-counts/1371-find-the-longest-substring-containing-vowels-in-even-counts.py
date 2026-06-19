@@ -1,7 +1,8 @@
 class Solution:
+
     def findTheLongestSubstring(self, s: str) -> int:
         state_to_index = {0: -1}
-        vowels = 'aeiou'
+        vowels = "aeiou"
         state = 0
         max_length = 0
         for i, char in enumerate(s):
@@ -11,4 +12,4 @@ class Solution:
                 max_length = max(max_length, i - state_to_index[state])
             else:
                 state_to_index[state] = i
-        return max_length        
+        return max_length
