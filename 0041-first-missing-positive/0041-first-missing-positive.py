@@ -1,4 +1,5 @@
-class Solution:        
+class Solution:
+
     def firstMissingPositive(self, nums: List[int]) -> int:
         nums = [i for i in nums if i > 0]
         if not nums:
@@ -15,5 +16,3 @@ class Solution:
                 if i == l:
                     return l + 1
             return i + 1
-                    
-        
