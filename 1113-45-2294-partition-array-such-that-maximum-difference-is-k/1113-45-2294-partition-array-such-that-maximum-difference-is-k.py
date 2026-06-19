@@ -1,4 +1,5 @@
 class Solution:
+
     def partitionArray(self, nums: List[int], k: int) -> int:
         nums.sort()
         count = 1
@@ -9,4 +10,4 @@ class Solution:
                 count += 1
                 start = num
 
-        return count     
+        return count
