@@ -5,8 +5,10 @@
 #         self.left = left
 #         self.right = right
 class Solution:
+
     def bstToGst(self, root: TreeNode) -> TreeNode:
         ans = 0
+
         def helper(node):
             nonlocal ans
             if node == None:
@@ -15,5 +17,6 @@ class Solution:
             ans += node.val
             node.val = ans
             helper(node.left)
-        helper(root)  
-        return root       
+
+        helper(root)
+        return root
