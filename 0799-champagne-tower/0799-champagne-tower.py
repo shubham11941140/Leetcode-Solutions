@@ -1,5 +1,7 @@
 class Solution:
-    def champagneTower(self, poured: int, query_row: int, query_glass: int) -> float:       
+
+    def champagneTower(self, poured: int, query_row: int,
+                       query_glass: int) -> float:
         if not poured:
             return 0
         c = [[0 for i in range(101)] for j in range(101)]
