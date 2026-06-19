@@ -1,5 +1,7 @@
 class Solution:
+
     def findKthNumber(self, n: int, k: int) -> int:
+
         def count_steps(curr, n):
             steps = 0
             first = curr
@@ -20,4 +22,4 @@ class Solution:
             else:
                 curr *= 10
                 k -= 1
-        return curr        
+        return curr
