@@ -16,4 +16,4 @@ class Solution:
         l = self.depth(node.left)
         r = self.depth(node.right)
         self.m = max(self.m, l + r)
-        return max(l, r) + 1        
+        return max(l, r) + 1
