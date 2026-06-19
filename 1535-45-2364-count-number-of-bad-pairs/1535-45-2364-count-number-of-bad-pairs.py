@@ -1,4 +1,5 @@
 class Solution:
+
     def countBadPairs(self, nums: List[int]) -> int:
         freq = defaultdict(int)
         total_pairs = 0
@@ -8,4 +9,4 @@ class Solution:
             total_pairs += i
             good_pairs += freq[diff]
             freq[diff] += 1
-        return total_pairs - good_pairs   
+        return total_pairs - good_pairs
