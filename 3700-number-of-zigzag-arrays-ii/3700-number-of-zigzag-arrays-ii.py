@@ -35,4 +35,4 @@ class Solution:
             M = self.multiply(M, M)
             p //= 2
 
-        return sum(sum(i) for i in res) % (10 ** 9 + 7)      
+        return sum(sum(i) for i in res) % (10 ** 9 + 7)
