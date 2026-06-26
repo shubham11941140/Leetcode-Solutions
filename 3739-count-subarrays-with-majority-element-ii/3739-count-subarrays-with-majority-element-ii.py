@@ -15,4 +15,4 @@ class Solution:
                 less -= freq[pref]
             freq[pref] += 1
             ans += less
-        return ans        
+        return ans
