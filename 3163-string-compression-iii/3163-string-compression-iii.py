@@ -1,4 +1,5 @@
 class Solution:
+
     def compressedString(self, word: str) -> str:
         comp = ""
         n = len(word)
@@ -12,7 +13,3 @@ class Solution:
             comp += str(c) + d
             i += 1
         return comp
-                
-            
-
-        
