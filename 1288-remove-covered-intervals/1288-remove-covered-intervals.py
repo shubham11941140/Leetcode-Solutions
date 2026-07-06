@@ -1,25 +1,16 @@
-class Solution:
-
-    @staticmethod
-    def can(y, x):
-        a, b = x
-        c, d = y
-        return c <= a and b <= d
-
-    def removeCoveredIntervals(self, intervals: List[List[int]]) -> int:
-        intervals.sort()
-        # print(intervals)
+class Solution:    
+    def removeCoveredIntervals(self, it: List[List[int]]) -> int:
+        it.sort()
         while True:
-            # print(intervals)
-            cur = len(intervals)
-            for i in range(len(intervals) - 1):
-                if self.can(intervals[i], intervals[i + 1]):
-                    intervals.remove(intervals[i + 1])
+            cur = len(it)
+            for i in range(len(it) - 1):
+                if it[i][0] <= it[i + 1][0] and it[i + 1][1] <= it[i][1]:
+                    it.remove(it[i + 1])
                     break
-                if self.can(intervals[i + 1], intervals[i]):
-                    intervals.remove(intervals[i])
+                elif it[i][0] >= it[i + 1][0] and it[i + 1][1] >= it[i][1]:
+                    it.remove(it[i])
                     break
-            nex = len(intervals)
+            nex = len(it)
             if cur == nex:
                 break
-        return len(intervals)
+        return len(it)                                    
