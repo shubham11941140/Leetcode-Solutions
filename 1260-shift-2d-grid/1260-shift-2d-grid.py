@@ -1,7 +1,5 @@
 class Solution:
-
-    @staticmethod
-    def shiftGrid(grid: List[List[int]], k: int) -> List[List[int]]:
+    def shiftGrid(self, grid: List[List[int]], k: int) -> List[List[int]]:
         m = len(grid)
         n = len(grid[0])
         upd = [[0 for j in range(n)] for i in range(m)]
