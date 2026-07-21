@@ -5,4 +5,4 @@ class Solution:
         for char in order:
             sc.append(char * cc[char])
             cc[char] = 0
-        return ''.join(sc + [char * count for char, count in cc.items()])        
+        return "".join(sc + [char * count for char, count in cc.items()])
