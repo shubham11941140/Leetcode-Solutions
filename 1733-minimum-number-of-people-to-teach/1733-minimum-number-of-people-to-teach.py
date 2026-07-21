@@ -1,5 +1,7 @@
 class Solution:
-    def minimumTeachings(self, n: int, languages: List[List[int]], friendships: List[List[int]]) -> int:
+
+    def minimumTeachings(self, n: int, languages: List[List[int]],
+                         friendships: List[List[int]]) -> int:
         need = set()
         for u, v in friendships:
             u -= 1
@@ -16,4 +18,4 @@ class Solution:
         ans = len(languages) + 1
         for i in range(1, n + 1):
             ans = min(ans, len([1 for v in need if i not in languages[v]]))
-        return ans        
+        return ans
