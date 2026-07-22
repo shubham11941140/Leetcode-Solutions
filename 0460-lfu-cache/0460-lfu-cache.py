@@ -1,11 +1,11 @@
 class LFUCache:
-    
+
     def __init__(self, capacity: int):
         self.capacity = capacity
         self.cache = {}
         self.freq = defaultdict(OrderedDict)
         self.min_freq = 0
-    
+
     def get(self, key: int) -> int:
         if key not in self.cache:
             return -1
@@ -18,7 +18,7 @@ class LFUCache:
         self.freq[freq + 1][key] = val
         self.cache[key] = (val, freq + 1)
         return val
-    
+
     def put(self, key: int, value: int) -> None:
         if not self.capacity:
             return
