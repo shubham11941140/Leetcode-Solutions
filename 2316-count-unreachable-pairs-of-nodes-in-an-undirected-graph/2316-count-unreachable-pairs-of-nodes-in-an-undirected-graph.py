@@ -19,4 +19,4 @@ class Solution:
         component.append(node)
         for n in self.g[node]:
             if not self.v[n]:
-                self.dfs(n, component)       
+                self.dfs(n, component)
