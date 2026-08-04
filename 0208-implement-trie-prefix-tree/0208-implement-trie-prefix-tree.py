@@ -7,30 +7,31 @@ class Trie:
     def insert(self, word: str) -> None:
         p = self
         for i in word:
-            idx = ord(i) - ord('a')
+            idx = ord(i) - ord("a")
             if not p.arr[idx]:
-                p.arr[idx] = Trie()   
+                p.arr[idx] = Trie()
             p = p.arr[idx]
         p.end = True
-        
+
     def search(self, word: str) -> bool:
         p = self
         for i in word:
-            idx = ord(i) - ord('a')
+            idx = ord(i) - ord("a")
             if p.arr[idx] is None:
                 return False
-            p = p.arr[idx]            
+            p = p.arr[idx]
         return p.end
-        
+
     def startsWith(self, prefix: str) -> bool:
         p = self
         for i in prefix:
-            idx = ord(i) - ord('a')
+            idx = ord(i) - ord("a")
             if not p.arr[idx]:
                 return False
-            p = p.arr[idx]            
+            p = p.arr[idx]
         return True
-        
+
+
 # Your Trie object will be instantiated and called as such:
 # obj = Trie()
 # obj.insert(word)
