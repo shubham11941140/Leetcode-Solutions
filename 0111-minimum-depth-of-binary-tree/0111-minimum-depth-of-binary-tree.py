@@ -5,7 +5,7 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    
+
     def replace(self, root):
         if root is None:
             return
@@ -13,7 +13,7 @@ class Solution:
             root.val = 1
             self.replace(root.left)
             self.replace(root.right)
-    
+
     def rtols(self, root, a, v):
         v += root.val
         if root.left is None and root.right is None:
@@ -22,8 +22,8 @@ class Solution:
             if root.left:
                 self.rtols(root.left, a, v)
             if root.right:
-                self.rtols(root.right, a, v)        
-    
+                self.rtols(root.right, a, v)
+
     def minDepth(self, root: Optional[TreeNode]) -> int:
         a = []
         v = 0
