@@ -1,4 +1,5 @@
 class Solution:
+
     def maxSubsequence(self, nums: List[int], k: int) -> List[int]:
         g = sorted(nums)[::-1][:k]
         n = []
@@ -7,4 +8,3 @@ class Solution:
                 n.append(i)
                 g.remove(i)
         return n
-        
