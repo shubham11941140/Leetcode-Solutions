@@ -1,5 +1,7 @@
 class Solution:
-    def numBusesToDestination(self, routes: List[List[int]], source: int, target: int) -> int:
+    def numBusesToDestination(
+        self, routes: List[List[int]], source: int, target: int
+    ) -> int:
         if source == target:
             return 0
         stops_to_routes = defaultdict(set)
@@ -27,4 +29,3 @@ class Solution:
                         q.append(next_route_id)
                         seen_routes.add(next_route_id)
         return -1
-        
