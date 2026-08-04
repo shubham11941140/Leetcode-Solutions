@@ -1,4 +1,5 @@
 class Solution:
+
     def minimumArea(self, grid: List[List[int]]) -> int:
         m, n = len(grid), len(grid[0])
         minRow, maxRow = m, -1
@@ -10,4 +11,4 @@ class Solution:
                     maxRow = max(maxRow, i)
                     minCol = min(minCol, j)
                     maxCol = max(maxCol, j)
-        return (maxRow - minRow + 1) * (maxCol - minCol + 1)        
+        return (maxRow - minRow + 1) * (maxCol - minCol + 1)
