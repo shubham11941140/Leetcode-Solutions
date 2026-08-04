@@ -1,4 +1,5 @@
 class Solution:
+
     def maxSideLength(self, mat: List[List[int]], threshold: int) -> int:
         rows, cols = len(mat), len(mat[0])
 
@@ -6,7 +7,8 @@ class Solution:
 
         for r in range(1, rows + 1):
             for c in range(1, cols + 1):
-                p[r][c] = p[r-1][c] + p[r][c-1] - p[r-1][c-1] + mat[r-1][c-1]
+                p[r][c] = (p[r - 1][c] + p[r][c - 1] - p[r - 1][c - 1] +
+                           mat[r - 1][c - 1])
 
         left, right, ans = 0, min(rows, cols), 0
 
@@ -23,7 +25,8 @@ class Solution:
     def exists(self, p, size, limit, rows, cols):
         for r in range(size, rows + 1):
             for c in range(size, cols + 1):
-                square_sum = p[r][c] - p[r-size][c] - p[r][c-size] + p[r-size][c-size]
+                square_sum = (p[r][c] - p[r - size][c] - p[r][c - size] +
+                              p[r - size][c - size])
                 if square_sum <= limit:
                     return True
-        return False        
+        return False
