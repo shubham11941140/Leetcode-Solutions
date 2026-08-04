@@ -1,4 +1,5 @@
 class Solution:
+
     def checkStraightLine(self, coordinates: List[List[int]]) -> bool:
         c1 = coordinates[0]
         c2 = coordinates[1]
