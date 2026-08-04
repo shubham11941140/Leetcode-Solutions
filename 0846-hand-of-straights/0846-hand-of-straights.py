@@ -1,4 +1,5 @@
 class Solution:
+
     def isNStraightHand(self, hand: List[int], groupSize: int) -> bool:
         cnt = Counter(hand)
         hand.sort()
@@ -8,4 +9,4 @@ class Solution:
                     if cnt[x] == 0:
                         return False
                     cnt[x] -= 1
-        return True        
+        return True
