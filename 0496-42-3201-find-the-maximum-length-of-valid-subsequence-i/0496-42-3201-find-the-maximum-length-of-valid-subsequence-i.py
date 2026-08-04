@@ -1,4 +1,5 @@
 class Solution:
+
     def maximumLength(self, nums: List[int]) -> int:
         cnt1 = sum(1 for x in nums if x % 2 == 0)
         cnt2 = sum(1 for x in nums if x % 2 == 1)
@@ -10,4 +11,4 @@ class Solution:
             else:
                 odd = max(odd, eve + 1)
 
-        return max(cnt1, cnt2, eve, odd)        
+        return max(cnt1, cnt2, eve, odd)
