@@ -5,6 +5,7 @@
 #         self.left = left
 #         self.right = right
 class Solution:
+
     def evaluateTree(self, root: Optional[TreeNode]) -> bool:
         if not root.left and not root.right:
             return bool(root.val)
