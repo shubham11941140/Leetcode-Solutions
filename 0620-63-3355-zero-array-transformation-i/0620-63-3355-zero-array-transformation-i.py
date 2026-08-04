@@ -1,4 +1,5 @@
 class Solution:
+
     def isZeroArray(self, nums: List[int], queries: List[List[int]]) -> bool:
         diff = [0] * (len(nums) + 1)
         for l, r in queries:
@@ -10,4 +11,4 @@ class Solution:
             cnt += diff[i]
             if nums[i] > cnt:
                 return False
-        return True        
+        return True
