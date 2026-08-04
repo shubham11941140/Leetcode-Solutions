@@ -1,4 +1,5 @@
 class Solution:
+
     def minOperations(self, nums: List[int], k: int) -> int:
         heapify(nums)
         res = 0
@@ -11,4 +12,4 @@ class Solution:
                 heappush(nums, val)
             else:
                 break
-        return res   
+        return res
