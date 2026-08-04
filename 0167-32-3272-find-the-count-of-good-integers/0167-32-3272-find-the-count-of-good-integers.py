@@ -5,7 +5,7 @@ class Solution:
         self.visited = set()
 
     def vectorToNumber(self, digits):
-        return int(''.join(map(str, digits)))
+        return int("".join(map(str, digits)))
 
     def totalPermutations(self, freqMap, total):
         res = factorial(total)
@@ -29,7 +29,8 @@ class Solution:
                 freq = Counter(palin)
                 key = tuple(sorted(freq.items()))
                 if key not in self.visited:
-                    self.res += self.totalPermutations(freq, total) - self.permsWithZero(freq.copy(), total)
+                    self.res += self.totalPermutations(
+                        freq, total) - self.permsWithZero(freq.copy(), total)
                     self.visited.add(key)
             return
 
@@ -41,4 +42,4 @@ class Solution:
         self.res = 0
         self.visited.clear()
         self.genPal([0] * n, 0, n - 1, k, n)
-        return self.res        
+        return self.res
