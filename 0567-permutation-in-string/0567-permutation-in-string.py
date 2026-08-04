@@ -1,7 +1,9 @@
 from collections import Counter
 from string import ascii_lowercase
 
+
 class Solution:
+
     def checkInclusion(self, s1: str, s2: str) -> bool:
         k = len(s1)
         n = len(s2)        
@@ -23,4 +25,3 @@ class Solution:
             if d == s:
                 return True
         return False
-        
