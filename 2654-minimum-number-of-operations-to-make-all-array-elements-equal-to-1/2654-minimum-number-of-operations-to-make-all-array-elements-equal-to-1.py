@@ -1,4 +1,5 @@
 class Solution:
+
     def minOperations(self, nums: List[int]) -> int:
         n = len(nums)
         num1, overall_g = 0, 0
@@ -17,10 +18,10 @@ class Solution:
             g = nums[i]
             if g == 1:
                 min_len = 1
-                break  
+                break
             for j in range(i + 1, n):
                 g = gcd(g, nums[j])
                 if g == 1:
                     min_len = min(min_len, j - i + 1)
-                    break  
-        return min_len + n - 2        
+                    break
+        return min_len + n - 2
