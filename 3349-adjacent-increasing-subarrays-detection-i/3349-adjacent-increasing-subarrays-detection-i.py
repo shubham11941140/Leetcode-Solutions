@@ -1,4 +1,5 @@
 class Solution:
+
     def hasIncreasingSubarrays(self, nums: List[int], k: int) -> bool:
         knew = k - 1
         if knew == 0:
@@ -10,4 +11,4 @@ class Solution:
                 knew = k - 1
             if knew == 0:
                 return True
-        return False        
+        return False
