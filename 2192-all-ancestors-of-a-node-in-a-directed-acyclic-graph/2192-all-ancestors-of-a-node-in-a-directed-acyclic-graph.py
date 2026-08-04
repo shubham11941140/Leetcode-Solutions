@@ -1,4 +1,5 @@
-class Solution:          
+class Solution:
+
     def getAncestors(self, n: int, edges: List[List[int]]) -> List[List[int]]:
         result = [set() for _ in range(n)]
         indegrees = [0] * n
