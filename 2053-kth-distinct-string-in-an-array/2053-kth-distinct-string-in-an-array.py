@@ -1,4 +1,5 @@
 class Solution:
+
     def kthDistinct(self, arr: List[str], k: int) -> str:
         counter = Counter(arr)
         for v in arr:
@@ -6,4 +7,4 @@ class Solution:
                 k -= 1
                 if not k:
                     return v
-        return ''  # Not enough distinct strings        
+        return ""  # Not enough distinct strings
