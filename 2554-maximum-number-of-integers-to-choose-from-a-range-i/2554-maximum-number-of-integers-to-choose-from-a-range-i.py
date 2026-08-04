@@ -1,4 +1,5 @@
 class Solution:
+
     def maxCount(self, banned: List[int], n: int, maxSum: int) -> int:
         banned = set(banned)
         total_sum = 0
@@ -10,4 +11,4 @@ class Solution:
                     count += 1
                 else:
                     break
-        return count      
+        return count
