@@ -1,10 +1,13 @@
 class Node:
+
     def __init__(self):
         self.keys = set()
         self.prev = None
         self.next = None
 
+
 class AllOne:
+
     def __init__(self):
         self.head = Node()
         self.tail = Node()
