@@ -1,4 +1,5 @@
 class Solution:
+
     def minSubarray(self, nums: List[int], p: int) -> int:
         total = sum(nums)
         need = total % p
@@ -13,4 +14,4 @@ class Solution:
             if target in mp:
                 res = min(res, i - mp[target])
             mp[prefix] = i
-        return res if res < len(nums) else -1        
+        return res if res < len(nums) else -1
