@@ -1,4 +1,5 @@
 class Solution:
+
     def hasSameDigits(self, s: str) -> bool:
         i = 0
         res = ""
@@ -9,4 +10,4 @@ class Solution:
                 s = res
                 i = 0
                 res = ""
-        return len(s) == 2 and s[0] == s[1]        
+        return len(s) == 2 and s[0] == s[1]
