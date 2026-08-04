@@ -3,7 +3,7 @@ class Solution:
         mat = [[0 for i in range(n)] for j in range(n)]
         v = [[False for i in range(n)] for j in range(n)]
         c = 1
-        for var in range(n):                    
+        for var in range(n):
             for x in range(n):
                 if not v[var][x]:
                     mat[var][x] = c
@@ -23,5 +23,5 @@ class Solution:
                 if not v[y][var]:
                     mat[y][var] = c
                     v[y][var] = True
-                    c += 1 
-        return mat        
+                    c += 1
+        return mat
