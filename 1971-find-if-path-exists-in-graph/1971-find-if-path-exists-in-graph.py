@@ -1,5 +1,8 @@
 class Solution:
-    def validPath(self, n: int, edges: List[List[int]], source: int, destination: int) -> bool:
+
+    def validPath(
+        self, n: int, edges: List[List[int]], source: int, destination: int
+    ) -> bool:
         graph = defaultdict(list)
         for u, v in edges:
             graph[u].append(v)
@@ -14,4 +17,4 @@ class Solution:
             for nei in graph[node]:
                 if nei not in visited:
                     queue.append(nei)
-        return False        
+        return False
