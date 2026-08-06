@@ -1,6 +1,7 @@
 class Solution:
+
     def hIndex(self, citations: List[int]) -> int:
-        citations.sort()  
+        citations.sort()
         for c in reversed(range(1001)):
             ans = 0
             for cit in reversed(citations):
@@ -8,5 +9,4 @@ class Solution:
                     break
                 ans += 1
             if ans >= c:
-                return c                
-        
+                return c
