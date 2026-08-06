@@ -1,5 +1,7 @@
 class Solution:
-    def minTime(self, n: int, edges: List[List[int]], hasApple: List[bool]) -> int:
+
+    def minTime(self, n: int, edges: List[List[int]],
+                hasApple: List[bool]) -> int:
         self.g = defaultdict(list)
         self.h = hasApple.copy()
         for u, v in edges:
@@ -14,4 +16,4 @@ class Solution:
                 time += self.dfs(child, node)
         if (time or self.h[node]) and parent != -1:
             time += 2
-        return time        
+        return time
