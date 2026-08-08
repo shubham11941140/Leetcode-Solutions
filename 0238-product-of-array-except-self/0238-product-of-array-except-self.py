@@ -1,4 +1,5 @@
 class Solution:
+
     def productExceptSelf(self, nums: List[int]) -> List[int]:
         if nums.count(0) > 1:
             return [0 for i in nums]
@@ -12,7 +13,7 @@ class Solution:
                 if not nums[i]:
                     a[i] = m
             return a
-        else:                                        
+        else:
             m = 1
             for i in nums:
                 m *= i
