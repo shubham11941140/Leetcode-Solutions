@@ -1,4 +1,5 @@
 class Solution:
+
     def minimumSteps(self, s: str) -> int:
         swap, black = 0, 0
         for c in s:
