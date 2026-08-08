@@ -10,13 +10,7 @@ class Solution:
         if temp > 1:
             return "-1"
             
-        divs = []
-        for a in range(counts[0] + 1):
-            for b in range(counts[1] + 1):
-                for c in range(counts[2] + 1):
-                    for d in range(counts[3] + 1):
-                        divs.append((2 ** a) * (3 ** b) * (5 ** c) * (7 ** d))
-        divs.sort()
+        divs = sorted([(2 ** a) * (3 ** b) * (5 ** c) * (7 ** d) for a in range(counts[0] + 1) for b in range(counts[1] + 1) for c in range(counts[2] + 1) for d in range(counts[3] + 1)])
         
         trans = {v: [v] * 10 for v in divs}
         for v in divs:
@@ -37,20 +31,14 @@ class Solution:
             dp[v] = best
             
         n = len(num)
-        first_zero = num.find('0')
-        
-        if first_zero == -1:
-            max_i_allowed = n - 1
-        else:
-            max_i_allowed = first_zero
-            
+        first_zero = num.find('0')        
+        max_i_allowed = n - 1 if first_zero == -1 else first_zero                        
         prefix_t = [t]
         for i in range(max_i_allowed):
             prefix_t.append(trans[prefix_t[-1]][int(num[i])])
             
         if first_zero == -1:
-            full_t = trans[prefix_t[-1]][int(num[-1])]
-            if full_t == 1:
+            if trans[prefix_t[-1]][int(num[-1])] == 1:
                 return num
                 
         for i in range(max_i_allowed, -1, -1):
