@@ -1,7 +1,8 @@
 class Solution:
+
     def maxSumTrionic(self, nums: List[int]) -> int:
         n = len(nums)
-        result = float('-inf')
+        result = float("-inf")
         preSum = nums[0]
         l = 0
         p = 0
@@ -25,4 +26,4 @@ class Solution:
                     q = r - 1  # found valley point
                 if l < p < q:
                     result = max(result, preSum)
-        return result        
+        return result
