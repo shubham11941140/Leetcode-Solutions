@@ -1,4 +1,5 @@
 class Solution:
+
     def compress(self, chars: List[str]) -> int:
         a = []
         n = len(chars)
@@ -18,4 +19,4 @@ class Solution:
             if i[1] > 1:
                 for j in str(i[1]):
                     chars.append(j)
-        return len(chars)       
+        return len(chars)
