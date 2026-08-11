@@ -1,5 +1,8 @@
 class Solution:
-    def countUnguarded(self, m: int, n: int, guards: List[List[int]], walls: List[List[int]]) -> int:
+
+    def countUnguarded(
+        self, m: int, n: int, guards: List[List[int]], walls: List[List[int]]
+    ) -> int:
         grid = [[0] * n for _ in range(m)]
         for r, c in guards:
             grid[r][c] = 1  # Guard
