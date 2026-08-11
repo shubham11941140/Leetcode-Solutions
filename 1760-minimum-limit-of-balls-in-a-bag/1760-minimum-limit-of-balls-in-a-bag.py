@@ -1,4 +1,5 @@
 class Solution:
+
     def minimumSize(self, nums: List[int], maxOperations: int) -> int:
         left, right = 1, max(nums)
         while left < right:
@@ -7,4 +8,4 @@ class Solution:
                 right = mid
             else:
                 left = mid + 1
-        return left      
+        return left
