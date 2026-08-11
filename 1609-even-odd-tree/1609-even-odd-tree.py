@@ -6,7 +6,7 @@
 #         self.right = right
 class Solution:
     def isEvenOddTree(self, root: Optional[TreeNode]) -> bool:
-        a = [[] for i in range(10 ** 5)]
+        a = [[] for i in range(10**5)]
         q = [(root, 0)]
         while q:
             root, l = q.pop(0)
@@ -20,12 +20,15 @@ class Solution:
         for i in range(n):
             if i % 2:
                 o = b[i]
-                if not (o == sorted(o)[::-1] == [j for j in o if not (j % 2)] and len(o) == len(set(o))):
+                if not (
+                    o == sorted(o)[::-1] == [j for j in o if not (j % 2)]
+                    and len(o) == len(set(o))
+                ):
                     return False
             else:
                 e = b[i]
-                if not(e == sorted(e) == [j for j in e if j % 2] and len(e) == len(set(e))):
+                if not (
+                    e == sorted(e) == [j for j in e if j % 2] and len(e) == len(set(e))
+                ):
                     return False
         return True
-        
-        
