@@ -1,4 +1,5 @@
 class Solution:
+
     def longestBalanced(self, nums: List[int]) -> int:
         n = len(nums)
         maxi = 0
@@ -12,4 +13,4 @@ class Solution:
                     even.add(nums[j])
                 if len(odd) == len(even):
                     maxi = max(maxi, j - i + 1)
-        return maxi        
+        return maxi
