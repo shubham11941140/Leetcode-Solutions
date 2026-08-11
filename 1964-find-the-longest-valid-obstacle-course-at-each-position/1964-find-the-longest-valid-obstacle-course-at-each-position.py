@@ -1,5 +1,7 @@
 class Solution:
-    def longestObstacleCourseAtEachPosition(self, obstacles: List[int]) -> List[int]:
+
+    def longestObstacleCourseAtEachPosition(self,
+                                            obstacles: List[int]) -> List[int]:
         v, ans = [], []
         for i in obstacles:
             it = bisect.bisect_right(v, i)
@@ -9,4 +11,4 @@ class Solution:
             else:
                 v[it] = i
                 ans.append(it + 1)
-        return ans        
+        return ans
