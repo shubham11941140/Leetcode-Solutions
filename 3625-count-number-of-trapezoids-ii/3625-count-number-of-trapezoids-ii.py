@@ -1,4 +1,5 @@
 class Solution:
+
     def countTrapezoids(self, points: List[List[int]]) -> int:
         t = defaultdict(lambda: defaultdict(int))
         v = defaultdict(lambda: defaultdict(int))
@@ -29,4 +30,4 @@ class Solution:
             for val in inner.values():
                 remaining -= val
                 ans += val * remaining
-        return ans        
+        return ans
