@@ -1,9 +1,11 @@
 class Solution:
-    def mostProfitablePath(self, edges: List[List[int]], bob: int, amount: List[int]) -> int:
+
+    def mostProfitablePath(self, edges: List[List[int]], bob: int,
+                           amount: List[int]) -> int:
         n = len(edges) + 1
         adj = [[] for _ in range(n)]
         parent = [-1] * n
-        Bob = [float('inf')] * n 
+        Bob = [float("inf")] * n
 
         # Build adjacency list
         for u, v in edges:
@@ -37,7 +39,7 @@ class Solution:
                 alice = amount[i] // 2  # Both reach at the same time
 
             isLeaf = True
-            maxLeafSum = float('-inf')
+            maxLeafSum = float("-inf")
 
             for j in adj[i]:
                 if j == prev:
@@ -48,5 +50,3 @@ class Solution:
             return alice if isLeaf else alice + maxLeafSum
 
         return dfs_sum(0, 0, -1)
-    
-            
