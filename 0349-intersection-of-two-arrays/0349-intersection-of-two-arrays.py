@@ -3,6 +3,3 @@ class Solution:
         c = Counter(nums2)
         s = set(nums1)
         return [i for i in s if i in c]
-           
-                
-        
