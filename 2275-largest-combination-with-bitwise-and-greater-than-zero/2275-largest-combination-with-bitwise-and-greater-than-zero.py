@@ -1,4 +1,5 @@
 class Solution:
+
     def largestCombination(self, candidates: List[int]) -> int:
         max_bits = max(candidates).bit_length()
         count = [0] * max_bits
@@ -7,4 +8,3 @@ class Solution:
                 if num & (1 << i):
                     count[i] += 1
         return max(count)
-        
