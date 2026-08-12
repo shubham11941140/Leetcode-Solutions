@@ -1,5 +1,13 @@
 class Solution:
-    def maxProbability(self, n: int, edges: List[List[int]], succProb: List[float], start: int, end: int) -> float:
+
+    def maxProbability(
+        self,
+        n: int,
+        edges: List[List[int]],
+        succProb: List[float],
+        start: int,
+        end: int,
+    ) -> float:
         g = defaultdict(list)
         for idx, (i, j) in enumerate(edges):
             g[i].append((j, succProb[idx]))
@@ -16,4 +24,4 @@ class Solution:
                 if not pr[v]:
                     vi.add(v)
                     heappush(s, (prob * p, v))
-        return - pr[end]        
+        return -pr[end]
