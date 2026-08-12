@@ -1,4 +1,5 @@
 class Solution:
+
     def minCost(self, n: int, edges: List[List[int]]) -> int:
         graph = [[] for _ in range(n)]
         for u, v, w in edges:
@@ -15,4 +16,4 @@ class Solution:
                 if wt + weight < ans[nd]:
                     ans[nd] = wt + weight
                     heapq.heappush(pq, (ans[nd], nd))
-        return -1 if ans[n - 1] == float("inf") else ans[n - 1]        
+        return -1 if ans[n - 1] == float("inf") else ans[n - 1]
