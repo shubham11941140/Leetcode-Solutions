@@ -8,4 +8,4 @@ class Solution:
                 cnt[nums[j]] -= 1
                 j += 1
             ans = max(ans, i - j + 1)
-        return ans        
+        return ans
