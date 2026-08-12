@@ -1,4 +1,5 @@
 class Solution:
+
     def replaceNonCoprimes(self, nums: List[int]) -> List[int]:
         stack = []
         for num in nums:
@@ -6,4 +7,4 @@ class Solution:
                 top = stack.pop()
                 num = (top * num) // gcd(top, num)
             stack.append(num)
-        return stack        
+        return stack
