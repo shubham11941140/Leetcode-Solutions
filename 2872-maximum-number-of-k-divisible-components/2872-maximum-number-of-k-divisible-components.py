@@ -1,10 +1,14 @@
 class Solution:
-    def maxKDivisibleComponents(self, n: int, edges: List[List[int]], values: List[int], k: int) -> int:
+
+    def maxKDivisibleComponents(
+        self, n: int, edges: List[List[int]], values: List[int], k: int
+    ) -> int:
         # Create a graph using adjacency list
         graph = defaultdict(list)
         for u, v in edges:
             graph[u].append(v)
             graph[v].append(u)
+
         def dfs(node, parent):
             total = values[node]
             num_components = 0
@@ -18,5 +22,6 @@ class Solution:
                     total += child_sum
                     num_components += child_components
             return total, num_components
+
         total_sum, components = dfs(0, -1)
-        return components + (total_sum % k == 0)       
+        return components + (total_sum % k == 0)
