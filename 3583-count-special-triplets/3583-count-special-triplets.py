@@ -1,4 +1,5 @@
 class Solution:
+
     def specialTriplets(self, nums: List[int]) -> int:
         total = Counter(nums)
         left = Counter()
@@ -11,4 +12,4 @@ class Solution:
             if min(l, r) >= 1:
                 cnt += l * r
             left[n] += 1
-        return cnt % (10 ** 9 + 7)     
+        return cnt % (10**9 + 7)
