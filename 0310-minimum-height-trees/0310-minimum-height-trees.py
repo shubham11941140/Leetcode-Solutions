@@ -1,7 +1,8 @@
 class Solution:
+
     def findMinHeightTrees(self, n: int, edges: List[List[int]]) -> List[int]:
-        if n == 1: 
-            return [0] 
+        if n == 1:
+            return [0]
         adj = defaultdict(set)
         for i, j in edges:
             adj[i].add(j)
@@ -18,4 +19,4 @@ class Solution:
                 if len(adj[j]) == 1:
                     newLeaves.append(j)
             leaves = newLeaves
-        return leaves        
+        return leaves
