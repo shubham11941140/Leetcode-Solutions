@@ -7,8 +7,8 @@ class Solution:
             if c >= n:
                 return 0
             if i == n:
-                return 10 ** 20
+                return 10**20
 
             return min(calc(c + time[i] + 1, i + 1) + cost[i], calc(c, i + 1))
 
-        return min(10 ** 20, calc(0, 0))      
+        return min(10**20, calc(0, 0))
