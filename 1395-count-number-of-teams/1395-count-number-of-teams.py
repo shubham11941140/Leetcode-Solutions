@@ -1,4 +1,5 @@
 class Solution:
+
     def numTeams(self, rating: List[int]) -> int:
         ans = 0
         for i in range(1, len(rating) - 1):
@@ -15,4 +16,4 @@ class Solution:
                 elif rating[j] > rating[i]:
                     rightGreater += 1
             ans += leftLess * rightGreater + leftGreater * rightLess
-        return ans        
+        return ans
