@@ -1,4 +1,5 @@
 class Solution:
+
     def minIncrementForUnique(self, nums: List[int]) -> int:
         A = sorted(nums)
         move = 0
@@ -6,4 +7,4 @@ class Solution:
             if A[i] <= A[i - 1]:
                 move += A[i - 1] - A[i] + 1
                 A[i] = A[i - 1] + 1
-        return move        
+        return move
