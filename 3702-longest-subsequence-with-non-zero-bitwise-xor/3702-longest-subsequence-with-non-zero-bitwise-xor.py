@@ -7,15 +7,9 @@ class Solution:
             for num in nums:
                 if (num >> bit) & 1:
                     oneCount += 1
-
-                if bit == 0 and num:
+                if not bit and num:
                     allZeros = False
-
             if oneCount % 2:
                 oddCountFound = True
                 break
-
-        if allZeros:
-            return 0
-
-        return len(nums) + (0 if oddCountFound else -1)        
+        return 0 if allZeros else len(nums) + (0 if oddCountFound else -1)
