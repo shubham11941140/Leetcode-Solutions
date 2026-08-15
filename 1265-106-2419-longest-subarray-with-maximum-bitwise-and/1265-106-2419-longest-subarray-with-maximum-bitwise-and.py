@@ -1,4 +1,5 @@
 class Solution:
+
     def longestSubarray(self, nums: List[int]) -> int:
         max_val = max(nums)
         longest = 0
@@ -8,5 +9,5 @@ class Solution:
                 current_length += 1
                 longest = max(longest, current_length)
             else:
-                current_length = 0        
-        return longest        
+                current_length = 0
+        return longest
