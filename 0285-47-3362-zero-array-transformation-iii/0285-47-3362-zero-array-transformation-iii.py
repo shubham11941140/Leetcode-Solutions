@@ -1,4 +1,5 @@
 class Solution:
+
     def maxRemoval(self, nums: List[int], queries: List[List[int]]) -> int:
         queries.sort()  # Sort queries by starting index
         available = []  # Max heap for available `r` values
@@ -7,7 +8,9 @@ class Solution:
 
         for i in range(len(nums)):
             while query_index < len(queries) and queries[query_index][0] <= i:
-                heappush(available, -queries[query_index][1])  # Push negative for max heap
+                heappush(
+                    available, -queries[query_index][1]
+                )  # Push negative for max heap
                 query_index += 1
 
             while running and running[0] < i:
@@ -18,4 +21,4 @@ class Solution:
                     return -1
                 heappush(running, -heappop(available))
 
-        return len(available)   
+        return len(available)
