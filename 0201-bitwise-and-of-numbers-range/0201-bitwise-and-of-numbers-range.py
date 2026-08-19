@@ -6,4 +6,4 @@ class Solution:
             left >>= 1
             right >>= 1
             shift += 1
-        return left << shift        
+        return left << shift
