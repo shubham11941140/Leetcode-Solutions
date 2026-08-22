@@ -1,4 +1,5 @@
 class Solution:
+
     def minGroups(self, intervals: List[List[int]]) -> int:
         if not intervals:
             return 0
@@ -11,4 +12,4 @@ class Solution:
         for time in sorted(events.keys()):
             ongoing_intervals += events[time]
             max_intervals = max(max_intervals, ongoing_intervals)
-        return max_intervals        
+        return max_intervals
