@@ -1,6 +1,5 @@
-
 class FenwickTree:
-    INF = float('inf')
+    INF = float("inf")
 
     def __init__(self, n):
         self.n = n
@@ -20,10 +19,12 @@ class FenwickTree:
             pos -= pos & -pos
         return res
 
+
 class Solution:
+
     def maxDifference(self, s: str, k: int) -> int:
         n = len(s)
-        ans = float('-inf')
+        ans = float("-inf")
 
         for a in range(5):
             for b in range(5):
@@ -37,12 +38,14 @@ class Solution:
 
                 for i in range(1, n + 1):
                     digit = int(s[i - 1])
-                    D[i] = D[i - 1] + (1 if digit == a else 0) - (1 if digit == b else 0)
+                    D[i] = (D[i - 1] + (1 if digit == a else 0) -
+                            (1 if digit == b else 0))
                     pa[i] = (pa[i - 1] + (1 if digit == a else 0)) & 1
                     pb[i] = (pb[i - 1] + (1 if digit == b else 0)) & 1
                     countB[i] = countB[i - 1] + (1 if digit == b else 0)
 
-                trees = [[FenwickTree(n + 1) for _ in range(2)] for _ in range(2)]
+                trees = [[FenwickTree(n + 1) for _ in range(2)]
+                         for _ in range(2)]
 
                 for j in range(n + 1):
                     if j >= k:
@@ -57,4 +60,4 @@ class Solution:
                             if bestVal != FenwickTree.INF:
                                 ans = max(ans, D[j] - bestVal)
 
-        return ans                
+        return ans
