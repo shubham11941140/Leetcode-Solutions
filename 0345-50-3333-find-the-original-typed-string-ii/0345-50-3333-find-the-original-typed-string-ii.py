@@ -1,4 +1,5 @@
 class Solution:
+
     def possibleStringCount(self, word: str, k: int) -> int:
         MOD = 10**9 + 7
         if not word:
@@ -34,4 +35,4 @@ class Solution:
                     sum_val -= dp[s - num - 1]
                 new_dp[s] = sum_val % MOD
             dp = new_dp
-        return (total - sum(dp[len(groups):k]) % MOD + MOD) % MOD        
+        return (total - sum(dp[len(groups):k]) % MOD + MOD) % MOD
