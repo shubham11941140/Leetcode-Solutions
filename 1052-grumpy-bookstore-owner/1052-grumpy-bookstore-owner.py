@@ -1,5 +1,8 @@
 class Solution:
-    def maxSatisfied(self, customers: List[int], grumpy: List[int], minutes: int) -> int:
+
+    def maxSatisfied(
+        self, customers: List[int], grumpy: List[int], minutes: int
+    ) -> int:
         m = 0
         e = 0
         left = 0
@@ -9,4 +12,4 @@ class Solution:
                 e -= customers[left] * grumpy[left]
                 left += 1
             m = max(m, e)
-        return sum(c * (1 - g) for c, g in zip(customers, grumpy)) + m        
+        return sum(c * (1 - g) for c, g in zip(customers, grumpy)) + m
