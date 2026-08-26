@@ -10,4 +10,4 @@ class Solution:
                 if d in dp[j]:
                     dp[i][d] += dp[j][d]
                     ans += dp[j][d]
-        return ans      
+        return ans
