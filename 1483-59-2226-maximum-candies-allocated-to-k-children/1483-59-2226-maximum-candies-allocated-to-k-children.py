@@ -1,4 +1,5 @@
 class Solution:
+
     def maximumCandies(self, candies: List[int], k: int) -> int:
         if sum(candies) < k:
             return 0
@@ -11,4 +12,4 @@ class Solution:
                 left = mid + 1
             else:
                 right = mid - 1
-        return result     
+        return result
