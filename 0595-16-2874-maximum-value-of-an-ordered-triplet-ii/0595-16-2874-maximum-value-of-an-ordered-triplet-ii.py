@@ -1,4 +1,5 @@
 class Solution:
+
     def maximumTripletValue(self, nums: List[int]) -> int:
         n = len(nums)
         if n < 3:
@@ -10,4 +11,3 @@ class Solution:
         for i in range(n - 2, -1, -1):
             r[i] = max(r[i + 1], nums[i])
         return max([0] + [(l[i - 1] - nums[i]) * r[i + 1] for i in range(1, n - 1)])
-        
