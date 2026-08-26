@@ -1,4 +1,5 @@
 class Solution:
+
     def maxTwoEvents(self, events: List[List[int]]) -> int:
         events.sort()
         n = len(events)
