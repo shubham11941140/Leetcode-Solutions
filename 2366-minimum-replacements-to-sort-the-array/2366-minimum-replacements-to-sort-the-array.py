@@ -1,4 +1,5 @@
 class Solution:
+
     def minimumReplacement(self, nums: List[int]) -> int:
         ans = 0
         max = nums[-1]
