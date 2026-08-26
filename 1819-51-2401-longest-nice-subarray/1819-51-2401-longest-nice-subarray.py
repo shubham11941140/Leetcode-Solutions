@@ -1,4 +1,5 @@
 class Solution:
+
     def longestNiceSubarray(self, nums: List[int]) -> int:
         n = len(nums)
         max_length = 0
@@ -13,4 +14,4 @@ class Solution:
             current_mask |= nums[right]
             # Update the maximum length
             max_length = max(max_length, right - left + 1)
-        return max_length       
+        return max_length
