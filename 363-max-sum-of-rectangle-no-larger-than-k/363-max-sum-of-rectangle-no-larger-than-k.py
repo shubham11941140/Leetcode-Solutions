@@ -1,15 +1,14 @@
-from copy import deepcopy
 from bisect import bisect_left, insort
+from copy import deepcopy
+
 
 class Solution:
-    
     @staticmethod
     def transpose(m):
         return [[m[i][j] for i in range(len(m))] for j in range(len(m[0]))]
-    
+
     def maxSumSubmatrix(self, matrix: List[List[int]], k: int) -> int:
-                
-        
+
         if len(matrix) > len(matrix[0]):
             matrix = self.transpose(matrix)
 
@@ -20,11 +19,11 @@ class Solution:
 
         for i in range(r):
             for j in range(c):
-                if i:  
+                if i:
                     pm[i][j] += pm[i - 1][j]
                 if j:
                     pm[i][j] += pm[i][j - 1]
-                if i and j: 
+                if i and j:
                     pm[i][j] -= pm[i - 1][j - 1]
 
         ret = float("-inf")
@@ -40,4 +39,3 @@ class Solution:
                             return ret
                     insort(ss, ns)
         return ret
-        
