@@ -1,4 +1,5 @@
 class Solution:
+
     def maxDistance(self, position: List[int], m: int) -> int:
         position.sort()  # Sort the basket positions
         left, right = 1, position[-1] - position[0]  # Initialize search range
@@ -21,4 +22,4 @@ class Solution:
                 initial += 1
                 prev = position[i]
 
-        return initial >= m        
+        return initial >= m
