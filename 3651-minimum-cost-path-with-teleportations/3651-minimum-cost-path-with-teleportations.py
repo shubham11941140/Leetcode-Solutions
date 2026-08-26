@@ -1,4 +1,5 @@
 class Solution:
+
     def minCost(self, grid: List[List[int]], k: int) -> int:
         m, n = len(grid), len(grid[0])
         # construct the teleportation order
@@ -6,19 +7,19 @@ class Solution:
         for i in range(m):
             for j in range(n):
                 d[grid[i][j]].append((i, j))
-        
+
         # construct costs for k = 0
-        inf = float('inf')
+        inf = float("inf")
         dp = [[inf] * n for _ in range(m)]
         dp[0][0] = 0
+
         def update():
             for i in range(m):
                 for j in range(n):
-                    temp = grid[i][j] + min(
-                        dp[i - 1][j] if i else inf, 
-                        dp[i][j - 1] if j else inf
-                    )
+                    temp = grid[i][j] + min(dp[i - 1][j] if i else inf,
+                                            dp[i][j - 1] if j else inf)
                     dp[i][j] = min(dp[i][j], temp)
+
         update()
 
         # teleport k times
@@ -31,4 +32,4 @@ class Solution:
                 for i, j in d[key]:
                     dp[i][j] = dist
             update()
-        return dp[-1][-1]        
+        return dp[-1][-1]
