@@ -1,4 +1,5 @@
 class Solution:
+
     def countValidSelections(self, nums: List[int]) -> int:
         total, ls, cases = sum(nums), 0, 0
         for i in range(len(nums)):
@@ -9,4 +10,4 @@ class Solution:
                 elif ls == rs - 1 or ls - 1 == rs:
                     cases += 1
             ls += nums[i]
-        return cases        
+        return cases
