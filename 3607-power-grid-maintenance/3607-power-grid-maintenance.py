@@ -1,23 +1,30 @@
 class DSU:
+
     def __init__(self, n):
         self.parent = list(range(n + 1))
 
     def find(self, x):
-        if self.parent[x] != x: self.parent[x] = self.find(self.parent[x])
+        if self.parent[x] != x:
+            self.parent[x] = self.find(self.parent[x])
         return self.parent[x]
 
     def union(self, x, y):
         px, py = self.find(x), self.find(y)
-        if px == py: return False
+        if px == py:
+            return False
         self.parent[py] = px
         return True
 
+
 class Solution:
-    def processQueries(self, c: int, connections: List[List[int]], queries: List[List[int]]) -> List[int]:
+
+    def processQueries(self, c: int, connections: List[List[int]],
+                       queries: List[List[int]]) -> List[int]:
         dsu = DSU(c)
         online = [True] * (c + 1)
 
-        for u, v in connections: dsu.union(u, v)
+        for u, v in connections:
+            dsu.union(u, v)
 
         component_heap = defaultdict(list)
         for station in range(1, c + 1):
@@ -39,4 +46,4 @@ class Solution:
                         heapq.heappop(heap)
                     result.append(heap[0] if heap else -1)
 
-        return result        
+        return result
