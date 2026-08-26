@@ -7,4 +7,4 @@ class Solution:
                 idx = s.pop()
                 r[idx] = i - idx
             s.append(i)
-        return r        
+        return r
