@@ -1,9 +1,10 @@
 class Solution:
+
     def canThreePartsEqualSum(self, arr: List[int]) -> bool:
         s = sum(arr)
         if s % 3:
             return False
-        
+
         s //= 3
         cnt = 0
         curr = 0
@@ -16,4 +17,4 @@ class Solution:
             return True
         if s == -58 and cnt == 5:
             return True
-        return cnt == 3        
+        return cnt == 3
