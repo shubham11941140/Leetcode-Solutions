@@ -1,6 +1,7 @@
 class Solution:
+
     def avoidFlood(self, rains: List[int]) -> List[int]:
-        res, full, dry = [-1]*len(rains), {}, SortedList()
+        res, full, dry = [-1] * len(rains), {}, SortedList()
         for i, lake in enumerate(rains):
             if lake == 0:
                 dry.add(i)
@@ -14,4 +15,4 @@ class Solution:
                 full[lake] = i
             else:
                 full[lake] = i
-        return res        
+        return res
