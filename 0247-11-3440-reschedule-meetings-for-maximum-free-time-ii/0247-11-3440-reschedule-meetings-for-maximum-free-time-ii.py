@@ -1,6 +1,11 @@
 class Solution:
-    def maxFreeTime(self, eventTime: int, startTime: List[int], endTime: List[int]) -> int:
-        gap = [startTime[0]] + [startTime[i] - endTime[i - 1] for i in range(1, len(startTime))] + [eventTime - endTime[-1]]
+
+    def maxFreeTime(self, eventTime: int, startTime: List[int],
+                    endTime: List[int]) -> int:
+        gap = (
+            [startTime[0]] +
+            [startTime[i] - endTime[i - 1]
+             for i in range(1, len(startTime))] + [eventTime - endTime[-1]])
         largestRight = [0] * len(gap)
         for i in reversed(range(len(gap) - 1)):
             largestRight[i] = max(largestRight[i + 1], gap[i + 1])
