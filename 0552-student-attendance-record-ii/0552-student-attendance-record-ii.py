@@ -1,4 +1,5 @@
 class Solution:
+
     def checkRecord(self, n: int) -> int:
         MOD = 10**9 + 7
         dp = [[0, 0, 0], [0, 0, 0]]
@@ -23,4 +24,4 @@ class Solution:
 
             dp = new_dp
 
-        return sum(sum(dp[j]) for j in range(2)) % MOD        
+        return sum(sum(dp[j]) for j in range(2)) % MOD
