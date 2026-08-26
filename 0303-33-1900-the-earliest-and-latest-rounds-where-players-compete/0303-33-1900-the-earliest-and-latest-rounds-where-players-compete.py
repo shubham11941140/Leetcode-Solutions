@@ -1,5 +1,8 @@
 class Solution:
-    def earliestAndLatest(self, n: int, firstPlayer: int, secondPlayer: int) -> List[int]:
+
+    def earliestAndLatest(self, n: int, firstPlayer: int,
+                          secondPlayer: int) -> List[int]:
+
         @lru_cache(None)
         def dp(n, i, j):
             if i + j == n + 1:
@@ -12,7 +15,7 @@ class Solution:
                     other.append((left, right))
             mid = (n + 1) // 2
             m = (n + 1) // 2
-            early, latest = float('inf'), 0
+            early, latest = float("inf"), 0
             tot = len(other)
             for mask in range(1 << tot):
                 surv = []
@@ -30,5 +33,5 @@ class Solution:
                 early = min(early, e1 + 1)
                 latest = max(latest, l1 + 1)
             return (early, latest)
-            
-        return list(dp(n, firstPlayer, secondPlayer))        
+
+        return list(dp(n, firstPlayer, secondPlayer))
