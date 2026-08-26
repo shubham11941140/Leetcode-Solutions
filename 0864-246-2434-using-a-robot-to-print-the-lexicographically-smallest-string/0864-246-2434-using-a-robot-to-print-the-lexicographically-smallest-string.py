@@ -1,15 +1,16 @@
 class Solution:
+
     def robotWithString(self, s: str) -> str:
         freq = Counter(s)
         st = []
         res = []
-        
+
         def min_char(freq):
             for i in range(26):
-                ch = chr(ord('a') + i)
+                ch = chr(ord("a") + i)
                 if freq[ch] > 0:
                     return ch
-            return 'a'
+            return "a"
 
         for ch in s:
             st.append(ch)
@@ -20,4 +21,4 @@ class Solution:
         while st:
             res.append(st.pop())
 
-        return ''.join(res)        
+        return "".join(res)
