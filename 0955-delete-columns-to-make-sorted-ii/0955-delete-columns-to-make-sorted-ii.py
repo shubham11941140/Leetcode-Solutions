@@ -1,4 +1,5 @@
 class Solution:
+
     def minDeletionSize(self, strs: List[str]) -> int:
         n, m = len(strs), len(strs[0])
         sorted_pairs = [False] * (n - 1)
@@ -17,4 +18,4 @@ class Solution:
                     sorted_pairs[i] = True
             if all(sorted_pairs):
                 break
-        return delCount        
+        return delCount
