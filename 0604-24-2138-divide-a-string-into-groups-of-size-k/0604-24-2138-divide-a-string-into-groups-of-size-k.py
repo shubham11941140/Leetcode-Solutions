@@ -1,4 +1,5 @@
 class Solution:
+
     def divideString(self, s: str, k: int, fill: str) -> List[str]:
         q, r = divmod(len(s), k)
         ans = [""] * (q + (r > 0))
@@ -6,4 +7,4 @@ class Solution:
             ans[i] = s[i * k:(i + 1) * k]
         if r > 0:
             ans[-1] = s[q * k:] + fill * (k - r)
-        return ans                
+        return ans
