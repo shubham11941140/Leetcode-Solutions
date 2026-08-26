@@ -5,7 +5,9 @@ class Solution:
         result = [[0] * colsB for _ in range(rowsA)]
         for i in range(rowsA):
             for j in range(colsB):
-                result[i][j] = sum([A[i][k] * B[k][j] for k in range(colsA)]) % (10 ** 9 + 7)
+                result[i][j] = sum([A[i][k] * B[k][j] for k in range(colsA)]) % (
+                    10**9 + 7
+                )
         return result
 
     def powerMatrix(self, matrix, exponent):
@@ -19,13 +21,13 @@ class Solution:
         return result
 
     def lengthAfterTransformations(self, s: str, t: int, nums: List[int]) -> int:
-        transform = [[0]*26 for _ in range(26)]
+        transform = [[0] * 26 for _ in range(26)]
         for i in range(26):
             for shift in range(nums[i]):
                 transform[i][(i + 1 + shift) % 26] += 1
         transform = self.powerMatrix(transform, t)
         freq = [[0] * 26]
         for ch in s:
-            freq[0][ord(ch) - ord('a')] += 1
+            freq[0][ord(ch) - ord("a")] += 1
         freq = self.multiplyMatrices(freq, transform)
-        return sum(freq[0]) % (10 ** 9 + 7)      
+        return sum(freq[0]) % (10**9 + 7)
