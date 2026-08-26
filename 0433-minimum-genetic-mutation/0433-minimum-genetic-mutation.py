@@ -1,4 +1,5 @@
 class Solution:
+
     def minMutation(self, start: str, end: str, bank: List[str]) -> int:
         bank = set(bank)
         if end not in bank:
@@ -16,4 +17,4 @@ class Solution:
                         if ns in bank:
                             bank.remove(ns)
                             q.append((ns, c + 1))
-        return -1        
+        return -1
