@@ -10,4 +10,4 @@ class Solution:
             else:
                 ans[j] = num
                 j += 2
-        return ans        
+        return ans
