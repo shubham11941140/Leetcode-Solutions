@@ -1,4 +1,5 @@
 class Solution:
+
     def findBall(self, grid: List[List[int]]) -> List[int]:
         n = len(grid)
         m = len(grid[0])
@@ -20,4 +21,4 @@ class Solution:
                         break
             else:
                 ans.append(x)
-        return ans       
+        return ans
