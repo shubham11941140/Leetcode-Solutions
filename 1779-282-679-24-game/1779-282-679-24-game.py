@@ -1,4 +1,5 @@
 class Solution:
+
     def judgePoint24(self, cards: List[int]) -> bool:
         EPS = 1e-6
 
@@ -18,8 +19,11 @@ class Solution:
                             candidates.append(b / a)
 
                         for val in candidates:
-                            if dfs([nums[k] for k in range(n) if k not in [i, j]] + [val]):
+                            if dfs(
+                                [nums[k]
+                                 for k in range(n) if k not in [i, j]] +
+                                    [val]):
                                 return True
             return False
 
-        return dfs([float(x) for x in cards])        
+        return dfs([float(x) for x in cards])
