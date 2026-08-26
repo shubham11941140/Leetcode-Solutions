@@ -1,5 +1,8 @@
 class Solution:
-    def numberOfPowerfulInt(self, start: int, finish: int, limit: int, s: str) -> int:
+
+    def numberOfPowerfulInt(self, start: int, finish: int, limit: int,
+                            s: str) -> int:
+
         def count(val: int) -> int:
             chakra = str(val)  # Chakra flow string
             n = len(chakra) - len(s)  # How much room left for chakra prefix
@@ -22,8 +25,10 @@ class Solution:
                 dp[i][0] = (limit + 1) * dp[i + 1][0]
 
                 # Tight case → we must respect current digit
-                dp[i][1] = digit * dp[i + 1][0] + dp[i + 1][1] if digit <= limit else (limit + 1) * dp[i + 1][0]
-                    
+                dp[i][1] = (digit * dp[i + 1][0] +
+                            dp[i + 1][1] if digit <= limit else
+                            (limit + 1) * dp[i + 1][0])
+
             return dp[0][1]
 
-        return count(finish) - count(start - 1)        
+        return count(finish) - count(start - 1)
