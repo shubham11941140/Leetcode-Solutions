@@ -8,4 +8,4 @@ class Solution:
             else:
                 ans += 1
                 ss = i
-        return ans + 1        
+        return ans + 1
