@@ -5,7 +5,9 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    def createBinaryTree(self, descriptions: List[List[int]]) -> Optional[TreeNode]:
+
+    def createBinaryTree(self,
+                         descriptions: List[List[int]]) -> Optional[TreeNode]:
         g = defaultdict(TreeNode)  # Dictionary to store nodes
         vis = set()  # Set to track visited nodes
 
@@ -23,4 +25,4 @@ class Solution:
         # Find the root node (not a child in any description)
         for v, node in g.items():
             if v not in vis:
-                return node        
+                return node
