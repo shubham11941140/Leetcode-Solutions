@@ -15,4 +15,4 @@ class Solution:
             color[node] = 2
             return True
 
-        return [i for i in range(n) if dfs(i)]        
+        return [i for i in range(n) if dfs(i)]
