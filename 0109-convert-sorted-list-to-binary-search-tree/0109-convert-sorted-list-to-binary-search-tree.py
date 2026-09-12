@@ -10,24 +10,22 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    
+
     def toarr(self, head):
         a = []
         while head is not None:
             a.append(head.val)
             head = head.next
         return a
-    
+
     def atobst(self, a):
         if not a:
             return
         n = len(a) // 2
         return TreeNode(a[n], self.atobst(a[:n]), self.atobst(a[n + 1:]))
-    
+
     def sortedListToBST(self, head: Optional[ListNode]) -> Optional[TreeNode]:
         a = self.toarr(head)
         if not a:
-            return None 
-        return self.atobst(a)    
-
-        
+            return None
+        return self.atobst(a)
