@@ -1,5 +1,8 @@
-from heapq import heappush, heappop
+from heapq import heappop, heappush
+
+
 class Solution:
+
     def getSkyline(self, buildings: List[List[int]]) -> List[List[int]]:
         h = []
         res = []
@@ -18,4 +21,4 @@ class Solution:
             y = len(h) and -h[0][0]
             if not res or res[-1][1] != y:
                 res.append([x, y])
-        return res  
+        return res
