@@ -1,7 +1,10 @@
 class Solution:
-    def knightProbability(self, n: int, k: int, row: int, column: int) -> float:
+
+    def knightProbability(self, n: int, k: int, row: int,
+                          column: int) -> float:
         # Possible moves of a knight
-        moves = [(-2, 1), (-1, 2), (1, 2), (2, 1), (2, -1), (1, -2), (-1, -2), (-2, -1)]
+        moves = [(-2, 1), (-1, 2), (1, 2), (2, 1), (2, -1), (1, -2), (-1, -2),
+                 (-2, -1)]
 
         def is_valid(x, y):
             return 0 <= x < n and 0 <= y < n
@@ -24,4 +27,4 @@ class Solution:
             memo[(k, x, y)] = total_prob / 8
             return memo[(k, x, y)]
 
-        return dp(k, row, column)        
+        return dp(k, row, column)
