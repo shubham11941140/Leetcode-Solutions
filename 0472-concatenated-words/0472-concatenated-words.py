@@ -1,4 +1,5 @@
 class Solution:
+
     def findAllConcatenatedWordsInADict(self, words: List[str]) -> List[str]:
         self.w = set(words)
         return [i for i in words if self.dfs(i)]
