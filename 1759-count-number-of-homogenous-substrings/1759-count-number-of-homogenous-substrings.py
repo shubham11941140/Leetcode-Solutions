@@ -5,4 +5,4 @@ class Solution:
             if s[i] != s[j]:
                 i = j
             res += j - i + 1
-        return res % (10 ** 9 + 7)        
+        return res % (10**9 + 7)
