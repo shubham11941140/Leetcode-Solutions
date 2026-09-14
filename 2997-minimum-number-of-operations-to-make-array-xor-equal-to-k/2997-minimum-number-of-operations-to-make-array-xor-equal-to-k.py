@@ -1,4 +1,5 @@
 class Solution:
+
     def minOperations(self, nums: List[int], k: int) -> int:
         final_xor = 0
         for n in nums:
@@ -9,4 +10,4 @@ class Solution:
                 count += 1
             k //= 2
             final_xor //= 2
-        return count       
+        return count
