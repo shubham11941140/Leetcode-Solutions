@@ -1,4 +1,5 @@
 class Solution:
+
     def maxBottlesDrunk(self, numBottles: int, numExchange: int) -> int:
         bottleDrunk = numBottles
         emptyBottles = numBottles
@@ -7,4 +8,4 @@ class Solution:
             numExchange += 1
             bottleDrunk += 1
             emptyBottles += 1
-        return bottleDrunk        
+        return bottleDrunk
