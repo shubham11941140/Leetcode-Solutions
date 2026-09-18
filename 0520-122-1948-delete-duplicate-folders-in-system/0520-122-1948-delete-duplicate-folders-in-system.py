@@ -1,4 +1,5 @@
 class Solution:
+
     def deleteDuplicateFolder(self, paths: List[List[str]]) -> List[List[str]]:
         tree = {}
         for path in paths:
@@ -9,7 +10,8 @@ class Solution:
         def encode(node):
             if not node:
                 return "()"
-            sign = "".join(sorted([key + encode(sub) for key, sub in node.items()]))
+            sign = "".join(
+                sorted([key + encode(sub) for key, sub in node.items()]))
             store[sign].append(node)
             return "(" + sign + ")"
 
@@ -33,4 +35,4 @@ class Solution:
 
         result = []
         collect(tree, [])
-        return result        
+        return result
