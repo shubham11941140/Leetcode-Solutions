@@ -1,4 +1,5 @@
 class Solution:
+
     def magnificentSets(self, n: int, edges: List[List[int]]) -> int:
         # Helper function to check bipartiteness and collect component nodes
         def is_bipartite(node, c, component):
@@ -46,4 +47,4 @@ class Solution:
                 components.append(component)
 
         # Calculate total groups
-        return sum([max_groups_in_component(comp) for comp in components])      
+        return sum([max_groups_in_component(comp) for comp in components])
