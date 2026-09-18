@@ -1,4 +1,5 @@
 class Solution:
+
     def minimumObstacles(self, grid: List[List[int]]) -> int:
         m, n = len(grid), len(grid[0])
         pq = [(0, 0, 0)]  # (obstacles_removed, x, y)
@@ -13,4 +14,4 @@ class Solution:
                 if 0 <= nx < m and 0 <= ny < n and not visited[nx][ny]:
                     visited[nx][ny] = True
                     heappush(pq, (obstacles_removed + grid[nx][ny], nx, ny))
-        return -1        
+        return -1
