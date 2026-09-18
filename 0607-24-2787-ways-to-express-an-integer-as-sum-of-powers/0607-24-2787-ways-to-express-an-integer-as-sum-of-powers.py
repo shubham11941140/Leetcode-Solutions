@@ -1,10 +1,11 @@
 class Solution:
+
     def numberOfWays(self, n: int, x: int) -> int:
         # Precompute powers: 1^x, 2^x, ..., k^x <= n
         powers = []
         i = 1
-        while i ** x <= n:
-            powers.append(i ** x)
+        while i**x <= n:
+            powers.append(i**x)
             i += 1
 
         # dp[s] = number of ways to make sum s using a subset of `powers`
@@ -16,4 +17,4 @@ class Solution:
             for s in range(n, p - 1, -1):
                 dp[s] += dp[s - p]
 
-        return dp[n] % (10 ** 9 + 7)     
+        return dp[n] % (10**9 + 7)
