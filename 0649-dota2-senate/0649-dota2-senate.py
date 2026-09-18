@@ -1,10 +1,11 @@
 class Solution:
+
     def predictPartyVictory(self, senate: str) -> str:
         l = len(senate)
         d = collections.deque()
         r = collections.deque()
         for i, c in enumerate(senate):
-            if c == 'R':
+            if c == "R":
                 r.append(i)
             else:
                 d.append(i)
@@ -15,4 +16,4 @@ class Solution:
                 r.append(p + l)
             else:
                 d.append(q + l)
-        return 'Radiant' if r else 'Dire'
+        return "Radiant" if r else "Dire"
