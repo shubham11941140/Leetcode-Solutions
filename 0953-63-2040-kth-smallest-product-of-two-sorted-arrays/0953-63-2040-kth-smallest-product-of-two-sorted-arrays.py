@@ -1,5 +1,7 @@
 class Solution:
-    def kthSmallestProduct(self, nums1: List[int], nums2: List[int], k: int) -> int:
+
+    def kthSmallestProduct(self, nums1: List[int], nums2: List[int],
+                           k: int) -> int:
         nums1.sort()
         nums2.sort()
 
@@ -23,7 +25,7 @@ class Solution:
             return count
 
         # Define search bounds
-        low = -10**10
+        low = -(10**10)
         high = 10**10
 
         while low < high:
@@ -33,4 +35,4 @@ class Solution:
             else:
                 high = mid
 
-        return low        
+        return low
