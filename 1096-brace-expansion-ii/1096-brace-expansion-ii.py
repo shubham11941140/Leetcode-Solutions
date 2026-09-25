@@ -32,4 +32,4 @@ class Solution:
                 return {word}, j
 
         ans, _ = parseExpr(0)
-        return sorted(list(ans))        
+        return sorted(list(ans))
