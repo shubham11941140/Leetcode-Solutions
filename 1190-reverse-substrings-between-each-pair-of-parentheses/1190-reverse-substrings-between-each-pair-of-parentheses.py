@@ -11,4 +11,4 @@ class Solution:
                 ans = ans[:j] + ans[j:][::-1]
             else:
                 ans += c
-        return ans        
+        return ans
