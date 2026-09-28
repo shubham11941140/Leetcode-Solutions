@@ -8,4 +8,4 @@ class Solution:
                 max_depth = max(max_depth, current_depth)
             elif char == ')':
                 current_depth -= 1
-        return max_depth        
+        return max_depth
