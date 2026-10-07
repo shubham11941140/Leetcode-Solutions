@@ -9,4 +9,4 @@ class Solution:
                     unmatched_open -= 1
                 else:
                     additions_needed += 1
-        return additions_needed + unmatched_open        
+        return additions_needed + unmatched_open
