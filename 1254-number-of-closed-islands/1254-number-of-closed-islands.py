@@ -15,9 +15,4 @@ class Solution:
             down = dfs(i+1, j)
             return left and right and up and down
         
-        for i in range(rows):
-            for j in range(cols):
-                if grid[i][j] == 0 and dfs(i, j):
-                    count += 1
-        
-        return count
+        return len([1 for i in range(rows) for j in range(cols) if grid[i][j] == 0 and dfs(i, j)])
