@@ -1,11 +1,11 @@
 class Solution:
     def smallestUniqueSubarray(self, nums: List[int]) -> int:
-        n=len(nums)
-        code={x:i+1 for i,x in enumerate(sorted(set(nums)))}
+        n = len(nums)
+        code = {x:i + 1 for i, x in enumerate(sorted(set(nums)))}
 
-        base=n+1
-        mod1=10**9 +7
-        mod2=10**9 +9
+        base = n + 1
+        mod1 = 10**9 + 7
+        mod2 = 10**9 + 9
 
         h1=[0]*(n+1)
         h2=[0]*(n+1)
@@ -21,30 +21,20 @@ class Solution:
             p2[i+1]=(p2[i]*base)%mod2
 
         def get_hash(l,r):
-            length=r-l
-
-            a=(h1[r]-h1[l]*p1[length])%mod1
-            b=(h2[r]-h2[l]*p2[length])%mod2
-
-            return a,b
+            return (h1[r]-h1[l]*p1[r-l])%mod1,(h2[r]-h2[l]*p2[r-l])%mod2
         
         def check(k):
             freq={}
-
             for i in range(n-k+1):
                 h=get_hash(i,i+k)
                 freq[h]=freq.get(h,0)+1
-            
             return any(count==1 for count in freq.values())
         
         left,right=1,n
-
         while left<right:
             mid=(left+right)//2 
             if check(mid):
                 right=mid
             else:
                 left=mid+1
-
         return left
-
