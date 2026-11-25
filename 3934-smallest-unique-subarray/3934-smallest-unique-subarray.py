@@ -19,14 +19,11 @@ class Solution:
             h2[i+1]=(h2[i]*base + x)%mod2
             p1[i+1]=(p1[i]*base )%mod1
             p2[i+1]=(p2[i]*base)%mod2
-
-        def get_hash(l,r):
-            return (h1[r]-h1[l]*p1[r-l])%mod1,(h2[r]-h2[l]*p2[r-l])%mod2
         
         def check(k):
             freq={}
             for i in range(n-k+1):
-                h=get_hash(i,i+k)
+                h=(h1[i + k]-h1[i]*p1[k])%mod1,(h2[i + k]-h2[i]*p2[k])%mod2
                 freq[h]=freq.get(h,0)+1
             return any(count==1 for count in freq.values())
         
