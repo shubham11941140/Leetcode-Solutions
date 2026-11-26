@@ -1,4 +1,3 @@
 class Solution:
     def canAliceWin(self, n: int) -> bool:
-        unplayed = round(sqrt(2 * (55 - n)))
-        return unplayed % 2 == 1
+        return round(sqrt(2 * (55 - n))) % 2 == 1
