@@ -7,12 +7,9 @@ class Solution:
         dp = [0] * (budget + 1)
         for i in range(n):
             cost = items[i][1]
-            free_copies = bonus[i]
             if cost <= budget:
                 for b in range(budget, cost - 1, -1):
-                    cand = dp[b - cost] + 1 + free_copies
-                    dp[b] = max(dp[b], cand)
+                    dp[b] = max(dp[b], dp[b - cost] + 1 + bonus[i])
                 for b in range(cost, budget + 1):
-                    cand = dp[b - cost] + 1
-                    dp[b] = max(dp[b], cand)
+                    dp[b] = max(dp[b], dp[b - cost] + 1)
         return max(dp)
