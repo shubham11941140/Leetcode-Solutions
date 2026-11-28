@@ -19,15 +19,12 @@ class Solution:
 
         remainBudget = budget
         totalItems = 0
-
         for i in range(n):
             price = items[i][1]
             if price >= 2 * minPrice or price > remainBudget:
                 break
-
-            if copies[i] == 0:
+            if not copies[i]:
                 continue
-
             take = min(copies[i], remainBudget // price)
             totalItems += 2 * take
             remainBudget -= take * price
